@@ -15,10 +15,9 @@ Frontend:
 - Bootstrap (styling) 
 - MaterialUI/CSS (inputs/forms)
 
-Backend: 
-Firebase: 
+Backend - Mongo: 
 - User Collection with log in information (ie. Name, Username, Password, Email, Hometown/City, foster or organization, and path/purpose) 
-- Path Resources Colletion (College, Workforce, Military, Technical School/Bootcamps) 
+- Path Resources Colletion (e.g: College, Workforce, Military, Technical School/Bootcamps) 
 - Mentors Collection (Name, Organization, Their Path, Email, Former Foster Youth, Bio: Why mentor?) 
 - Organziations Collection (Name, donation route, purpose, location) 
 
@@ -30,7 +29,7 @@ TODO: how to get the project dev environment up and running, npm install etc
 ## Deployment
 
 TODO: how to deploy the project
-Netlify <3 
+heroku(backend) & netlify(overall) <3 
 
 ## Authors
 
