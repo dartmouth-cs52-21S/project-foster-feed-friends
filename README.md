@@ -29,6 +29,7 @@ TODO: how to get the project dev environment up and running, npm install etc
 ## Deployment
 
 TODO: how to deploy the project
+
 heroku(backend) & netlify(overall) <3 
 
 ## Authors
