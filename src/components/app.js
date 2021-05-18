@@ -1,42 +1,20 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import {
-  BrowserRouter as Router, Route, NavLink, Switch,
+  BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
+
+import Nav from './Navbar';
+import Landing from './Landing';
+import Educate from './Educate';
+import Mentor from './Mentor';
+import SignIn from './SignIn';
+import SignUpFoster from './SignUpFoster';
+import SignUpOrg from './SignUpOrg';
 import '../style.scss';
 
-const About = (props) => {
-  console.log('rough');
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
-  return (
-    <div>
-      <Counter />
-      <Controls />
-      <div>Welcome</div>
-    </div>
-  );
-};
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
-};
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-      </ul>
-    </nav>
-  );
 };
 
 const App = (props) => {
@@ -45,9 +23,12 @@ const App = (props) => {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/mentor" component={Mentor} />
+          <Route path="/educate" component={Educate} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup-org" component={SignUpOrg} />
+          <Route path="/signup-youth" component={SignUpFoster} />
           <Route component={FallBack} />
         </Switch>
       </div>
@@ -56,4 +37,3 @@ const App = (props) => {
 };
 
 export default App;
-// ReactDOM.render(<App />, document.getElementById('main'));

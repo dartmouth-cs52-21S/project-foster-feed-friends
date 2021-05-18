@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^9.0.2",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8",
     "react": "^17.0.2",
