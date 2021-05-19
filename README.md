@@ -34,7 +34,7 @@ heroku(backend) & netlify(overall) <3
 
 ## Authors
 - Gebriel Belaineh 
-- Juliet E. Giraso 
+- Juliet Elisa Giraso 
 - Karina Montiel 
 - Melissa Valencia 
 - Muhtasim Miraz 
