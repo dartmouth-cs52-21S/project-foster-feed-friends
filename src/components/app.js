@@ -13,6 +13,7 @@ import SignUpFoster from './SignUpFoster';
 import SignUpOrg from './SignUpOrg';
 import SignInFoster from './SignInFoster';
 import SignInOrg from './SignInOrg';
+import SignUp from './SignUp';
 import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
@@ -34,6 +35,7 @@ const App = (props) => {
           <Route exact path="/signin" component={SignIn} />
           <Route path="/signin/org" component={SignInOrg} />
           <Route path="/signin/youth" component={SignInFoster} />
+          <Route exact path="/signup" component={SignUp} />
           <Route path="/signup/org" component={SignUpOrg} />
           <Route path="/signup/youth" component={SignUpFoster} />
           <Route component={FallBack} />

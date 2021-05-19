@@ -15,7 +15,55 @@ class Educate extends Component {
 
   render = () => {
     return (
-      <div />
+      <div>
+        <div>
+          <h1>Understand the System</h1>
+          <p>The system is broken. It fails foster youth, especially those as they age out (17+) of the system</p>
+        </div>
+        <div>
+          <h1>How to Help</h1>
+          <h2>Contribute to those trying to help foster youth</h2>
+          <p>Child Welfare League of America
+            Providing services that aid 3.5 million neglected and abused children each year.
+          </p>
+          <p>
+            National CASA Association
+            Training and support for court appointed special advocates for children.
+          </p>
+          <p>
+            Orphan Foundation of America
+            Support to parentless teens pursuing college and vocational training.
+          </p>
+          <p>
+            Dave Thomas Foundation for Adoption
+            Working to increase adoptions of waiting children in North America.
+          </p>
+          <p>
+            Family Builders By Adoption
+            Educating the community about the needs of waiting children and placing children with permanent, secure families through adoption.
+          </p>
+          <p>
+            National Association of Child Advocates
+            Nationwide network of child advocacy organizations.
+          </p>
+          <p>
+            North American Council on Adoptable Children
+            Placing school-age children who can not remain with their birth families.
+          </p>
+          <p>
+            Southern California Foster Family Agency
+            Placing children into homes until they can be reunited with their birth families, be adopted or become independent adults.
+          </p>
+          <p>
+            YouthBuild USA
+            Helping young adults to rebuild and improve the communities in which they live.
+          </p>
+        </div>
+        <div>
+          <h1>Being empathetic</h1>
+          <p>These children have gone through tremendous trauma, listen to their needs</p>
+        </div>
+      </div>
     );
   }
 }
