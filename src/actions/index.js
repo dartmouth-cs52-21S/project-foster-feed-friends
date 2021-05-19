@@ -113,7 +113,26 @@ export function signinUser({ email, password }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin/${API_KEY}`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signin/youth/${API_KEY}`, { email, password }).then((response) => {
+      dispatch({ type: ActionTypes.AUTH_USER });
+      localStorage.setItem('token', response.data.token);
+      history.push('/');
+    }).catch((error) => {
+      dispatch(authError(`Sign In Failed: ${error.response.data}`));
+    });
+  };
+}
+
+export function signinOrg({ email, password }, history) {
+  // takes in an object with email and password (minimal user object)
+  // returns a thunk method that takes dispatch as an argument (just like our create post method really)
+  // does an axios.post on the /signin endpoint
+  // on success does:
+  //  dispatch({ type: ActionTypes.AUTH_USER });
+  //  localStorage.setItem('token', response.data.token);
+  // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/signin/org/${API_KEY}`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push('/');
@@ -133,6 +152,34 @@ export function signupUser({ email, password, userName }, history) {
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signup/${API_KEY}`, { email, password, userName }).then((response) => {
+      dispatch({ type: ActionTypes.AUTH_USER });
+      localStorage.setItem('token', response.data.token);
+      history.push('/');
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Sign up Failed: ${error.response.data}`));
+    });
+  };
+}
+
+export function signupOrg({
+  orgname, location, pocname, email, password,
+}, history) {
+// takes in an object with email and password (minimal user object)
+// returns a thunk method that takes dispatch as an argument (just like our create post method really)
+// does an axios.post on the /signup endpoint (only difference from above)
+// on success does:
+//  dispatch({ type: ActionTypes.AUTH_USER });
+//  localStorage.setItem('token', response.data.token);
+// on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/signup/org/${API_KEY}`, {
+      orgname,
+      location,
+      pocname,
+      email,
+      password,
+    }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push('/');

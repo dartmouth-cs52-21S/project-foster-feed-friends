@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import * as ReactBootStrap from 'react-bootstrap';
-
-// DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signoutUser } from '../actions';
+import { Button } from '@material-ui/core';
+import { signupUser } from '../actions';
 
 class Mentor extends Component {
   constructor(props) {
@@ -13,11 +11,21 @@ class Mentor extends Component {
     };
   }
 
+  handleSignUpClick = (event) => {
+
+  }
+
   render = () => {
     return (
-      <div />
+      <div className="mentor-page">
+        <div className="mentor-header">
+          <h1>Making An Impact</h1>
+          <p>Sign up and become a mentor for foster youth.</p>
+        </div>
+        <Button className="signUpSpecificButton" variant="contained" color="primary">Sign-Up</Button>
+      </div>
     );
   }
 }
 
-export default withRouter(connect(null, { signoutUser })(Mentor));
+export default withRouter(connect(null, { signupUser })(Mentor));
