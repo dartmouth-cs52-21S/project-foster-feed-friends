@@ -12,6 +12,7 @@ import SignIn from './SignIn';
 import SignUpFoster from './SignUpFoster';
 import SignUpOrg from './SignUpOrg';
 import '../style.scss';
+import '../Karina.scss';
 
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
