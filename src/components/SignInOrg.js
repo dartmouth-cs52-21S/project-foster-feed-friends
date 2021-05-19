@@ -5,6 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
+import { signinOrg } from '../actions';
 
 class SignInOrg extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class SignInOrg extends Component {
 
   onSubmit = (event) => {
     if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signinUser(this.state, this.props.history);
+      this.props.signinOrg(this.state, this.props.history);
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -53,7 +54,7 @@ class SignInOrg extends Component {
           <InputLabel htmlFor="component-simple">Password</InputLabel>
           <Input id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        <Button className="signInSpecificButton" variant="contained" color="primary">
+        <Button className="signInSpecificButton" variant="contained" onClick={this.onSubmit} color="primary">
           Sign-In
         </Button>
 
@@ -62,4 +63,4 @@ class SignInOrg extends Component {
   }
 }
 
-export default withRouter(connect(null, { })(SignInOrg));
+export default withRouter(connect(null, { signinOrg })(SignInOrg));

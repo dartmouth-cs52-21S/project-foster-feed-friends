@@ -12,8 +12,8 @@ export const ActionTypes = {
   AUTH_ERROR: 'AUTH_ERROR',
 };
 
-const ROOT_URL = 'http://localhost:9090/api';
-const API_KEY = '?key=j_giraso';
+const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
 // to clear error after dispatching and handling it
@@ -173,6 +173,7 @@ export function signupOrg({
 //  localStorage.setItem('token', response.data.token);
 // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
+    console.log('inside action singup');
     axios.post(`${ROOT_URL}/signup/org/${API_KEY}`, {
       orgname,
       location,
