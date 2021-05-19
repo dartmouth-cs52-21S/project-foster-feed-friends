@@ -1,0 +1,58 @@
+#landing-container{
+    display:flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.landingSubcontainer{
+    padding: 150px;
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+}
+#signInOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#signInContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signInCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+.navLink{
+    text-decoration: none;
+    color: black;
+}
+.MuiCardContent-root {
+    padding-bottom: 0px!important;
+}
+.MuiCardActions-root{
+    padding-bottom: 16px !important;
+}
+.MuiTypography-body1{
+    font-size: 1.5em !important;
+}
+#signInSpecificConatiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signInSpecificInput{
+    margin: 15px !important ;
+    width: 300px !important;
+}
+.signInSpecificButton{
+    margin: 15px !important ;
+}
