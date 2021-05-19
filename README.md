@@ -33,13 +33,12 @@ TODO: how to deploy the project
 heroku(backend) & netlify(overall) <3 
 
 ## Authors
-
-Gebriel Belaineh 
-Juliet E. Giraso 
-Karina Montiel 
-Melissa Valencia 
-Muhtasim Miraz 
-William Perez 
+- Gebriel Belaineh 
+- Juliet E. Giraso 
+- Karina Montiel 
+- Melissa Valencia 
+- Muhtasim Miraz 
+- William Perez 
 
 ## Acknowledgments
 CS52 Professor Tim T. 
