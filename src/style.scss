@@ -1,15 +1,9 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    background: white;
+
+  background: white;
     height: 100%;
-  }
-  .logo {
-    // background-image: url('img/MYIMG.svg');
-    width: 100px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+}
   .active {
     color: pink;
   }
