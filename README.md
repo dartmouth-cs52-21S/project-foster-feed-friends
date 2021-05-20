@@ -37,8 +37,8 @@ heroku(backend) & netlify(overall) <3
 - Juliet Elisa Giraso 
 - Karina Montiel -- Frontend
 - Melissa Valencia 
-- Muhtasim Miraz 
 - William Perez 
+- Muhtasim Miraz
 
 ## Acknowledgments
 CS52 Professor Tim T. 
