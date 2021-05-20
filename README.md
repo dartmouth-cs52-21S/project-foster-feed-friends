@@ -24,7 +24,7 @@ Backend - Mongo:
 ## Setup
 
 TODO: how to get the project dev environment up and running, npm install etc
-- pull from startpack, run npm install and npm start. 
+- pull from starterpack, run npm install and npm start. 
 
 ## Deployment
 
@@ -33,13 +33,12 @@ TODO: how to deploy the project
 heroku(backend) & netlify(overall) <3 
 
 ## Authors
-
-Gebriel Belaineh
-Juliet E. Giraso
-Karina Montiel 
-Melissa Valencia 
-Muhtasim Miraz 
-William Perez
+- Gebriel Belaineh 
+- Juliet Elisa Giraso 
+- Karina Montiel 
+- Melissa Valencia 
+- Muhtasim Miraz 
+- William Perez 
 
 ## Acknowledgments
 CS52 Professor Tim T. 
