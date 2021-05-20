@@ -43,7 +43,11 @@ class SignIn extends Component {
               <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignIn/youth">Sign-In</NavLink></Button>
             </CardActions>
           </Card>
+
         </div>
+        <p>New to Foster Feed Friends?</p>
+        <Button variant="outlined" size="medium"><NavLink className="navLink" to="/SignUp">Sign-Up</NavLink></Button>
+
       </div>
     );
   }
