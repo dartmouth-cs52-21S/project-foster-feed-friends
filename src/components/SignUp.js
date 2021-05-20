@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import '../will.scss';
 
-class SignIn extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ class SignIn extends Component {
   render = () => {
     return (
       <div id="signInContainer">
-        <h1> Choose Your User Sign In</h1>
+        <h1> Choose Your User Sign Up</h1>
         <div id="signInOptions">
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -29,7 +29,7 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignIn/org">Sign-In</NavLink></Button>
+              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignUp/org">Sign-In</NavLink></Button>
             </CardActions>
 
           </Card>
@@ -40,17 +40,13 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignIn/youth">Sign-In</NavLink></Button>
+              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-In</NavLink></Button>
             </CardActions>
           </Card>
-
         </div>
-        <p>New to Foster Feed Friends?</p>
-        <Button variant="outlined" size="medium"><NavLink className="navLink" to="/SignUp">Sign-Up</NavLink></Button>
-
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { })(SignIn));
+export default withRouter(connect(null, { })(SignUp));

@@ -26,9 +26,14 @@ class SignUpFoster extends Component {
     };
   }
 
+  // information source: https://www.networkforgood.org/topics/humanserv/foster_care/
+
   render = () => {
     return (
-      <div />
+      <div>
+        <h2> Oops this page is under construction! Stay tuned for more information! </h2>
+
+      </div>
     );
   }
 }

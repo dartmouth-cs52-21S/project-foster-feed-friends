@@ -71,7 +71,7 @@ class SignUpOrg extends Component {
         </FormControl>
         <FormControl className="signUpSpecificInput">
           <InputLabel htmlFor="component-simple">Location</InputLabel>
-          <Input id="component-simple" value={this.state.orgname} onChange={this.handleOrgNameChange} />
+          <Input id="component-simple" value={this.state.location} onChange={this.handleLocationChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
           <InputLabel htmlFor="component-simple">Point of Contact Name</InputLabel>
@@ -93,7 +93,7 @@ class SignUpOrg extends Component {
           <InputLabel htmlFor="component-simple">Password Confirmation</InputLabel>
           <Input id="component-simple" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
         </FormControl>
-        <Button className="signUpSpecificButton" variant="contained" color="primary">Sign-Up</Button>
+        <Button className="signUpSpecificButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</Button>
       </div>
     );
   }
