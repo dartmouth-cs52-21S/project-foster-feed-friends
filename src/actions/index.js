@@ -205,7 +205,7 @@ export function signoutUser() {
 // get all posts
 export function renderUserInfo(id) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+    axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
