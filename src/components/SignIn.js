@@ -6,7 +6,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import '../will.scss';
 
@@ -29,7 +29,7 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignIn/org">Sign-In</NavLink></Button>
+              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
             </CardActions>
 
           </Card>
@@ -40,13 +40,21 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignIn/youth">Sign-In</NavLink></Button>
+              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
             </CardActions>
+          </Card>
+          <Card className="signInCard" variant="outlined">
+            <CardContent>
+              <Typography className="title" color="textPrimary" gutterBottom>
+                Mentor
+              </Typography>
+            </CardContent>
+            <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
           </Card>
 
         </div>
         <p>New to Foster Feed Friends?</p>
-        <Button variant="outlined" size="medium"><NavLink className="navLink" to="/SignUp">Sign-Up</NavLink></Button>
+        <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-Up</NavLink></button>
 
       </div>
     );

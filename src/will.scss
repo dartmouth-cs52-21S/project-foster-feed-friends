@@ -3,6 +3,7 @@
     padding: 0px;
     margin: 0px;
 }
+//landing page 
 #landing-container{
     display:flex; 
     flex-direction: column;
@@ -39,13 +40,17 @@
     border-radius: 25px;
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: 700;
     padding-top: 0px;
+    line-height: 25px;
+    padding-bottom: 5px;;
 }
 .navLinkButton{
     text-decoration: none;
     color:black;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
+    height: fit-content;
     font-size: .5em !important;
 }
 .landingLeftSubcontainer{
@@ -84,6 +89,75 @@
     font-size: .35em !important;
     padding-top: 25px;
 }
+// educate page 
+#educateRowI{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#educateRowII{
+    margin-left: 417px;;
+}
+.educateLanding{
+    width: fit-content;
+}
+.educateLanding h1{
+    font-family: 'Mulish', sans-serif;
+    background-color: #6F93EE;
+    padding-left: 25px;
+    font-size: 1em !important;
+    padding-right: 45px;
+
+    color: #F5FFFC;
+}
+#educatebar{
+    display: flex;
+    flex-direction: row ;
+}
+#four.educateLanding{
+    background-color: #6F93EE;
+    width:75px;
+    height: 60px;
+    margin-left: 10px;
+}
+#three.educateLanding{
+    background-color: #6F93EE;
+    width:50px;
+    height:  60px;
+    margin-left: 10px;
+}
+#two.educateLanding{
+    width:25px;
+    background-color: #6F93EE;
+    height:  60px;
+    margin-left: 10px;
+}
+#one.educateLanding{
+    background-color: #6F93EE;
+    width:15px;
+    height: 60px;
+    margin-left: 10px;
+}
+.educateContent{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.educateContent h2{
+    padding-left: 25px;
+    color: #6F93EE;
+    font-size: 1em;
+}
+.educateContent p{
+    font-size: .5em;
+    width: 900px;
+    padding-right: 25px;
+
+}
+
+//sign in 
+
 #signInOptions{
     display: flex;
     flex-direction: row;
@@ -94,6 +168,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#signInContainer h1{
+    font-size: 1em;
 }
 .signInCard{
     display: flex;
