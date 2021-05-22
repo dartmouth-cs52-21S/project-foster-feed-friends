@@ -1,3 +1,8 @@
+*{
+    font-size: 1em;
+    padding: 0px;
+    margin: 0px;
+}
 #landing-container{
     display:flex; 
     flex-direction: column;
@@ -28,6 +33,56 @@
     font-size: .5em;
     text-align: center;
     color:#F5FFFC;
+}
+.yellowButton{
+    background-color: #FFB621;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+.navLinkButton{
+    text-decoration: none;
+    color:black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: .5em !important;
+}
+.landingLeftSubcontainer{
+    margin-top: 205px;
+    display: flex;
+    flex-direction: row;
+}
+#blobs{
+    padding-left: 55px;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+}
+.underlineLight{
+    background-color: #92C893;
+    width:400px; 
+    height :5px;
+}
+.underlineDark{
+    background-color: #0E442C;
+    width:400px; 
+    height :5px;
+}
+.subLeft{
+    margin-left: 25px;
+}
+.subLeft h1,h2{
+    font-family: 'Nunito', sans-serif;
+    margin: 0px !important;
+    font-size: 1em !important;
+}
+.landingLeftSubcontainer p {
+    font-family: 'Mulish', sans-serif;
+    font-size: .35em !important;
+    padding-top: 25px;
 }
 #signInOptions{
     display: flex;
