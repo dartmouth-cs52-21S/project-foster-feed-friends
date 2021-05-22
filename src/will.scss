@@ -2,15 +2,32 @@
     display:flex; 
     flex-direction: column;
     justify-content: space-evenly;
+    background-image: url(./img/papaioannou-kostas-tysecUm5HJA-unsplash.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    align-items: center;
 }
 .landingSubcontainer{
-    padding: 150px;
+    padding-top: 50px;
     display: flex;
     width: 75%;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    justify-content: flex-start;
+    align-items: center;
     height: 100vh;
+}
+.landingSubcontainer h1{
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.3em;
+    width: 1600px;
+    text-align: center;
+    color:#F5FFFC;
+}
+.landingSubcontainer p{
+    font-size: .5em;
+    text-align: center;
+    color:#F5FFFC;
 }
 #signInOptions{
     display: flex;

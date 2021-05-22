@@ -18,10 +18,6 @@ class Landing extends Component {
     return (
       <div id="landing-container">
         <div className="landingSubcontainer">
-          <img src="src/2492244.jpg"
-            width="300px"
-            alt="youth arms around each other"
-          />
           <h1>We are a pathway to building better futures.</h1>
           <p>Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the system.
             We want to enable foster children to not only understand thier options but take advantage of it.
