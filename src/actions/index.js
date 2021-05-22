@@ -10,6 +10,7 @@ export const ActionTypes = {
   AUTH_USER: 'AUTH_USER',
   DEAUTH_USER: 'DEAUTH_USER',
   AUTH_ERROR: 'AUTH_ERROR',
+  USER_INFO: 'USER_INFO',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -198,5 +199,18 @@ export function signoutUser() {
     localStorage.removeItem('token');
     dispatch({ type: ActionTypes.DEAUTH_USER });
     // history.push('/');
+  };
+}
+
+// get all posts
+export function renderUserInfo() {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/posts${API_KEY}`).then((response) => {
+      dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
   };
 }
