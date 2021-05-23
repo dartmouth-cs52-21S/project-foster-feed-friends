@@ -233,3 +233,21 @@
     align-items: center;
     justify-content: center;
 }
+
+//org profile 
+.leftBar{
+    background-color: #92C893;
+    height: 100vh;
+    width: 30%;
+}
+.boldtwentyfour{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 24px;;
+}
+.update{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
