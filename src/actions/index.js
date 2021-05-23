@@ -184,7 +184,7 @@ export function signupOrg({
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      history.push('/');
+      history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
       dispatch(authError(`Sign up Failed: ${error.response.data}`));
@@ -205,7 +205,8 @@ export function signoutUser() {
 // get all posts
 export function renderUserInfo(id) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+    axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      console.log(`hi from renderinfo ${id}`);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       // clear prev error
       errorClear()(dispatch);

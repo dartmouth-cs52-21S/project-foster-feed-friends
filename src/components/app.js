@@ -39,7 +39,7 @@ const App = (props) => {
           <Route exact path="/signup" component={SignUp} />
           <Route path="/signup/org" component={SignUpOrg} />
           <Route path="/signup/youth" component={SignUpFoster} />
-          <Route path="/profile/:id" component={ProfileOrg} />
+          <Route path="/org/profile/:userID" component={ProfileOrg} />
           <Route component={FallBack} />
         </Switch>
       </div>
