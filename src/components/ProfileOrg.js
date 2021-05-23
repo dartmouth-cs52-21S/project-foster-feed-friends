@@ -9,7 +9,7 @@ class ProfileOrg extends Component {
   }
 
   componentDidMount() {
-    this.props.renderUserInfo(this.props.match.params.postID);
+    this.props.renderUserInfo(this.props.match.params.userID);
   }
 
   render() {

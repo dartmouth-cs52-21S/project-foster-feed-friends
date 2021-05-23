@@ -184,7 +184,7 @@ export function signupOrg({
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      history.push('/');
+      history.push(`/org/profile/${response.data.id}`);
     }).catch((error) => {
       console.log('catch');
       dispatch(authError(`Sign up Failed: ${error.response.data}`));
