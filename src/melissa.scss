@@ -33,7 +33,56 @@ body, html {
 .mentor-page{
     display: flex;
     flex-direction: column;
-    margin-top: 400px;
-    margin-left: 100px;
-    
+    // margin-top: 400px;
+    // margin-left: 100px;
 }
+.mentor-header{
+    display: flex;
+    flex-direction: row;
+    background-color: #6F93EE;
+    height:100vh;
+    padding: 25px;
+}
+.mentor-header h1{
+    margin-top: 400px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+.mentor-header h2{
+    margin-top: 400px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.5em;
+}
+#mentor-blobs{
+    padding-top: 100px;
+    padding-left: 300px;
+}
+.mentor-container{
+    padding: 25px;
+}
+.mentor-container h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    font-weight: bolder;
+}
+.mentor-container h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7em !important;
+}
+.mentor-container h3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+.mentor-container h4{
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+.mentor-container p{
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.5em;
+}
+
+
