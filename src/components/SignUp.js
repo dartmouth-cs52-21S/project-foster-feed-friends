@@ -6,7 +6,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import '../will.scss';
 
@@ -20,7 +20,7 @@ class SignUp extends Component {
   render = () => {
     return (
       <div id="signInContainer">
-        <h1> Choose Your User Sign Up</h1>
+        <h1 className="title"> Choose Your User Sign Up</h1>
         <div id="signInOptions">
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -29,19 +29,9 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignUp/org">Sign-Up</NavLink></Button>
+              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/org">Sign-Up</NavLink></button>
             </CardActions>
 
-          </Card>
-          <Card className="signInCard" variant="outlined">
-            <CardContent>
-              <Typography className="title" color="textPrimary" gutterBottom>
-                Foster Youth
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-Up</NavLink></Button>
-            </CardActions>
           </Card>
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -50,9 +40,20 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-Up</NavLink></Button>
+              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button>
             </CardActions>
           </Card>
+          <Card className="signInCard" variant="outlined">
+            <CardContent>
+              <Typography className="title" color="textPrimary" gutterBottom>
+                Foster Youth
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button>
+            </CardActions>
+          </Card>
+
         </div>
       </div>
     );

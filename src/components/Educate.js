@@ -43,7 +43,8 @@ class Educate extends Component {
             other in whatever capacity we can be. There are resources for you as a youth, or mentor to recieve the necessary aid. Create an account to get started!
           </p>
         </div>
-        {/* <div>
+        {/*
+          // information source: https://www.networkforgood.org/topics/humanserv/foster_care/<div>
           <h1>Understand the System</h1>
           <p>The system is broken. It fails foster youth, especially those as they age out (17+) of the system</p>
         </div>

@@ -11,6 +11,7 @@ const ProfileOrg = (props) => {
   useEffect(() => {
     dispatch(renderUserInfo(props.match.params.userID));
   }, []);
+
   return (
     <div>
       <h2>Person of contact name : {org.pocname}</h2>

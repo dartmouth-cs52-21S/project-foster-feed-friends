@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../melissa.scss';
 import { withRouter } from 'react-router-dom';
 import {
-  FormControl, InputLabel, Input, Button,
+  FormControl, InputLabel, Input,
 } from '@material-ui/core';
 import { signupOrg } from '../actions';
 
@@ -66,34 +66,34 @@ class SignUpOrg extends Component {
           <div id="su-title">Welcome to Foster Feed Friends! Sign up to [...]</div>
         </div>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Organization Name</InputLabel>
-          <Input id="component-simple" value={this.state.orgname} onChange={this.handleOrgNameChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.orgname} onChange={this.handleOrgNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Location</InputLabel>
-          <Input id="component-simple" value={this.state.location} onChange={this.handleLocationChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Location</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Point of Contact Name</InputLabel>
-          <Input id="component-simple" value={this.state.pocname} onChange={this.handlePOCNameChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Point of Contact Email</InputLabel>
-          <Input id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Email</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.email} onChange={this.handleEmailChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Email Confirmation</InputLabel>
-          <Input id="component-simple" value={this.state.emailconfirm} onChange={this.handleEmailConfirmChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.emailconfirm} onChange={this.handleEmailConfirmChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Password</InputLabel>
-          <Input id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel htmlFor="component-simple">Password Confirmation</InputLabel>
-          <Input id="component-simple" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
+          <Input id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
         </FormControl>
-        <Button className="signUpSpecificButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</Button>
+        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
     );
   }

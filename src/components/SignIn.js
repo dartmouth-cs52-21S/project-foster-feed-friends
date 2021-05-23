@@ -20,7 +20,7 @@ class SignIn extends Component {
   render = () => {
     return (
       <div id="signInContainer">
-        <h1> Choose Your User Sign In</h1>
+        <h1 className="title"> Choose Your User Sign In</h1>
         <div id="signInOptions">
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -36,6 +36,14 @@ class SignIn extends Component {
           <Card className="signInCard" variant="outlined">
             <CardContent>
               <Typography className="title" color="textPrimary" gutterBottom>
+                Mentor
+              </Typography>
+            </CardContent>
+            <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/mentor">Sign-In</NavLink></button>
+          </Card>
+          <Card className="signInCard" variant="outlined">
+            <CardContent>
+              <Typography className="title" color="textPrimary" gutterBottom>
                 Foster Youth
               </Typography>
             </CardContent>
@@ -43,19 +51,12 @@ class SignIn extends Component {
               <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/youth">Sign-In</NavLink></button>
             </CardActions>
           </Card>
-          <Card className="signInCard" variant="outlined">
-            <CardContent>
-              <Typography className="title" color="textPrimary" gutterBottom>
-                Mentor
-              </Typography>
-            </CardContent>
-            <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/mentor">Sign-In</NavLink></button>
-          </Card>
 
         </div>
-        <p>New to Foster Feed Friends?</p>
-        <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signup">Sign-Up</NavLink></button>
-
+        <div id="ending">
+          <p>New to Foster Feed Friends?</p>
+          <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signup">Sign-Up</NavLink></button>
+        </div>
       </div>
     );
   }

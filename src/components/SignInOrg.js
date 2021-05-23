@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { signinOrg } from '../actions';
 
 class SignInOrg extends Component {
@@ -45,18 +45,18 @@ class SignInOrg extends Component {
   render = () => {
     return (
       <div id="signInSpecificConatiner">
-        <h1>Sign In Foster Organizations</h1>
+        <h1 className="title">Sign In Foster Organizations</h1>
         <FormControl className="signInSpecificInput">
-          <InputLabel htmlFor="component-simple">Email</InputLabel>
-          <Input id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Email</InputLabel>
+          <Input className="sixteenpoint" id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
         </FormControl>
         <FormControl className="signInSpecificInput">
-          <InputLabel htmlFor="component-simple">Password</InputLabel>
-          <Input id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
+          <Input className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        <Button className="signInSpecificButton" variant="contained" onClick={this.onSubmit} color="primary">
+        <button className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} type="button">
           Sign-In
-        </Button>
+        </button>
 
       </div>
     );
