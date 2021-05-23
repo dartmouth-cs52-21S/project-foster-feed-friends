@@ -29,7 +29,7 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
+              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/org">Sign-In</NavLink></button>
             </CardActions>
 
           </Card>
@@ -40,7 +40,7 @@ class SignIn extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
+              <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/youth">Sign-In</NavLink></button>
             </CardActions>
           </Card>
           <Card className="signInCard" variant="outlined">
@@ -49,12 +49,12 @@ class SignIn extends Component {
                 Mentor
               </Typography>
             </CardContent>
-            <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-In</NavLink></button>
+            <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signin/mentor">Sign-In</NavLink></button>
           </Card>
 
         </div>
         <p>New to Foster Feed Friends?</p>
-        <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/SignIn/youth">Sign-Up</NavLink></button>
+        <button type="button" className="yellowButton"><NavLink className="navLinkButton" to="/signup">Sign-Up</NavLink></button>
 
       </div>
     );
