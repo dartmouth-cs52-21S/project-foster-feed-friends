@@ -16,7 +16,34 @@ class Educate extends Component {
   render = () => {
     return (
       <div>
-        <div>
+        <div id="educateRowI">
+          <img src="src/img/educateI.png" alt="grad cap young woman" />
+          <img src="src/img/educateIII.png" alt="young men gathered around computer" />
+        </div>
+        <img id="educateRowII" src="src/img/educateII.png" alt="grad cap young woman" />
+        <div id="educatebar">
+          <div className="educateLanding">
+            <h1>Learn How to Build Better Futures</h1>
+          </div>
+          <div id="four" className="educateLanding" />
+          <div id="three" className="educateLanding" />
+          <div id="two" className="educateLanding" />
+          <div id="one" className="educateLanding" />
+        </div>
+        <div className="educateContent">
+          <h2>Empathy</h2>
+          <p>Foster youth have undergone immense trauma. As adults, we must be able to listen and respond when needed with care and compassion.
+            Put yourself in their situation for just a minute and try to understand how the system has failed them. We must continously be kind
+            with foster youth in order to help them succeed.
+          </p>
+        </div>
+        <div className="educateContent">
+          <h2>Counseling</h2>
+          <p>You are not a counselor but a mentor and guiding figure. Being part of the Foster Feed Friends network means that we are here for each
+            other in whatever capacity we can be. There are resources for you as a youth, or mentor to recieve the necessary aid. Create an account to get started!
+          </p>
+        </div>
+        {/* <div>
           <h1>Understand the System</h1>
           <p>The system is broken. It fails foster youth, especially those as they age out (17+) of the system</p>
         </div>
@@ -62,7 +89,7 @@ class Educate extends Component {
         <div>
           <h1>Being empathetic</h1>
           <p>These children have gone through tremendous trauma, listen to their needs</p>
-        </div>
+        </div> */}
       </div>
     );
   }

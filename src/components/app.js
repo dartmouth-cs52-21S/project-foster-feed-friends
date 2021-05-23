@@ -18,6 +18,7 @@ import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
 import '../melissa.scss';
+import ProfileOrg from './ProfileOrg';
 
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
@@ -38,6 +39,7 @@ const App = (props) => {
           <Route exact path="/signup" component={SignUp} />
           <Route path="/signup/org" component={SignUpOrg} />
           <Route path="/signup/youth" component={SignUpFoster} />
+          <Route path="/profile/:id" component={ProfileOrg} />
           <Route component={FallBack} />
         </Switch>
       </div>

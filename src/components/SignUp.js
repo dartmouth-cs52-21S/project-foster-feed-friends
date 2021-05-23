@@ -29,7 +29,7 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignUp/org">Sign-In</NavLink></Button>
+              <Button variant="outlined" size="small"><NavLink class="navLink" to="/SignUp/org">Sign-Up</NavLink></Button>
             </CardActions>
 
           </Card>
@@ -40,7 +40,17 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-In</NavLink></Button>
+              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-Up</NavLink></Button>
+            </CardActions>
+          </Card>
+          <Card className="signInCard" variant="outlined">
+            <CardContent>
+              <Typography className="title" color="textPrimary" gutterBottom>
+                Mentor
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="outlined" size="small"><NavLink className="navLink" to="/SignUp/youth">Sign-Up</NavLink></Button>
             </CardActions>
           </Card>
         </div>
