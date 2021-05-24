@@ -7,7 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signoutUser } from '../actions';
+import { signupYouth } from '../actions';
 
 class SignUpFoster extends Component {
   constructor(props) {
@@ -58,7 +58,7 @@ class SignUpFoster extends Component {
 
   onSubmit = (event) => {
     if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signinOrg(this.state, this.props.history);
+      this.props.signupYouth(this.state, this.props.history);
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -124,4 +124,4 @@ class SignUpFoster extends Component {
   }
 }
 
-export default withRouter(connect(null, { signoutUser })(SignUpFoster));
+export default withRouter(connect(null, { signupYouth })(SignUpFoster));

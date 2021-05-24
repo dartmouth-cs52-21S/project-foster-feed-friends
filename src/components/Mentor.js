@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
-import { signupUser } from '../actions';
+import { signupMentor } from '../actions';
 
 class Mentor extends Component {
   constructor(props) {
@@ -44,4 +44,4 @@ class Mentor extends Component {
   }
 }
 
-export default withRouter(connect(null, { signupUser })(Mentor));
+export default withRouter(connect(null, { signupMentor })(Mentor));
