@@ -24,7 +24,7 @@ const ProfileOrg = (props) => {
           />
         </div>
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
-        {/* <h3 className="sixteenpoint">{org.events}</h3> */}
+        <h3 className="sixteenpoint">{org.events.length}</h3>
         <h3 className="sixteenpoint">{org.pocname}</h3>
         <h3 className="sixteenpoint">{org.location}</h3>
         <h3 className="boldtwentyfour">Email:</h3>
