@@ -212,11 +212,11 @@ export function signupOrg({
 
 // deletes token from localstorage
 // and deauths
-export function signoutUser() {
+export function signoutUser(history) {
   return (dispatch) => {
     localStorage.removeItem('token');
     dispatch({ type: ActionTypes.DEAUTH_USER });
-    // history.push('/');
+    history.push('/');
   };
 }
 
