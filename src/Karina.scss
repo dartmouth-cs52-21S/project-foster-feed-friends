@@ -7,15 +7,9 @@ $white:#F5FFFC;
 $blue:#6F93EE;
 $pink:#D37B4D;
 
-*{
-    font-size: 1em;
-    padding: 0px;
-    margin: 0px;
-}
 body, html {
     font-family: "Nunito", sans-serif !important;
     height: 100%;
-    font-size: 50px;
     color:black;
     background-color: white;
     padding:0;
@@ -29,23 +23,32 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-decoration: none;
 }
+
 
 //nav bar bg and text elems
 #navBarContainer{
     background-color: $primaryG;
-    height:10vh;
+    height:10%;
 }
   
 .navTab{
     padding:10px;
     text-align: center;
+    color:$white;
+    font-size: 25px;
 }
 
 //For underline navbar animation left-right
 a{
     text-decoration: none;
     color:black;
+}
+
+a:hover{
+    color:$yello-CTA;
+    text-decoration: none;
 }
 
 a.left
@@ -86,25 +89,21 @@ a.left:hover:before {
     margin-left: 0px;
 }
 
-.yellowButton{
-    background-color: #FFB621 !important; 
-    border-radius: 25px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    font-size: 22px !important;
-    font-weight: 700 !important;
-    padding-top: 0px !important;
-    line-height: 25px !important;
-    padding: 5px !important;
-    margin: 15px !important ;
-
-}
-
 .navLinkButton{
     text-decoration: none;
-    color:black;
-    font-family: 'Nunito', sans-serif;
+    color:$white !important;
+    font-family: 'Nunito', sans-serif !important;
     height: fit-content;
-    font-size: .5em !important;
+    font-size: .8rem !important;
+    background-color: #FFB621;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    padding-top: 5px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    margin-top: 5px;
 }
 
