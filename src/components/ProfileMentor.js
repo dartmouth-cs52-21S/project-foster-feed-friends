@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
 // import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderUserInfo } from '../actions';
+import { useHistory } from 'react-router';
+import { renderUserInfo, signoutUser } from '../actions';
 
 const ProfileMentor = (props) => {
   const { mentor } = useSelector((state) => state.org);
   const dispatch = useDispatch();
+  const history = useHistory();
   console.log(mentor);
 
   useEffect(() => {
     dispatch(renderUserInfo(props.match.params.userID));
   }, []);
+  const onSubmit = () => {
+    dispatch(signoutUser(history));
+  };
 
   return (
     <div>
@@ -29,7 +34,7 @@ const ProfileMentor = (props) => {
         <h3 className="sixteenpoint">{mentor.location}</h3>
         <h3 className="boldtwentyfour">Email:</h3>
         <h3 className="sixteenpoint"> {mentor.email} </h3>
-        <button type="button">Sign Out </button>
+        <button type="button" onClick={onSubmit}>Sign Out </button>
 
       </div>
 
