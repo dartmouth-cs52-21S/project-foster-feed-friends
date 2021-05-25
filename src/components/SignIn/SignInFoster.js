@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { signinOrg } from '../actions';
+import { withRouter } from 'react-router-dom';
+import { signinUser } from '../../actions/index';
 
-class SignInOrg extends Component {
+class SignInFoster extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class SignInOrg extends Component {
 
   onSubmit = (event) => {
     if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signinOrg(this.state, this.props.history);
+      this.props.signinUser(this.state, this.props.history);
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -45,22 +45,23 @@ class SignInOrg extends Component {
   render = () => {
     return (
       <div id="signInSpecificConatiner">
-        <h1 className="title">Sign In Foster Organizations</h1>
+        <h1 className="title">Sign In Foster Youth</h1>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Email</InputLabel>
-          <Input className="sixteenpoint" id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
+          <Input id="component-simple" className="sixteenpoint" value={this.state.email} onChange={this.handleEmailChange} />
         </FormControl>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-          <Input className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
+          <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        <button className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} type="button">
+        {/* <Button className="signInSpecificButton" variant="contained" color="primary">
           Sign-In
-        </button>
+        </Button> */}
+        <button type="button" className="yellowButton navLinkButton" onClick={this.onSubmit}>Sign In</button>
 
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { signinOrg })(SignInOrg));
+export default withRouter(connect(null, { signinUser })(SignInFoster));

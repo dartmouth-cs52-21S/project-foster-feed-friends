@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 // import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { renderUserInfo, signoutUser } from '../actions';
+import { renderMentorInfo, signoutUser } from '../../actions';
 
 const ProfileMentor = (props) => {
   const { mentor } = useSelector((state) => state.org);
@@ -11,7 +11,7 @@ const ProfileMentor = (props) => {
   console.log(mentor);
 
   useEffect(() => {
-    dispatch(renderUserInfo(props.match.params.userID));
+    dispatch(renderMentorInfo(props.match.params.userID));
   }, []);
   const onSubmit = () => {
     dispatch(signoutUser(history));

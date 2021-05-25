@@ -44,7 +44,7 @@
     font-weight: 700;
     padding-top: 0px;
     line-height: 25px;
-    padding-bottom: 5px;;
+    padding-bottom: 5px;
 }
 .navLinkButton{
     text-decoration: none;
@@ -249,5 +249,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+//signupMentor 
+.radioButtons{
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }

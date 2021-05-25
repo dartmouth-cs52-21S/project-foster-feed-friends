@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 // import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { renderUserInfo, signoutUser } from '../actions';
+import { renderOrgInfo, signoutUser } from '../../actions';
 
 const ProfileOrg = (props) => {
   const { org } = useSelector((state) => state.org);
@@ -11,7 +11,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(renderUserInfo(props.match.params.userID));
+    dispatch(renderOrgInfo(props.match.params.userID));
   }, []);
   const onSubmit = () => {
     dispatch(signoutUser(history));
@@ -29,13 +29,26 @@ const ProfileOrg = (props) => {
           />
         </div>
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
-        {org.events ? <h3 className="sixteenpoint">{org.events.length}</h3> : null}x
+        {org.events ? <h3 className="sixteenpoint">{org.events.length}</h3> : null}
         <h3 className="sixteenpoint">{org.pocname}</h3>
         <h3 className="sixteenpoint">{org.location}</h3>
         <h3 className="boldtwentyfour">Email:</h3>
         <h3 className="sixteenpoint"> {org.email} </h3>
         <button type="button" onClick={onSubmit}>Sign Out </button>
 
+      </div>
+      <div>
+        <button type="button"> Create an Event </button>
+        <div>
+          <h2>Upcoming Events </h2>
+          {org.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          <div />
+        </div>
+        <div>
+          <h2>Previous Events </h2>
+          {org.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          <div />
+        </div>
       </div>
 
     </div>

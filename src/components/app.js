@@ -6,21 +6,24 @@ import {
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Nav from './Navbar';
-import Landing from './Landing';
-import Educate from './Educate';
-import Mentor from './Mentor';
-import SignIn from './SignIn';
-import SignUpFoster from './SignUpFoster';
-import SignUpOrg from './SignUpOrg';
-import SignInFoster from './SignInFoster';
-import SignInOrg from './SignInOrg';
-import SignUp from './SignUp';
+import Landing from './Website/Landing';
+import Educate from './Website/Educate';
+import Mentor from './Website/Mentor';
+import SignIn from './SignIn/SignIn';
+import SignUpFoster from './SignUp/SignUpFoster';
+import SignUpOrg from './SignUp/SignUpOrg';
+import SignInFoster from './SignIn/SignInFoster';
+import SignInOrg from './SignIn/SignInOrg';
+import SignUp from './SignUp/SignUp';
 import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
 import '../melissa.scss';
-import ProfileOrg from './ProfileOrg';
-import SignInMentor from './SignInMentor';
+import ProfileOrg from './Profile/ProfileOrg';
+import ProfileMentor from './Profile/ProfileMentor';
+import ProfileYouth from './Profile/ProfileYouth';
+import SignInMentor from './SignIn/SignInMentor';
+import SignUpMentor from './SignUp/SignUpMentor';
 
 const theme = createMuiTheme({
   palette: {
@@ -51,7 +54,10 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
+            <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/org/profile/:userID" component={ProfileOrg} />
+            <Route path="/youth/profile/:userID" component={ProfileYouth} />
+            <Route path="/youth/mentor/:userID" component={ProfileMentor} />
             {/* <Route path="/mentor/profile/:userID" component={ProfileMentor} />
             <Route path="/youth/profile/:userID" component={ProfileYouth} /> */}
 

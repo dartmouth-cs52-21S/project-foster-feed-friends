@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../melissa.scss';
+
 import { withRouter } from 'react-router-dom';
 import {
   FormControl, InputLabel, Input,
 } from '@material-ui/core';
-import { signupOrg } from '../actions';
+import { signupOrg } from '../../actions';
 
 class SignUpOrg extends Component {
   constructor(props) {

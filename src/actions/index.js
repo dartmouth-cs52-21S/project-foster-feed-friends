@@ -143,7 +143,9 @@ export function signinOrg({ email, password }, history) {
   };
 }
 
-export function signupYouth({ email, password, userName }, history) {
+export function signupYouth({
+  email, password, firstName, lastName, age, hometown,
+}, history) {
   // takes in an object with email and password (minimal user object)
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   // does an axios.post on the /signup endpoint (only difference from above)
@@ -152,7 +154,9 @@ export function signupYouth({ email, password, userName }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/youth/${API_KEY}`, { email, password, userName }).then((response) => {
+    axios.post(`${ROOT_URL}/signup/youth/${API_KEY}`, {
+      email, password, firstName, lastName, age, hometown,
+    }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       console.log(response.data.ID);
@@ -163,7 +167,10 @@ export function signupYouth({ email, password, userName }, history) {
     });
   };
 }
-export function signupMentor({ email, password, userName }, history) {
+
+export function signupMentor({
+  email, password, firstName, lastName, foster, organization, path,
+}, history) {
   // takes in an object with email and password (minimal user object)
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   // does an axios.post on the /signup endpoint (only difference from above)
@@ -172,7 +179,9 @@ export function signupMentor({ email, password, userName }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, { email, password, userName }).then((response) => {
+    axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, {
+      email, password, firstName, lastName, foster, organization, path,
+    }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push(`/mentor/profile/${response.data.ID}`);
@@ -222,9 +231,33 @@ export function signoutUser(history) {
 }
 
 // get all posts
-export function renderUserInfo(id) {
+export function renderOrgInfo(id) {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      console.log(`hi from renderinfo ${id}`);
+      dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+export function renderYouthInfo(id) {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/youth/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      console.log(`hi from renderinfo ${id}`);
+      dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+export function renderMentorInfo(id) {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/mentor/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log(`hi from renderinfo ${id}`);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       // clear prev error
