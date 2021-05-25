@@ -152,9 +152,10 @@ export function signupYouth({ email, password, userName }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/${API_KEY}`, { email, password, userName }).then((response) => {
+    axios.post(`${ROOT_URL}/signup/youth/${API_KEY}`, { email, password, userName }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      console.log(response.data.ID);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
@@ -171,7 +172,7 @@ export function signupMentor({ email, password, userName }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/${API_KEY}`, { email, password, userName }).then((response) => {
+    axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, { email, password, userName }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push(`/mentor/profile/${response.data.ID}`);

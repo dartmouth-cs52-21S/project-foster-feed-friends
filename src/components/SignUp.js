@@ -40,7 +40,7 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button>
+              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/mentor">Sign-Up</NavLink></button>
             </CardActions>
           </Card>
           <Card className="signInCard" variant="outlined">
