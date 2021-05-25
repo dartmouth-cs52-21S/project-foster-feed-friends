@@ -15,7 +15,7 @@ const ProfileOrg = (props) => {
   return (
     <div>
       <div className="leftBar">
-        <h1 className="title">Welcome! {org.name}</h1>
+        <h1 className="title">Welcome! {org.orgname}</h1>
         <div className="update">
           <h3 className="boldtwentyfour">Person of contact name : </h3>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png"
