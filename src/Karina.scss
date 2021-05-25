@@ -30,12 +30,14 @@ ul{
 //nav bar bg and text elems
 #navBarContainer{
     background-color: $primaryG;
-    height:10vh;
+    height:10%;
 }
   
 .navTab{
     padding:10px;
     text-align: center;
+    color:$white;
+    font-size: 25px;
 }
 
 //For underline navbar animation left-right
@@ -89,10 +91,19 @@ a.left:hover:before {
 
 .navLinkButton{
     text-decoration: none;
-    color:black;
-    font-family: 'Nunito', sans-serif;
+    color:$white !important;
+    font-family: 'Nunito', sans-serif !important;
     height: fit-content;
-    font-size: .5em !important;
-
+    font-size: .8rem !important;
+    background-color: #FFB621;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    padding-top: 5px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    margin-top: 5px;
 }
 

@@ -32,8 +32,8 @@ const NavBar = (props) => {
             <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
           </div>
           <div id="navRight">
-            <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
-            <NavLink to="/educate" className="navTab left right">Educate </NavLink>
+            <NavLink to="/events" className="navTab left right">Events </NavLink>
+            <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
             {renderAuth(props.auth, props.signoutUser, props.history)}
           </div>
         </ul>
