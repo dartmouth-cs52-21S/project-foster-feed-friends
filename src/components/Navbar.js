@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { AppBar } from '@material-ui/core';
-// import AddIcon from '@material-ui/icons/Add';
 import { signoutUser } from '../actions';
 
 function mapStateToProps(reduxState) {
@@ -17,29 +16,20 @@ function mapStateToProps(reduxState) {
 
 const renderAuth = (auth, signout, history) => {
   if (auth) {
-    return <Button color="inherit" onClick={() => signout(history)}>Sign Out</Button>;
+    return <Button className="yellowButton navLinkButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    return <NavLink className="nav" to="/signin"><Button color="inherit">Sign In</Button></NavLink>;
+    return <NavLink className="navLinkButton yellowButton" to="/signin"><Button className="yellowButton">Sign In</Button></NavLink>;
   }
 };
 
 const NavBar = (props) => {
   return (
-    // <nav>
-    //   <ul>
-    //     <li><NavLink to="/" exact>Foster Feed Friends</NavLink></li>
-    //     {/* <li><NavLink to="/signin">About</NavLink></li> */}
-    //     <li><NavLink to="/mentor">Mentor</NavLink></li>
-    //     <li><NavLink to="/educate">Educate</NavLink></li>
-    //   </ul>
-    // </nav>
-    <AppBar position="static" id="navBar">
+    <AppBar position="static" id="navBarContainer">
       <div className="link-background">
         <ul>
-          <div id="titleLeft">
+          <div id="title">
             <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
           </div>
-          {/* <NavLink to="/signin" className="navTab left">About</NavLink> */}
           <div id="navRight">
             <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
             <NavLink to="/educate" className="navTab left right">Educate </NavLink>
