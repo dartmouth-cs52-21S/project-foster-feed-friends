@@ -16,15 +16,16 @@ function mapStateToProps(reduxState) {
 
 const renderAuth = (auth, signout, history) => {
   if (auth) {
-    return <Button className="yellowButton navLinkButton" onClick={() => signout(history)}>Sign Out</Button>;
+    return <Button className="navLinkButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    return <NavLink className="navLinkButton yellowButton" to="/signin"><Button className="yellowButton">Sign In</Button></NavLink>;
+    return <NavLink className="navLinkButton" to="/signin"><Button className="yellowButton">Sign In</Button></NavLink>;
   }
 };
 
 const NavBar = (props) => {
   return (
     <AppBar position="static" id="navBarContainer">
+      <img alt=" " src="../img/logo.png" />
       <div className="link-background">
         <ul>
           <div id="title">
