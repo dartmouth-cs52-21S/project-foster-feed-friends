@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 
-class emailCard extends Component {
+class onBoardingCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mentor: '',
-      date: '',
+      text: '',
+      hoverText: '',
     };
   }
 
@@ -16,12 +16,11 @@ class emailCard extends Component {
     return (
 
       <div>
-        <h1>{this.state.mentor}</h1>
-        <h3>{this.state.date}</h3>
-        <button type="button">Follow Up</button>
+        <h1>{this.state.text}</h1>
+        <h3>{this.state.hoverText}</h3>
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, {})(emailCard));
+export default withRouter(connect(null, {})(onBoardingCard));

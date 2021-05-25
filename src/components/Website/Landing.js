@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 
 // DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
-import { signoutUser } from '../actions';
-import '../will.scss';
+import { signoutUser } from '../../actions';
 
 class Landing extends Component {
   constructor(props) {

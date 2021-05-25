@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { withRouter } from 'react-router-dom';
-import { signinUser } from '../actions/index';
+import { signinUser } from '../../actions';
 
-class SignInFoster extends Component {
+class SignInMentor extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,23 +45,22 @@ class SignInFoster extends Component {
   render = () => {
     return (
       <div id="signInSpecificConatiner">
-        <h1 className="title">Sign In Foster Youth</h1>
+        <h1 className="title">Sign In Mentor</h1>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Email</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.email} onChange={this.handleEmailChange} />
+          <Input className="sixteenpoint" id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
         </FormControl>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
+          <Input className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        {/* <Button className="signInSpecificButton" variant="contained" color="primary">
+        <button className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} type="button">
           Sign-In
-        </Button> */}
-        <button type="button" className="yellowButton navLinkButton" onClick={this.onSubmit}>Sign In</button>
+        </button>
 
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { signinUser })(SignInFoster));
+export default withRouter(connect(null, { signinUser })(SignInMentor));

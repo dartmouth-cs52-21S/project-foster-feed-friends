@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signoutUser } from '../actions';
+import { signoutUser } from '../../actions';
 
 class Footer extends Component {
   constructor(props) {
