@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { signoutUser } from '../actions';
 import '../will.scss';
+import Footer from './footer';
 
 class Landing extends Component {
   constructor(props) {
@@ -54,10 +55,9 @@ class Landing extends Component {
               </div>
             </div>
           </div>
-
           <img id="blobs" src="src/img/landingBlobs.png" alt="" height="450px" />
-
         </div>
+        <Footer />
       </div>
 
     );
