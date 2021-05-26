@@ -129,26 +129,6 @@ class SignUpMentor extends Component {
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
             </FormControl>
-            {/* <div className="radioButtonsContainer">
-              <FormLabel className="sixteenpoint">Are you a former foster youth?</FormLabel>
-              <RadioGroup className="radioButtons" value={this.state.fosterBackground} onChange={this.handleFosterBackgroundChange}>
-                <FormControlLabel
-                  value="FosterBackgroundYes"
-                  colorSecondary="primary"
-                  size="small"
-                  control={<Radio />}
-                  label="Yes"
-                />
-                <FormControlLabel
-                  value="FosterBackgroundNo"
-                  size="small"
-                  control={<Radio />}
-                  colorSecon="primary"
-                  label="No"
-                />
-
-              </RadioGroup>
-            </div> */}
 
           </div>
 

@@ -9,6 +9,10 @@ const orgReducer = (state = initial, action) => {
     case ActionTypes.USER_INFO:
       console.log(action.payload);
       return { ...state, org: action.payload };
+    case ActionTypes.USER_CLEAR:
+      console.log(action.payload);
+      return { ...state, org: {} };
+
     default:
       return state;
   }

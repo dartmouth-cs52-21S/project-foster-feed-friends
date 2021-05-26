@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
-import { signinUser } from '../../actions/index';
+import { signinYouth } from '../../actions/index';
 
 class SignInFoster extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class SignInFoster extends Component {
 
   onSubmit = (event) => {
     if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signinUser(this.state, this.props.history);
+      this.props.signinYouth(this.state, this.props.history);
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -64,4 +64,4 @@ class SignInFoster extends Component {
   }
 }
 
-export default withRouter(connect(null, { signinUser })(SignInFoster));
+export default withRouter(connect(null, { signinYouth })(SignInFoster));
