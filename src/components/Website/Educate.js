@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import * as ReactBootStrap from 'react-bootstrap';
-
-// DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 import { signoutUser } from '../../actions';
+import Footer from './footer';
 
 class Educate extends Component {
   constructor(props) {
@@ -91,6 +90,7 @@ class Educate extends Component {
           <h1>Being empathetic</h1>
           <p>These children have gone through tremendous trauma, listen to their needs</p>
         </div> */}
+        <Footer />
       </div>
     );
   }
