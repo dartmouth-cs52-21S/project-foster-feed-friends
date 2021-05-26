@@ -16,9 +16,9 @@ function mapStateToProps(reduxState) {
 
 const renderAuth = (auth, signout, history) => {
   if (auth) {
-    return <Button className="navLinkButton" onClick={() => signout(history)}>Sign Out</Button>;
+    return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    return <NavLink className="navLinkButton" to="/signin"><Button className="navLinkButton">Sign In</Button></NavLink>;
+    return <NavLink className="navSignInButton" to="/signin"><Button className="navSignInButton">Sign In</Button></NavLink>;
   }
 };
 
@@ -32,7 +32,7 @@ const NavBar = (props) => {
             <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
           </div>
           <div id="navRight">
-            <NavLink to="/events" className="navTab left right">Events </NavLink>
+            <NavLink to="/messages" className="navTab left right">Messages </NavLink>
             <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
             {renderAuth(props.auth, props.signoutUser, props.history)}
           </div>

@@ -16,9 +16,9 @@ function mapStateToProps(reduxState) {
 
 const renderAuth = (auth, signout, history) => {
   if (auth) {
-    return <Button className="navLinkButton" onClick={() => signout(history)}>Sign Out</Button>;
+    return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    return <NavLink className="navLinkButton" to="/signin"><Button className="navLinkButton">Sign In</Button></NavLink>;
+    return <NavLink className="navSignInButton" to="/signin"><Button className="navSignInButton">Sign In</Button></NavLink>;
   }
 };
 
