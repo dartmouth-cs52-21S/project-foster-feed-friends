@@ -10,17 +10,13 @@ class Mentor extends Component {
     };
   }
 
-  handleSignUpClick = (event) => {
-
-  }
-
   render = () => {
     return (
       <div className="mentor-page">
         <div className="mentor-header">
-          <div>
+          <div className="mh-text">
             <h1>Mentor Stories</h1>
-            <h2>Making an Impact</h2>
+            <p>Making an Impact</p>
           </div>
           <img id="mentor-blobs" src="src/img/mentorblob.png" alt="" height="550px" />
         </div>
@@ -30,14 +26,16 @@ class Mentor extends Component {
           <h3>a person who teaches or gives advice or guidance to someone</h3>
           <p>Foster Feed Friends looks for motivated individuals with a passion for helping others.
             Our mentors serve as guides for foster youth, providing an extra source of support! Whether
-            it bw guiding youth through future life choices such as deciding if they will apply for
+            it be guiding youth through future life choices such as deciding if they will apply for
             college or simply being a friend to converse with, our mentors foster life-long
             relationships.
           </p>
           <h4>We are always looking for more mentors, like you, to join our community! <br />
             Sign up today to become a mentor.
           </h4>
-          <button className="yellowButton" type="button"><NavLink className="navLinkButton" to="/signup">sign up now</NavLink></button>
+          <div id="mentorpg-btn">
+            <NavLink className="yellow-btn" to="/signup">Sign Up Now</NavLink>
+          </div>
         </div>
       </div>
     );

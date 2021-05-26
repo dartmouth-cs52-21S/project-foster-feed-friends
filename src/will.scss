@@ -1,3 +1,11 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$pink:#D34D9D;
 *{
     font-size: 1em;
     padding: 0px;
@@ -24,36 +32,51 @@
     height: 100vh;
 }
 .landingSubcontainer h1{
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.3em;
+    font-family: 'Nunito', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
     width: 1600px;
     text-align: center;
     color:#F5FFFC;
 }
 .landingSubcontainer p{
-    font-size: .5em;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
     text-align: center;
     color:#F5FFFC;
 }
-.yellowButton{
-    background-color: #FFB621;
-    border-radius: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 22x;
-    font-weight: 700;
-    padding-top: 0px;
-    line-height: 25px;
-    padding-bottom: 5px;
-}
-.navLinkButton{
+.yellow-btn{
     text-decoration: none;
-    color:black;
+    background-color: #FFB621;
+    color: #000000;
     font-family: 'Nunito', sans-serif;
+    font-size: 20px;
     font-weight: 700;
     height: fit-content;
-    font-size: .5em !important;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right:20px
 }
+// .yellowButton{
+//     background-color: #FFB621;
+//     border-radius: 25px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     font-size: 22x;
+//     font-weight: 700;
+//     padding-top: 0px;
+//     line-height: 25px;
+//     padding-bottom: 5px;
+// }
+// .navLinkButton{
+//     text-decoration: none;
+//     color:black;
+//     font-family: 'Nunito', sans-serif;
+//     font-weight: 700;
+//     height: fit-content;
+//     font-size: .5em !important;
+// }
 .landingLeftSubcontainer{
     margin-top: 205px;
     display: flex;
@@ -70,7 +93,7 @@
 .underlineLight{
     background-color: #92C893;
     width:400px; 
-    height :5px;
+    height: 5px;
 }
 .underlineDark{
     background-color: #0E442C;
@@ -83,11 +106,11 @@
 .subLeft h1,h2{
     font-family: 'Nunito', sans-serif;
     margin: 0px !important;
-    font-size: 1em !important;
+    font-size: 40px;
 }
 .landingLeftSubcontainer p {
     font-family: 'Mulish', sans-serif;
-    font-size: .35em !important;
+    font-size: 16px;
     padding-top: 25px;
 }
 // educate page 

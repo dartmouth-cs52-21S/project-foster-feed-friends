@@ -23,7 +23,8 @@ class Landing extends Component {
           <p>Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the system.
             We want to enable foster children to not only understand thier options but take advantage of it.
           </p>
-          <button className="yellowButton" type="button"><NavLink className="navLinkButton" to="/signup">Join Our Community</NavLink></button>
+          <NavLink className="yellow-btn" to="/signup">Join Our Community</NavLink>
+          {/* <button className="yellowButton" type="button"><NavLink className="navLinkButton" to="/signup">Join Our Community</NavLink></button> */}
         </div>
         <div className="landingLeftSubcontainer">
           <div id="content">

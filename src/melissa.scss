@@ -1,9 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 // @import '~mdb-ui-kit/css/mdb.min.css';
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$pink:#D34D9D;
 
 body, html {
-    font-family: "Montserrat", sans-serif;
-    color:#161616;
+    color: #000000;
     background: white;
     height: 100%;
 }
@@ -39,95 +46,118 @@ body, html {
 .mentor-page{
     display: flex;
     flex-direction: column;
-    // margin-top: 400px;
-    // margin-left: 100px;
 }
 .mentor-header{
     display: flex;
     flex-direction: row;
     background-color: #6F93EE;
-    height:100vh;
-    padding: 25px;
+    height: 100%;
+    padding: 20px;
 }
-.mentor-header h1{
-    margin-top: 400px;
+.mh-text{
+    margin-top: 300px;
+    margin-left: 20px;
+    color: $white;
+}
+.mh-text h1{
     font-family: 'Mulish', sans-serif;
-    font-size: 1.3em;
+    font-size: 50px;
     text-transform: uppercase;
 }
-.mentor-header h2{
-    margin-top: 400px;
+.mh-text p{
     font-family: 'Mulish', sans-serif;
-    font-size: 0.5em;
+    font-size: 40px;
 }
 #mentor-blobs{
     padding-top: 100px;
-    padding-left: 300px;
+    padding-left: 500px;
 }
 .mentor-container{
-    padding: 25px;
+    padding: 30px;
 }
 .mentor-container h1{
     font-family: 'Nunito', sans-serif;
-    font-size: 1em;
-    font-weight: bolder;
+    font-size: 36px;
+    font-weight: 700;
 }
 .mentor-container h2{
     font-family: 'Nunito', sans-serif;
-    font-size: 0.7em !important;
+    font-size: 20px;
+    font-weight: 600;
+    color: $black;
 }
 .mentor-container h3{
     font-family: 'Nunito', sans-serif;
-    font-size: 0.7em;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
 }
 .mentor-container h4{
     font-family: 'Mulish', sans-serif;
-    font-size: 0.7em;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 20px;
 }
 .mentor-container p{
     font-family: 'Mulish', sans-serif;
-    font-size: 0.5em;
+    font-size: 18px;
+    padding-top: 20px;
+}
+.yellow-btn{
+    text-decoration: none;
+    background-color: $yellow-CTA;
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right:20px
+}
+#mentorpg-btn{
+    padding-top: 40px;
 }
 
 // footer.js styling
-// footer{
-//     padding: 0;
-//     margin: 0;
-// }
 #general-footer{
     background-color: #12A67C;
     width: 100%;
     height: 100%;
 }
 #footer-container{
-    padding:20px !important;
+    padding:20px;
 }
 .logo-name{
     font-family: "Nunito", sans-serif;
-    color: white;
+    color: $white;
     font-size: 18px;
 }
 .logo-desc{
     font-family: "Mulish", sans-serif;
-    color: white;
+    color: $white;
     font-size: 14px;
 }
 .footer-col{
     font-family: "Nunito", sans-serif;
-    color: white;
+    color: $white;
     font-size: 18px;
 }
 .footer-links{
     font-family: "Mulish", sans-serif;
-    color: white !important;
+    color: $white;
     font-size: 14px;
-    margin: 0px !important;
+    margin: 0px;
+}
+.text-reset{
+    text-decoration: none;
+}
+.text-reset:hover{
+    text-decoration: underline;
 }
 .copyright{
     padding:10px;
-    color: white !important;
+    color: $white;
     font-size: 14px;
 }
 .md-form{
@@ -136,17 +166,17 @@ body, html {
     align-content: space-between;
 }
 #form1{
-    width: 300px !important;
-    height: 18px !important;
+    width: 300px;
     border-radius: 10px;
     font-size: 14px;
+    margin-right: 5px;
 }
 .pink-btn{
     font-size: 16px !important;
     border-radius: 10px;
     padding: 5px;
-    background-color: #d34d9d;
-    color:white;
+    background-color: $pink;
+    color:$white;
 }
 
 
