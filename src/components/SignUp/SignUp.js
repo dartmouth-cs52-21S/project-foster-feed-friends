@@ -28,7 +28,9 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/org">Sign-Up</NavLink></button>
+              <NavLink className="yellow-btn" to="/SignUp/org">Sign-Up</NavLink>
+
+              {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/org">Sign-Up</NavLink></button> */}
             </CardActions>
 
           </Card>
@@ -39,7 +41,9 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/mentor">Sign-Up</NavLink></button>
+              <NavLink className="yellow-btn" to="/SignUp/mentor">Sign-Up</NavLink>
+
+              {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/mentor">Sign-Up</NavLink></button> */}
             </CardActions>
           </Card>
           <Card className="signInCard" variant="outlined">
@@ -49,7 +53,9 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button>
+              <NavLink className="yellow-btn" to="/SignUp/youth">Sign-Up</NavLink>
+
+              {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button> */}
             </CardActions>
           </Card>
 
