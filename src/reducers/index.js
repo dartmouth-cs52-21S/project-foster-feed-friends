@@ -6,12 +6,16 @@ import CountReducer from './count-reducer';
 import AuthReducer from './auth-reducer';
 import ErrorReducer from './error-reducer';
 import userReducer from './user-reducer';
+import PostsReducer from './posts-reducer';
+import MomentsReducer from './moments-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
   errors: ErrorReducer,
   auth: AuthReducer,
   user: userReducer,
+  moments: MomentsReducer,
+  posts: PostsReducer,
 });
 
 export default rootReducer;

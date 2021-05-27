@@ -25,6 +25,7 @@ import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
 import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
+// import MentorPath from './MentorOnboarding/Mentor-Path';
 
 const theme = createMuiTheme({
   palette: {
@@ -56,6 +57,7 @@ const App = (props) => {
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
             <Route path="/signup/mentor" component={SignUpMentor} />
+            {/* <Route path="/signup/mentor" component={MentorPath} /> */}
             <Route exact path="/org/profile/:userID" component={ProfileOrg} />
             <Route exact path="/youth/profile/:userID" component={ProfileYouth} />
             <Route exact path="/mentor/profile/:userID" component={ProfileMentor} />
