@@ -11,6 +11,8 @@ $pink:#D34D9D;
     padding: 0px;
     margin: 0px;
 }
+
+
 //landing page 
 #landing-container{
     display:flex; 
@@ -56,7 +58,8 @@ $pink:#D34D9D;
     border-radius: 20px;
     padding: 10px;
     padding-left: 20px;
-    padding-right:20px
+    padding-right:20px;
+    width: fit-content
 }
 // .yellowButton{
 //     background-color: #FFB621;
@@ -259,8 +262,12 @@ $pink:#D34D9D;
     justify-content: center;
 }
 
+
 //org profile 
+
 .leftBar{
+    padding-left: 20px;
+    padding-top: 24px;
     background-color: #92C893;
     height: 100vh;
     width: 30%;
@@ -275,6 +282,23 @@ $pink:#D34D9D;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+#profilePageContainer{
+    display: flex;
+    flex-direction: row;
+}
+.eventsContainer{
+    padding-left: 25px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+.profileBar.underlineLight{
+    width: 275px;
+}
+.EventsBlock{
+    padding-top: 25px;
 }
 //signupMentor 
 .radioButtons{

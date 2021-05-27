@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { signinUser } from '../../actions';
+import { signinMentor } from '../../actions';
 
 class SignInMentor extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class SignInMentor extends Component {
 
   onSubmit = (event) => {
     if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signinUser(this.state, this.props.history);
+      this.props.signinMentor(this.state, this.props.history);
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -63,4 +63,4 @@ class SignInMentor extends Component {
   }
 }
 
-export default withRouter(connect(null, { signinUser })(SignInMentor));
+export default withRouter(connect(null, { signinMentor })(SignInMentor));
