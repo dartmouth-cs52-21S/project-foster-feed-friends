@@ -56,10 +56,10 @@ const App = (props) => {
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
             <Route path="/signup/mentor" component={SignUpMentor} />
-            <Route path="/org/profile/:userID" component={ProfileOrg} />
-            <Route path="/youth/profile/:userID" component={ProfileYouth} />
-            <Route path="/mentor/profile/:userID" component={ProfileMentor} />
-            <Route path="/org/profile/:userID/event" compont={eventForm} />
+            <Route exact path="/org/profile/:userID" component={ProfileOrg} />
+            <Route exact path="/youth/profile/:userID" component={ProfileYouth} />
+            <Route exact path="/mentor/profile/:userID" component={ProfileMentor} />
+            <Route exact path="/org/profile/event/:userID" component={eventForm} />
             <Route component={FallBack} />
           </Switch>
         </div>

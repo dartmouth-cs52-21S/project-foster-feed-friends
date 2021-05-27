@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import { createEvent } from '../../actions';
+import { createEvent, renderOrgInfo } from '../../actions';
 
 class eventForm extends Component {
   constructor(props) {
@@ -19,6 +19,10 @@ class eventForm extends Component {
       coordinator: '',
       description: '',
     };
+  }
+
+  componentDidMount = () => {
+    renderOrgInfo(this.props.match.params.userID);
   }
 
   handleNameChange = (event) => {
@@ -46,44 +50,44 @@ class eventForm extends Component {
   }
 
   createEventButton = (event) => {
-    this.props.signupYouth(this.state, this.props.history);
+    this.props.createEvent(this.state, this.props.history);
   }
 
-    render = () => {
-      return (
-        <div>
-          <form>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Name</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.name} onChange={this.handleNameChange} />
-            </FormControl>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Date</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.date} onChange={this.handleDateChange} />
-            </FormControl>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Time</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.time} onChange={this.handleTimeChange} />
-            </FormControl>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Location</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
-            </FormControl>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Coordinator</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.coordinator} onChange={this.handleCoordinatorChange} />
-            </FormControl>
-            <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Description</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.description} onChange={this.handleDescriptionChange} />
-            </FormControl>
-          </form>
-          <button type="button" onClick={this.createEventButton}>Submit</button>
+  render = () => {
+    return (
+      <div>
+        <form>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Name</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.name} onChange={this.handleNameChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Date</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.date} onChange={this.handleDateChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Time</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.time} onChange={this.handleTimeChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Location</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Coordinator</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.coordinator} onChange={this.handleCoordinatorChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Description</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.description} onChange={this.handleDescriptionChange} />
+          </FormControl>
+        </form>
+        <button type="button" onClick={this.createEventButton}>Submit</button>
 
-        </div>
+      </div>
 
-      );
-    }
+    );
+  }
 }
 
-export default withRouter(connect(null, { createEvent })(eventForm));
+export default withRouter(connect(null, { createEvent, renderOrgInfo })(eventForm));

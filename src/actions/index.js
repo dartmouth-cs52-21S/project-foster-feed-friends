@@ -129,9 +129,9 @@ export function signinMentor({ email, password }, history) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signin/mentor`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
+      dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      console.log('signin', response.data.token, response.data.id);
-      history.push(`/mentor/profile/${response.data.id}`);
+      history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
     });
@@ -139,13 +139,6 @@ export function signinMentor({ email, password }, history) {
 }
 
 export function signinOrg({ email, password }, history) {
-  // takes in an object with email and password (minimal user object)
-  // returns a thunk method that takes dispatch as an argument (just like our create post method really)
-  // does an axios.post on the /signin endpoint
-  // on success does:
-  //  dispatch({ type: ActionTypes.AUTH_USER });
-  //  localStorage.setItem('token', response.data.token);
-  // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signin/org/${API_KEY}`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
@@ -160,13 +153,6 @@ export function signinOrg({ email, password }, history) {
 export function signupYouth({
   email, password, firstName, lastName, age, hometown,
 }, history) {
-  // takes in an object with email and password (minimal user object)
-  // returns a thunk method that takes dispatch as an argument (just like our create post method really)
-  // does an axios.post on the /signup endpoint (only difference from above)
-  // on success does:
-  //  dispatch({ type: ActionTypes.AUTH_USER });
-  //  localStorage.setItem('token', response.data.token);
-  // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signup/youth/${API_KEY}`, {
       email, password, firstName, lastName, age, hometown,
@@ -191,7 +177,6 @@ export function signupMentor({
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      console.log('token', response.data.token, ' id:', response.data.ID);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
@@ -202,13 +187,6 @@ export function signupMentor({
 export function signupOrg({
   orgname, location, pocname, email, password,
 }, history) {
-// takes in an object with email and password (minimal user object)
-// returns a thunk method that takes dispatch as an argument (just like our create post method really)
-// does an axios.post on the /signup endpoint (only difference from above)
-// on success does:
-//  dispatch({ type: ActionTypes.AUTH_USER });
-//  localStorage.setItem('token', response.data.token);
-// on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
   return (dispatch) => {
     console.log('inside action singup');
     axios.post(`${ROOT_URL}/signup/org/${API_KEY}`, {
@@ -270,7 +248,7 @@ export function renderMentorInfo(id) {
     axios.get(`${ROOT_URL}/mentor/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log(`hi from mentor ${id}`);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
-      // clear prev error
+      console.log('response.data:', response.data);
       errorClear()(dispatch);
     }).catch((error) => {
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
@@ -282,7 +260,7 @@ export function createEvent({
   name, date, time, coordinator, description, location,
 }, id, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/org/profile/${id}/event`, {
+    axios.post(`${ROOT_URL}/org/profile/event/${id}/`, {
       name,
       date,
       time,
