@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { renderOrgInfo, signoutUser } from '../../actions';
+import eventForm from './eventForm';
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -20,7 +21,7 @@ const ProfileOrg = (props) => {
 
   return (
     <div>
-      <div id="profilePageContainer">
+      <div className="profilePageContainer">
         <div className="leftBar">
           <h1 className="title">Welcome! {org.user.orgname}</h1>
 
@@ -38,16 +39,17 @@ const ProfileOrg = (props) => {
         </div>
         <div className="eventsContainer">
           <NavLink className="yellow-btn" to="/org/profile/event/:userID"> Create an Event </NavLink>
+          <eventForm />
           <div className="EventsBlock">
             <h2>Upcoming Events </h2>
             <div className="underlineLight profileBar" />
-            {org.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
             <div />
           </div>
           <div className="EventsBlock">
             <h2>Previous Events </h2>
             <div className="underlineLight profileBar" />
-            {org.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
             <div />
           </div>
         </div>

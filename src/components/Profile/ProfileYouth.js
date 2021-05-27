@@ -20,16 +20,13 @@ const ProfileYouth = (props) => {
   console.log(youth);
   return (
 
-    <div>
+    <div className="profilePageContainer">
       <div className="leftBar">
-        <h1 className="title">Welcome! {youth ? <h1>{youth.user.firstName}</h1> : null } </h1>
-        <div className="update">
-          <h3 className="boldtwentyfour">Person of contact name : </h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png"
-            alt="edit button"
-            width="25px"
-          />
-        </div>
+        <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
+        <button type="button" className="yellow-btn">Edit Profile</button>
+
+        <h3 className="boldtwentyfour">Person of contact name : </h3>
+
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
         {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
         {/* <h3 className="sixteenpoint">{youth.f}</h3> */}
@@ -51,7 +48,22 @@ const ProfileYouth = (props) => {
             <h4>twenty-five Connection </h4>
           </div>
         </div>
-        <button type="button" onClick={onSubmit}>Sign Out </button>
+        <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
+      </div>
+      <div className="eventsContainer">
+
+        <div className="EventsBlock">
+          <h2>Upcoming Events </h2>
+          <div className="underlineLight profileBar" />
+          {youth.user.connections ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          <div />
+        </div>
+        <div className="EventsBlock">
+          <h2>Previous Events </h2>
+          <div className="underlineLight profileBar" />
+          {youth.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          <div />
+        </div>
       </div>
     </div>
   );

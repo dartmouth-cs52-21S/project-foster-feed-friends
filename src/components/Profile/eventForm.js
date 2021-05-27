@@ -82,7 +82,7 @@ class eventForm extends Component {
             <Input id="component-simple" className="sixteenpoint" value={this.state.description} onChange={this.handleDescriptionChange} />
           </FormControl>
         </form>
-        <button type="button" onClick={this.createEventButton}>Submit</button>
+        <button type="button" className="yellow-btn" onClick={this.createEventButton}>Submit</button>
 
       </div>
 

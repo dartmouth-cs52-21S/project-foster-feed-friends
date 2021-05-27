@@ -22,20 +22,15 @@ const ProfileMentor = (props) => {
     <div>
       <div className="leftBar">
         <h1 className="title">Welcome! {mentor.user.firstName} </h1>
-        <div className="update">
-          <h3 className="boldtwentyfour">Person of contact name : </h3>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png"
-            alt="edit button"
-            width="25px"
-          />
-        </div>
-        {/* <h3 className="boldtwentyfour">Location :</h3> */}
-        {/* <h3 className="sixteenpoint">{mentor.events.length}</h3>
-        <h3 className="sixteenpoint">{mentor.pocname}</h3>
-        <h3 className="sixteenpoint">{mentor.location}</h3> */}
-        <h3 className="boldtwentyfour">Email:</h3>
-        {/* <h3 className="sixteenpoint"> {mentor.email} </h3> */}
-        <button type="button" onClick={onSubmit}>Sign Out </button>
+        <button className="yellow-btn" type="button">Edit Profile</button>
+
+        <h3 className="boldtwentyfour">Personal Information: </h3>
+        <h3 className="sixteenpoint">Carrer Path: {mentor.user.path}</h3>
+        <h3 className="sixteenpoint"> Email: {mentor.user.email}</h3>
+        <h3 className="sixteenpoint"> Location: {mentor.user.location}</h3>
+        <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
+
+        <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
 
       </div>
 
