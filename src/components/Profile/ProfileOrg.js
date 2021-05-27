@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -10,53 +10,112 @@ const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [editing, toggleEditing] = useState(false);
+  // const [orgAcountDetail, editOrgAccountDetail] = useState({
+  //   poc: org.user.pocname,
+  //   location: org.user.location,
+  //   email: org.user.location,
+
+  // });
   console.log(org);
 
   useEffect(() => {
     dispatch(renderOrgInfo(props.match.params.userID));
   }, []);
+
   const onSubmit = () => {
     dispatch(signoutUser(history));
   };
 
-  return (
-    <div>
-      <div className="profilePageContainer">
-        <div className="leftBar">
-          <h1 className="title">Welcome! {org.user.orgname}</h1>
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
 
-          <button className="yellow-btn" type="button"> Edit Profile </button>
+  //   editOrgAccountDetail((prevValue) => {
+  //     return { ...prevValue, [name]: value };
+  //   });
+  //   event.preventDefault();
+  // };
+  if (!editing) {
+    return (
 
-          <h3 className="boldtwentyfour">Person of contact name : </h3>
+      <div>
+        <div className="profilePageContainer">
+          <div className="leftBar">
+            <h1 className="title">Welcome! {org.user.orgname}</h1>
+            {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
 
-          {org.events ? <h3 className="sixteenpoint">{org.user.events.length}</h3> : null}
-          <h3 className="sixteenpoint">{org.user.pocname}</h3>
-          <h3 className="sixteenpoint">{org.user.location}</h3>
-          <h3 className="boldtwentyfour">Email:</h3>
-          <h3 className="sixteenpoint"> {org.user.email} </h3>
-          <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
+            <button className="yellow-btn" type="button" onClick={() => { toggleEditing(false); }}> Edit Profile </button>
+
+            <h3 className="boldtwentyfour">Person of contact name : </h3>
+
+            <h3 className="sixteenpoint">{org.user.poc}</h3>
+            <h3 className="sixteenpoint">{org.user.location}</h3>
+            <h3 className="boldtwentyfour">Email:</h3>
+            <h3 className="sixteenpoint"> {org.user.email} </h3>
+            <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
+
+          </div>
+          <div className="eventsContainer">
+            <NavLink className="yellow-btn" to={`/org/profile/event/${props.match.params.userID}`}>Create an Event</NavLink>
+            <eventForm />
+            <div className="EventsBlock">
+              <h2>Upcoming Events </h2>
+              <div className="underlineLight profileBar" />
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
+            </div>
+            <div className="EventsBlock">
+              <h2>Previous Events </h2>
+              <div className="underlineLight profileBar" />
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
+            </div>
+          </div>
 
         </div>
-        <div className="eventsContainer">
-          <NavLink className="yellow-btn" to="/org/profile/event/:userID"> Create an Event </NavLink>
-          <eventForm />
-          <div className="EventsBlock">
-            <h2>Upcoming Events </h2>
-            <div className="underlineLight profileBar" />
-            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
-            <div />
-          </div>
-          <div className="EventsBlock">
-            <h2>Previous Events </h2>
-            <div className="underlineLight profileBar" />
-            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
-            <div />
-          </div>
-        </div>
-
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        {/* <div className="profilePageContainer">
+          <div className="leftBar">
+            <h1 className="title">Welcome! {org.user.orgname}</h1>
+
+            <button className="yellow-btn" type="button" onClick={() => { toggleEditing(true); }}> Edit Profile </button>
+
+            <h3 className="boldtwentyfour">Person of contact name : </h3>
+
+            {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length}</h3> : null}
+            <input type="text" value={org.user.pocname} onChange={handleChange} />
+            <h3 className="sixteenpoint">{org.user.pocname}</h3>
+            <input type="text" value={org.user.location} onChange={handleChange} />
+            <h3 className="boldtwentyfour">Email:</h3>
+            <input type="text" value={org.user.email} onChange={handleChange} />
+            <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
+
+          </div>
+          <div className="eventsContainer">
+            <NavLink className="yellow-btn" to={`/org/profile/event/${props.match.params.userID}`}>Create an Event</NavLink>
+            <eventForm />
+            <div className="EventsBlock">
+              <h2>Upcoming Events </h2>
+              <div className="underlineLight profileBar" />
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
+            </div>
+            <div className="EventsBlock">
+              <h2>Previous Events </h2>
+              <div className="underlineLight profileBar" />
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
+            </div>
+          </div>
+
+        </div> */}
+      </div>
+    );
+  }
 };
 
 export default ProfileOrg;

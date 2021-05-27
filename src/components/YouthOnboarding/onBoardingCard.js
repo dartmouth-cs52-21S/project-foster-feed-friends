@@ -8,16 +8,24 @@ class onBoardingCard extends Component {
     super(props);
     this.state = {
       text: '',
+      hover: false,
       hoverText: '',
     };
   }
 
+  handleHover = () => {
+    this.setState({ hover: !this.hover });
+  }
+
   render = () => {
     return (
-
       <div>
-        <h1>{this.state.text}</h1>
-        <h3>{this.state.hoverText}</h3>
+        <div className="onBoardingCard">
+          <h1 className="title" onMouseOver={this.handleHover} onFocus={this.handleHover}>{this.state.text}</h1>
+        </div>
+        <div>
+          {this.state.hover ? <p>{this.state.hoverText}</p> : <div />}
+        </div>
       </div>
     );
   }
