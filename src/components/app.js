@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 // import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router, Route, Switch,
@@ -28,6 +29,8 @@ import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
 // import MentorPath from './MentorOnboarding/Mentor-Path';
 
+import { authUser } from '../actions';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -41,6 +44,16 @@ const FallBack = (props) => {
 };
 
 const App = (props) => {
+  // const history = useHistory();
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+
+    if (token && userId) {
+      props.authUser(userId);
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -62,7 +75,7 @@ const App = (props) => {
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
-            <PrivateRoute path="/org/profile/event/:userID" component={eventForm} />
+            <PrivateRoute path="/org/profile/:userID/event" component={eventForm} />
             <PrivateRoute component={FallBack} />
           </Switch>
         </div>
@@ -71,4 +84,12 @@ const App = (props) => {
   );
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authUser: (userId) => {
+      dispatch(authUser(userId));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

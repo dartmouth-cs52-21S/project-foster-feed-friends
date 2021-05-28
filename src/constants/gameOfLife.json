@@ -4,7 +4,7 @@
         "college": {
             "hoverText": "Having a college degree increases your average yearly income by 70 percent", 
             "transition":{
-                "transitionsText":"Higher education is accessible to you! College has so many options, we are gonna begin with2 year v 4 year colleges",
+                "transitionsText":"Higher education is accessible to you! College has so many options, we are gonna begin with 2 year v 4 year colleges",
                 "transitionResource":["2 year colleges are a very financailly accessible option. They are open to everyone and are government funded and cost less than a 4 year insitition. There is lots of aid, and you can transfer to a 4 year afterwards", "4 year colleges are more selective than 2 year colleges. They some require entrance exams, have application fees, essays, and have higher tution. However there is lots of aid if need! You are not alone"],
                 "resourceLink":""
             },

@@ -17,7 +17,6 @@ class eventForm extends Component {
       time: '',
       location: '',
       coordinator: '',
-      description: '',
     };
   }
 
@@ -50,7 +49,7 @@ class eventForm extends Component {
   }
 
   createEventButton = (event) => {
-    this.props.createEvent(this.state, this.props.history);
+    this.props.createEvent(this.state, this.props.match.params.userID, this.props.history);
   }
 
   render = () => {
@@ -77,10 +76,10 @@ class eventForm extends Component {
             <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Coordinator</InputLabel>
             <Input id="component-simple" className="sixteenpoint" value={this.state.coordinator} onChange={this.handleCoordinatorChange} />
           </FormControl>
-          <FormControl className="signUpSpecificInput">
+          {/* <FormControl className="signUpSpecificInput">
             <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Description</InputLabel>
             <Input id="component-simple" className="sixteenpoint" value={this.state.description} onChange={this.handleDescriptionChange} />
-          </FormControl>
+          </FormControl> */}
         </form>
         <button type="button" className="yellow-btn" onClick={this.createEventButton}>Submit</button>
 

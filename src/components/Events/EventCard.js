@@ -11,7 +11,7 @@ class EventCard extends Component {
       time: '',
       location: '',
       contact: '',
-      description: '',
+      // description: '',
       // react: '',
     };
   }
@@ -26,7 +26,7 @@ class EventCard extends Component {
           </div>
           <div className="rightCard">
             <p>{this.state.org}</p>
-            <p>{this.state.description}</p>
+            {/* <p>{this.state.description}</p> */}
             <p>{this.state.contact}</p>
             {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
           </div>
