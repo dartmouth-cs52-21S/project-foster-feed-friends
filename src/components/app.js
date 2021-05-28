@@ -26,6 +26,9 @@ import SignInMentor from './SignIn/SignInMentor';
 import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
+import MentorEdit from './ProfileEditing/MentorEdit';
+import FosterEdit from './ProfileEditing/FosterEdit';
+import OrgEdit from './ProfileEditing/OrgEdit';
 // import MentorPath from './MentorOnboarding/Mentor-Path';
 
 const theme = createMuiTheme({
@@ -63,6 +66,9 @@ const App = (props) => {
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
             <PrivateRoute path="/org/profile/event/:userID" component={eventForm} />
+            <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
+            <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
+            <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />
             <PrivateRoute component={FallBack} />
           </Switch>
         </div>
