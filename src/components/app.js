@@ -23,10 +23,10 @@ import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
-import SignUpMentor from './SignUp/SignUpMentor';
+// import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
-// import MentorPath from './MentorOnboarding/Mentor-Path';
+import MentorPath from './MentorOnboarding/Mentor-Path';
 
 const theme = createMuiTheme({
   palette: {
@@ -57,8 +57,8 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
-            <Route path="/signup/mentor" component={SignUpMentor} />
-            {/* <Route path="/signup/mentor" component={MentorPath} /> */}
+            {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
+            <Route path="/signup/mentor" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
