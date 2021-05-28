@@ -12,6 +12,7 @@ export const ActionTypes = {
   AUTH_ERROR: 'AUTH_ERROR',
   USER_INFO: 'USER_INFO',
   USER_CLEAR: 'USER_CLEAR',
+  UPDATE_USER: 'UPDATE_USER',
   EVENT_CREATE: 'EVENT_CREATE',
 };
 
@@ -179,11 +180,11 @@ export function signupYouth({
 }
 
 export function signupMentor({
-  email, password, firstName, lastName, foster, organization, path,
+  email, password, firstName, lastName, foster, organization, careerPath,
 }, history) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, {
-      email, password, firstName, lastName, foster, organization, path,
+      email, password, firstName, lastName, foster, organization, careerPath,
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
@@ -292,17 +293,49 @@ export function createEvent({
   };
 }
 
-// update one post
-export function updateOrg(mentor, history) {
-  console.log('update');
-  console.log(history);
+// update mentor
+export function updateMentor(mentor, history) {
+  console.log('hello');
   return (dispatch) => {
-    axios.put(`${ROOT_URL}/posts/${mentor.id}${API_KEY}`, mentor, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
-      dispatch({ type: ActionTypes.UPDATE_POST, payload: response.data });
+    axios.put(`${ROOT_URL}/mentor/profile/${mentor.id}/edit`, mentor, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
       // clear prev error
       errorClear()(dispatch);
       // redirect to main page
-      history.push(`/posts/${mentor.id}`);
+      history.push(`/mentor/profile/${mentor.id}`);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function updateYouth(youth, history) {
+  console.log('hello');
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/youth/profile/${youth.id}/edit`, youth, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
+      // clear prev error
+      errorClear()(dispatch);
+      // redirect to main page
+      history.push(`/youth/profile/${youth.id}`);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function updateOrg(org, history) {
+  console.log('hello');
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/org/profile/${org.id}/edit`, org, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
+      // clear prev error
+      errorClear()(dispatch);
+      // redirect to main page
+      history.push(`/org/profile/${org.id}`);
     }).catch((error) => {
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
     });

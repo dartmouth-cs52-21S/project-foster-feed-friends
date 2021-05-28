@@ -10,7 +10,8 @@ const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [editing, toggleEditing] = useState(false);
+  // const [editing, toggleEditing] = useState(false);
+  const [editing] = useState(false);
   // const [orgAcountDetail, editOrgAccountDetail] = useState({
   //   poc: org.user.pocname,
   //   location: org.user.location,
@@ -44,7 +45,8 @@ const ProfileOrg = (props) => {
             <h1 className="title">Welcome! {org.user.orgname}</h1>
             {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
 
-            <button className="yellow-btn" type="button" onClick={() => { toggleEditing(false); }}> Edit Profile </button>
+            {/* <button className="yellow-btn" type="button" onClick={() => { toggleEditing(false); }}> Edit Profile </button> */}
+            <NavLink to={`/org/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
