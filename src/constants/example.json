@@ -1,6 +1,6 @@
 {
     "titleText": "You are not alone, and you have options! Choose a path to explore.",
-    "options": {
+    "options":{
         "College": {
             "title": "College",
             "hoverText":"Having a college degree increases your average yearly income by 70 percent",

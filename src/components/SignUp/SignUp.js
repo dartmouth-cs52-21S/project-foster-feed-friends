@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 
 const jsonFile = require('../../constants/example.json');
 
+// const res = JSON.parse(jsonFile);
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,11 @@ class SignUp extends Component {
   }
 
   render = () => {
-    console.log(jsonFile);
+    // eslint-disable-next-line guard-for-in
+    for (const key in jsonFile.options) {
+      console.log(`${key} : ${jsonFile.options[key].options}`);
+    }
+    // console.log(res);
     return (
       <div id="signInContainer">
         <h1 className="title"> Choose Your User Sign Up</h1>

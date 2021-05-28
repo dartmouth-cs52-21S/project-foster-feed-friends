@@ -237,7 +237,7 @@ export function renderOrgInfo(id) {
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {
-      console.log('this use shit');
+      console.log('this use');
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
     });
   };
@@ -260,7 +260,7 @@ export function renderMentorInfo(id) {
     console.log(id);
     axios.get(`${ROOT_URL}/mentor/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log(`hi from mentor ${id}`);
-      console.log(response);
+      console.log(response.data);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       console.log('response.data:', response.data);
       errorClear()(dispatch);
@@ -284,7 +284,7 @@ export function createEvent({
     }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.EVENT_CREATE });
       localStorage.setItem('token', response.data.token);
-      history.push(`/org/profile/${localStorage.getItem('userId')}`);
+      history.push(`/org/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
       dispatch(authError(`Event Creation Failed: ${error.response.data}`));

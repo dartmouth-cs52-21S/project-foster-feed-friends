@@ -19,10 +19,9 @@ class onBoardingPage extends Component {
       <div className="onBoardingPage">
         <h1 className="title">{jsonFile.mainText}</h1>
         <div className="onBoardingRowFlex">
-          {/* <onBoardingCard />
-          <onBoardingCard />
-          <onBoardingCard />
-          <onBoardingCard /> */}
+          {jsonFile.options.length > 2
+            ? <div> <onBoardingCard text={jsonFile.options} /> <onBoardingCard text={jsonFile.options} /> <onBoardingCard text={jsonFile.options} /> <onBoardingCard text={jsonFile.options} />  </div>
+            : <div> <onBoardingCard text={jsonFile.options} /><onBoardingCard text={jsonFile.options} /> </div> }
         </div>
       </div>
     );
