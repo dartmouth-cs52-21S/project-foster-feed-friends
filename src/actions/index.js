@@ -16,6 +16,7 @@ export const ActionTypes = {
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+// const ROOT_URL = 'https://localhost:9090/api';
 const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -207,6 +208,7 @@ export function signupOrg({
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      console.log(response.data);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
@@ -252,11 +254,13 @@ export function renderYouthInfo(id) {
     });
   };
 }
+
 export function renderMentorInfo(id) {
   return (dispatch) => {
     console.log(id);
     axios.get(`${ROOT_URL}/mentor/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log(`hi from mentor ${id}`);
+      console.log(response);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       console.log('response.data:', response.data);
       errorClear()(dispatch);
