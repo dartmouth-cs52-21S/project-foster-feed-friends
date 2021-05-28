@@ -1,19 +1,52 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
-import { fetchPosts } from '../../actions';
+import { fetchMoments } from '../../actions/moments-action';
 
 // const [show, setShow] = useState(false);
 const MomentThumbnail = (props) => {
-  return (
-    <div className="card" id="tn-card">
-      <div className="card-body">
-        <h5 className="card-title" id="tn-title">{props.post.title}</h5>
-        <p className="card-tags" id="tn-tags">{props.post.description}</p>
+  if (props.moment.symbol === 'star') {
+    return (
+      <div className="card" id="tn-card">
+        <div className="card-body">
+          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
+          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
+          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else if (props.moment.symbol === 'bridge') {
+    return (
+      <div className="card" id="tn-card">
+        <div className="card-body">
+          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
+          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
+          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+        </div>
+      </div>
+    );
+  } else if (props.moment.symbol === 'circle') {
+    return (
+      <div className="card" id="tn-card">
+        <div className="card-body">
+          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
+          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
+          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="card" id="tn-card">
+        <div className="card-body">
+          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
+          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
+          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+        </div>
+      </div>
+    );
+  }
 };
 
 class MentorPath extends Component {
@@ -25,18 +58,26 @@ class MentorPath extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
+    if (this.props.allMoments.length > 0) {
+      this.props.fetchMoments();
+    }
   }
 
-  //   onAdd = (event) => {
-  //   }
+  // onAdd = (title, description) => {
+  //   this.setState({
+  //     show: false,
+  //     title: this.props.post.title,
+  //     description: this.props.description,
+  //   });
+  // };
 
-  showPosts = (posts) => {
-    if (posts) {
-      return (posts.map((post) => {
+  showMoments = (moments) => {
+    if (moments) {
+      return (moments.map((moment) => {
         // put this in a nav link
-        return (<Link id="tn-link" to={`posts/${post.id}`} key={post.id}> <MomentThumbnail id={post.id} key={post.id} post={post} /> </Link>);
+        // return (<Link id="tn-link" to={`posts/${post.id}`} key={post.id}> <MomentThumbnail id={post.id} key={post.id} post={post} /> </Link>);
         // return (<Link to={`posts/${post.id}`}> <Post id={post.id} key={post.id} post={post} /> </Link>);
+        return <MomentThumbnail moment={moment} key={moment.title} />;
       }));
     }
     return (
@@ -44,13 +85,13 @@ class MentorPath extends Component {
     );
   }
 
-  render() {
-    return (
-      <div className="all-posts">
-        {this.showPosts(this.props.allPosts)}
-      </div>
-    );
-  }
+  // render() {
+  //   return (
+  //     <div className="all-moments">
+  //       {this.showMoments(this.props.allMoments)}
+  //     </div>
+  //   );
+  // }
 
   render = () => {
     return (
@@ -60,10 +101,10 @@ class MentorPath extends Component {
           <h4>click the add button on the right to add these moments</h4>
           <button className="green-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
         </div>
-        <div className="all-posts">
-          {this.showPosts(this.props.allPosts)}
+        <div className="all-moments">
+          {this.showMoments(this.props.allMoments)}
         </div>
-        <MomentModal onCancel={() => this.setState({ show: false })} onAdd={() => this.setState({ show: false })} show={this.state.show} />
+        <MomentModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
         <div className="done-btn">
           <button className="yellow-btn" type="submit">Done</button>
@@ -74,7 +115,7 @@ class MentorPath extends Component {
 }
 
 const mapStateToProps = (reduxstate) => ({
-  allPosts: reduxstate.posts.allPosts,
+  allMoments: reduxstate.moments.allMoments,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchPosts })(MentorPath));
+export default withRouter(connect(mapStateToProps, { fetchMoments })(MentorPath));
