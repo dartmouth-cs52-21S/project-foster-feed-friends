@@ -13,6 +13,7 @@ export const ActionTypes = {
   USER_INFO: 'USER_INFO',
   USER_CLEAR: 'USER_CLEAR',
   UPDATE_USER: 'UPDATE_USER',
+  EVENT_CREATE: 'EVENT_CREATE',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -139,11 +140,19 @@ export function signinMentor({ email, password }, history) {
   };
 }
 
+export function authUser(userId) {
+  return (dispatch) => {
+    dispatch({ type: ActionTypes.AUTH_USER, payload: userId });
+    // history.push(`/org/profile/${userId}`);
+  };
+}
+
 export function signinOrg({ email, password }, history) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signin/org/${API_KEY}`, { email, password }).then((response) => {
-      dispatch({ type: ActionTypes.AUTH_USER });
+      dispatch({ type: ActionTypes.AUTH_USER, payload: response.data.ID });
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userId', response.data.ID);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -227,6 +236,7 @@ export function renderOrgInfo(id) {
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {
+      console.log('this use shit');
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
     });
   };
@@ -258,21 +268,20 @@ export function renderMentorInfo(id) {
 }
 
 export function createEvent({
-  name, date, time, coordinator, description, location,
+  name, date, time, coordinator, location,
 }, id, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/org/profile/event/${id}/`, {
+    axios.post(`${ROOT_URL}/org/profile/${id}/event`, {
       name,
       date,
       time,
       coordinator,
-      description,
+      // description,
       location,
-      headers: { authorization: localStorage.getItem('token') },
-    }).then((response) => {
-      dispatch({ type: ActionTypes.AUTH_USER });
+    }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.EVENT_CREATE });
       localStorage.setItem('token', response.data.token);
-      history.push(`/org/profile/${response.data.ID}`);
+      history.push(`/org/profile/${localStorage.getItem('userId')}`);
     }).catch((error) => {
       console.log('catch');
       dispatch(authError(`Event Creation Failed: ${error.response.data}`));

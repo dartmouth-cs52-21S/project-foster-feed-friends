@@ -4,14 +4,16 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
-import { createPost } from '../../actions';
+import { createMoment } from '../../actions/moments-action';
 
 class MomentModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // show: true,
       title: '',
       description: '',
+      symbol: '',
     };
   }
 
@@ -23,21 +25,32 @@ class MomentModal extends Component {
     this.setState({ description: event.target.value });
   }
 
+  // onSymbolClick = (event) => {
+
+  // }
+
   onAdd = (event) => {
+    console.log('here');
+
+    this.props.createMoment(this.state);
+    console.log(this.state);
+    this.props.handleAdd();
     this.setState({
-      show: false,
+      // show: false,
       title: '',
       description: '',
+      symbol: '',
     });
-    this.props.createPost(this.state, this.props.history);
   }
 
   onCancel = (event) => {
     this.setState({
-      show: false,
+      // show: false,
       title: '',
       description: '',
+      symbol: '',
     });
+    this.props.handleCancel();
   }
 
   render = () => {
@@ -63,15 +76,15 @@ class MomentModal extends Component {
               </div>
               <h6>Choose the symbol best representing this moment.</h6>
               <div className="moment-buttons">
-                <button className="pink-btn" type="button">star</button>
-                <button className="pink-btn" type="button">bridge</button>
-                <button className="pink-btn" type="button">full circle</button>
-                <button className="pink-btn" type="button">none</button>
+                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'star' })} symbol={this.state.symbol}>star</button>
+                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'bridge' })} symbol={this.state.symbol}>bridge</button>
+                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'circle' })} symbol={this.state.symbol}>full circle</button>
+                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'none' })} symbol={this.state.symbol}>none</button>
               </div>
             </div>
             <div className="moment-footer">
-              <button className="green-btn" type="submit" onClick={this.props.onCancel}>Cancel</button>
-              <button className="green-btn" type="submit" onClick={this.props.onAdd}>Add</button>
+              <button className="green-btn" type="submit" onClick={this.onCancel}>Cancel</button>
+              <button className="green-btn" type="submit" onClick={this.onAdd}>Add</button>
             </div>
           </div>
         </div>
@@ -80,9 +93,9 @@ class MomentModal extends Component {
   }
 }
 
-// const mapStateToProps = (reduxstate) => ({
-//   moment: reduxstate.moments.currentMoment,
-//   error: reduxstate.error.error,
-// });
+const mapStateToProps = (reduxstate) => ({
+  moment: reduxstate.moments.currentMoment,
+  // error: reduxstate.error.error,
+});
 
-export default connect(null, { createPost })(MomentModal);
+export default connect(mapStateToProps, { createMoment })(MomentModal);

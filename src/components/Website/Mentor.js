@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { signupMentor } from '../../actions';
 import Footer from './footer';
+import mentorblob from '../../img/mentorblob.png';
 
 class Mentor extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Mentor extends Component {
             <h1>Mentor Stories</h1>
             <p>Making an Impact</p>
           </div>
-          <img id="mentor-blobs" src="src/img/mentorblob.png" alt="" height="550px" />
+          {/* <img id="mentor-blobs" src="src/img/mentorblob.png" alt="" height="550px" /> */}
+          <img id="mentor-blobs" src={mentorblob} alt="mentors" height="550px" />
         </div>
         <div className="mentor-container">
           <h1>mentor</h1>

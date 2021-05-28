@@ -8,6 +8,7 @@ import ErrorReducer from './error-reducer';
 import userReducer from './user-reducer';
 import PostsReducer from './posts-reducer';
 import MomentsReducer from './moments-reducer';
+import EventReducer from './event-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   moments: MomentsReducer,
   posts: PostsReducer,
+  events: EventReducer,
 });
 
 export default rootReducer;
