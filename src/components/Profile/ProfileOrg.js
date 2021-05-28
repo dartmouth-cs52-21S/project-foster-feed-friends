@@ -20,7 +20,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(renderOrgInfo(props.match.params.userID));
+    dispatch(renderOrgInfo(localStorage.getItem('userId')));
   }, []);
 
   const onSubmit = () => {
@@ -56,12 +56,12 @@ const ProfileOrg = (props) => {
 
           </div>
           <div className="eventsContainer">
-            <NavLink className="yellow-btn" to={`/org/profile/event/${props.match.params.userID}`}>Create an Event</NavLink>
+            <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
             <eventForm />
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
               <div />
             </div>
             <div className="EventsBlock">
