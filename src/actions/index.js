@@ -236,7 +236,7 @@ export function renderOrgInfo(id) {
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {
-      console.log('this use shit');
+      console.log('this use');
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
     });
   };
