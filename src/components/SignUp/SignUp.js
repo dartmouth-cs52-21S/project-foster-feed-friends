@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const jsonFile = require('../../constants/example.json');
+// const jsonFile = require('../../constants/example.json');
 
 // const res = JSON.parse(jsonFile);
 
@@ -21,10 +21,6 @@ class SignUp extends Component {
   }
 
   render = () => {
-    // eslint-disable-next-line guard-for-in
-    for (const key in jsonFile.options) {
-      console.log(`${key} : ${jsonFile.options[key].options}`);
-    }
     // console.log(res);
     return (
       <div id="signInContainer">

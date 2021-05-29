@@ -7,9 +7,10 @@ class onBoardingCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      text: this.props.forCard.title,
       hover: false,
-      hoverText: '',
+      hoverText: this.props.forCard.hoverText,
+
     };
   }
 
@@ -18,13 +19,14 @@ class onBoardingCard extends Component {
   }
 
   render = () => {
+    console.log(this.props.forCard.title, this.props.forCard.hoverText);
     return (
       <div>
         <div className="onBoardingCard">
           <h1 className="title" onMouseOver={this.handleHover} onFocus={this.handleHover}>{this.state.text}</h1>
         </div>
         <div>
-          {this.state.hover ? <p>{this.state.hoverText}</p> : <div />}
+          {this.state.hover ? <p>{this.state.hoverText}</p> : 'shake ass'}
         </div>
       </div>
     );
