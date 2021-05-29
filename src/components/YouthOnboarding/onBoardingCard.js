@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 
-class onBoardingCard extends Component {
+class OnBoardingCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,11 +26,11 @@ class onBoardingCard extends Component {
           <h1 className="title" onMouseOver={this.handleHover} onFocus={this.handleHover}>{this.state.text}</h1>
         </div>
         <div>
-          {this.state.hover ? <p>{this.state.hoverText}</p> : 'shake ass'}
+          {this.state.hover ? <p>{this.state.hoverText}</p> : null}
         </div>
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, {})(onBoardingCard));
+export default withRouter(connect(null, {})(OnBoardingCards));

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { renderOrgInfo, signoutUser } from '../../actions';
 import eventForm from './eventForm';
+import eventCard from '../Events/EventCard';
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -63,7 +64,9 @@ const ProfileOrg = (props) => {
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
+              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : org.user.events.map((data, key) => {
+                return (<eventCard org={org.user.orgname} event={data} />);
+              })}
               <div />
             </div>
             <div className="EventsBlock">

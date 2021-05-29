@@ -32,7 +32,7 @@ import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
 // import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
-import onBoardingPage from './YouthOnboarding/onBoardingPage';
+import OnBoardingPage from './YouthOnboarding/onBoardingPage';
 import { authUser } from '../actions';
 
 const theme = createMuiTheme({
@@ -73,7 +73,7 @@ const App = (props) => {
             <Route path="/signin/mentor" component={SignInMentor} />
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
-            <Route path="/signup/youth" component={onBoardingPage} />
+            <Route path="/signup/youth" component={OnBoardingPage} />
             {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
             <Route path="/signup/mentor" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
