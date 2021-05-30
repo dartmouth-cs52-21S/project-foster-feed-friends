@@ -1,0 +1,49 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yello-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$pink:#D37B4D;
+
+#banner{
+    background-color: $blue;
+    text-align: center;
+    padding:10px;
+    font-size: 25px;
+}
+
+.sortingBar{
+    background-color: #F2F2F2 !important;
+    text-align: center !important;
+    padding:10px;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+#location{
+    opacity: 0.5;
+}
+.card{
+    border-radius: 10%;
+    margin:20px;
+}
+
+.searchBar{
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.green-btn{
+    background-color:$dark-green;
+}
+#search-addon{
+    margin-right: 30px;
+}
+
+.MuiTabs-flexContainer{
+    display: flex;
+    justify-content: space-around;
+}

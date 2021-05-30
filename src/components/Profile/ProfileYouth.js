@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 // import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { renderYouthInfo, signoutUser } from '../../actions';
 
 const ProfileYouth = (props) => {
@@ -23,8 +24,8 @@ const ProfileYouth = (props) => {
     <div className="profilePageContainer">
       <div className="leftBar">
         <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
-        <button type="button" className="yellow-btn">Edit Profile</button>
-
+        {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
+        <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
         <h3 className="boldtwentyfour">Person of contact name : </h3>
 
         {/* <h3 className="boldtwentyfour">Location :</h3> */}

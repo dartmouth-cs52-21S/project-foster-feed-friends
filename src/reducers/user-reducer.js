@@ -12,7 +12,8 @@ const userReducer = (state = initial, action) => {
     case ActionTypes.USER_CLEAR:
       console.log(action.payload);
       return { ...state, user: {} };
-
+    case ActionTypes.UPDATE_USER:
+      return { ...state, user: action.payload };
     default:
       return state;
   }

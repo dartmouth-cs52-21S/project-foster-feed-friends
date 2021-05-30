@@ -3,46 +3,47 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
+import '../../moment-card.scss';
 
 // const [show, setShow] = useState(false);
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else if (props.moment.symbol === 'bridge') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else if (props.moment.symbol === 'circle') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );

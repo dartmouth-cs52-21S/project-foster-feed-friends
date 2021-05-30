@@ -20,6 +20,7 @@ import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
 import '../melissa.scss';
+import '../network-mentor.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
@@ -27,9 +28,14 @@ import SignInMentor from './SignIn/SignInMentor';
 // import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
+import MentorEdit from './ProfileEditing/MentorEdit';
+import FosterEdit from './ProfileEditing/FosterEdit';
+import OrgEdit from './ProfileEditing/OrgEdit';
+// import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
 
 import { authUser } from '../actions';
+import NetworkMentor from './Network/NetworkMentor';
 
 const theme = createMuiTheme({
   palette: {
@@ -70,11 +76,16 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
+            <Route path="/mentor/network" component={NetworkMentor} />
             {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
             <Route path="/signup/mentor" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
+            {/* <PrivateRoute path="/org/profile/event/:userID" component={eventForm} /> */}
+            <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
+            <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
+            <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />
             <PrivateRoute path="/org/profile/:userID/event" component={eventForm} />
             <PrivateRoute component={FallBack} />
           </Switch>
