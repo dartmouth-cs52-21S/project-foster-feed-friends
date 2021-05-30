@@ -20,6 +20,7 @@ import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
 import '../melissa.scss';
+import '../network-mentor.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
@@ -34,6 +35,7 @@ import OrgEdit from './ProfileEditing/OrgEdit';
 import MentorPath from './MentorOnboarding/Mentor-Path';
 
 import { authUser } from '../actions';
+import NetworkMentor from './Network/NetworkMentor';
 
 const theme = createMuiTheme({
   palette: {
@@ -74,6 +76,7 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
+            <Route path="/mentor/network" component={NetworkMentor} />
             {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
             <Route path="/signup/mentor" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
