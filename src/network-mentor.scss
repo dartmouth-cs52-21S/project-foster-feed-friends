@@ -18,7 +18,19 @@ $pink:#D37B4D;
 #location{
     opacity: 0.5;
 }
+.card{
+    border-radius: 10%;
+    margin:20px;
+}
+
+.searchBar{
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
 
 .green-btn{
     background-color:$dark-green;
+}
+#search-addon{
+    margin-right: 30px;
 }
