@@ -34,7 +34,7 @@ import OrgEdit from './ProfileEditing/OrgEdit';
 // import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
 
-import { authUser } from '../actions';
+import { authUser } from '../actions/onboarding-actions';
 import NetworkMentor from './Network/NetworkMentor';
 
 const theme = createMuiTheme({
@@ -82,7 +82,7 @@ const App = (props) => {
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
-            {/* <PrivateRoute path="/org/profile/event/:userID" component={eventForm} /> */}
+            {/* <PrivateRoute path="/-org/profile/event/:userID" component={eventForm} /> */}
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
             <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />

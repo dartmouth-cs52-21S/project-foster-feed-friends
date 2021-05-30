@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { renderYouthInfo, signoutUser } from '../../actions';
+import { fetchYouthInfo } from '../../actions/user-actions';
+import { signoutUser } from '../../actions/onboarding-actions';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
@@ -12,7 +13,7 @@ const ProfileYouth = (props) => {
   console.log(youth);
 
   useEffect(() => {
-    dispatch(renderYouthInfo(props.match.params.userID));
+    dispatch(fetchYouthInfo(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {

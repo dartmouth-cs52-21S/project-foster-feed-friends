@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
-import { signupMentor } from '../../actions';
+import { signupMentor } from '../../actions/onboarding-actions';
 import Footer from './footer';
 import mentorblob from '../../img/mentorblob.png';
 

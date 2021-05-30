@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import {
   FormControl, InputLabel, Input,
 } from '@material-ui/core';
-import { signupOrg } from '../../actions';
+import { signupOrg } from '../../actions/onboarding-actions';
 
 class SignUpOrg extends Component {
   constructor(props) {

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { AppBar } from '@material-ui/core';
-import { signoutUser } from '../actions';
+import { signoutUser } from '../actions/onboarding-actions';
 
 function mapStateToProps(reduxState) {
   return {
