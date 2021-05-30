@@ -12,7 +12,14 @@ $pink:#D37B4D;
     text-align: center;
     padding:10px;
     font-size: 25px;
-    margin-bottom: 20px;
+}
+
+.sortingBar{
+    background-color: #F2F2F2 !important;
+    text-align: center !important;
+    padding:10px;
+    font-size: 25px;
+    margin-bottom: 30px;
 }
 
 #location{
@@ -26,6 +33,7 @@ $pink:#D37B4D;
 .searchBar{
     margin-bottom: 20px;
     margin-left: 15px;
+    margin-top: 20px;
 }
 
 .green-btn{
@@ -33,4 +41,9 @@ $pink:#D37B4D;
 }
 #search-addon{
     margin-right: 30px;
+}
+
+.MuiTabs-flexContainer{
+    display: flex;
+    justify-content: space-around;
 }

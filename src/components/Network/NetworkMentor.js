@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 class NetworkMentor extends Component {
   constructor(props) {
@@ -13,6 +16,13 @@ class NetworkMentor extends Component {
     return (
       <div>
         <div id="banner">Network</div>
+        <AppBar position="static" className="sortingBar">
+          <Tabs saria-label="simple tabs example">
+            <Tab label="Organizations" />
+            <Tab label="Mentors" />
+            <Tab label="All" />
+          </Tabs>
+        </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
             className="form-control rounded"
