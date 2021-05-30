@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-// import OnBoardingCards from './onBoardingCard';
+import OnBoardingCards from './onBoardingCard';
 
-const jsonFile = require('../../constants/example.json');
+const jsonFile = require('../../constants/test.json');
 
 class OnBoardingPage extends Component {
   constructor(props) {
@@ -39,16 +39,25 @@ class OnBoardingPage extends Component {
   //   array.forEach()
   // }
 
-  mapTheseHoes = (fileArray) => {
+  mapJson = (fileArray) => {
     console.log('json file:', fileArray);
     return fileArray.map((data) => {
-      console.log('array from .map: ', data);
+      console.log('array from .map: ', data.options);
       return (
-        // need a way to iterate through all of the things in data and use the json object that is returned to populate onBoardingCard component
-        <div>
-          {data.toString()}
-        </div>
-      );
+        data.options.map((value) => {
+          console.log('val', value.title);
+          return (
+          // need a way to iterate through all of the things in data and use the json object that is returned to populate onBoardingCard component
+            <div key={value.id} className="accordion" id="accordionPanelsStayOpenExample">
+              <OnBoardingCards
+                key={value.id}
+                title={value.title}
+                hoverText={value.hoverText}
+                collapse={value.collapse}
+              />
+            </div>
+          );
+        }));
     });
   }
 
@@ -62,7 +71,7 @@ class OnBoardingPage extends Component {
 
       <div className="onBoardingPage">
         <h1 className="title">{jsonFile[0].titleText}</h1>
-        {this.mapTheseHoes(jsonFile)}
+        {this.mapJson(jsonFile)}
         {/* {jsonFile.map((data, key) => {
           return (
             // eslint-disable-next-line react/no-array-index-key
