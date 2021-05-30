@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // import Card from '@material-ui/core/Card';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardContent from '@material-ui/core/CardContent';
@@ -25,7 +25,8 @@ class NetworkMentor extends Component {
                 <h5 className="card-title">Organizaiton Name</h5>
                 <h6 id="location">Location</h6>
                 <p className="card-text"> Point of Contact Email</p>
-                <NavLink className="green-btn" to="/SignUp/mentor">Email</NavLink>
+                {/* <NavLink className="green-btn" to="/SignUp/mentor">Email</NavLink> */}
+                <i className="far fa-envelope green-btn" />
               </div>
             </div>
           </div>
@@ -35,7 +36,8 @@ class NetworkMentor extends Component {
                 <h5 className="card-title">Organizaiton Name</h5>
                 <h6 id="location">Location</h6>
                 <p className="card-text"> Point of Contact Email</p>
-                <NavLink className="green-btn" to="/SignUp/mentor">Email</NavLink>
+                {/* <NavLink className="green-btn" to="/SignUp/mentor">Email</NavLink> */}
+                <i className="far fa-envelope green-btn" />
               </div>
             </div>
           </div>
