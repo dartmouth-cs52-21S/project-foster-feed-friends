@@ -181,7 +181,6 @@ export function deletePost(id, history) {
 //   };
 // }
 
-
 // export function signupMentor({
 //   email, password, firstName, lastName, foster, organization, careerPath,
 // }, history) {
@@ -220,7 +219,6 @@ export function deletePost(id, history) {
 //     });
 //   };
 // }
-
 
 // // deletes token from localstorage
 // // and deauths

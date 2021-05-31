@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // DONT FORGET NAV LINK
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 // import onBoardingCard from './onBoardingCard';
 
-const jsonFile = require('../../constants/example.json');
-
-
-import { withRouter, NavLink } from 'react-router-dom';
 import OnBoardingCards from './onBoardingCard';
 import './onBoardingPage.scss';
 
@@ -137,7 +133,6 @@ class OnBoardingPage extends Component {
   // }
 
   render = () => {
-
     if (!this.state.transition) {
       return (
 
