@@ -5,8 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { signinOrg } from '../../actions';
-import '../../website-styles/sign-inup.scss';
+import { signinOrg } from '../../actions/onboarding-actions';
 
 class SignInOrg extends Component {
   constructor(props) {

@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { renderMentorInfo, signoutUser } from '../../actions';
-import '../../profile-styles/org-profile.scss';
+import { fetchMentorInfo } from '../../actions/user-actions';
+import { signoutUser } from '../../actions/onboarding-actions';
 
 const ProfileMentor = (props) => {
   const mentor = useSelector((state) => state.user);
@@ -12,7 +12,7 @@ const ProfileMentor = (props) => {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(renderMentorInfo(props.match.params.userID));
+    dispatch(fetchMentorInfo(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import * as ReactBootStrap from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import { signoutUser } from '../../actions';
+import { signoutUser } from '../../actions/onboarding-actions';
 import Footer from './footer';
 import '../../website-styles/educate.scss';
 

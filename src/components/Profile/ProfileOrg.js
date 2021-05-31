@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { renderOrgInfo, signoutUser } from '../../actions';
+import { fetchOrgInfo } from '../../actions/user-actions';
+import { signoutUser } from '../../actions/onboarding-actions';
 import eventForm from './eventForm';
 import '../../profile-styles/org-profile.scss';
 
@@ -22,7 +23,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(renderOrgInfo(localStorage.getItem('userId')));
+    dispatch(fetchOrgInfo(localStorage.getItem('userId')));
   }, []);
 
   const onSubmit = () => {
