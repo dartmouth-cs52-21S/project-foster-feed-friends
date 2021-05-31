@@ -18,6 +18,7 @@ class SignUpOrg extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'org',
     };
   }
 

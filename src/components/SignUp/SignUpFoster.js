@@ -21,6 +21,7 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'youth',
     };
   }
 

@@ -1,13 +1,9 @@
-// work in progress
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import { connect } from 'react-redux';
 import { fetchOrgs } from '../../actions/network-actions';
 
-class NetworkYouth extends Component {
+class Network extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,19 +38,6 @@ class NetworkYouth extends Component {
     return (
       <div>
         <div id="banner">Network</div>
-        <AppBar position="static" className="sortingBar">
-          <Tabs saria-label="simple tabs example">
-            <NavLink to="/orgs">
-              <Tab label="Organizations" />
-            </NavLink>
-            <NavLink to="/mentors">
-              <Tab label="Mentors" />
-            </NavLink>
-            <NavLink to="/mentor/network">
-              <Tab label="All" />
-            </NavLink>
-          </Tabs>
-        </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
             className="form-control rounded"
@@ -78,4 +61,4 @@ const mapStateToProps = (reduxstate) => ({
   allOrgs: reduxstate.network.allOrgs,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchOrgs })(NetworkYouth));
+export default withRouter(connect(mapStateToProps, { fetchOrgs })(Network));

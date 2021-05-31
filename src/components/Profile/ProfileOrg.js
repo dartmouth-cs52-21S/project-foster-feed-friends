@@ -22,7 +22,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(fetchOrgInfo(localStorage.getItem('userId')));
+    dispatch(fetchOrgInfo(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {

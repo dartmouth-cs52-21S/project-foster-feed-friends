@@ -35,7 +35,10 @@ import OrgEdit from './ProfileEditing/OrgEdit';
 import MentorPath from './MentorOnboarding/Mentor-Path';
 
 import { authUser } from '../actions/onboarding-actions';
-import NetworkMentor from './Network/NetworkMentor';
+import Network from './Network/Network';
+import NetworkMentors from './Network/NetworkMentors';
+import NetworkOrgs from './Network/NetworkOrgs';
+import NetworkOrgProfile from './Network/NetworkOrgProfile';
 
 const theme = createMuiTheme({
   palette: {
@@ -76,7 +79,11 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
-            <Route path="/mentor/network" component={NetworkMentor} />
+            <Route path="/network" component={Network} />
+            <Route path="/network/orgs" component={NetworkOrgs} />
+            <Route path="/network/mentors" component={NetworkMentors} />
+            <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} />
+            {/* // specific org profile after clicking card */}
             {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
             <Route path="/signup/mentor" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />

@@ -14,6 +14,8 @@ export const ActionTypes = {
   USER_CLEAR: 'USER_CLEAR',
   UPDATE_USER: 'UPDATE_USER',
   EVENT_CREATE: 'EVENT_CREATE',
+  FETCH_ORGS: 'FECTCH_ORGS',
+  FETCH_ORG: 'FETCH_ORG',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -28,31 +30,31 @@ export function errorClear() {
   };
 }
 
-// get all posts
-export function fetchPosts() {
-  return (dispatch) => {
-    axios.get(`${ROOT_URL}/posts${API_KEY}`).then((response) => {
-      dispatch({ type: ActionTypes.FETCH_POSTS, payload: response.data });
-      // clear prev error
-      errorClear()(dispatch);
-    }).catch((error) => {
-      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
-    });
-  };
-}
+// // get all posts
+// export function fetchPosts() {
+//   return (dispatch) => {
+//     axios.get(`${ROOT_URL}/posts${API_KEY}`).then((response) => {
+//       dispatch({ type: ActionTypes.FETCH_POSTS, payload: response.data });
+//       // clear prev error
+//       errorClear()(dispatch);
+//     }).catch((error) => {
+//       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+//     });
+//   };
+// }
 
-// get a post by id
-export function fetchPost(id) {
-  return (dispatch) => {
-    axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
-      dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });
-      // clear prev error
-      errorClear()(dispatch);
-    }).catch((error) => {
-      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
-    });
-  };
-}
+// // get a post by id
+// export function fetchPost(id) {
+//   return (dispatch) => {
+//     axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
+//       dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });
+//       // clear prev error
+//       errorClear()(dispatch);
+//     }).catch((error) => {
+//       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+//     });
+//   };
+// }
 
 // create a post
 export function createPost(post, history) {
