@@ -6,6 +6,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
 import { signinMentor } from '../../actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignInMentor extends Component {
   constructor(props) {

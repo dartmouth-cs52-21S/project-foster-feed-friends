@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import * as ReactBootStrap from 'react-bootstrap';
-
 // DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
 import { signoutUser } from '../../actions';
-import '../../will.scss';
 import Footer from './footer';
+import '../../website-styles/landing.scss';
 
 class Landing extends Component {
   constructor(props) {

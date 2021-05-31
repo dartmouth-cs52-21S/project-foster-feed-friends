@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
-import '../../moment-card.scss';
+import '../../onboarding-styles/moment-card.scss';
 
 // const [show, setShow] = useState(false);
 const MomentThumbnail = (props) => {

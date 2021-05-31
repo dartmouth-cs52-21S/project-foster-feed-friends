@@ -8,6 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 import { signupYouth } from '../../actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignUpFoster extends Component {
   constructor(props) {

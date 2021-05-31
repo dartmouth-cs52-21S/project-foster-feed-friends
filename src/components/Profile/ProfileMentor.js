@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { renderMentorInfo, signoutUser } from '../../actions';
+import '../../profile-styles/org-profile.scss';
 
 const ProfileMentor = (props) => {
   const mentor = useSelector((state) => state.user);

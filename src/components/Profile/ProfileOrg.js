@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { renderOrgInfo, signoutUser } from '../../actions';
 import eventForm from './eventForm';
+import '../../profile-styles/org-profile.scss';
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);

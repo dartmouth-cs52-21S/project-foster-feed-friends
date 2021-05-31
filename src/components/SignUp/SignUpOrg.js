@@ -6,6 +6,7 @@ import {
   FormControl, InputLabel, Input,
 } from '@material-ui/core';
 import { signupOrg } from '../../actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignUpOrg extends Component {
   constructor(props) {

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { renderYouthInfo, signoutUser } from '../../actions';
+import '../../profile-styles/org-profile.scss';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);

@@ -17,10 +17,6 @@ import SignInFoster from './SignIn/SignInFoster';
 import SignInOrg from './SignIn/SignInOrg';
 import SignUp from './SignUp/SignUp';
 import '../style.scss';
-import '../Karina.scss';
-import '../will.scss';
-import '../melissa.scss';
-import '../network-mentor.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
@@ -33,7 +29,6 @@ import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
 // import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
-
 import { authUser } from '../actions';
 import NetworkMentor from './Network/NetworkMentor';
 
