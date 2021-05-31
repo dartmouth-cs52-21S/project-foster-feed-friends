@@ -1,0 +1,19 @@
+.onBoardingPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.onBoardingTitle{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.onBoardingCards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
