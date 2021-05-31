@@ -1,4 +1,3 @@
-// work in progress
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,7 +7,7 @@ import { connect } from 'react-redux';
 import { fetchOrgs } from '../../actions/network-actions';
 import '../../platform-styles/network-mentor.scss';
 
-class NetworkYouth extends Component {
+class NetworkOrgs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -79,4 +78,4 @@ const mapStateToProps = (reduxstate) => ({
   allOrgs: reduxstate.network.allOrgs,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchOrgs })(NetworkYouth));
+export default withRouter(connect(mapStateToProps, { fetchOrgs })(NetworkOrgs));

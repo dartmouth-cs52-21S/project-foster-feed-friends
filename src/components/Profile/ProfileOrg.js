@@ -3,9 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { renderOrgInfo, signoutUser } from '../../actions';
+import { fetchOrgInfo } from '../../actions/user-actions';
+import { signoutUser } from '../../actions/onboarding-actions';
 import eventForm from './eventForm';
-// import eventCard from '../Events/EventCard';
+
+import '../../profile-styles/org-profile.scss';
+
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -22,7 +25,9 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(renderOrgInfo(props.match.params.userID));
+
+    dispatch(fetchOrgInfo(props.match.params.userID));
+
   }, []);
 
   const onSubmit = () => {

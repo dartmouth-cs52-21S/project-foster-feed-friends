@@ -6,7 +6,7 @@ import CountReducer from './count-reducer';
 import AuthReducer from './auth-reducer';
 import ErrorReducer from './error-reducer';
 import userReducer from './user-reducer';
-import PostsReducer from './posts-reducer';
+import OrgReducer from './OrgReducer';
 import MomentsReducer from './moments-reducer';
 import EventReducer from './event-reducer';
 
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   auth: AuthReducer,
   user: userReducer,
   moments: MomentsReducer,
-  posts: PostsReducer,
+  network: OrgReducer,
   events: EventReducer,
 });
 

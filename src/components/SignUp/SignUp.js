@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
-// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import '../../website-styles/sign-inup.scss';
+
+const jsonFile = require('../../constants/example.json');
 
 // const jsonFile = require('../../constants/example.json');
 
@@ -21,7 +23,8 @@ class SignUp extends Component {
   }
 
   render = () => {
-    // console.log(res);
+
+   
     return (
       <div id="signInContainer">
         <h1 className="title"> Choose Your User Sign Up</h1>

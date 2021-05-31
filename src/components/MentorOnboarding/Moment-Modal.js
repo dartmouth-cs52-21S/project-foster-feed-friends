@@ -5,6 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
 import { createMoment } from '../../actions/moments-action';
+import '../../onboarding-styles/moment-modal.scss';
 
 class MomentModal extends Component {
   constructor(props) {
@@ -83,8 +84,8 @@ class MomentModal extends Component {
               </div>
             </div>
             <div className="moment-footer">
-              <button className="green-btn" type="submit" onClick={this.onCancel}>Cancel</button>
-              <button className="green-btn" type="submit" onClick={this.onAdd}>Add</button>
+              <button className="lightgreen-btn" type="submit" onClick={this.onCancel}>Cancel</button>
+              <button className="lightgreen-btn" type="submit" onClick={this.onAdd}>Add</button>
             </div>
           </div>
         </div>

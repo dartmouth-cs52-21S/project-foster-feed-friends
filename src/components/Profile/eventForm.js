@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import { createEvent, renderOrgInfo } from '../../actions';
+import { createEvent } from '../../actions/events-actions';
+import { fetchOrgInfo } from '../../actions/user-actions';
 
 class eventForm extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class eventForm extends Component {
   }
 
   componentDidMount = () => {
-    renderOrgInfo(this.props.match.params.userID);
+    fetchOrgInfo(this.props.match.params.userID);
   }
 
   handleNameChange = (event) => {
@@ -89,4 +90,4 @@ class eventForm extends Component {
   }
 }
 
-export default withRouter(connect(null, { createEvent, renderOrgInfo })(eventForm));
+export default withRouter(connect(null, { createEvent, fetchOrgInfo })(eventForm));

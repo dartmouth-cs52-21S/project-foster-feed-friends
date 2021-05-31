@@ -1,23 +1,12 @@
 $primaryG:#12A67C;
 $dark-green:#0E442C;
 $light-green:#92C893;
-$yello-CTA:#FFB621;
+$yellow-CTA:#FFB621;
 $black:#323433;
 $white:#F5FFFC;
 $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
-
-
-body, html {
-    font-family: "Nunito", sans-serif !important;
-    height: 100%;
-    color:black;
-    background-color: white;
-    padding:0;
-    margin:0;
-}
-
 //for rendering the left and right side 
 // elements on the navbar in the same line 
 ul{
@@ -49,7 +38,7 @@ a{
 }
 
 a:hover{
-    color:$yello-CTA;
+    color:$yellow-CTA;
     text-decoration: none;
 }
 

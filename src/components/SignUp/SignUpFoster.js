@@ -7,7 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signupYouth } from '../../actions';
+import { signupYouth } from '../../actions/onboarding-actions';
 
 class SignUpFoster extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'youth',
     };
   }
 

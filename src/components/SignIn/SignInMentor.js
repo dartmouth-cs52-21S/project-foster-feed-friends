@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { signinMentor } from '../../actions';
+import { signinMentor } from '../../actions/onboarding-actions';
 
 class SignInMentor extends Component {
   constructor(props) {

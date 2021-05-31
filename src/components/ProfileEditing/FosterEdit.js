@@ -4,7 +4,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
-import { updateYouth } from '../../actions';
+import { updateYouth } from '../../actions/user-actions';
 
 class FosterEdit extends Component {
   constructor(props) {

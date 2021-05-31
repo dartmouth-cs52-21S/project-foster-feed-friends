@@ -3,46 +3,48 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
+import '../../onboarding-styles/moment-card.scss';
+import '../../onboarding-styles/mentor-path.scss';
 
 // const [show, setShow] = useState(false);
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else if (props.moment.symbol === 'bridge') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else if (props.moment.symbol === 'circle') {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="card" id="tn-card">
+      <div className="card" id="mom-card">
         <div className="card-body">
-          <h5 className="card-title" id="tn-title">{props.moment.title}</h5>
-          <p className="card-tags" id="tn-tags">{props.moment.description}</p>
-          <p className="card-tags" id="tn-tags">{props.moment.symbol}</p>
+          <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
+          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
+          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
         </div>
       </div>
     );
@@ -99,7 +101,7 @@ class MentorPath extends Component {
         <div className="path-header">
           <h2>As you proceed, tell us about any pivotal moments in your life, the highs and the lows.</h2>
           <h4>click the add button on the right to add these moments</h4>
-          <button className="green-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
+          <button className="lightgreen-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
         </div>
         <div className="all-moments">
           {this.showMoments(this.props.allMoments)}

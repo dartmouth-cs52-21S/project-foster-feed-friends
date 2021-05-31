@@ -1,0 +1,68 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+// footer.js styling
+#general-footer{
+    background-color: #12A67C;
+    width: 100%;
+    height: 100%;
+}
+#footer-container{
+    padding:20px;
+}
+.logo-name{
+    font-family: "Nunito", sans-serif;
+    color: $white;
+    font-size: 18px;
+}
+.logo-desc{
+    font-family: "Mulish", sans-serif;
+    color: $white;
+    font-size: 14px;
+}
+.footer-col{
+    font-family: "Nunito", sans-serif;
+    color: $white;
+    font-size: 18px;
+}
+.footer-links{
+    font-family: "Mulish", sans-serif;
+    color: $white;
+    font-size: 14px;
+    margin: 0px;
+}
+.text-reset{
+    text-decoration: none;
+}
+.text-reset:hover{
+    text-decoration: underline;
+}
+.copyright{
+    padding:10px;
+    color: $white;
+    font-size: 14px;
+}
+.md-form{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+#form1{
+    width: 300px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.pink-btn{
+    font-size: 16px !important;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: $pink;
+    color:$white;
+}

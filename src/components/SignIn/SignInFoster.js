@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
-import { signinYouth } from '../../actions/index';
+import { signinYouth } from '../../actions/onboarding-actions';
 
 class SignInFoster extends Component {
   constructor(props) {

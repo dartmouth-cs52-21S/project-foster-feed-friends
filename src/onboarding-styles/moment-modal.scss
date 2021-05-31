@@ -1,0 +1,61 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+// moment-modal.js styling
+.moment-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.moment-content{
+    width: 500px;
+    background-color: $white;
+}
+.moment-header{
+    text-align: center;
+}
+.moment-header, .moment-footer{
+    padding: 10px;
+}
+.moment-title {
+    margin: 0;
+}
+.moment-body{
+    padding:10px;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+}
+.moment-body h6{
+    text-align: left;
+    margin-left: 15px;
+}
+.ModalSpecificInput{
+    margin: 15px !important ;
+    width: 450px !important;
+}
+.modal-input{
+    font-family: "Mulish", sans-serif !important;
+    font-size: 16px;
+}
+.moment-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.moment-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

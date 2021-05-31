@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
+import '../../website-styles/footer.scss';
 
 class Footer extends Component {
   constructor(props) {
