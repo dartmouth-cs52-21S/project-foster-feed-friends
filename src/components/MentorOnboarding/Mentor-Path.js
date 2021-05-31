@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
 import '../../onboarding-styles/moment-card.scss';
+import '../../onboarding-styles/mentor-path.scss';
 
 // const [show, setShow] = useState(false);
 const MomentThumbnail = (props) => {
@@ -100,7 +101,7 @@ class MentorPath extends Component {
         <div className="path-header">
           <h2>As you proceed, tell us about any pivotal moments in your life, the highs and the lows.</h2>
           <h4>click the add button on the right to add these moments</h4>
-          <button className="green-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
+          <button className="lightgreen-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
         </div>
         <div className="all-moments">
           {this.showMoments(this.props.allMoments)}

@@ -84,8 +84,8 @@ class MomentModal extends Component {
               </div>
             </div>
             <div className="moment-footer">
-              <button className="green-btn" type="submit" onClick={this.onCancel}>Cancel</button>
-              <button className="green-btn" type="submit" onClick={this.onAdd}>Add</button>
+              <button className="lightgreen-btn" type="submit" onClick={this.onCancel}>Cancel</button>
+              <button className="lightgreen-btn" type="submit" onClick={this.onAdd}>Add</button>
             </div>
           </div>
         </div>
