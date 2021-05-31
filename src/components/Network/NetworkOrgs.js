@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { connect } from 'react-redux';
 import { fetchOrgs } from '../../actions/network-actions';
+import '../../platform-styles/network-mentor.scss';
 
 class NetworkOrgs extends Component {
   constructor(props) {

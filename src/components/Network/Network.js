@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchOrgs } from '../../actions/network-actions';
+import '../../platform-styles/network-mentor.scss';
 
 class Network extends Component {
   constructor(props) {
