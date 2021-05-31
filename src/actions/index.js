@@ -181,6 +181,7 @@ export function deletePost(id, history) {
 //   };
 // }
 
+
 // export function signupMentor({
 //   email, password, firstName, lastName, foster, organization, careerPath,
 // }, history) {
@@ -220,6 +221,7 @@ export function deletePost(id, history) {
 //   };
 // }
 
+
 // // deletes token from localstorage
 // // and deauths
 // export function signoutUser(history) {
@@ -232,6 +234,7 @@ export function deletePost(id, history) {
 // }
 
 // get all posts
+
 // export function renderOrgInfo(id) {
 //   return (dispatch) => {
 //     axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {

@@ -23,8 +23,9 @@ const store = createStore(reducers, {}, compose(
   window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f,
 ));
 const token = localStorage.getItem('token');
-if (token) {
-  store.dispatch({ type: ActionTypes.AUTH_USER });
+const userID = localStorage.getItem('userId');
+if (token && userID) {
+  store.dispatch({ type: ActionTypes.AUTH_USER, payload: userID });
 }
 // we now wrap App in a Provider
 ReactDOM.render(

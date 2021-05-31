@@ -1,7 +1,6 @@
 [{
     "titleText": "You are not alone, and you have options! Choose a path to explore.",
     "options":[{
-        "College":{
             "title": "College",
             "hoverText":"Having a college degree increases your average yearly income by 70 percent",
             "transitionTitleText":"Higher education is accessible to you! College has so many options, we are gonna begin with 2 year v 4 year colleges",
@@ -37,8 +36,7 @@
                     }]
                 }]
             }]
-        }},{
-        "Military": {
+        },{
             "title": "Military",
             "hoverText":"The military offers many benefits after a certain time frame of service. It is a large commitment",
             "transitionTitleText":"The military is an option for you. There are mulitple branches under the military that could be appealing to you.",
@@ -73,8 +71,7 @@
                     
                 }
             }]
-        }},{
-        "Work Force": {
+        },{
             "title": "Work Force",
             "hoverText":"These jobs have minimal educational requirements, and can range in pay starting at minimum wage",
             "transitionTitleText":"Entering the workforce right away is a great way to start earning money from the get go! You can explore various workforve jobs below",
@@ -110,8 +107,7 @@
                     
                 }
             }]
-        }},{
-        "Technical School": {
+        },{
             "title": "Technical School",
             "hoverText":"This is an option to learn a trade or specific skill. They range in time periods, but offer a very direct path to job options ",
             "transitionTitleText":"Technical Schools can be bootcamps or other trainings that specify a specific skill/trade",
@@ -135,6 +131,6 @@
                 }
             }]
         }
-    }]
+    ]
 }]
 

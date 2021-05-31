@@ -1,0 +1,22 @@
+.onBoardingCard{
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.onBoardingHover{
+    margin-top: 25px;
+    margin-right: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 5px;
+    margin-left: 25px;
+}

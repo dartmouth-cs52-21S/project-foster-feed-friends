@@ -11,6 +11,10 @@ import '../../website-styles/sign-inup.scss';
 
 const jsonFile = require('../../constants/example.json');
 
+// const jsonFile = require('../../constants/example.json');
+
+// const res = JSON.parse(jsonFile);
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +23,8 @@ class SignUp extends Component {
   }
 
   render = () => {
-    console.log(jsonFile);
+
+   
     return (
       <div id="signInContainer">
         <h1 className="title"> Choose Your User Sign Up</h1>
