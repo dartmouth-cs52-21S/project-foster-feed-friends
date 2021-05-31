@@ -53,7 +53,7 @@ class OnBoardingPage extends Component {
                 key={value.id}
                 title={value.title}
                 hoverText={value.hoverText}
-                collapse={value.collapse}
+                transitionTitleText={value.transitionTitleText}
               />
             </div>
           );

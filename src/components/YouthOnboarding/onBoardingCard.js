@@ -3,21 +3,32 @@ import React, { useState } from 'react';
 // DONT FORGET NAV LINK
 // import { withRouter } from 'react-router-dom';
 
-const OnBoardingCards = ({ title, hoverText }) => {
+const OnBoardingCards = ({ title, hoverText, transitionTitleText }) => {
   const [hover, setHover] = useState(false);
+  const [transition, setTransition] = useState(false);
+
+  console.log(transitionTitleText);
 
   const handleHover = () => {
     setHover(!hover);
   };
 
+  const handleClick = () => {
+    setTransition(!transition);
+  };
+
   return (
     <div>
-      <div className="onBoardingCard">
-        <h1 className="title" onMouseOver={handleHover} onFocus={handleHover}>{title}</h1>
-      </div>
-      <div>
-        {hover ? <p>{hoverText}</p> : null}
-      </div>
+      { transition ? <p> {transitionTitleText}</p> : (
+        <div>
+          <div className="onBoardingCard" onClick={handleClick} role="button" tabIndex="0">
+            <h1 className="title" onMouseOver={handleHover} onFocus={handleHover}>{title}</h1>
+          </div>
+          <div>
+            {hover ? <p>{hoverText}</p> : null}
+          </div>
+        </div>
+      ) }
     </div>
 
   );
