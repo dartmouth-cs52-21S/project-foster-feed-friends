@@ -4,6 +4,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { signupMentor } from '../../actions/onboarding-actions';
 import Footer from './footer';
 import mentorblob from '../../img/mentorblob.png';
+import '../../website-styles/mentor.scss';
 
 class Mentor extends Component {
   constructor(props) {

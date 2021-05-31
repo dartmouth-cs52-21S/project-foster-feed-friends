@@ -1,0 +1,45 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+//org profile 
+.leftBar{
+    padding-left: 20px;
+    padding-top: 24px;
+    background-color: #92C893;
+    height: 100vh;
+    width: 30%;
+}
+.boldtwentyfour{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 24px;;
+}
+.update{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.profilePageContainer{
+    display: flex;
+    flex-direction: row;
+}
+.eventsContainer{
+    padding-left: 25px;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+.profileBar.underlineLight{
+    width: 275px;
+}
+.EventsBlock{
+    padding-top: 25px;
+}

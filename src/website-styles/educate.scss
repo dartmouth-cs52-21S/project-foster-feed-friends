@@ -1,0 +1,77 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+// educate page
+#educateRowI{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#educateRowII{
+    margin-left: 417px;;
+}
+.educateLanding{
+    width: fit-content;
+}
+.educateLanding h1{
+    font-family: 'Mulish', sans-serif;
+    background-color: #6F93EE;
+    font-size: 50px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 45px;
+    color: #F5FFFC;
+}
+#educatebar{
+    display: flex;
+    flex-direction: row;
+}
+#four.educateLanding{
+    background-color: #6F93EE;
+    width: 75px;
+    height: 80px;
+    margin-left: 10px;
+}
+#three.educateLanding{
+    background-color: #6F93EE;
+    width: 50px;
+    height:  80px;
+    margin-left: 10px;
+}
+#two.educateLanding{
+    width: 25px;
+    background-color: #6F93EE;
+    height:  80px;
+    margin-left: 10px;
+}
+#one.educateLanding{
+    background-color: #6F93EE;
+    width:15px;
+    height: 80px;
+    margin-left: 10px;
+}
+.educateContent{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.educateContent h2{
+    font-family: "Nunito", sans-serif;
+    padding-left: 25px;
+    color: #6F93EE;
+    font-size: 40px;
+}
+.educateContent p{
+    font-family: "Mulish", sans-serif;
+    font-size: 24px;
+    width: 900px;
+    padding-right: 25px;
+
+}

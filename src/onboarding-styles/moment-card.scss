@@ -1,5 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
-
 $primaryG:#12A67C;
 $dark-green:#0E442C;
 $light-green:#92C893;
@@ -9,13 +7,7 @@ $white:#F5FFFC;
 $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
-
-body, html {
-  font-family: "Roboto", sans-serif;
-  background: white;
-  height: 100%;
+#mom-card{
+    height: 100px;
+    width: 200px;
 }
-.active {
-  color: #FFB621;
-}
-

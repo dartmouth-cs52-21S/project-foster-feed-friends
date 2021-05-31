@@ -5,6 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
 import { createMoment } from '../../actions/moments-action';
+import '../../onboarding-styles/moment-modal.scss';
 
 class MomentModal extends Component {
   constructor(props) {
