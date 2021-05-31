@@ -3,12 +3,7 @@ import { connect } from 'react-redux';
 // import * as ReactBootStrap from 'react-bootstrap';
 // DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
-<<<<<<< HEAD
-import { signoutUser } from '../../actions';
-=======
 import { signoutUser } from '../../actions/onboarding-actions';
-import '../../will.scss';
->>>>>>> c029eac7e349489f508f1b52b760140ad873b1bd
 import Footer from './footer';
 import '../../website-styles/landing.scss';
 

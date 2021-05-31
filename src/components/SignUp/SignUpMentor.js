@@ -11,7 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signupMentor } from '../../actions';
+import { signupMentor } from '../../actions/onboarding-actions';
 import '../../website-styles/sign-inup.scss';
 
 class SignUpMentor extends Component {
