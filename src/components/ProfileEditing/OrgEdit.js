@@ -13,11 +13,6 @@ class OrgEdit extends Component {
       orgname: '',
       location: '',
       pocname: '',
-      email: '',
-      emailconfirm: '',
-      password: '',
-      passwordconfirm: '',
-      type: 'org',
     };
   }
 
