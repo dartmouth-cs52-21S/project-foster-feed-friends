@@ -25,7 +25,9 @@ class Network extends Component {
               <h5 className="card-title">{org.orgname}</h5>
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
-              <i className="far fa-envelope green-btn" />
+              <i className="far fa-envelope green-btn">
+                <a href={org.email}>Email Us</a>
+              </i>
             </div>
           </div>
           {/* </div> */}
