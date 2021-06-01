@@ -15,12 +15,12 @@ function mapStateToProps(reduxState) {
   };
 }
 
-const renderAuth = (auth, signout, history) => {
+const renderAuth = (auth) => {
+  const user = useSelector((state) => state.user);
   if (auth) {
-    console.log('auth');
-    return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
+    return <NavLink to={`/${user.user.type}/profile/${user.user.id}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
+    // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    console.log('no auth');
     return <NavLink className="navSignInButton" to="/signin"><Button className="navSignInButton">Sign In</Button></NavLink>;
   }
 };
@@ -39,7 +39,7 @@ const NavBar = (props) => {
             <div id="navRight">
               <NavLink to="/messages" className="navTab left right">Messages </NavLink>
               <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
-              {renderAuth(props.auth, props.signoutUser, props.history)}
+              {renderAuth(props.auth)}
             </div>
           </ul>
         </div>
@@ -57,7 +57,7 @@ const NavBar = (props) => {
             <div id="navRight">
               <NavLink to="/messages" className="navTab left right">Messages </NavLink>
               <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
-              {renderAuth(props.auth, props.signoutUser, props.history)}
+              {renderAuth(props.auth)}
             </div>
           </ul>
         </div>
@@ -75,7 +75,7 @@ const NavBar = (props) => {
             <div id="navRight">
               <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
               <NavLink to="/educate" className="navTab left right">Educate </NavLink>
-              {renderAuth(props.auth, props.signoutUser, props.history)}
+              {renderAuth(props.auth)}
             </div>
           </ul>
         </div>
