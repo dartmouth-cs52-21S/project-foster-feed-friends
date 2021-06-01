@@ -32,6 +32,7 @@ const ProfileYouth = (props) => {
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
         {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
         {/* <h3 className="sixteenpoint">{youth.f}</h3> */}
+        <h3 className="sixteenpoint">path: {youth.user.path}</h3>
         <h3 className="sixteenpoint">{youth ? <h1>{youth.user.hometown}</h1> : null }</h3>
         <h3 className="boldtwentyfour">Email:</h3>
         <h3 className="sixteenpoint"> {youth ? <h1>{youth.user.email}</h1> : null } </h3>

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -18,14 +20,16 @@ class Network extends Component {
   orgsList = () => {
     const map = this.props.allOrgs.map((org) => {
       return (
-        <NavLink to={`orgs/${org.id}`} exact>
+        <NavLink to={`orgs/profile/${org.id}`} exact>
           {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">{org.orgname}</h5>
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
-              <i className="far fa-envelope green-btn" />
+              <i className="far fa-envelope green-btn">
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer">Email</a>
+              </i>
             </div>
           </div>
           {/* </div> */}

@@ -5,6 +5,7 @@ export const ActionTypes = {
   USER_CLEAR: 'USER_CLEAR',
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
+  UPDATE_USER: 'UPDATE_USER',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -25,6 +26,7 @@ export function fetchOrgInfo(id) {
     console.log('token', localStorage.getItem('token'));
     axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log({ response });
+      localStorage.setItem('type', response.data.type);
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
@@ -96,11 +98,11 @@ export function updateYouth(youth, history) {
 }
 
 export function updateOrg(org, history) {
-  console.log('hello');
+  console.log('updated org: ', org);
   return (dispatch) => {
     axios.put(`${ROOT_URL}/org/profile/${org.id}/edit`, org, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
-      console.log(response.data);
+      console.log('yikes', response.data);
       // clear prev error
       errorClear()(dispatch);
       // redirect to main page

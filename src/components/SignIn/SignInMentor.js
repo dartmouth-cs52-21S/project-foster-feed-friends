@@ -52,7 +52,7 @@ class SignInMentor extends Component {
         </FormControl>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-          <Input className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
+          <Input type="password" className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
         <button className="yellow-btn" variant="contained" onClick={this.onSubmit} type="button">
           Sign-In

@@ -10,7 +10,7 @@ import Landing from './Website/Landing';
 import Educate from './Website/Educate';
 import Mentor from './Website/Mentor';
 import SignIn from './SignIn/SignIn';
-// import SignUpFoster from './SignUp/SignUpFoster';
+import SignUpFoster from './SignUp/SignUpFoster';
 import SignUpOrg from './SignUp/SignUpOrg';
 import SignInFoster from './SignIn/SignInFoster';
 import SignInOrg from './SignIn/SignInOrg';
@@ -36,7 +36,8 @@ import { authUser } from '../actions/onboarding-actions';
 import Network from './Network/Network';
 import NetworkMentors from './Network/NetworkMentors';
 import NetworkOrgs from './Network/NetworkOrgs';
-// import NetworkOrgProfile from './Network/NetworkOrgProfile';
+import SubmitResource from './sumbitResource';
+import NetworkOrgProfile from './Network/NetworkOrgProfile';
 
 const theme = createMuiTheme({
   palette: {
@@ -71,16 +72,18 @@ const App = (props) => {
             <Route exact path="/mentor" component={Mentor} />
             <Route path="/educate" component={Educate} />
             <Route exact path="/signin" component={SignIn} />
+            <Route path="/submitResource" component={SubmitResource} />
             <Route path="/signin/org" component={SignInOrg} />
             <Route path="/signin/youth" component={SignInFoster} />
             <Route path="/signin/mentor" component={SignInMentor} />
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
-            <Route path="/signup/youth" component={OnBoardingPage} />
+            <Route path="/signup/youth" component={SignUpFoster} />
+            <Route path="/signup/youthOnboarding" component={OnBoardingPage} />
             <Route path="/network" component={Network} />
             <Route path="/network/orgs" component={NetworkOrgs} />
             <Route path="/network/mentors" component={NetworkMentors} />
-            {/* <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} /> */}
+            <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />

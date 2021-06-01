@@ -53,7 +53,7 @@ const ProfileOrg = (props) => {
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
-            <h3 className="sixteenpoint">{org.user.poc}</h3>
+            <h3 className="sixteenpoint">{org.user.pocname}</h3>
             <h3 className="sixteenpoint">{org.user.location}</h3>
             <h3 className="boldtwentyfour">Email:</h3>
             <h3 className="sixteenpoint"> {org.user.email} </h3>
