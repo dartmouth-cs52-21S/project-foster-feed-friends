@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { withRouter, NavLink } from 'react-router-dom';
 import './submitResource.scss';
-// import { signupYouth } from '../../actions/onboarding-actions';
+import { createResource } from '../actions/resource-actions';
 
 class SubmitResource extends Component {
   constructor(props) {
@@ -43,6 +43,10 @@ class SubmitResource extends Component {
     this.setState({ website: event.target.value });
   }
 
+  createEvent = () => {
+    this.props.createResource(this.state);
+  }
+
   render = () => {
     return (
       <div className="resourcePage">
@@ -71,11 +75,11 @@ class SubmitResource extends Component {
             <Input id="component-simple" className="sixteenpoint" value={this.state.website} onChange={this.handleWebsiteChange} />
           </FormControl>
           <FormControl className="resourceSpecificInput" />
-          <NavLink className="yellow-btn submitResourceBtn" to="/">Submit</NavLink>
+          <NavLink className="yellow-btn submitResourceBtn" to="/" onClick={this.createEvent}>Submit</NavLink>
         </div>
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { })(SubmitResource));
+export default withRouter(connect(null, { createResource })(SubmitResource));

@@ -7,10 +7,12 @@ const initialState = {
 
 const ResourceReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ActionTypes.CREATE_RESOURCE:
+      return { ...state, resource: action.payload };
     case ActionTypes.FETCH_RESOURCES:
-      return { ...state, allOrgs: action.payload };
+      return { ...state, allResources: action.payload };
     case ActionTypes.FETCH_RESOURCE:
-      return { ...state, currentOrg: action.payload };
+      return { ...state, currentResources: action.payload };
     default:
       return state;
   }
