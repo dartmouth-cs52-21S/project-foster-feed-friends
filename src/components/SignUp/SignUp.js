@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
-// import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import '../../website-styles/sign-inup.scss';
 
 // const jsonFile = require('../../constants/example.json');
 
@@ -21,7 +21,6 @@ class SignUp extends Component {
   }
 
   render = () => {
-    // console.log(res);
     return (
       <div id="signInContainer">
         <h1 className="title"> Choose Your User Sign Up</h1>
@@ -46,7 +45,7 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <NavLink className="yellow-btn" to="/SignUp/mentor">Sign-Up</NavLink>
+              <NavLink className="yellow-btn" to="/SignUp/mentormoments">Sign-Up</NavLink>
 
               {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/mentor">Sign-Up</NavLink></button> */}
             </CardActions>
@@ -58,7 +57,7 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <NavLink className="yellow-btn" to="/SignUp/youth">Sign-Up</NavLink>
+              <NavLink className="yellow-btn" to="/SignUp/youthOnboarding">Sign-Up</NavLink>
 
               {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/youth">Sign-Up</NavLink></button> */}
             </CardActions>

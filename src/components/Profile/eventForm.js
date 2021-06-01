@@ -5,7 +5,8 @@ import { useHistory } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import { createEvent, renderOrgInfo } from '../../actions';
+import { createEvent } from '../../actions/events-actions';
+import { fetchOrgInfo } from '../../actions/user-actions';
 
 const EventForm = (props) => {
   const [state, setState] = useState(
@@ -15,6 +16,7 @@ const EventForm = (props) => {
       time: '',
       location: '',
       coordinator: '',
+
     },
   );
 

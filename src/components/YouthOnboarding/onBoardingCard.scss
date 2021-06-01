@@ -1,0 +1,30 @@
+.onBoardingCard{
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    border-radius: 20px;
+    padding: 80px 55px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+.onBoardingHover{
+    margin-top: 25px;
+    margin-right: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin-left: 25px;
+}
+.totalCard{
+    max-width: 350px;
+}
+
+.cardTitle{
+    text-align: center;
+}

@@ -11,8 +11,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-
-import { signupMentor } from '../../actions';
+import { signupMentor } from '../../actions/onboarding-actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignUpMentor extends Component {
   constructor(props) {
@@ -28,6 +28,8 @@ class SignUpMentor extends Component {
       passwordconfirm: '',
       fosterBackground: 'No',
       bio: '',
+      type: 'mentor',
+      momentsPath: props.allMoments,
 
     };
   }
@@ -88,6 +90,7 @@ class SignUpMentor extends Component {
   }
 
   render = () => {
+    // console.log(localStorage.getItem('momentsPath'));
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
@@ -123,20 +126,24 @@ class SignUpMentor extends Component {
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
+              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
+              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
             </FormControl>
 
           </div>
 
         </div>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
+        <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { signupMentor })(SignUpMentor));
+const mapStateToProps = (reduxstate) => ({
+  allMoments: reduxstate.moments.allMoments,
+});
+
+export default withRouter(connect(mapStateToProps, { signupMentor })(SignUpMentor));

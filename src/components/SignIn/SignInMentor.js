@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
-import { signinMentor } from '../../actions';
+import { signinMentor } from '../../actions/onboarding-actions';
 
 class SignInMentor extends Component {
   constructor(props) {
@@ -52,9 +52,9 @@ class SignInMentor extends Component {
         </FormControl>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-          <Input className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
+          <Input type="password" className="sixteenpoint" id="component-simple" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        <button className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} type="button">
+        <button className="yellow-btn" variant="contained" onClick={this.onSubmit} type="button">
           Sign-In
         </button>
 

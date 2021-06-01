@@ -1,0 +1,85 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+// mentor.js styling
+.mentor-page{
+    display: flex;
+    flex-direction: column;
+}
+.mentor-header{
+    display: flex;
+    flex-direction: row;
+    background-color: #6F93EE;
+    height: 100%;
+    padding: 20px;
+}
+.mh-text{
+    margin-top: 300px;
+    margin-left: 20px;
+    color: $white;
+}
+.mh-text h1{
+    font-family: 'Mulish', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.mh-text p{
+    font-family: 'Mulish', sans-serif;
+    font-size: 40px;
+}
+#mentor-blobs{
+    padding-top: 100px;
+    padding-left: 500px;
+}
+.mentor-container{
+    padding: 30px;
+}
+.mentor-container h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+.mentor-container h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: $black;
+}
+.mentor-container h3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.mentor-container h4{
+    font-family: 'Mulish', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+.mentor-container p{
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+}
+.yellow-btn{
+    text-decoration: none;
+    background-color: $yellow-CTA;
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right:20px
+}
+#mentorpg-btn{
+    padding-top: 40px;
+}

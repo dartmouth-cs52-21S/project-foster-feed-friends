@@ -4,7 +4,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
-import { updateOrg } from '../../actions';
+import { updateOrg } from '../../actions/user-actions';
 
 class OrgEdit extends Component {
   constructor(props) {
@@ -13,10 +13,6 @@ class OrgEdit extends Component {
       orgname: '',
       location: '',
       pocname: '',
-      email: '',
-      emailconfirm: '',
-      password: '',
-      passwordconfirm: '',
     };
   }
 
@@ -62,7 +58,7 @@ class OrgEdit extends Component {
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
-          <div id="su-title">Welcome to Foster Feed Friends! Sign up to [...]</div>
+          <div id="su-title">Edit Your Profile</div>
         </div>
         <FormControl className="signUpSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>

@@ -17,6 +17,10 @@ const MomentsReducer = (state = initialState, action) => {
       console.log('made it in the actiontypes');
       console.log('create payload', action.payload);
       return { ...state, allMoments: [...state.allMoments, action.payload] };
+    case ActionTypes.MOMENTS_CLEAR:
+      return { ...state, allMoments: [] };
+    case ActionTypes.MOMENT_CLEAR:
+      return { ...state, currentMoment: {} };
     default:
       return state;
   }

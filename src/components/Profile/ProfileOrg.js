@@ -3,9 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { renderOrgInfo, signoutUser } from '../../actions';
+
+
 // import EventForm from './eventForm';
 import EventCard from '../Events/EventCard';
+
+import { fetchOrgInfo } from '../../actions/user-actions';
+import { signoutUser } from '../../actions/onboarding-actions';
+// import eventForm from './eventForm';
+
+import '../../profile-styles/org-profile.scss';
+
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -24,7 +32,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-    dispatch(renderOrgInfo(props.match.params.userID));
+    dispatch(fetchOrgInfo(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {
@@ -53,7 +61,7 @@ const ProfileOrg = (props) => {
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
-            <h3 className="sixteenpoint">{org.user.poc}</h3>
+            <h3 className="sixteenpoint">{org.user.pocname}</h3>
             <h3 className="sixteenpoint">{org.user.location}</h3>
             <h3 className="boldtwentyfour">Email:</h3>
             <h3 className="sixteenpoint"> {org.user.email} </h3>
@@ -62,6 +70,7 @@ const ProfileOrg = (props) => {
           </div>
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
+
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
@@ -77,8 +86,9 @@ const ProfileOrg = (props) => {
                     coordinator={data.coordinator}
                   />
                 );
+
               })}
-              <div />
+              <div /> */}
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>

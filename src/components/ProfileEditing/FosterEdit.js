@@ -4,7 +4,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
-import { updateYouth } from '../../actions';
+import { updateYouth } from '../../actions/user-actions';
 
 class FosterEdit extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class FosterEdit extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'youth',
     };
   }
 
@@ -50,6 +51,9 @@ class FosterEdit extends Component {
   render = () => {
     return (
       <div>
+        <div className="header">
+          <div id="su-title">Edit Your Profile</div>
+        </div>
         <div>
           <FormControl className="signUpSpecificInput">
             <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name</InputLabel>

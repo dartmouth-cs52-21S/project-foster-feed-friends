@@ -4,7 +4,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
-import { updateMentor } from '../../actions';
+import { updateMentor } from '../../actions/user-actions';
 
 class MentorEdit extends Component {
   constructor(props) {
@@ -20,12 +20,12 @@ class MentorEdit extends Component {
       passwordconfirm: '',
       fosterBackground: 'No',
       bio: '',
+      type: 'mentor',
 
     };
   }
 
   componentDidMount() {
-    console.log(this.props.user.user);
     this.setState(this.props.user.user);
   }
 
@@ -51,12 +51,14 @@ class MentorEdit extends Component {
 
   onSubmit = () => {
     this.props.updateMentor(this.state, this.props.history);
-    console.log('hii');
   }
 
   render = () => {
     return (
       <div>
+        <div className="header">
+          <div id="su-title">Edit Your Profile</div>
+        </div>
         <div>
           <FormControl className="signUpSpecificInput">
             <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name</InputLabel>

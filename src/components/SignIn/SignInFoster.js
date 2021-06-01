@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 // import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
-import { signinYouth } from '../../actions/index';
+import { signinYouth } from '../../actions/onboarding-actions';
 
 class SignInFoster extends Component {
   constructor(props) {
@@ -52,12 +52,12 @@ class SignInFoster extends Component {
         </FormControl>
         <FormControl className="signInSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
+          <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
         {/* <Button className="signInSpecificButton" variant="contained" color="primary">
           Sign-In
         </Button> */}
-        <button type="button" className="yellowButton navLinkButton" onClick={this.onSubmit}>Sign In</button>
+        <button type="button" className="yellow-btn" onClick={this.onSubmit}>Sign In</button>
 
       </div>
     );

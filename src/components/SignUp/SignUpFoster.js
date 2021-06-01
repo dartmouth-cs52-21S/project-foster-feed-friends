@@ -7,7 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-import { signupYouth } from '../../actions';
+import { signupYouth } from '../../actions/onboarding-actions';
 
 class SignUpFoster extends Component {
   constructor(props) {
@@ -21,6 +21,8 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      path: localStorage.getItem('pathYouth'),
+      type: 'youth',
     };
   }
 
@@ -72,9 +74,12 @@ class SignUpFoster extends Component {
       password: '',
       passwordconfirm: '',
     });
+    localStorage.removeItem('pathYouth');
+    console.log('shouldbe empty/undefined:', localStorage.removeItem('pathYouth'));
   }
 
   render = () => {
+    console.log('path youth =', localStorage.getItem('pathYouth'));
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
@@ -111,16 +116,16 @@ class SignUpFoster extends Component {
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
+              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
-              <Input id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
+              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
             </FormControl>
           </div>
 
         </div>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
+        <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
     );
   }
