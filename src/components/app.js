@@ -42,6 +42,7 @@ import NetworkMentors from './Network/NetworkMentors';
 import NetworkOrgs from './Network/NetworkOrgs';
 import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
+import Resource from './Resource';
 
 const theme = createMuiTheme({
   palette: {
@@ -77,6 +78,7 @@ const App = (props) => {
             <Route path="/educate" component={Educate} />
             <Route exact path="/signin" component={SignIn} />
             <Route path="/submitResource" component={SubmitResource} />
+            <Route path="/resources" component={Resource} />
             <Route path="/signin/org" component={SignInOrg} />
             <Route path="/signin/youth" component={SignInFoster} />
             <Route path="/signin/mentor" component={SignInMentor} />
