@@ -35,7 +35,7 @@ export function fetchOrgs() {
 // get a post by id
 export function fetchOrg(id) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/posts/${id}`).then((response) => {
+    axios.get(`${ROOT_URL}/orgs/${id}`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_ORG, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
