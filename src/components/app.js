@@ -25,15 +25,13 @@ import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
-// import SignUpMentor from './SignUp/SignUpMentor';
+import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
-// import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
-
 import { authUser } from '../actions/onboarding-actions';
 import Network from './Network/Network';
 import NetworkMentors from './Network/NetworkMentors';
@@ -84,8 +82,8 @@ const App = (props) => {
             <Route path="/network/mentors" component={NetworkMentors} />
             {/* <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} /> */}
             {/* // specific org profile after clicking card */}
-            {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
-            <Route path="/signup/mentor" component={MentorPath} />
+            <Route path="/signup/mentor" component={SignUpMentor} />
+            <Route path="/signup/mentormoments" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />

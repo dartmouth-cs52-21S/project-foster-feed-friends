@@ -11,13 +11,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 // DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
-<<<<<<< HEAD
-
-import { signupMentor } from '../../actions/onboarding-actions';
-=======
 import { signupMentor } from '../../actions/onboarding-actions';
 import '../../website-styles/sign-inup.scss';
->>>>>>> 2e6f63ea0270f6d5788635b306c004cbff987dbe
 
 class SignUpMentor extends Component {
   constructor(props) {
@@ -34,6 +29,7 @@ class SignUpMentor extends Component {
       fosterBackground: 'No',
       bio: '',
       type: 'mentor',
+      momentsPath: props.allMoments,
 
     };
   }
@@ -94,6 +90,7 @@ class SignUpMentor extends Component {
   }
 
   render = () => {
+    // console.log(localStorage.getItem('momentsPath'));
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
@@ -145,4 +142,8 @@ class SignUpMentor extends Component {
   }
 }
 
-export default withRouter(connect(null, { signupMentor })(SignUpMentor));
+const mapStateToProps = (reduxstate) => ({
+  allMoments: reduxstate.moments.allMoments,
+});
+
+export default withRouter(connect(mapStateToProps, { signupMentor })(SignUpMentor));

@@ -2,6 +2,8 @@ export const ActionTypes = {
   AUTH_USER: 'AUTH_USER',
   DEAUTH_USER: 'DEAUTH_USER',
   AUTH_ERROR: 'AUTH_ERROR',
+  MOMENTS_CLEAR: 'MOMENTS_CLEAR',
+  MOMENT_CLEAR: 'MOMENT_CLEAR',
 
 };
 
@@ -85,6 +87,7 @@ export function signupMentor(
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
+      // dispatch({ type: ActionTypes.MOMENTS_CLEAR });
       localStorage.setItem('token', response.data.token);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
