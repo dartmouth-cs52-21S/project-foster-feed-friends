@@ -57,7 +57,7 @@ class SignInFoster extends Component {
         {/* <Button className="signInSpecificButton" variant="contained" color="primary">
           Sign-In
         </Button> */}
-        <button type="button" className="yellowButton navLinkButton" onClick={this.onSubmit}>Sign In</button>
+        <button type="button" className="yellow-btn" onClick={this.onSubmit}>Sign In</button>
 
       </div>
     );

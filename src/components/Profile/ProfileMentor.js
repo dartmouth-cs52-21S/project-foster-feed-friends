@@ -12,8 +12,10 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-star pink-btn" />
+          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -22,8 +24,9 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-archway pink-btn" />
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -32,8 +35,9 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-spinner pink-btn" />
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -42,8 +46,8 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
