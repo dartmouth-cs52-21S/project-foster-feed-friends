@@ -77,10 +77,6 @@ const App = (props) => {
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={OnBoardingPage} />
-<<<<<<< HEAD
-
-=======
->>>>>>> 03cf08e0dc5c1d80b7fbde3f1039a72ccebf67b4
             <Route path="/network" component={Network} />
             <Route path="/network/orgs" component={NetworkOrgs} />
             <Route path="/network/mentors" component={NetworkMentors} />
