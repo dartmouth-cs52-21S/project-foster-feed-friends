@@ -24,8 +24,12 @@ import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
+
+// import SignUpMentor from './SignUp/SignUpMentor';
+import EventForm from './Profile/eventForm';
+
 import SignUpMentor from './SignUp/SignUpMentor';
-import eventForm from './Profile/eventForm';
+
 import PrivateRoute from './PrivateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
@@ -94,7 +98,7 @@ const App = (props) => {
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
             <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />
-            <PrivateRoute path="/org/profile/:userID/event" component={eventForm} />
+            <PrivateRoute path="/org/profile/:userID/event" component={EventForm} />
             <PrivateRoute component={FallBack} />
           </Switch>
         </div>

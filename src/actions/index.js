@@ -14,6 +14,7 @@ export const ActionTypes = {
   USER_CLEAR: 'USER_CLEAR',
   UPDATE_USER: 'UPDATE_USER',
   EVENT_CREATE: 'EVENT_CREATE',
+
   FETCH_ORGS: 'FECTCH_ORGS',
   FETCH_ORG: 'FETCH_ORG',
   MOMENTS_CLEAR: 'MOMENTS_CLEAR',
@@ -22,6 +23,7 @@ export const ActionTypes = {
   FETCH_RESOURCES: 'FETCH_RESOURCES',
   FETCH_RESOURCE: 'FETCH_RESOURCE',
   CLEAR_RESOURCE: 'CLEAR_RESOURCE',
+  FETCH_EVENTS: 'FETCH_EVENTS',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -117,6 +119,7 @@ export function deletePost(id, history) {
 //   };
 // }
 
+
 // export function signinYouth({ email, password }, history) {
 //   // takes in an object with email and password (minimal user object)
 //   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
@@ -135,6 +138,7 @@ export function deletePost(id, history) {
 //     });
 //   };
 // }
+
 
 // export function signinMentor({ email, password }, history) {
 //   return (dispatch) => {
@@ -155,6 +159,7 @@ export function deletePost(id, history) {
 //     // history.push(`/org/profile/${userId}`);
 //   };
 // }
+
 
 // export function signinOrg({ email, password }, history) {
 //   return (dispatch) => {
@@ -226,6 +231,7 @@ export function deletePost(id, history) {
 //   };
 // }
 
+
 // // deletes token from localstorage
 // // and deauths
 // export function signoutUser(history) {
@@ -265,6 +271,35 @@ export function deletePost(id, history) {
 //   };
 // }
 
+
+export function createEvent({
+  name, date, time, coordinator, location,
+}, id, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/org/profile/${id}/event`, {
+      name,
+      date,
+      time,
+      coordinator,
+      // description,
+      location,
+    }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      console.log('Creating an Event');
+      dispatch({ type: ActionTypes.EVENT_CREATE });
+      localStorage.setItem('token', response.data.token);
+      console.log(`${ROOT_URL}/org/${id}/events`);
+      axios.get(`${ROOT_URL}/org/${id}/events`).then((value) => {
+        console.log('Events Data', value);
+        dispatch({ type: ActionTypes.FETCH_EVENTS, payload: value.data });
+      });
+      history.push(`/org/profile/${id}`);
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Event Creation Failed: ${error.response.data}`));
+    });
+  };
+}
+
 // export function renderMentorInfo(id) {
 //   return (dispatch) => {
 //     console.log(id);
@@ -279,6 +314,7 @@ export function deletePost(id, history) {
 //     });
 //   };
 // }
+
 
 // export function createEvent({
 //   name, date, time, coordinator, location,
