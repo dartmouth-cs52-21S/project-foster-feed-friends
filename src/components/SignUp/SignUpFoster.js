@@ -58,8 +58,14 @@ class SignUpFoster extends Component {
   }
 
   onSubmit = (event) => {
-    if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signupYouth(this.state, this.props.history);
+    if (this.state.firstName !== '' && this.state.lastName !== '' && this.state.hometown !== ''
+    && this.state.age !== '' && this.state.email !== '' && this.state.emailconfirm !== ''
+    && this.state.password !== '' && this.state.passwordconfirm !== '') {
+      if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
+        this.props.signupYouth(this.state, this.props.history);
+      } else {
+        this.setState({ error: 'Make sure both emails and passwords match!' });
+      }
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }

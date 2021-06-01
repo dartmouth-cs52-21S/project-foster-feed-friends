@@ -32,10 +32,7 @@ class MomentModal extends Component {
   // }
 
   onAdd = (event) => {
-    console.log('here');
-
     this.props.createMoment(this.state);
-    console.log(this.state);
     this.props.handleAdd();
     this.setState({
       // show: false,

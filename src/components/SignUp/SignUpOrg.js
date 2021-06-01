@@ -57,7 +57,17 @@ class SignUpOrg extends Component {
     //   username: this.username,
     // });
     console.log(this.state);
-    this.props.signupOrg(this.state, this.props.history);
+    if (this.state.orgname !== '' && this.state.location !== '' && this.state.pocname !== ''
+    && this.state.email !== '' && this.state.emailconfirm !== '' && this.state.password !== ''
+    && this.state.passwordconfirm !== '') {
+      if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
+        this.props.signupOrg(this.state, this.props.history);
+      } else {
+        this.setState({ error: 'Make sure both emails and passwords match!' });
+      }
+    } else {
+      this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
+    }
   }
 
   render = () => {
@@ -65,6 +75,7 @@ class SignUpOrg extends Component {
       <div id="signUpSpecificContainer">
         <div className="header">
           <div id="su-title">Welcome to Foster Feed Friends! Sign up to [...]</div>
+          <div>{this.state.error}</div>
         </div>
         <FormControl className="signUpSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>

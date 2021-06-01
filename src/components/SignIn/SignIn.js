@@ -31,7 +31,6 @@ class SignIn extends Component {
             <CardActions>
               <NavLink className="yellow-btn" to="/signin/org">Sign-In</NavLink>
             </CardActions>
-
           </Card>
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -39,7 +38,9 @@ class SignIn extends Component {
                 Mentor
               </Typography>
             </CardContent>
-            <NavLink className="yellow-btn" to="/signin/mentor">Sign-In</NavLink>
+            <CardActions>
+              <NavLink className="yellow-btn" to="/signin/mentor">Sign-In</NavLink>
+            </CardActions>
           </Card>
           <Card className="signInCard" variant="outlined">
             <CardContent>
@@ -51,7 +52,6 @@ class SignIn extends Component {
               <NavLink className="yellow-btn" to="/signin/youth">Sign-In</NavLink>
             </CardActions>
           </Card>
-
         </div>
         <div id="ending">
           <p>New to Foster Feed Friends?</p>
