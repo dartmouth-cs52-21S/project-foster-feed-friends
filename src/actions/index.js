@@ -119,7 +119,6 @@ export function deletePost(id, history) {
 //   };
 // }
 
-
 // export function signinYouth({ email, password }, history) {
 //   // takes in an object with email and password (minimal user object)
 //   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
@@ -138,7 +137,6 @@ export function deletePost(id, history) {
 //     });
 //   };
 // }
-
 
 // export function signinMentor({ email, password }, history) {
 //   return (dispatch) => {
@@ -159,7 +157,6 @@ export function deletePost(id, history) {
 //     // history.push(`/org/profile/${userId}`);
 //   };
 // }
-
 
 // export function signinOrg({ email, password }, history) {
 //   return (dispatch) => {
@@ -231,7 +228,6 @@ export function deletePost(id, history) {
 //   };
 // }
 
-
 // // deletes token from localstorage
 // // and deauths
 // export function signoutUser(history) {
@@ -271,7 +267,6 @@ export function deletePost(id, history) {
 //   };
 // }
 
-
 export function createEvent({
   name, date, time, coordinator, location,
 }, id, history) {
@@ -295,7 +290,8 @@ export function createEvent({
       history.push(`/org/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
-      dispatch(authError(`Event Creation Failed: ${error.response.data}`));
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+      // dispatch(authError(`Event Creation Failed: ${error.response.data}`));
     });
   };
 }
@@ -314,7 +310,6 @@ export function createEvent({
 //     });
 //   };
 // }
-
 
 // export function createEvent({
 //   name, date, time, coordinator, location,

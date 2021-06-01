@@ -2,10 +2,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, NavLink } from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { withRouter } from 'react-router-dom';
 import '../../platform-styles/network-mentor.scss';
 
 class NetworkMentor extends Component {
@@ -19,19 +16,6 @@ class NetworkMentor extends Component {
     return (
       <div>
         <div id="banner">Network</div>
-        <AppBar position="static" className="sortingBar">
-          <Tabs saria-label="simple tabs example">
-            <NavLink to="/orgs">
-              <Tab label="Organizations" />
-            </NavLink>
-            <NavLink to="/mentors">
-              <Tab label="Mentors" />
-            </NavLink>
-            <NavLink to="/network">
-              <Tab label="All" />
-            </NavLink>
-          </Tabs>
-        </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
             className="form-control rounded"

@@ -1,7 +1,7 @@
 // import { ROOT_URL } from './index';
 
 export const ActionTypes = {
-  FETCH_ORGS: 'FECTCH_ORGS',
+  FETCH_ORGS: 'FETCH_ORGS',
   FETCH_ORG: 'FETCH_ORG',
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
