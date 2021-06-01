@@ -14,7 +14,6 @@ class OnBoardingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       titleText: jsonFile[0].titleText,
       transitionTitleText: '',
       transition: false,

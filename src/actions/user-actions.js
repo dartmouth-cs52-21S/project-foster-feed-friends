@@ -1,3 +1,5 @@
+// import { ROOT_URL } from './index';
+
 export const ActionTypes = {
   USER_INFO: 'USER_INFO',
   USER_CLEAR: 'USER_CLEAR',
@@ -6,7 +8,7 @@ export const ActionTypes = {
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'https://localhost:9090/api';
+// const ROOT_URL = 'http://localhost:9090/api';
 // const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -19,8 +21,10 @@ export function errorClear() {
 // get all posts
 export function fetchOrgInfo(id) {
   return (dispatch) => {
+    console.log({ id });
+    console.log('token', localStorage.getItem('token'));
     axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
-      console.log(`hi from renderinfo ${id}`);
+      console.log({ response });
       dispatch({ type: ActionTypes.USER_INFO, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
