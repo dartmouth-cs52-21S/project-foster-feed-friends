@@ -18,6 +18,7 @@ class FosterEdit extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'youth',
     };
   }
 
@@ -50,6 +51,9 @@ class FosterEdit extends Component {
   render = () => {
     return (
       <div>
+        <div className="header">
+          <div id="su-title">Edit Your Profile</div>
+        </div>
         <div>
           <FormControl className="signUpSpecificInput">
             <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name</InputLabel>

@@ -20,34 +20,15 @@ class OnBoardingPage extends Component {
       transitionTitleText: '',
       transition: false,
       options: jsonFile[0].options,
-      // first: true,
+      resourceText: '',
+      resourceLink: '',
       conclusionText: '',
+      // previous: jsonFile,
     };
   }
 
-  // interateKey = (jsonData) => {
-  //   // eslint-disable-next-line guard-for-in
-  //   for (const key in jsonData) {
-  //     return key;
-
-  //     // options.add(`${jsonFile.options[key].options}`);
-  //     // eslint-disable-next-line guard-for-in
-  //     // for (const key2 in jsonFile.options[key].options) {
-  //     //   console.log(`${key2} : ${jsonFile.options[key].options[key2].options}`);
-  //   }
-  // }
-  //   for
-  // }
-
-  // mapTheseHoes= (fileArray) => {
-  //   return fileArray.map((data) => {
-  //     return(
-  //       <div></div>
-  //     );
-  //   }
-
-  // iterateData = (array) => {
-  //   array.forEach()
+  // setPrevious = () => {
+  //   this.setState(prevState => ({options: this.state.previous));
   // }
 
   setConclusionText = (text) => {
@@ -64,51 +45,57 @@ class OnBoardingPage extends Component {
     this.setState({ titleText: text });
   }
 
+  setResourceText = (text) => {
+    this.setState({ resourceText: text });
+  }
+
+  setResourceLink = (text) => {
+    this.setState({ resourceLink: text });
+  }
+
   setOptions = (optionsArray) => {
     this.setState({ options: optionsArray });
   }
 
   continueClick = () => {
     this.setState({ transition: false });
-    // this.setState({ first: false });
   }
 
-  mapJson = (fileArray) => {
-    console.log('json file:', fileArray);
-    return fileArray.map((data) => {
-      console.log('array from .map: ', data.options);
-      return (
-        data.options.map((value) => {
-          console.log('val', value.title);
-          return (
-          // need a way to iterate through all of the things in data and use the json object that is returned to populate onBoardingCard component
-            <div key={value.id} className="accordion" id="accordionPanelsStayOpenExample">
-              <OnBoardingCards
-                key={value.id}
-                title={value.title}
-                hoverText={value.hoverText}
-                transitionTitleText={value.transitionTitleText}
-                setTransitionText={this.setTransitionText}
-                titleText={value.titleText}
-                setTitleText={this.setTitleText}
-                option={data.options}
-                setOptions={this.setOptions}
-                conclusionText={data.conclusionText}
-                setConclusionText={this.setConclusionText}
-              />
-            </div>
-          );
-        }));
-    });
-  }
+  // mapJson = (fileArray) => {
+  //   console.log(localStorage.getItem('pathYouth'));
+
+  //   return fileArray.map((data) => {
+  //     return (
+  //       data.options.map((value) => {
+  //         return (
+  //           <div key={value.id} className="accordion" id="accordionPanelsStayOpenExample">
+  //             <OnBoardingCards
+  //               key={value.id}
+  //               title={value.title}
+  //               hoverText={value.hoverText}
+  //               transitionTitleText={value.transitionTitleText}
+  //               setTransitionText={this.setTransitionText}
+  //               titleText={value.titleText}
+  //               setTitleText={this.setTitleText}
+  //               resourceText={value.resourceText}
+  //               setResourceText={this.setResourceText}
+  //               resourceLink={value.resourceLink}
+  //               setResourceLink={this.setResourceLink}
+  //               option={data.options}
+  //               setOptions={this.setOptions}
+  //               conclusionText={data.conclusionText}
+  //               setConclusionText={this.setConclusionText}
+  //             />
+  //           </div>
+  //         );
+  //       }));
+  //   });
+  // }
 
   mapJsonAfter = (fileArray) => {
-    console.log('json file:', fileArray);
     return fileArray.map((data) => {
-      console.log('data from mapJsonAfter', data);
-      console.log('array from after .map: ', data.options);
+      console.log(fileArray);
       return (
-      // need a way to iterate through all of the things in data and use the json object that is returned to populate onBoardingCard component
         <div key={data.id} className="accordion" id="accordionPanelsStayOpenExample">
           <OnBoardingCards
             key={data.id}
@@ -116,6 +103,10 @@ class OnBoardingPage extends Component {
             hoverText={data.hoverText}
             transitionTitleText={data.transitionTitleText}
             setTransitionText={this.setTransitionText}
+            resourceText={data.resourceText}
+            setResourceText={this.setResourceText}
+            resourceLink={data.resourceLink}
+            setResourceLink={this.setResourceLink}
             titleText={data.titleText}
             setTitleText={this.setTitleText}
             option={data.options}
@@ -128,35 +119,32 @@ class OnBoardingPage extends Component {
     });
   }
 
-  //   return fileArray.map((data) => {
-  //     return <h1>i made it</h1>;
-  //   });
-  // }
-
   render = () => {
     if (!this.state.transition) {
       return (
-
         <div className="onBoardingPage">
+          {/* <div><p>Back</p></div> */}
           <h1 className="title onBoardingTitle">{this.state.titleText}</h1>
           <div className="onBoardingCards">{this.mapJsonAfter(this.state.options)} </div>
-          {/* {this.state.conclusionText !== '' ? <h1 className="title">{this.state.conclusionText}</h1> : <h1 className="title">{this.state.titleText}</h1> } */}
-          {/* {this.mapJsonAfter(this.state.options)} */}
-          {/* { this.state.first ? <div className="onBoardingCards">{this.mapJson(this.state.options)}</div> : (
-            <div className="onBoardingCards">{this.mapJsonAfter(this.state.options)}
-            </div>
-          )} */}
         </div>
       );
     } else {
       return (
         <div className="onBoardingPage">
-          {/* <h1>{this.state.transitionTitleText}</h1> */}
-          {console.log('conslusionText is : ', this.state.conclusionText)}
           {this.state.conclusionText !== undefined ? <h1 className="title onBoardingTitle">{this.state.conclusionText}</h1>
             : <h1 className="title onBoardingTitle">{this.state.transitionTitleText}</h1>}
 
-          {this.state.conclusionText !== undefined ? <NavLink type="button" to="/signup/youth">Finalize Account</NavLink> : <button type="button" onClick={this.continueClick}>Continue </button>}
+          {this.state.resourceText !== undefined && this.state.resourceLink !== undefined
+            ? (
+              <div className="gameOfLifeResource">
+                <h3 className="resourceText">{this.state.resourceText}</h3>
+                <a href={`${this.state.resourceLink}`} target="_blank" rel="noopener noreferrer"> website here!</a>
+              </div>
+            )
+            : <div> Join our family today! </div>}
+
+          {this.state.conclusionText !== undefined ? <NavLink type="button" className="yellow-btn" to="/signup/youth">Finalize Account</NavLink>
+            : <button type="button" className="yellow-btn" onClick={this.continueClick}>Continue </button>}
         </div>
 
       );
