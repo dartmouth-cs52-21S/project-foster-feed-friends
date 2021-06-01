@@ -1,55 +1,71 @@
-import React, { useEffect } from 'react';
-// import { withRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, NavLink } from 'react-router-dom';
 import { fetchOrg } from '../../actions/network-actions';
 // import eventForm from './eventForm';
 
-const NetworkOrgProfile = (props) => {
-  const org = useSelector((state) => state.org);
-  const dispatch = useDispatch();
+// const NetworkOrgProfile = (props) => {
+//   const org = useSelector((state) => state.org);
+//   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchOrg(props.match.params.userID)); // reseting user
-  }, []);
+//   useEffect(() => {
+//     dispatch(fetchOrg(props.match.params.userID)); // reseting user
+//   }, []);
 
-  return (
+class NetworkOrgProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    <div>
-      <div className="profilePageContainer">
-        <div className="leftBar">
-          <h1 className="title">Welcome! {org.current.orgname}</h1>
-          {org.user.events ? <h3 className="sixteenpoint">{org.user.current.length} Events</h3> : null}
+  componentDidMount() {
+    this.props.fetchOrg(this.props.match.params.userID);
+  }
 
-          <NavLink to={`/org/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+  render = () => {
+    return (
+      <div>
+        {console.log(this.props.match)};
+        <div className="profilePageContainer">
+          <div className="leftBar">
+            <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
+            {this.props.currentOrg.events ? <h3 className="sixteenpoint">{this.props.currentOrg.events.length} Events</h3> : null}
 
-          <h3 className="boldtwentyfour">Person of contact name : </h3>
+            <NavLink to={`/org/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
 
-          <h3 className="sixteenpoint">{org.current.poc}</h3>
-          <h3 className="sixteenpoint">{org.current.location}</h3>
-          <h3 className="boldtwentyfour">Email:</h3>
-          <h3 className="sixteenpoint"> {org.current.email} </h3>
-        </div>
-        <div className="eventsContainer">
-          <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
-          <eventForm />
-          <div className="EventsBlock">
-            <h2>Upcoming Events </h2>
-            <div className="underlineLight profileBar" />
-            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
-            <div />
+            <h3 className="boldtwentyfour">Person of contact name : </h3>
+
+            <h3 className="sixteenpoint">{this.props.currentOrg.poc}</h3>
+            <h3 className="sixteenpoint">{this.props.currentOrg.location}</h3>
+            <h3 className="boldtwentyfour">Email:</h3>
+            <h3 className="sixteenpoint"> {this.props.currentOrg.email} </h3>
           </div>
-          <div className="EventsBlock">
-            <h2>Previous Events </h2>
-            <div className="underlineLight profileBar" />
-            {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
-            <div />
+          <div className="eventsContainer">
+            <NavLink className="yellow-btn" to={`/org/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
+            <eventForm />
+            <div className="EventsBlock">
+              <h2>Upcoming Events </h2>
+              <div className="underlineLight profileBar" />
+              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
+              <div />
+            </div>
+            <div className="EventsBlock">
+              <h2>Previous Events </h2>
+              <div className="underlineLight profileBar" />
+              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default NetworkOrgProfile;
+    );
+  }
+}
+function mapStateToProps(reduxState) {
+  return {
+    currentOrg: reduxState.network.currentOrg,
+  };
+}
+export default withRouter(connect(mapStateToProps, { fetchOrg })(NetworkOrgProfile));
