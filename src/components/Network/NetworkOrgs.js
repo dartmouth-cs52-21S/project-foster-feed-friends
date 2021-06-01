@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -28,7 +30,9 @@ class NetworkOrgs extends Component {
               <h5 className="card-title">{org.orgname}</h5>
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
-              <i className="far fa-envelope green-btn" />
+              <i className="far fa-envelope green-btn">
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} />
+              </i>
             </div>
           </div>
           {/* </div> */}

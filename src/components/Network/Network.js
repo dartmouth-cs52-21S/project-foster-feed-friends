@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -26,7 +28,7 @@ class Network extends Component {
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
               <i className="far fa-envelope green-btn">
-                <a href={org.email}>Email Us</a>
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`}>Email</a>
               </i>
             </div>
           </div>
