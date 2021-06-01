@@ -4,9 +4,10 @@ import {
   NavLink,
   withRouter,
 } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { AppBar } from '@material-ui/core';
 import { signoutUser } from '../actions/onboarding-actions';
+import '../website-styles/nav-bar.scss';
 
 function mapStateToProps(reduxState) {
   return {
@@ -21,7 +22,7 @@ const renderAuth = (auth) => {
     return <NavLink to={`/${user.user.type}/profile/${user.user.id}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
     // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
-    return <NavLink className="navSignInButton" to="/signin"><Button className="navSignInButton">Sign In</Button></NavLink>;
+    return <NavLink className="yellow-btn" to="/signin">Sign In</NavLink>;
   }
 };
 

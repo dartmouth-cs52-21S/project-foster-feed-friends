@@ -7,6 +7,9 @@ import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 
 // const [show, setShow] = useState(false);
+// const onDelete = () => {
+
+// }
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
@@ -15,6 +18,7 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-star pink-btn" />
+          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>

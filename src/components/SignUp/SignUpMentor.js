@@ -136,7 +136,7 @@ class SignUpMentor extends Component {
           </div>
 
         </div>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
+        <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
     );
   }
