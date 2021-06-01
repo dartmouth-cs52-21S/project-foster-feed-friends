@@ -234,6 +234,7 @@ export function deletePost(id, history) {
 // }
 
 // get all posts
+
 // export function renderOrgInfo(id) {
 //   return (dispatch) => {
 //     axios.get(`${ROOT_URL}/org/profile/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {

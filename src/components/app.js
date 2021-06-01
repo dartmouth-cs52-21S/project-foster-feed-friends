@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Nav from './Navbar';
 import Landing from './Website/Landing';
 import Educate from './Website/Educate';
 import Mentor from './Website/Mentor';
 import SignIn from './SignIn/SignIn';
-import SignUpFoster from './SignUp/SignUpFoster';
+// import SignUpFoster from './SignUp/SignUpFoster';
 import SignUpOrg from './SignUp/SignUpOrg';
 import SignInFoster from './SignIn/SignInFoster';
 import SignInOrg from './SignIn/SignInOrg';
@@ -32,6 +31,7 @@ import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
 import MentorPath from './MentorOnboarding/Mentor-Path';
+import OnBoardingPage from './YouthOnboarding/onBoardingPage';
 import { authUser } from '../actions/onboarding-actions';
 import Network from './Network/Network';
 import NetworkMentors from './Network/NetworkMentors';
@@ -76,7 +76,7 @@ const App = (props) => {
             <Route path="/signin/mentor" component={SignInMentor} />
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
-            <Route path="/signup/youth" component={SignUpFoster} />
+            <Route path="/signup/youth" component={OnBoardingPage} />
             <Route path="/network" component={Network} />
             <Route path="/network/orgs" component={NetworkOrgs} />
             <Route path="/network/mentors" component={NetworkMentors} />

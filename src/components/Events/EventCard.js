@@ -6,11 +6,11 @@ class EventCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      org: '',
-      date: '',
-      time: '',
-      location: '',
-      contact: '',
+      // org: '',
+      // date: '',
+      // time: '',
+      // location: '',
+      // contact: '',
       // description: '',
       // react: '',
     };
@@ -20,12 +20,12 @@ class EventCard extends Component {
       return (
         <div>
           <div className="leftCard">
-            <p>{this.state.date}</p>
-            <p>{this.state.time}</p>
-            <p>{this.state.location}</p>
+            <p>{this.props.event.date}</p>
+            <p>{this.props.event.time}</p>
+            <p>{this.props.event.location}</p>
           </div>
           <div className="rightCard">
-            <p>{this.state.org}</p>
+            <p>{this.props.orgname}</p>
             {/* <p>{this.state.description}</p> */}
             <p>{this.state.contact}</p>
             {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}

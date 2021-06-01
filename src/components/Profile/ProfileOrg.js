@@ -6,7 +6,9 @@ import { NavLink } from 'react-router-dom';
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import eventForm from './eventForm';
+
 import '../../profile-styles/org-profile.scss';
+
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -23,7 +25,9 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
+
     dispatch(fetchOrgInfo(props.match.params.userID));
+
   }, []);
 
   const onSubmit = () => {
@@ -65,8 +69,10 @@ const ProfileOrg = (props) => {
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
-              <div />
+              {/* {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : org.user.events.map((data, key) => {
+                return (<eventCard org={org.user.orgname} event={data} />);
+              })}
+              <div /> */}
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
