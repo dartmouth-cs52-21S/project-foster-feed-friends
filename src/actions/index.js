@@ -16,11 +16,13 @@ export const ActionTypes = {
   EVENT_CREATE: 'EVENT_CREATE',
   FETCH_ORGS: 'FECTCH_ORGS',
   FETCH_ORG: 'FETCH_ORG',
+  MOMENTS_CLEAR: 'MOMENTS_CLEAR',
+  MOMENT_CLEAR: 'MOMENT_CLEAR',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'https://localhost:9090/api';
-const API_KEY = '?key=fosterfeedfriends';
+// export const ROOT_URL = 'http://localhost:9090/api';
+export const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
 // to clear error after dispatching and handling it

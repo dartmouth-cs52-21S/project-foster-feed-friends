@@ -1,10 +1,14 @@
+// import { ROOT_URL } from './index';
+
+// import API_KEY from './index';
+
 export const ActionTypes = {
   EVENT_CREATE: 'EVENT_CREATE',
   AUTH_ERROR: 'AUTH_ERROR',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'https://localhost:9090/api';
+// const ROOT_URL = 'http://localhost:9090/api';
 // const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -28,11 +32,10 @@ export function createEvent({
       location,
     }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.EVENT_CREATE });
-      localStorage.setItem('token', response.data.token);
-      history.push(`/org/profile/${localStorage.getItem('userId')}`);
+      history.push(`/org/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
-      dispatch(authError(`Event Creation Failed: ${error.response.data}`));
+      dispatch(authError(`Event Creation Failed: ${error.response}`));
     });
   };
 }

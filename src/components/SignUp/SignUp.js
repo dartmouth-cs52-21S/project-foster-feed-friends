@@ -11,8 +11,6 @@ import '../../website-styles/sign-inup.scss';
 
 // const jsonFile = require('../../constants/example.json');
 
-// const jsonFile = require('../../constants/example.json');
-
 // const res = JSON.parse(jsonFile);
 
 class SignUp extends Component {
@@ -47,7 +45,7 @@ class SignUp extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <NavLink className="yellow-btn" to="/SignUp/mentor">Sign-Up</NavLink>
+              <NavLink className="yellow-btn" to="/SignUp/mentormoments">Sign-Up</NavLink>
 
               {/* <button type="button" className="yellowButton"><NavLink class="navLinkButton" to="/SignUp/mentor">Sign-Up</NavLink></button> */}
             </CardActions>

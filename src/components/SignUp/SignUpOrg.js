@@ -94,7 +94,7 @@ class SignUpOrg extends Component {
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
         </FormControl>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
+        <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
-import eventForm from './eventForm';
+// import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
 
@@ -62,7 +62,7 @@ const ProfileOrg = (props) => {
           </div>
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
-            <eventForm />
+            {/* <eventForm /> */}
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
