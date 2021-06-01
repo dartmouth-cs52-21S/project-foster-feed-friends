@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import '../../website-styles/sign-inup.scss';
 
-const jsonFile = require('../../constants/example.json');
+// const jsonFile = require('../../constants/example.json');
 
 // const jsonFile = require('../../constants/example.json');
 
@@ -23,8 +23,6 @@ class SignUp extends Component {
   }
 
   render = () => {
-
-   
     return (
       <div id="signInContainer">
         <h1 className="title"> Choose Your User Sign Up</h1>

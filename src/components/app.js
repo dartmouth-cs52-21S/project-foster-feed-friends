@@ -36,7 +36,6 @@ import MentorPath from './MentorOnboarding/Mentor-Path';
 
 import OnBoardingPage from './YouthOnboarding/onBoardingPage';
 
-
 import { authUser } from '../actions/onboarding-actions';
 import Network from './Network/Network';
 import NetworkMentors from './Network/NetworkMentors';
@@ -84,7 +83,6 @@ const App = (props) => {
 
             <Route path="/signup/youth" component={OnBoardingPage} />
 
-      
             <Route path="/network" component={Network} />
             <Route path="/network/orgs" component={NetworkOrgs} />
             <Route path="/network/mentors" component={NetworkMentors} />
