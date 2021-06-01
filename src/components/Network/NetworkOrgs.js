@@ -23,7 +23,7 @@ class NetworkOrgs extends Component {
   orgsList = () => {
     const map = this.props.allOrgs.map((org) => {
       return (
-        <NavLink to={`orgs/${org.id}`} exact>
+        <NavLink to={`orgs/profile/${org.id}`} exact>
           {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
@@ -31,7 +31,7 @@ class NetworkOrgs extends Component {
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
               <i className="far fa-envelope green-btn">
-                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} />
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
               </i>
             </div>
           </div>
@@ -54,7 +54,7 @@ class NetworkOrgs extends Component {
             <NavLink to="/mentors">
               <Tab label="Mentors" />
             </NavLink>
-            <NavLink to="/mentor/network">
+            <NavLink to="/network">
               <Tab label="All" />
             </NavLink>
           </Tabs>

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -21,9 +21,15 @@ class NetworkMentor extends Component {
         <div id="banner">Network</div>
         <AppBar position="static" className="sortingBar">
           <Tabs saria-label="simple tabs example">
-            <Tab label="Organizations" />
-            <Tab label="Mentors" />
-            <Tab label="All" />
+            <NavLink to="/orgs">
+              <Tab label="Organizations" />
+            </NavLink>
+            <NavLink to="/mentors">
+              <Tab label="Mentors" />
+            </NavLink>
+            <NavLink to="/network">
+              <Tab label="All" />
+            </NavLink>
           </Tabs>
         </AppBar>
         <div className="searchBar input-group rounded">
@@ -45,7 +51,6 @@ class NetworkMentor extends Component {
                 <h6 id="location">Location</h6>
                 <p className="card-text"> Point of Contact Name</p>
                 <p className="card-text"> Website</p>
-                {/* // add on click to make it functional */}
                 <i className="far fa-envelope green-btn" />
               </div>
             </div>

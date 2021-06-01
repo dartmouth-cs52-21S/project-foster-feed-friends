@@ -17,9 +17,10 @@ function mapStateToProps(reduxState) {
 }
 
 const renderAuth = (auth) => {
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   if (auth) {
-    return <NavLink to={`/${localStorage.getItem('type')}/profile/${localStorage.getItem('userId')}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
+    return <NavLink to={`/${user.user.type}/profile/${user.user.id}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
+    // return <NavLink to={`/${localStorage.getItem('type')}/profile/${localStorage.getItem('userId')}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
     // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
     return <NavLink className="yellow-btn" to="/signin">Sign In</NavLink>;
@@ -98,7 +99,7 @@ const NavBar = (props) => {
             </div>
             <div id="navRight">
               <NavLink to="/messages" className="navTab left right">Messages </NavLink>
-              <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
+              <NavLink to="/network" className="navTab left right">Feed Friends </NavLink>
               {renderAuth(props.auth)}
             </div>
           </ul>
@@ -116,7 +117,7 @@ const NavBar = (props) => {
             </div>
             <div id="navRight">
               <NavLink to="/messages" className="navTab left right">Messages </NavLink>
-              <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
+              <NavLink to="/network" className="navTab left right">Feed Friends </NavLink>
               {renderAuth(props.auth)}
             </div>
           </ul>
