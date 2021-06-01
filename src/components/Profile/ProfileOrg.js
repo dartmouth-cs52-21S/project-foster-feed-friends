@@ -4,16 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
-
 // import EventForm from './eventForm';
 import EventCard from '../Events/EventCard';
 
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
+import { fetchEvents } from '../../actions/events-actions';
 // import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
-
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
@@ -33,6 +32,7 @@ const ProfileOrg = (props) => {
 
   useEffect(() => {
     dispatch(fetchOrgInfo(props.match.params.userID));
+    dispatch(fetchEvents(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {
@@ -86,9 +86,8 @@ const ProfileOrg = (props) => {
                     coordinator={data.coordinator}
                   />
                 );
-
-              })}
-              <div /> */}
+              }) }
+              <div />
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>

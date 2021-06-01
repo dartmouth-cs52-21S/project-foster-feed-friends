@@ -4,6 +4,7 @@
 
 export const ActionTypes = {
   EVENT_CREATE: 'EVENT_CREATE',
+  FETCH_EVENTS: 'FETCH_EVENTS',
   AUTH_ERROR: 'AUTH_ERROR',
 };
 
@@ -19,6 +20,27 @@ export function authError(error) {
   };
 }
 
+// export function createEvent({
+//   name, date, time, coordinator, location,
+// }, id, history) {
+//   return (dispatch) => {
+//     axios.post(`${ROOT_URL}/org/profile/${id}/event`, {
+//       name,
+//       date,
+//       time,
+//       coordinator,
+//       // description,
+//       location,
+//     }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+//       dispatch({ type: ActionTypes.EVENT_CREATE });
+//       history.push(`/org/profile/${id}`);
+//     }).catch((error) => {
+//       console.log('catch');
+//       dispatch(authError(`Event Creation Failed: ${error.response}`));
+//     });
+//   };
+// }
+
 export function createEvent({
   name, date, time, coordinator, location,
 }, id, history) {
@@ -32,10 +54,26 @@ export function createEvent({
       location,
     }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.EVENT_CREATE });
+      console.log(`${ROOT_URL}/org/${id}/events`);
+      // axios.get(`${ROOT_URL}/org/${id}/events`).then((value) => {
+      //   console.log('Events Data', value);
+      //   dispatch({ type: ActionTypes.FETCH_EVENTS, payload: value.data });
+      // });
       history.push(`/org/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
-      dispatch(authError(`Event Creation Failed: ${error.response}`));
+      dispatch(authError(`Event Creation Failed: ${error.response.data}`));
+    });
+  };
+}
+export function fetchEvents(id) {
+  return (dispatch) => {
+    console.log('fetch events token:', localStorage.getItem('token'));
+    axios.get(`${ROOT_URL}/org/${id}/events`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_EVENTS, payload: response.data });
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Event fetch Failed: ${error.response.data}`));
     });
   };
 }

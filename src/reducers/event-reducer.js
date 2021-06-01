@@ -11,6 +11,7 @@ const EventReducer = (state = initialState, action) => {
     case ActionTypes.EVENT_CREATE:
       return { ...state, event: action.payload };
     case ActionTypes.FETCH_EVENTS:
+      console.log('heeeellllllllllllooopooooooooooo', { ...state, all: action.payload });
       return { ...state, all: action.payload };
     default:
       return state;

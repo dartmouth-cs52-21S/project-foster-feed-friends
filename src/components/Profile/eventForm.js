@@ -24,7 +24,7 @@ const EventForm = (props) => {
   const history = useHistory();
 
   useEffect(() => {
-    renderOrgInfo(props.match.params.userID);
+    fetchOrgInfo(props.match.params.userID);
   }, []);
 
   const handleChange = (event) => {
