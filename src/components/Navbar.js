@@ -17,9 +17,9 @@ function mapStateToProps(reduxState) {
 }
 
 const renderAuth = (auth) => {
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   if (auth) {
-    return <NavLink to={`/${user.user.type}/profile/${user.user.id}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
+    return <NavLink to={`/${localStorage.getItem('type')}/profile/${localStorage.getItem('userId')}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
     // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
     return <NavLink className="yellow-btn" to="/signin">Sign In</NavLink>;

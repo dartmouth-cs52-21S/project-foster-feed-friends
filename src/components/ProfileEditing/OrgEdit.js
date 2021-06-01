@@ -17,6 +17,7 @@ class OrgEdit extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'org',
     };
   }
 
@@ -62,7 +63,7 @@ class OrgEdit extends Component {
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
-          <div id="su-title">Welcome to Foster Feed Friends! Sign up to [...]</div>
+          <div id="su-title">Edit Your Profile</div>
         </div>
         <FormControl className="signUpSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>

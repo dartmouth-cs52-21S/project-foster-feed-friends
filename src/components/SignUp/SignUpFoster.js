@@ -21,6 +21,7 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      path: localStorage.getItem('youthPath'),
       type: 'youth',
     };
   }
@@ -73,6 +74,8 @@ class SignUpFoster extends Component {
       password: '',
       passwordconfirm: '',
     });
+    localStorage.removeItem('pathYouth');
+    console.log(localStorage.removeItem('pathYouth'));
   }
 
   render = () => {

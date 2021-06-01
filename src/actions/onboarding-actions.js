@@ -39,7 +39,6 @@ export function signinMentor({ email, password }, history) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signin/mentor`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
-      // dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
@@ -51,7 +50,6 @@ export function signinMentor({ email, password }, history) {
 export function authUser(userId) {
   return (dispatch) => {
     dispatch({ type: ActionTypes.AUTH_USER, payload: userId });
-    // history.push(`/org/profile/${userId}`);
   };
 }
 
@@ -121,6 +119,8 @@ export function signupOrg(
 export function signoutUser(history) {
   return (dispatch) => {
     localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('type');
     dispatch({ type: ActionTypes.DEAUTH_USER });
     dispatch({ type: ActionTypes.USER_CLEAR });
     history.push('/');
