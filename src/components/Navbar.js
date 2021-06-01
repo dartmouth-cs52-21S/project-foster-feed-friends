@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import {
   NavLink,
   withRouter,
@@ -11,37 +11,77 @@ import { signoutUser } from '../actions/onboarding-actions';
 function mapStateToProps(reduxState) {
   return {
     auth: reduxState.auth.authenticated,
+    // user: reduxState.user.user,
   };
 }
 
 const renderAuth = (auth, signout, history) => {
   if (auth) {
+    console.log('auth');
     return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
+    console.log('no auth');
     return <NavLink className="navSignInButton" to="/signin"><Button className="navSignInButton">Sign In</Button></NavLink>;
   }
 };
 
 const NavBar = (props) => {
-  return (
-    <AppBar position="static" id="navBarContainer">
-      {/* <img alt=" " src="../img/logo.png" /> */}
-      <div className="link-background">
-        <ul>
-          <div id="title">
-            <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
-          </div>
-          <div id="navRight">
-            <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
-            <NavLink to="/educate" className="navTab left right">Educate </NavLink>
-            {renderAuth(props.auth, props.signoutUser, props.history)}
-          </div>
-        </ul>
-      </div>
-    </AppBar>
-  );
+  const user = useSelector((state) => state.user);
+  if (props.auth && user.user.type === 'youth') {
+    return (
+      <AppBar position="static" id="navBarContainer">
+        {/* <img alt=" " src="../img/logo.png" /> */}
+        <div className="link-background">
+          <ul>
+            <div id="title">
+              <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
+            </div>
+            <div id="navRight">
+              <NavLink to="/messages" className="navTab left right">Messages </NavLink>
+              <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
+              {renderAuth(props.auth, props.signoutUser, props.history)}
+            </div>
+          </ul>
+        </div>
+      </AppBar>
+    );
+  } else if (props.auth && (user.user.type === 'mentor' || user.user.type === 'org')) {
+    return (
+      <AppBar position="static" id="navBarContainer">
+        {/* <img alt=" " src="../img/logo.png" /> */}
+        <div className="link-background">
+          <ul>
+            <div id="title">
+              <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
+            </div>
+            <div id="navRight">
+              <NavLink to="/messages" className="navTab left right">Messages </NavLink>
+              <NavLink to="/resources" className="navTab left right">Feed Friends </NavLink>
+              {renderAuth(props.auth, props.signoutUser, props.history)}
+            </div>
+          </ul>
+        </div>
+      </AppBar>
+    );
+  } else {
+    return (
+      <AppBar position="static" id="navBarContainer">
+        {/* <img alt=" " src="../img/logo.png" /> */}
+        <div className="link-background">
+          <ul>
+            <div id="title">
+              <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
+            </div>
+            <div id="navRight">
+              <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
+              <NavLink to="/educate" className="navTab left right">Educate </NavLink>
+              {renderAuth(props.auth, props.signoutUser, props.history)}
+            </div>
+          </ul>
+        </div>
+      </AppBar>
+    );
+  }
 };
-
-// const ConnectedNav = connect(mapStateToProps, { signoutUser })(withRouter(NavBar));
 
 export default withRouter(connect(mapStateToProps, { signoutUser })(NavBar));
