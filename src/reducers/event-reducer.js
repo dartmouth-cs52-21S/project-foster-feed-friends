@@ -10,6 +10,8 @@ const EventReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.EVENT_CREATE:
       return { ...state, event: action.payload };
+    case ActionTypes.FETCH_EVENTS:
+      return { ...state, all: action.payload };
     default:
       return state;
   }

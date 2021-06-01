@@ -14,10 +14,11 @@ export const ActionTypes = {
   USER_CLEAR: 'USER_CLEAR',
   UPDATE_USER: 'UPDATE_USER',
   EVENT_CREATE: 'EVENT_CREATE',
+  FETCH_EVENTS: 'FETCH_EVENTS',
 };
 
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'https://localhost:9090/api';
+// const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -118,7 +119,7 @@ export function signinYouth({ email, password }, history) {
   //  localStorage.setItem('token', response.data.token);
   // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin/youth/${API_KEY}`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signin/youth`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       history.push(`/youth/profile/${response.data.ID}`);
@@ -150,7 +151,7 @@ export function authUser(userId) {
 
 export function signinOrg({ email, password }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin/org/${API_KEY}`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signin/org`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER, payload: response.data.ID });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
@@ -165,7 +166,7 @@ export function signupYouth({
   email, password, firstName, lastName, age, hometown,
 }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/youth/${API_KEY}`, {
+    axios.post(`${ROOT_URL}/signup/youth`, {
       email, password, firstName, lastName, age, hometown,
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
@@ -183,7 +184,7 @@ export function signupMentor({
   email, password, firstName, lastName, foster, organization, careerPath,
 }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/mentor/${API_KEY}`, {
+    axios.post(`${ROOT_URL}/signup/mentor`, {
       email, password, firstName, lastName, foster, organization, careerPath,
     }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
@@ -200,7 +201,8 @@ export function signupOrg({
 }, history) {
   return (dispatch) => {
     console.log('inside action singup');
-    axios.post(`${ROOT_URL}/signup/org/${API_KEY}`, {
+    console.log(`${ROOT_URL}/signup/org`);
+    axios.post(`${ROOT_URL}/signup/org`, {
       orgname,
       location,
       pocname,
@@ -283,8 +285,14 @@ export function createEvent({
       // description,
       location,
     }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      console.log('Creating an Event');
       dispatch({ type: ActionTypes.EVENT_CREATE });
       localStorage.setItem('token', response.data.token);
+      console.log(`${ROOT_URL}/org/${id}/events`);
+      axios.get(`${ROOT_URL}/org/${id}/events`).then((value) => {
+        console.log('Events Data', value);
+        dispatch({ type: ActionTypes.FETCH_EVENTS, payload: value.data });
+      });
       history.push(`/org/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
