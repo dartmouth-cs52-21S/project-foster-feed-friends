@@ -67,7 +67,7 @@ class SubmitResource extends Component {
             <Input id="component-simple" className="sixteenpoint" value={this.state.pocemail} onChange={this.handlePOCEmailChange} />
           </FormControl>
           <FormControl className="resourceSpecificInput">
-            <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation</InputLabel>
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Website</InputLabel>
             <Input id="component-simple" className="sixteenpoint" value={this.state.website} onChange={this.handleWebsiteChange} />
           </FormControl>
           <FormControl className="resourceSpecificInput" />

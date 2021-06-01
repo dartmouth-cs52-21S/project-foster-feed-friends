@@ -44,7 +44,7 @@ export function fetchResources() {
 // get a post by id
 export function fetchResource(id) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/resource/${id}`).then((response) => {
+    axios.get(`${ROOT_URL}/resources/${id}`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_RESOURCE, payload: response.data });
       errorClear()(dispatch);
     }).catch((error) => {

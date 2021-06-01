@@ -99,7 +99,6 @@ export function updateYouth(youth, history) {
 
 export function updateOrg(org, history) {
   console.log('updated org: ', org);
-
   return (dispatch) => {
     axios.put(`${ROOT_URL}/org/profile/${org.id}/edit`, org, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });

@@ -33,6 +33,7 @@ class OnBoardingCards extends Component {
     } else {
       localStorage.setItem('pathYouth', (`${localStorage.getItem('pathYouth')}: ${this.state.text}`));
     }
+    console.log(localStorage.getItem('pathYouth'));
     this.props.setTransitionText(this.state.transitionTitleText);
     this.props.setTitleText(this.state.titleText);
     this.props.setOptions(this.state.options);

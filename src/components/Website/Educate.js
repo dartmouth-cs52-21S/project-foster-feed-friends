@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import * as ReactBootStrap from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { signoutUser } from '../../actions/onboarding-actions';
 import Footer from './footer';
 import '../../website-styles/educate.scss';
@@ -16,6 +16,7 @@ class Educate extends Component {
   render = () => {
     return (
       <div>
+
         <div id="educateRowI">
           <img src="src/img/educateI.png" alt="grad cap young woman" />
           <img src="src/img/educateIII.png" alt="young men gathered around computer" />
@@ -29,6 +30,10 @@ class Educate extends Component {
           <div id="three" className="educateLanding" />
           <div id="two" className="educateLanding" />
           <div id="one" className="educateLanding" />
+        </div>
+        <div>
+          <h1>Have a resource to share? Let us know!</h1>
+          <NavLink className="yellow-btn" to="/submitResource">Submit a Resource</NavLink>
         </div>
         <div className="educateContent">
           <h2>Empathy</h2>

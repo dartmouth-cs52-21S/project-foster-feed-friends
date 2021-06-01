@@ -32,7 +32,6 @@ class OnBoardingPage extends Component {
   // }
 
   setConclusionText = (text) => {
-    console.log('made it in set conclusion text');
     this.setState({ conclusionText: text });
   }
 

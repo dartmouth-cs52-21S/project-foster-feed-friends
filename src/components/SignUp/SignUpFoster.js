@@ -21,7 +21,7 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
-      path: localStorage.getItem('youthPath'),
+      path: localStorage.getItem('pathYouth'),
       type: 'youth',
     };
   }
@@ -75,10 +75,11 @@ class SignUpFoster extends Component {
       passwordconfirm: '',
     });
     localStorage.removeItem('pathYouth');
-    console.log(localStorage.removeItem('pathYouth'));
+    console.log('shouldbe empty/undefined:', localStorage.removeItem('pathYouth'));
   }
 
   render = () => {
+    console.log('path youth =', localStorage.getItem('pathYouth'));
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
