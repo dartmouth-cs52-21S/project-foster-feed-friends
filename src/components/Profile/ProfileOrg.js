@@ -9,7 +9,6 @@ import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
 
-
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -25,9 +24,7 @@ const ProfileOrg = (props) => {
   console.log(org);
 
   useEffect(() => {
-
     dispatch(fetchOrgInfo(props.match.params.userID));
-
   }, []);
 
   const onSubmit = () => {
