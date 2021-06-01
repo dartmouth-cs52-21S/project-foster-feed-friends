@@ -9,6 +9,7 @@ import EventCard from '../Events/EventCard';
 
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
+import { fetchEvents } from '../../actions/events-actions';
 // import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
@@ -31,6 +32,7 @@ const ProfileOrg = (props) => {
 
   useEffect(() => {
     dispatch(fetchOrgInfo(props.match.params.userID));
+    dispatch(fetchEvents(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {
