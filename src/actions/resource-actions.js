@@ -4,7 +4,7 @@ const ROOT_URL = 'https://foster-project.herokuapp.com/api';
 const axios = require('axios').default;
 
 export const ActionTypes = {
-  CREATE_RESOURCE: 'CREATE_RESOURC',
+  CREATE_RESOURCE: 'CREATE_RESOURCE',
   FETCH_RESOURCES: 'FETCH_RESOURCES',
   FETCH_RESOURCE: 'FETCH_RESOURCE',
   CLEAR_RESOURCE: 'CLEAR_RESOURCE',
@@ -19,11 +19,11 @@ export function errorClear() {
   };
 }
 
-export function createResource(fields, history) {
+export function createResource(fields) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/submitResource`, fields).then((response) => {
+      console.log('create resource fields: ', fields);
       dispatch({ type: ActionTypes.CREATE_RESOURCE });
-      history.push('/');
     }).catch((error) => {
       console.log('catch resource: ', error);
     });
