@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Nav from './Navbar';
 import Landing from './Website/Landing';
@@ -25,17 +24,14 @@ import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
-// import SignUpMentor from './SignUp/SignUpMentor';
+import SignUpMentor from './SignUp/SignUpMentor';
 import eventForm from './Profile/eventForm';
 import PrivateRoute from './PrivateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
-// import MentorPath from './MentorOnboarding/Mentor-Path';
 import MentorPath from './MentorOnboarding/Mentor-Path';
-
 import OnBoardingPage from './YouthOnboarding/onBoardingPage';
-
 import { authUser } from '../actions/onboarding-actions';
 import Network from './Network/Network';
 import NetworkMentors from './Network/NetworkMentors';
@@ -80,16 +76,18 @@ const App = (props) => {
             <Route path="/signin/mentor" component={SignInMentor} />
             <Route exact path="/signup" component={SignUp} />
             <Route path="/signup/org" component={SignUpOrg} />
-
             <Route path="/signup/youth" component={OnBoardingPage} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 03cf08e0dc5c1d80b7fbde3f1039a72ccebf67b4
             <Route path="/network" component={Network} />
             <Route path="/network/orgs" component={NetworkOrgs} />
             <Route path="/network/mentors" component={NetworkMentors} />
             {/* <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} /> */}
             {/* // specific org profile after clicking card */}
-            {/* <Route path="/signup/mentor" component={SignUpMentor} /> */}
-            <Route path="/signup/mentor" component={MentorPath} />
+            <Route path="/signup/mentor" component={SignUpMentor} />
+            <Route path="/signup/mentormoments" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />

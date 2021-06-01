@@ -25,6 +25,7 @@ ul{
 }
   
 .navTab{
+    text-decoration: none;
     padding:10px;
     text-align: center;
     color:$white;
@@ -97,4 +98,5 @@ a.left:hover:before {
     margin-left: 20px;
     margin-top: 5px;
 }
+
 

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
@@ -77,10 +78,22 @@ class MomentModal extends Component {
               </div>
               <h6>Choose the symbol best representing this moment.</h6>
               <div className="moment-buttons">
-                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'star' })} symbol={this.state.symbol}>star</button>
-                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'bridge' })} symbol={this.state.symbol}>bridge</button>
-                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'circle' })} symbol={this.state.symbol}>full circle</button>
-                <button className="pink-btn" type="button" onClick={() => this.setState({ symbol: 'none' })} symbol={this.state.symbol}>none</button>
+                <div className="img-btn">
+                  <button className="fas fa-star pink-btn" type="button" onClick={() => this.setState({ symbol: 'star' })} symbol={this.state.symbol} />
+                  <p>star</p>
+                </div>
+                <div className="img-btn">
+                  <button className="fas fa-archway pink-btn" type="button" onClick={() => this.setState({ symbol: 'bridge' })} symbol={this.state.symbol} />
+                  <p>bridge</p>
+                </div>
+                <div className="img-btn">
+                  <button className="fas fa-spinner pink-btn" type="button" onClick={() => this.setState({ symbol: 'circle' })} symbol={this.state.symbol} />
+                  <p>full-circle</p>
+                </div>
+                <div className="img-btn">
+                  <button className="fas fa-slash pink-btn" type="button" onClick={() => this.setState({ symbol: 'none' })} symbol={this.state.symbol} />
+                  <p>none</p>
+                </div>
               </div>
             </div>
             <div className="moment-footer">

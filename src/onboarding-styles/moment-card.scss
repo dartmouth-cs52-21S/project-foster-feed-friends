@@ -8,6 +8,19 @@ $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
 #mom-card{
-    height: 100px;
     width: 200px;
+    background-color: $light-green;
+}
+#mom-title{
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+#mom-desc{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+#mom-sym{
+    background-color: $pink;
 }

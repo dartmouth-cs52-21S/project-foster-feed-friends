@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
@@ -7,14 +7,19 @@ import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 
 // const [show, setShow] = useState(false);
+// const onDelete = () => {
+
+// }
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-star pink-btn" />
+          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -23,8 +28,9 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-archway pink-btn" />
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -33,8 +39,9 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          <i className="fas fa-spinner pink-btn" />
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -43,8 +50,8 @@ const MomentThumbnail = (props) => {
       <div className="card" id="mom-card">
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
-          <p className="card-tags" id="mom-tags">{props.moment.description}</p>
-          <p className="card-tags" id="mom-tags">{props.moment.symbol}</p>
+          <p className="card-desc" id="mom-desc">{props.moment.description}</p>
+          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -65,13 +72,9 @@ class MentorPath extends Component {
     }
   }
 
-  // onAdd = (title, description) => {
-  //   this.setState({
-  //     show: false,
-  //     title: this.props.post.title,
-  //     description: this.props.description,
-  //   });
-  // };
+  onDone = () => {
+    localStorage.setItem('momentsPath', this.props.allMoments);
+  };
 
   showMoments = (moments) => {
     if (moments) {
@@ -109,7 +112,7 @@ class MentorPath extends Component {
         <MomentModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
         <div className="done-btn">
-          <button className="yellow-btn" type="submit">Done</button>
+          <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
         </div>
       </div>
     );
