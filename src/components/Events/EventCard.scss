@@ -1,0 +1,27 @@
+.totalCard{
+    width:300px;
+    // background-color: grey;
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px 10px;
+    border-radius: 25px;
+    border:2px solid black;
+    
+
+}
+
+// .card.event{
+//     margin-left: 25px;
+//     width: 250px;
+//     height: 100px;
+// }
+.leftCard{
+    display: flex;
+    flex-direction: column;
+}
+.rightCard{
+    display: flex;
+    flex-direction: column;
+}

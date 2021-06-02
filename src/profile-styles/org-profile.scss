@@ -13,7 +13,7 @@ $pink:#D34D9D;
     padding-top: 24px;
     background-color: #92C893;
     height: 100vh;
-    width: 30%;
+    width: 500px;
 }
 .boldtwentyfour{
     font-family: 'Nunito';
@@ -43,3 +43,10 @@ $pink:#D34D9D;
 .EventsBlock{
     padding-top: 25px;
 }
+.eventsRow{
+    margin-top: 20px;
+    display: flex;
+    overflow-x: auto;
+    width:900px;
+}
+.eventsRow::-webkit-scrollbar {display: none;}

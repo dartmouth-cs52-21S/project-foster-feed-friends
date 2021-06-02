@@ -74,25 +74,27 @@ const ProfileOrg = (props) => {
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
-                return (
-                  <EventCard
+              <div className="eventsRow">
+                {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
+                  return (
+                    <EventCard
                     // eslint-disable-next-line react/no-array-index-key
-                    key={key}
-                    name={data.name}
-                    date={data.date}
-                    time={data.time}
-                    location={data.location}
-                    coordinator={data.coordinator}
-                  />
-                );
-              }) }
-              <div />
+                      key={key}
+                      name={data.name}
+                      date={data.date}
+                      time={data.time}
+                      location={data.location}
+                      coordinator={data.coordinator}
+                    />
+                  );
+                }) }
+              </div>
+
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
               <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              {org.user.events ? <h3 className="sixteenpoint">No Past Events</h3> : null }
               <div />
             </div>
           </div>
