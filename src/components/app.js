@@ -24,8 +24,12 @@ import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
+
+// import SignUpMentor from './SignUp/SignUpMentor';
+import EventForm from './Profile/eventForm';
+
 import SignUpMentor from './SignUp/SignUpMentor';
-import eventForm from './Profile/eventForm';
+
 import PrivateRoute from './PrivateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
@@ -38,6 +42,7 @@ import NetworkMentors from './Network/NetworkMentors';
 import NetworkOrgs from './Network/NetworkOrgs';
 import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
+import Resource from './Resource';
 
 const theme = createMuiTheme({
   palette: {
@@ -73,6 +78,7 @@ const App = (props) => {
             <Route path="/educate" component={Educate} />
             <Route exact path="/signin" component={SignIn} />
             <Route path="/submitResource" component={SubmitResource} />
+            <Route path="/resources" component={Resource} />
             <Route path="/signin/org" component={SignInOrg} />
             <Route path="/signin/youth" component={SignInFoster} />
             <Route path="/signin/mentor" component={SignInMentor} />
@@ -80,9 +86,9 @@ const App = (props) => {
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
             <Route path="/signup/youthOnboarding" component={OnBoardingPage} />
-            <Route path="/network" component={Network} />
-            <Route path="/network/orgs" component={NetworkOrgs} />
-            <Route path="/network/mentors" component={NetworkMentors} />
+            <Route path="/networks/all" component={Network} />
+            <Route path="/networks/resources" component={NetworkOrgs} />
+            <Route path="/networks/mentors" component={NetworkMentors} />
             <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
@@ -94,7 +100,7 @@ const App = (props) => {
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
             <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />
-            <PrivateRoute path="/org/profile/:userID/event" component={eventForm} />
+            <PrivateRoute path="/org/profile/:userID/event" component={EventForm} />
             <PrivateRoute component={FallBack} />
           </Switch>
         </div>

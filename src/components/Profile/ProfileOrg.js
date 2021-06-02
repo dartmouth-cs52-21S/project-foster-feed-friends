@@ -3,14 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
+
+// import EventForm from './eventForm';
+import EventCard from '../Events/EventCard';
+
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
+import { fetchEvents } from '../../actions/events-actions';
 // import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
+  const { all } = useSelector((state) => state.events);
+  console.log(all);
   const dispatch = useDispatch();
   const history = useHistory();
   // const [editing, toggleEditing] = useState(false);
@@ -25,6 +32,7 @@ const ProfileOrg = (props) => {
 
   useEffect(() => {
     dispatch(fetchOrgInfo(props.match.params.userID));
+    dispatch(fetchEvents(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {
@@ -62,14 +70,24 @@ const ProfileOrg = (props) => {
           </div>
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
-            {/* <eventForm /> */}
+
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {/* {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : org.user.events.map((data, key) => {
-                return (<eventCard org={org.user.orgname} event={data} />);
+              {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
+                return (
+                  <EventCard
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={key}
+                    name={data.name}
+                    date={data.date}
+                    time={data.time}
+                    location={data.location}
+                    coordinator={data.coordinator}
+                  />
+                );
               })}
-              <div /> */}
+              <div />
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
