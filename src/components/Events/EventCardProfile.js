@@ -1,28 +1,26 @@
 import React from 'react';
 import './EventCard.scss';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 const EventCard = ({
   name, date, time, location, coordinator, id, currentOrgID,
 }) => {
   return (
-    <NavLink to={`${currentOrgID}/event/${id}`}>
-      <div className="totalCard">
-        {/* <div className="card-body"> */}
-        <div className="leftCard">
-          <p>{date}</p>
-          <p>{time}</p>
-          <p>{location}</p>
-        </div>
-        <div className="rightCard">
-          <p>{name}</p>
-          {/* <p>{this.state.description}</p> */}
-          <p>{coordinator}</p>
-          {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
-        </div>
-        {/* </div> */}
+    <div className="totalCard">
+      {/* <div className="card-body"> */}
+      <div className="leftCard">
+        <p>{date}</p>
+        <p>{time}</p>
+        <p>{location}</p>
       </div>
-    </NavLink>
+      <div className="rightCard">
+        <p>{name}</p>
+        {/* <p>{this.state.description}</p> */}
+        <p>{coordinator}</p>
+        {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
+      </div>
+      {/* </div> */}
+    </div>
 
   );
 };

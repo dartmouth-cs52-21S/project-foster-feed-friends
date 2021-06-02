@@ -23,20 +23,20 @@ class NetworkMentors extends Component {
   mentorsList = () => {
     const map = this.props.allMentors.map((mentor) => {
       return (
-        <NavLink to={`mentor/profile/${mentor.id}`} exact>
-          {/* <div className="col-sm-6"> */}
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
-              <h6 id="location">{mentor.hometown}</h6>
-              <p className="card-text"> {mentor.bio}</p>
-              <i className="far fa-envelope green-btn">
-                <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
-              </i>
-            </div>
+      // <NavLink to={`mentor/profile/${mentor.id}`} exact>
+      /* <div className="col-sm-6"> */
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
+            <h6 id="location">{mentor.hometown}</h6>
+            <p className="card-text"> {mentor.bio}</p>
+            <i className="far fa-envelope green-btn">
+              <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
+            </i>
           </div>
-          {/* </div> */}
-        </NavLink>
+        </div>
+      /* </div> */
+      /* </NavLink> */
       );
     });
     return map;

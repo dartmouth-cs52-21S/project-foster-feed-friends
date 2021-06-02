@@ -5,8 +5,10 @@ import { useHistory } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+// import DatePicker from 'react-datepicker';
 import { createEvent } from '../../actions/events-actions';
 import { fetchOrgInfo } from '../../actions/user-actions';
+// import 'react-datepicker/dist/react-datepicker.css';
 
 const EventForm = (props) => {
   const [state, setState] = useState(
@@ -39,6 +41,19 @@ const EventForm = (props) => {
     dispatch(createEvent(state, props.match.params.userID, history));
   };
 
+  // const DateTimePicker = () => {
+  //   const [startDate, setStartDate] = useState(new Date());
+  //   return (
+  //     <DatePicker
+  //       selected={startDate}
+  //       onChange={(date) => setStartDate(date)}
+  //       timeInputLabel="Time:"
+  //       dateFormat="MM/dd/yyyy h:mm aa"
+  //       showTimeInput
+  //     />
+  //   );
+  // };
+
   return (
     <div>
       <form>
@@ -46,6 +61,7 @@ const EventForm = (props) => {
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Name</InputLabel>
           <Input name="name" id="component-simple" className="sixteenpoint" value={state.name} onChange={handleChange} />
         </FormControl>
+        {/* <DateTimePicker onChange={(startDate) => setState({ date: startDate })} /> */}
         <FormControl className="signUpSpecificInput">
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Event Date</InputLabel>
           <Input name="date" id="component-simple" className="sixteenpoint" value={state.date} onChange={handleChange} />

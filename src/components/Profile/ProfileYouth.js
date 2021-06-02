@@ -6,9 +6,11 @@ import { NavLink } from 'react-router-dom';
 import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchYouthEvents } from '../../actions/events-actions';
+import EventCardProfile from '../Events/EventCard';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
+  const { all } = useSelector((state) => state.events);
   const dispatch = useDispatch();
   const history = useHistory();
   console.log(youth);
@@ -29,17 +31,18 @@ const ProfileYouth = (props) => {
         <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
         {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
         <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-        <h3 className="boldtwentyfour">Person of contact name : </h3>
 
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
         {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
         {/* <h3 className="sixteenpoint">{youth.f}</h3> */}
-        <h3 className="sixteenpoint">path: {youth.user.path}</h3>
-        <h3 className="sixteenpoint">{youth ? <h1>{youth.user.hometown}</h1> : null }</h3>
+        <h3 className="boldtwentyfour">path:</h3>
+        <h3 className="sixteenpoint">{youth.user.path}</h3>
+        <h3 className="boldtwentyfour">hometown:</h3>
+        <h3 className="sixteenpoint">{youth ? youth.user.hometown : null }</h3>
         <h3 className="boldtwentyfour">Email:</h3>
-        <h3 className="sixteenpoint"> {youth ? <h1>{youth.user.email}</h1> : null } </h3>
-        <h3 className="boldtwentyfour">Badges</h3>
-        <div className="badgeContainer">
+        <h3 className="sixteenpoint"> {youth ? youth.user.email : null } </h3>
+        {/* <h3 className="boldtwentyfour">Badges</h3> */}
+        {/* <div className="badgeContainer">
           <div className="badge">
             <div> Badge 1</div>
             <h4>One Connection </h4>
@@ -52,7 +55,7 @@ const ProfileYouth = (props) => {
             <div> Badge 3</div>
             <h4>twenty-five Connection </h4>
           </div>
-        </div>
+        </div> */}
         <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
       </div>
       <div className="eventsContainer">
@@ -66,7 +69,19 @@ const ProfileYouth = (props) => {
         <div className="EventsBlock">
           <h2>Events </h2>
           <div className="underlineLight profileBar" />
-          {youth.user.events ? <h3 className="sixteenpoint">Explore Events</h3> : null }
+          {all.length === 0 ? <h3 className="sixteenpoint">Explore Events</h3> : all.map((data, key) => {
+            return (
+              <EventCardProfile
+                key={data._id}
+                name={data.name}
+                date={data.date}
+                time={data.time}
+                location={data.location}
+                id={data._id}
+                coordinator={data.coordinator}
+              />
+            );
+          }) }
           <div />
         </div>
       </div>
