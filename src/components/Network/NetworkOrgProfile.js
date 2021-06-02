@@ -30,6 +30,7 @@ class NetworkOrgProfile extends Component {
   }
 
   render = () => {
+    console.log('org id:', this.props.currentOrg.id);
     return (
       <div>
         <div className="profilePageContainer">
@@ -51,15 +52,18 @@ class NetworkOrgProfile extends Component {
               <div className="underlineLight profileBar" />
               <div className="eventsRow">
                 {this.props.all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : this.props.all.map((data, key) => {
+                  console.log('current event id:', data.id);
                   return (
                     <EventCardYouth
                     // eslint-disable-next-line react/no-array-index-key
-                      key={key}
+                      key={data._id}
                       name={data.name}
                       date={data.date}
                       time={data.time}
                       location={data.location}
+                      id={data._id}
                       coordinator={data.coordinator}
+                      currentOrgID={this.props.currentOrg.id}
                     />
                   );
                 }) }

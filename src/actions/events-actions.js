@@ -5,6 +5,7 @@
 export const ActionTypes = {
   EVENT_CREATE: 'EVENT_CREATE',
   FETCH_EVENTS: 'FETCH_EVENTS',
+  FETCH_EVENT: 'FETCH_EVENT',
   AUTH_ERROR: 'AUTH_ERROR',
 };
 
@@ -83,6 +84,30 @@ export function fetchYouthEvents(id) {
     console.log('fetch events token:', localStorage.getItem('token'));
     axios.get(`${ROOT_URL}/youth/${id}/events`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.FETCH_EVENTS, payload: response.data });
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Event fetch Failed: ${error.response.data}`));
+    });
+  };
+}
+
+export function fetchSpecificEvent(id, eventID) {
+  console.log(localStorage.getItem('token'));
+  console.log(id, eventID);
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/org/${id}/event/${eventID}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_EVENT, payload: response.data });
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Event fetch Failed: ${error.response.data}`));
+    });
+  };
+}
+export function updateYouthEvent(id, eventID, history) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/orgs/${id}/event/${eventID}`, eventID, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.ADD_EVENT, payload: response.data });
+      history.push(`/youth/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
       dispatch(authError(`Event fetch Failed: ${error.response.data}`));

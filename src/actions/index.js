@@ -26,6 +26,7 @@ export const ActionTypes = {
   FETCH_RESOURCE: 'FETCH_RESOURCE',
   CLEAR_RESOURCE: 'CLEAR_RESOURCE',
   FETCH_EVENTS: 'FETCH_EVENTS',
+  FETCH_EVENT: 'FETCH_EVENT',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
