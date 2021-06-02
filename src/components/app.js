@@ -43,6 +43,7 @@ import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
 import NetworkMentorProfile from './Network/NetworkMentorProfile';
 import Resource from './Resource';
+import Event from './Events/Event';
 
 const theme = createMuiTheme({
   palette: {
@@ -89,14 +90,15 @@ const App = (props) => {
             <Route path="/networks/all" component={Network} />
             <Route path="/networks/resources" component={NetworkOrgs} />
             <Route exact path="/networks/mentors" component={NetworkMentors} />
-            <Route path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
-            <Route path="/networks/mentor/profile/:userID" components={NetworkMentorProfile} />
+            <Route exact path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
+            <Route exact path="/networks/mentor/profile/:userID" components={NetworkMentorProfile} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
+            <PrivateRoute path="/networks/orgs/profile/:userID/event/:eventId" component={Event} />
             {/* <PrivateRoute path="/-org/profile/event/:userID" component={eventForm} /> */}
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />

@@ -69,12 +69,12 @@ const ProfileOrg = (props) => {
                 {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
                   return (
                     <EventCard
-                    // eslint-disable-next-line react/no-array-index-key
-                      key={key}
+                      key={data._sid}
                       name={data.name}
                       date={data.date}
                       time={data.time}
                       location={data.location}
+                      id={data._id}
                       coordinator={data.coordinator}
                     />
                   );
