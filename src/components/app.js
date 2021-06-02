@@ -41,7 +41,7 @@ import NetworkMentors from './Network/NetworkMentors';
 import NetworkOrgs from './Network/NetworkOrgs';
 import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
-// import NetworkMentorProfile from './Network/NetworkMentorProfile';
+import NetworkMentorProfile from './Network/NetworkMentorProfile';
 import Resource from './Resource';
 
 const theme = createMuiTheme({
@@ -90,7 +90,7 @@ const App = (props) => {
             <Route path="/networks/resources" component={NetworkOrgs} />
             <Route exact path="/networks/mentors" component={NetworkMentors} />
             <Route path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
-            {/* <Route path="/networks/mentors/profile/:userID" components={NetworkMentorProfile} /> */}
+            <Route path="/networks/mentors/profile/:userID" components={NetworkMentorProfile} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />
