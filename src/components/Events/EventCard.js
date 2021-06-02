@@ -1,10 +1,12 @@
 import React from 'react';
+import './EventCard.scss';
 
 const EventCard = ({
   name, date, time, location, coordinator,
 }) => {
   return (
-    <div>
+    <div className="totalCard">
+      {/* <div className="card-body"> */}
       <div className="leftCard">
         <p>{date}</p>
         <p>{time}</p>
@@ -16,6 +18,7 @@ const EventCard = ({
         <p>{coordinator}</p>
         {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
       </div>
+      {/* </div> */}
     </div>
 
   );

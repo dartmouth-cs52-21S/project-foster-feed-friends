@@ -72,8 +72,14 @@ class SignUpMentor extends Component {
 
   onSubmit = (event) => {
     console.log(this.state);
-    if (this.state.email !== '' && this.state.password !== '') {
-      this.props.signupMentor(this.state, this.props.history);
+    if (this.state.firstName !== '' && this.state.lastName !== '' && this.state.careerPath !== ''
+    && this.state.email !== '' && this.state.emailconfirm !== '' && this.state.password !== ''
+    && this.state.passwordconfirm !== '') {
+      if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
+        this.props.signupMentor(this.state, this.props.history);
+      } else {
+        this.setState({ error: 'Make sure both emails and passwords match!' });
+      }
     } else {
       this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
     }
@@ -95,6 +101,7 @@ class SignUpMentor extends Component {
       <div id="signUpSpecificContainer">
         <div className="header">
           <h1 className="title"> Welcome to Foster Feed Friends! Sign up now to build your best future! </h1>
+          <div>{this.state.error}</div>
         </div>
         <div className="inputColumns">
           <div className="inputColumn">
@@ -103,7 +110,7 @@ class SignUpMentor extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.firstName} onChange={this.handleFirstNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Organizaiton</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization</InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.organization} onChange={this.handleOrgChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
@@ -132,9 +139,7 @@ class SignUpMentor extends Component {
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
               <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
             </FormControl>
-
           </div>
-
         </div>
         <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>
       </div>
