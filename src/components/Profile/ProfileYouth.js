@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
+import { fetchYouthEvents } from '../../actions/events-actions';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
@@ -14,6 +15,7 @@ const ProfileYouth = (props) => {
 
   useEffect(() => {
     dispatch(fetchYouthInfo(props.match.params.userID));
+    dispatch(fetchYouthEvents(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {

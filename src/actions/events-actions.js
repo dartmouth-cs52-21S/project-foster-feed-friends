@@ -66,10 +66,22 @@ export function createEvent({
     });
   };
 }
-export function fetchEvents(id) {
+export function fetchOrgEvents(id) {
   return (dispatch) => {
     console.log('fetch events token:', localStorage.getItem('token'));
     axios.get(`${ROOT_URL}/org/${id}/events`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_EVENTS, payload: response.data });
+    }).catch((error) => {
+      console.log('catch');
+      dispatch(authError(`Event fetch Failed: ${error.response.data}`));
+    });
+  };
+}
+
+export function fetchYouthEvents(id) {
+  return (dispatch) => {
+    console.log('fetch events token:', localStorage.getItem('token'));
+    axios.get(`${ROOT_URL}/youth/${id}/events`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.FETCH_EVENTS, payload: response.data });
     }).catch((error) => {
       console.log('catch');

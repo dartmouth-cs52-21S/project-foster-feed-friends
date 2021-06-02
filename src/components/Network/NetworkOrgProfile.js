@@ -26,7 +26,7 @@ class NetworkOrgProfile extends Component {
   render = () => {
     return (
       <div>
-        {console.log(this.props.match)};
+        {console.log(this.props.match)}
         <div className="profilePageContainer">
           <div className="leftBar">
             <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
