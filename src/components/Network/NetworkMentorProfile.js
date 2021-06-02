@@ -32,7 +32,7 @@ class NetworkMentorProfile extends Component {
             <h1 className="title">Welcome! {this.props.currentMentor?.firstName}</h1>
             {this.props.currentMentor.events ? <h3 className="sixteenpoint">{this.props.currentMentor.events.length} Events</h3> : null}
 
-            <NavLink to={`/mentor/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+            <NavLink to={`/mentors/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
@@ -42,7 +42,7 @@ class NetworkMentorProfile extends Component {
             <h3 className="sixteenpoint"> {this.props.currentMentor.email} </h3>
           </div>
           <div className="eventsContainer">
-            <NavLink className="yellow-btn" to={`/mentor/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
+            <NavLink className="yellow-btn" to={`/mentors/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
             <eventForm />
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>

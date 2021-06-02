@@ -8,10 +8,22 @@ $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
 
+html,body{
+    color:$white;
+}
+
 a{
     text-decoration: none;
 }
 
+.email{
+    color:$white;
+}
+
+h5, h6{
+    color:$black;
+}
+
 .green-btn{
-    color:white;
+    color:$white;
 }
