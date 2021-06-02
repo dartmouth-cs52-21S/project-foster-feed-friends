@@ -67,6 +67,7 @@ class NetworkMentorProfile extends Component {
   }
 
   componentDidMount() {
+    console.log('I MADE IT');
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
