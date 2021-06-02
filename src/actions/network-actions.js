@@ -3,6 +3,8 @@
 export const ActionTypes = {
   FETCH_ORGS: 'FETCH_ORGS',
   FETCH_ORG: 'FETCH_ORG',
+  FETCH_MENTORS: 'FETCH_MENTORS',
+  FETCH_ALL: 'FETCH_ALL',
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
 };
@@ -22,8 +24,32 @@ export function errorClear() {
 // get all posts
 export function fetchOrgs() {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/orgs`).then((response) => {
+    axios.get(`${ROOT_URL}/networks/resources`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_ORGS, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function fetchMentors() {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/networks/mentors`).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_MENTORS, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function fetchAll() {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/networks/all`).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_ALL, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {

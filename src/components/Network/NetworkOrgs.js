@@ -48,13 +48,13 @@ class NetworkOrgs extends Component {
         <div id="banner">Network</div>
         <AppBar position="static" className="sortingBar">
           <Tabs saria-label="simple tabs example">
-            <NavLink to="/orgs">
+            <NavLink to="/networks/resources">
               <Tab label="Organizations" />
             </NavLink>
-            <NavLink to="/mentors">
+            <NavLink to="/networks/mentors">
               <Tab label="Mentors" />
             </NavLink>
-            <NavLink to="/network">
+            <NavLink to="/networks/all">
               <Tab label="All" />
             </NavLink>
           </Tabs>

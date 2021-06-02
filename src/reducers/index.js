@@ -10,6 +10,7 @@ import OrgReducer from './OrgReducer';
 import MomentsReducer from './moments-reducer';
 import EventReducer from './event-reducer';
 import ResourceReducer from './resource-reducer';
+import mentorReducer from './mentor-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   network: OrgReducer,
   events: EventReducer,
   resources: ResourceReducer,
+  networkMentors: mentorReducer,
 
 });
 
