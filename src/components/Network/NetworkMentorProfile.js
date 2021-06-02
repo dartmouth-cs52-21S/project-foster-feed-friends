@@ -93,10 +93,10 @@ class NetworkMentorProfile extends Component {
           <div className="leftBar">
             <h1 className="title">Welcome! {this.props.currentMentor.firstName} </h1>
             <h3 className="boldtwentyfour">Personal Information: </h3>
-            <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.user.path}</h3>
-            <h3 className="sixteenpoint"> Email: {this.props.currentMentor.user.email}</h3>
-            <h3 className="sixteenpoint"> Location: {this.props.currentMentor.user.location}</h3>
-            <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.user.why}</h3>
+            <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.path}</h3>
+            <h3 className="sixteenpoint"> Email: {this.props.currentMentor.email}</h3>
+            <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3>
+            <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3>
           </div>
           <div className="path-container">
             <div className="mentor-name">
@@ -114,7 +114,6 @@ class NetworkMentorProfile extends Component {
 function mapStateToProps(reduxState) {
   return {
     currentMentor: reduxState.networkMentors.currentMentor,
-
   };
 }
 export default withRouter(connect(mapStateToProps, { fetchMentor })(NetworkMentorProfile));

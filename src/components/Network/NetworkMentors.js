@@ -23,7 +23,7 @@ class NetworkMentors extends Component {
   mentorsList = () => {
     const map = this.props.allMentors.map((mentor) => {
       return (
-        <NavLink to={`mentor/profile/${mentor.id}`} exact>
+        <NavLink to={`mentors/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
