@@ -9,7 +9,7 @@ import EventCard from '../Events/EventCard';
 
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
-import { fetchEvents } from '../../actions/events-actions';
+import { fetchOrgEvents } from '../../actions/events-actions';
 // import eventForm from './eventForm';
 
 import '../../profile-styles/org-profile.scss';
@@ -32,7 +32,7 @@ const ProfileOrg = (props) => {
 
   useEffect(() => {
     dispatch(fetchOrgInfo(props.match.params.userID));
-    dispatch(fetchEvents(props.match.params.userID));
+    dispatch(fetchOrgEvents(props.match.params.userID));
   }, []);
 
   const onSubmit = () => {
@@ -74,25 +74,27 @@ const ProfileOrg = (props) => {
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
-                return (
-                  <EventCard
+              <div className="eventsRow">
+                {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
+                  return (
+                    <EventCard
                     // eslint-disable-next-line react/no-array-index-key
-                    key={key}
-                    name={data.name}
-                    date={data.date}
-                    time={data.time}
-                    location={data.location}
-                    coordinator={data.coordinator}
-                  />
-                );
-              })}
-              <div />
+                      key={key}
+                      name={data.name}
+                      date={data.date}
+                      time={data.time}
+                      location={data.location}
+                      coordinator={data.coordinator}
+                    />
+                  );
+                }) }
+              </div>
+
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
               <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              {org.user.events ? <h3 className="sixteenpoint">No Past Events</h3> : null }
               <div />
             </div>
           </div>
