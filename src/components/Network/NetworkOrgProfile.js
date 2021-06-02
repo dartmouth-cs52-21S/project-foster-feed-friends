@@ -5,6 +5,8 @@ import { fetchOrg } from '../../actions/network-actions';
 import { fetchOrgEvents } from '../../actions/events-actions';
 
 import EventCardYouth from '../Events/EventCardYouth';
+import '../../platform-styles/network-mentor.scss';
+
 // import eventForm from './eventForm';
 
 // const NetworkOrgProfile = (props) => {

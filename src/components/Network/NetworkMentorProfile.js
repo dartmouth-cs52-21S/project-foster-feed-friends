@@ -67,7 +67,6 @@ class NetworkMentorProfile extends Component {
   }
 
   componentDidMount() {
-    console.log('hello');
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
@@ -112,7 +111,7 @@ class NetworkMentorProfile extends Component {
 }
 function mapStateToProps(reduxState) {
   return {
-    currentMentor: reduxState.network.currentMentor,
+    currentMentor: reduxState.networkMentors.currentMentor,
 
   };
 }

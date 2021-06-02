@@ -45,7 +45,7 @@ class Network extends Component {
   mentorsList = () => {
     const map = this.props.allMentors.map((mentor) => {
       return (
-        <NavLink to={`mentor/profile/${mentor.id}`} exact>
+        <NavLink to={`mentors/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
@@ -94,6 +94,8 @@ class Network extends Component {
         </div>
         <ul id="orgList">
           {this.orgsList()}
+        </ul>
+        <ul>
           {this.mentorsList()}
         </ul>
       </div>

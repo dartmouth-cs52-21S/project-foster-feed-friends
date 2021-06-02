@@ -75,7 +75,7 @@ export function fetchOrg(id) {
 // get a post by id
 export function fetchMentor(id) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/mentor/profile/${id}`).then((response) => {
+    axios.get(`${ROOT_URL}/mentors/profile/${id}`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_MENTOR, payload: response.data });
       // clear prev error
       errorClear()(dispatch);

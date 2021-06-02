@@ -6,7 +6,9 @@ import { withRouter } from 'react-router-dom';
 // import AppBar from '@material-ui/core/AppBar';
 // import Tabs from '@material-ui/core/Tabs';
 // import Tab from '@material-ui/core/Tab';
-// import '../../platform-styles/network-mentor.scss';
+import '../platform-styles/network-mentor.scss';
+import '../platform-styles/resources.scss';
+
 import { fetchResources } from '../actions/resource-actions';
 
 class Resource extends Component {
