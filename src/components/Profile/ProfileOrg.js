@@ -3,15 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-
 // import EventForm from './eventForm';
 import EventCard from '../Events/EventCard';
-
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchOrgEvents } from '../../actions/events-actions';
 // import eventForm from './eventForm';
-
 import '../../profile-styles/org-profile.scss';
 
 const ProfileOrg = (props) => {
@@ -49,28 +46,22 @@ const ProfileOrg = (props) => {
   // };
   if (!editing) {
     return (
-
       <div>
         <div className="profilePageContainer">
           <div className="leftBar">
             <h1 className="title">Welcome! {org.user.orgname}</h1>
             {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
-
             {/* <button className="yellow-btn" type="button" onClick={() => { toggleEditing(false); }}> Edit Profile </button> */}
             <NavLink to={`/org/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-
             <h3 className="boldtwentyfour">Person of contact name : </h3>
-
             <h3 className="sixteenpoint">{org.user.pocname}</h3>
             <h3 className="sixteenpoint">{org.user.location}</h3>
             <h3 className="boldtwentyfour">Email:</h3>
             <h3 className="sixteenpoint"> {org.user.email} </h3>
             <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
-
           </div>
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
-
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
@@ -89,7 +80,6 @@ const ProfileOrg = (props) => {
                   );
                 }) }
               </div>
-
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
@@ -98,7 +88,6 @@ const ProfileOrg = (props) => {
               <div />
             </div>
           </div>
-
         </div>
       </div>
     );
