@@ -31,7 +31,6 @@ const ProfileYouth = (props) => {
         <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
         {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
         <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-        <h3 className="boldtwentyfour">Person of contact name : </h3>
 
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
         {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
