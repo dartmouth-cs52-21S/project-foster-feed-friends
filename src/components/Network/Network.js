@@ -3,8 +3,11 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOrgs } from '../../actions/network-actions';
 import '../../platform-styles/network-mentor.scss';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { fetchOrgs } from '../../actions/network-actions';
 
 class Network extends Component {
   constructor(props) {
@@ -43,6 +46,19 @@ class Network extends Component {
     return (
       <div>
         <div id="banner">Network</div>
+        <AppBar position="static" className="sortingBar">
+          <Tabs saria-label="simple tabs example">
+            <NavLink to="/network/orgs">
+              <Tab label="Organizations" />
+            </NavLink>
+            <NavLink to="/network/mentors">
+              <Tab label="Mentors" />
+            </NavLink>
+            <NavLink to="/network">
+              <Tab label="All" />
+            </NavLink>
+          </Tabs>
+        </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
             className="form-control rounded"
