@@ -29,7 +29,7 @@ import EventForm from './Profile/eventForm';
 
 import SignUpMentor from './SignUp/SignUpMentor';
 
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './privateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';
 import OrgEdit from './ProfileEditing/OrgEdit';
