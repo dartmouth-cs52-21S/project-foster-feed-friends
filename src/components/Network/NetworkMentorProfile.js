@@ -1,59 +1,71 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import '../../platform-styles/network-mentor.scss';
+import { withRouter, NavLink } from 'react-router-dom';
+import { fetchMentor } from '../../actions/network-actions';
+// import eventForm from './eventForm';
 
-class NetworkMentor extends Component {
+// const NetworkOrgProfile = (props) => {
+//   const org = useSelector((state) => state.org);
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(fetchOrg(props.match.params.userID)); // reseting user
+//   }, []);
+
+class NetworkMentorProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchMentor(this.props.match.params.userID);
+  }
+
   render = () => {
     return (
       <div>
-        <div id="banner">Network</div>
-        <div className="searchBar input-group rounded">
-          <input type="search"
-            className="form-control rounded"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
-          <span className="input-group-text border-0" id="search-addon">
-            <i className="fas fa-search" />
-          </span>
-        </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Organizaiton Name</h5>
-                <h6 id="location">Location</h6>
-                <p className="card-text"> Point of Contact Name</p>
-                <p className="card-text"> Website</p>
-                <i className="far fa-envelope green-btn" />
-              </div>
+        {console.log(this.props.match)};
+        <div className="profilePageContainer">
+          <div className="leftBar">
+            <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
+            {this.props.currentOrg.events ? <h3 className="sixteenpoint">{this.props.currentOrg.events.length} Events</h3> : null}
+
+            <NavLink to={`/org/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+
+            <h3 className="boldtwentyfour">Person of contact name : </h3>
+
+            <h3 className="sixteenpoint">{this.props.currentOrg.poc}</h3>
+            <h3 className="sixteenpoint">{this.props.currentOrg.location}</h3>
+            <h3 className="boldtwentyfour">Email:</h3>
+            <h3 className="sixteenpoint"> {this.props.currentOrg.email} </h3>
+          </div>
+          <div className="eventsContainer">
+            <NavLink className="yellow-btn" to={`/org/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
+            <eventForm />
+            <div className="EventsBlock">
+              <h2>Upcoming Events </h2>
+              <div className="underlineLight profileBar" />
+              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
+              <div />
+            </div>
+            <div className="EventsBlock">
+              <h2>Previous Events </h2>
+              <div className="underlineLight profileBar" />
+              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div />
             </div>
           </div>
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Organizaiton Name</h5>
-                <h6 id="location">Location</h6>
-                <p className="card-text"> Point of Contact Name</p>
-                <p className="card-text"> Website</p>
-                <i className="far fa-envelope green-btn" />
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     );
   }
 }
-
-export default withRouter(connect(null, { })(NetworkMentor));
+function mapStateToProps(reduxState) {
+  return {
+    currentOrg: reduxState.network.currentOrg,
+  };
+}
+export default withRouter(connect(mapStateToProps, { fetchMentor })(NetworkMentorProfile));

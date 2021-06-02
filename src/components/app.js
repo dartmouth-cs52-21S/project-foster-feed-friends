@@ -19,7 +19,6 @@ import '../style.scss';
 import '../Karina.scss';
 import '../will.scss';
 import '../melissa.scss';
-// import '../network-mentor.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';

@@ -4,6 +4,7 @@ export const ActionTypes = {
   FETCH_ORGS: 'FETCH_ORGS',
   FETCH_ORG: 'FETCH_ORG',
   FETCH_MENTORS: 'FETCH_MENTORS',
+  FETCH_MENTOR: 'FETCH_MENTOR',
   FETCH_ALL: 'FETCH_ALL',
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
@@ -63,6 +64,19 @@ export function fetchOrg(id) {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/org/profile/${id}`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_ORG, payload: response.data });
+      // clear prev error
+      errorClear()(dispatch);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+// get a post by id
+export function fetchMentor(id) {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/mentor/profile/${id}`).then((response) => {
+      dispatch({ type: ActionTypes.FETCH_MENTOR, payload: response.data });
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {
