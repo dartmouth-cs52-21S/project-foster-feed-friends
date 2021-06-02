@@ -25,10 +25,10 @@ class Resource extends Component {
   resourcesList = () => {
     const map = this.props.allResources.map((resource) => {
       return (
-        <div className="col-sm-6">
+        <div className="col-sm-6 ">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">{resource.orgnaizationName}</h5>
+              <h5 className="card-title">{resource.organizationName}</h5>
               <h6 id="location">{resource.location}</h6>
               <h6 id="location">{resource.poc}</h6>
               <i className="far fa-envelope green-btn">
@@ -57,7 +57,7 @@ class Resource extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <ul id="orgList">
+        <ul className="orgList cardContainer">
           {this.resourcesList()}
         </ul>
       </div>
