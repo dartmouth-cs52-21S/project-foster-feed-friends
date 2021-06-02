@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { fetchMentors } from '../../actions/network-actions';
 import '../../platform-styles/network-mentor.scss';
 
-class NetworkOrgs extends Component {
+class NetworkMentors extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class NetworkOrgs extends Component {
   mentorsList = () => {
     const map = this.props.allMentors.map((mentor) => {
       return (
-        <NavLink to={`mentor/profile/${mentor.id}`} exact>
+        <NavLink to={`mentors/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
@@ -82,4 +82,4 @@ const mapStateToProps = (reduxstate) => ({
   allMentors: reduxstate.networkMentors.allMentors,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchMentors })(NetworkOrgs));
+export default withRouter(connect(mapStateToProps, { fetchMentors })(NetworkMentors));

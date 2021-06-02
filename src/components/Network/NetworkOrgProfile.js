@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { fetchOrg } from '../../actions/network-actions';
+import { fetchOrgEvents } from '../../actions/events-actions';
+
+import EventCardYouth from '../Events/EventCardYouth';
 import '../../platform-styles/network-mentor.scss';
 
 // import eventForm from './eventForm';
@@ -23,18 +26,16 @@ class NetworkOrgProfile extends Component {
 
   componentDidMount() {
     this.props.fetchOrg(this.props.match.params.userID);
+    this.props.fetchOrgEvents(this.props.match.params.userID);
   }
 
   render = () => {
     return (
       <div>
-        {console.log(this.props.match)}
         <div className="profilePageContainer">
           <div className="leftBar">
             <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
             {this.props.currentOrg.events ? <h3 className="sixteenpoint">{this.props.currentOrg.events.length} Events</h3> : null}
-
-            <NavLink to={`/org/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
@@ -44,18 +45,25 @@ class NetworkOrgProfile extends Component {
             <h3 className="sixteenpoint"> {this.props.currentOrg.email} </h3>
           </div>
           <div className="eventsContainer">
-            <NavLink className="yellow-btn" to={`/org/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
-            <eventForm />
+
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
-              <div />
-            </div>
-            <div className="EventsBlock">
-              <h2>Previous Events </h2>
-              <div className="underlineLight profileBar" />
-              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              <div className="eventsRow">
+                {this.props.all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : this.props.all.map((data, key) => {
+                  return (
+                    <EventCardYouth
+                    // eslint-disable-next-line react/no-array-index-key
+                      key={key}
+                      name={data.name}
+                      date={data.date}
+                      time={data.time}
+                      location={data.location}
+                      coordinator={data.coordinator}
+                    />
+                  );
+                }) }
+              </div>
               <div />
             </div>
           </div>
@@ -68,6 +76,7 @@ class NetworkOrgProfile extends Component {
 function mapStateToProps(reduxState) {
   return {
     currentOrg: reduxState.network.currentOrg,
+    all: reduxState.events.all,
   };
 }
-export default withRouter(connect(mapStateToProps, { fetchOrg })(NetworkOrgProfile));
+export default withRouter(connect(mapStateToProps, { fetchOrg, fetchOrgEvents })(NetworkOrgProfile));
