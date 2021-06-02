@@ -5,6 +5,9 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { fetchMentorInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
+import '../../profile-styles/org-profile.scss';
+import '../../onboarding-styles/moment-card.scss';
+import '../../onboarding-styles/mentor-path.scss';
 
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
@@ -85,18 +88,25 @@ const ProfileMentor = (props) => {
   return (
 
     <div>
-      <div className="leftBar">
-        <h1 className="title">Welcome! {mentor.user.firstName} </h1>
-        <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-        <h3 className="boldtwentyfour">Personal Information: </h3>
-        <h3 className="sixteenpoint">Carrer Path: {mentor.user.path}</h3>
-        <h3 className="sixteenpoint"> Email: {mentor.user.email}</h3>
-        <h3 className="sixteenpoint"> Location: {mentor.user.location}</h3>
-        <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
-        <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
-      </div>
-      <div className="all-moments">
-        {showMoments(mentor.user.momentsPath)}
+      <div className="profilePageContainer">
+        <div className="leftBar">
+          <h1 className="title">Welcome! {mentor.user.firstName} </h1>
+          <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+          <h3 className="boldtwentyfour">Personal Information: </h3>
+          <h3 className="sixteenpoint">Career Path: {mentor.user.path}</h3>
+          <h3 className="sixteenpoint"> Email: {mentor.user.email}</h3>
+          <h3 className="sixteenpoint"> Location: {mentor.user.location}</h3>
+          <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
+          <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
+        </div>
+        <div className="path-container">
+          <div className="mentor-name">
+            <h3 className="sixteenpoint" id="path-name">{mentor.user.firstName}&apos;s Path</h3>
+          </div>
+          <div className="all-moments">
+            {showMoments(mentor.user.momentsPath)}
+          </div>
+        </div>
       </div>
     </div>
   );
