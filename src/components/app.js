@@ -41,7 +41,7 @@ import NetworkMentors from './Network/NetworkMentors';
 import NetworkOrgs from './Network/NetworkOrgs';
 import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
-import NetworkMentorProfile from './Network/NetworkMentorProfile';
+import NetworkMentorProfile from './Network/NetworkMentorProfileFunctional';
 import Resource from './Resource';
 
 const theme = createMuiTheme({
