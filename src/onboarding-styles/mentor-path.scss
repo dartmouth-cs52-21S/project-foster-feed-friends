@@ -39,3 +39,14 @@ $pink:#D34D9D;
     justify-content: center;
     padding: 10px;
 }
+.all-moments{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    width:900px;
+}
+#path-name{
+    padding: 20px;
+}
