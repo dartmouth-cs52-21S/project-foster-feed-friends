@@ -29,31 +29,31 @@ class NetworkMentorProfile extends Component {
         {console.log(this.props.match)};
         <div className="profilePageContainer">
           <div className="leftBar">
-            <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
-            {this.props.currentOrg.events ? <h3 className="sixteenpoint">{this.props.currentOrg.events.length} Events</h3> : null}
+            <h1 className="title">Welcome! {this.props.currentMentor?.firstName}</h1>
+            {this.props.currentMentor.events ? <h3 className="sixteenpoint">{this.props.currentMentor.events.length} Events</h3> : null}
 
-            <NavLink to={`/org/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+            <NavLink to={`/mentor/profile/${this.props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
 
             <h3 className="boldtwentyfour">Person of contact name : </h3>
 
-            <h3 className="sixteenpoint">{this.props.currentOrg.poc}</h3>
-            <h3 className="sixteenpoint">{this.props.currentOrg.location}</h3>
+            <h3 className="sixteenpoint">{this.props.currentMentor.bio}</h3>
+            <h3 className="sixteenpoint">{this.props.currentMentor.hometown}</h3>
             <h3 className="boldtwentyfour">Email:</h3>
-            <h3 className="sixteenpoint"> {this.props.currentOrg.email} </h3>
+            <h3 className="sixteenpoint"> {this.props.currentMentor.email} </h3>
           </div>
           <div className="eventsContainer">
-            <NavLink className="yellow-btn" to={`/org/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
+            <NavLink className="yellow-btn" to={`/mentor/profile/${this.props.match.params.userID}/event`}>Create an Event</NavLink>
             <eventForm />
             <div className="EventsBlock">
               <h2>Upcoming Events </h2>
               <div className="underlineLight profileBar" />
-              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
+              {this.props.currentMentor.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : <eventCard />}
               <div />
             </div>
             <div className="EventsBlock">
               <h2>Previous Events </h2>
               <div className="underlineLight profileBar" />
-              {this.props.currentOrg.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+              {this.props.currentMentor.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
               <div />
             </div>
           </div>
@@ -65,7 +65,7 @@ class NetworkMentorProfile extends Component {
 }
 function mapStateToProps(reduxState) {
   return {
-    currentOrg: reduxState.network.currentOrg,
+    currentMentor: reduxState.network.currentMentor,
   };
 }
 export default withRouter(connect(mapStateToProps, { fetchMentor })(NetworkMentorProfile));
