@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 // import Tabs from '@material-ui/core/Tabs';
 // import Tab from '@material-ui/core/Tab';
 // import '../../platform-styles/network-mentor.scss';
+import { fetchResources } from '../actions/resource-actions';
 
 class Resource extends Component {
   constructor(props) {
@@ -15,7 +16,31 @@ class Resource extends Component {
     };
   }
 
-  render = () => {
+  componentDidMount() {
+    this.props.fetchResources();
+  }
+
+  resourcesList = () => {
+    const map = this.props.allResources.map((resource) => {
+      return (
+        <div className="col-sm-6">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{resource.orgnaizationName}</h5>
+              <h6 id="location">{resource.location}</h6>
+              <h6 id="location">{resource.poc}</h6>
+              <i className="far fa-envelope green-btn">
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${resource.pocemail}`} target="_blank" rel="noopener noreferrer">Email</a>
+              </i>
+            </div>
+          </div>
+        </div>
+      );
+    });
+    return map;
+  }
+
+  render() {
     return (
       <div>
         <div id="banner">Resources</div>
@@ -30,31 +55,16 @@ class Resource extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Resource Name</h5>
-                <h6 id="location">Location</h6>
-                <p className="card-text"> Website</p>
-                <i className="far fa-envelope green-btn" />
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Resource Name</h5>
-                <h6 id="location">Location</h6>
-                <p className="card-text"> Website</p>
-                <i className="far fa-envelope green-btn" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul id="orgList">
+          {this.resourcesList()}
+        </ul>
       </div>
     );
   }
 }
 
-export default withRouter(connect(null, { })(Resource));
+const mapStateToProps = (reduxstate) => ({
+  allResources: reduxstate.resources.allResources,
+});
+
+export default withRouter(connect(mapStateToProps, { fetchResources })(Resource));
