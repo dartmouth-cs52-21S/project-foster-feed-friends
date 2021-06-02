@@ -86,9 +86,9 @@ const App = (props) => {
             <Route path="/signup/org" component={SignUpOrg} />
             <Route path="/signup/youth" component={SignUpFoster} />
             <Route path="/signup/youthOnboarding" component={OnBoardingPage} />
-            <Route path="/network" component={Network} />
-            <Route path="/network/orgs" component={NetworkOrgs} />
-            <Route path="/network/mentors" component={NetworkMentors} />
+            <Route path="/networks/all" component={Network} />
+            <Route path="/networks/resources" component={NetworkOrgs} />
+            <Route path="/networks/mentors" component={NetworkMentors} />
             <Route path="/orgs/profile/:userID" component={NetworkOrgProfile} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />

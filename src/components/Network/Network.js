@@ -7,7 +7,7 @@ import '../../platform-styles/network-mentor.scss';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { fetchOrgs } from '../../actions/network-actions';
+import { fetchAll } from '../../actions/network-actions';
 
 class Network extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Network extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchOrgs();
+    this.props.fetchAll();
   }
 
   orgsList = () => {
@@ -42,19 +42,41 @@ class Network extends Component {
     return map;
   }
 
+  mentorsList = () => {
+    const map = this.props.allMentors.map((mentor) => {
+      return (
+        <NavLink to={`orgs/profile/${mentor.id}`} exact>
+          {/* <div className="col-sm-6"> */}
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
+              <h6 id="location">{mentor.hometown}</h6>
+              <p className="card-text"> {mentor.bio}</p>
+              <i className="far fa-envelope green-btn">
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
+              </i>
+            </div>
+          </div>
+          {/* </div> */}
+        </NavLink>
+      );
+    });
+    return map;
+  }
+
   render() {
     return (
       <div>
         <div id="banner">Network</div>
         <AppBar position="static" className="sortingBar">
           <Tabs saria-label="simple tabs example">
-            <NavLink to="/network/orgs">
+            <NavLink to="/networks/resources">
               <Tab label="Organizations" />
             </NavLink>
-            <NavLink to="/network/mentors">
+            <NavLink to="/networks/mentors">
               <Tab label="Mentors" />
             </NavLink>
-            <NavLink to="/network">
+            <NavLink to="/networks/all">
               <Tab label="All" />
             </NavLink>
           </Tabs>
@@ -72,6 +94,7 @@ class Network extends Component {
         </div>
         <ul id="orgList">
           {this.orgsList()}
+          {this.mentorsList()}
         </ul>
       </div>
     );
@@ -80,6 +103,7 @@ class Network extends Component {
 
 const mapStateToProps = (reduxstate) => ({
   allOrgs: reduxstate.network.allOrgs,
+  allMentors: reduxstate.networkMentors.allMentors,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchOrgs })(Network));
+export default withRouter(connect(mapStateToProps, { fetchAll })(Network));
