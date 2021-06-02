@@ -21,6 +21,7 @@ const MomentThumbnail = (props) => {
           <i className="fas fa-star pink-btn" />
           {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
+
         </div>
       </div>
     );

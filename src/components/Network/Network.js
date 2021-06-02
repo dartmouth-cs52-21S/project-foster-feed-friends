@@ -53,7 +53,7 @@ class Network extends Component {
               <h6 id="location">{mentor.hometown}</h6>
               <p className="card-text"> {mentor.bio}</p>
               <i className="far fa-envelope green-btn">
-                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
+                <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
               </i>
             </div>
           </div>
@@ -71,13 +71,13 @@ class Network extends Component {
         <AppBar position="static" className="sortingBar">
           <Tabs saria-label="simple tabs example">
             <NavLink to="/networks/resources">
-              <Tab label="Organizations" />
+              <Tab index={0} value={0} label="Organizations" />
             </NavLink>
             <NavLink to="/networks/mentors">
-              <Tab label="Mentors" />
+              <Tab index={1} value={1} label="Mentors" />
             </NavLink>
             <NavLink to="/networks/all">
-              <Tab label="All" />
+              <Tab index={2} value={2} label="All" />
             </NavLink>
           </Tabs>
         </AppBar>
