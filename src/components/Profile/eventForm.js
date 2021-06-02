@@ -8,7 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 // import DatePicker from 'react-datepicker';
 import { createEvent } from '../../actions/events-actions';
 import { fetchOrgInfo } from '../../actions/user-actions';
-import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker.css';
 
 const EventForm = (props) => {
   const [state, setState] = useState(
