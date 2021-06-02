@@ -90,7 +90,7 @@ const App = (props) => {
             <Route path="/networks/resources" component={NetworkOrgs} />
             <Route path="/networks/mentors" component={NetworkMentors} />
             <Route path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
-            <Route path="/networs/mentor/profile/:userID" components={NetworkMentor} />
+            <Route path="/networks/mentor/profile/:userID" components={NetworkMentor} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />
