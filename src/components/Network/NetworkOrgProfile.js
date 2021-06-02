@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { fetchOrg } from '../../actions/network-actions';
+import '../../platform-styles/network-mentor.scss';
+
 // import eventForm from './eventForm';
 
 // const NetworkOrgProfile = (props) => {

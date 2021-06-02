@@ -94,6 +94,8 @@ class Network extends Component {
         </div>
         <ul id="orgList">
           {this.orgsList()}
+        </ul>
+        <ul>
           {this.mentorsList()}
         </ul>
       </div>
