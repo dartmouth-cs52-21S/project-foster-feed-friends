@@ -15,8 +15,6 @@ class Landing extends Component {
   }
 
   render = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
     // localStorage.removeItem('pathYouth');
     return (
       <div id="landing-container">
