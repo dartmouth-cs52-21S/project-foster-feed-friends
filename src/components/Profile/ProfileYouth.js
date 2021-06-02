@@ -58,15 +58,15 @@ const ProfileYouth = (props) => {
       <div className="eventsContainer">
 
         <div className="EventsBlock">
-          <h2>Upcoming Events </h2>
+          <h2>Connections</h2>
           <div className="underlineLight profileBar" />
-          {youth.user.connections ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          {youth.user.messaged ? <h3 className="sixteenpoint">Connect with a Mentor!</h3> : null }
           <div />
         </div>
         <div className="EventsBlock">
-          <h2>Previous Events </h2>
+          <h2>Events </h2>
           <div className="underlineLight profileBar" />
-          {youth.user.events ? <h3 className="sixteenpoint">No Upcoming Events</h3> : null }
+          {youth.user.events ? <h3 className="sixteenpoint">Explore Events</h3> : null }
           <div />
         </div>
       </div>
