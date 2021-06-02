@@ -7,6 +7,7 @@ export const ActionTypes = {
   FETCH_EVENTS: 'FETCH_EVENTS',
   FETCH_EVENT: 'FETCH_EVENT',
   AUTH_ERROR: 'AUTH_ERROR',
+  UPDATE_USER: 'UPDATE_USER',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -104,13 +105,18 @@ export function fetchSpecificEvent(id, eventID) {
   };
 }
 export function updateYouthEvent(id, eventID, history) {
+  // console.log('id ', id, ' eventID ', { events: [{ eventID }] }, ' history ', history);
   return (dispatch) => {
-    axios.put(`${ROOT_URL}/orgs/${id}/event/${eventID}`, eventID, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
-      dispatch({ type: ActionTypes.ADD_EVENT, payload: response.data });
+    axios.put(`${ROOT_URL}/org/${id}/event/${eventID}`, { events: [eventID] }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // dispatch({ type: ActionTypes.ADD_EVENT, payload: response.data });
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
+      // clear prev error
       history.push(`/youth/profile/${id}`);
     }).catch((error) => {
       console.log('catch');
-      dispatch(authError(`Event fetch Failed: ${error.response.data}`));
+      console.log(error);
+      // dispatch(authError(`Event update Failed: ${error.response.data}`));
     });
   };
 }

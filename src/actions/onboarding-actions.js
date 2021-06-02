@@ -28,6 +28,7 @@ export function signinYouth({ email, password }, history) {
     axios.post(`${ROOT_URL}/signin/youth/`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userId', response.data.ID);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -40,6 +41,7 @@ export function signinMentor({ email, password }, history) {
     axios.post(`${ROOT_URL}/signin/mentor`, { email, password }).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userId', response.data.ID);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -71,6 +73,7 @@ export function signupYouth(fields, history) {
     axios.post(`${ROOT_URL}/signup/youth/`, fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userId', response.data.ID);
       console.log(response.data.ID);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
@@ -89,6 +92,7 @@ export function signupMentor(
       dispatch({ type: ActionTypes.AUTH_USER });
       // dispatch({ type: ActionTypes.MOMENTS_CLEAR });
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userId', response.data.ID);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
@@ -105,7 +109,7 @@ export function signupOrg(
       fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      console.log(response.data);
+      localStorage.setItem('userId', response.data.ID);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');

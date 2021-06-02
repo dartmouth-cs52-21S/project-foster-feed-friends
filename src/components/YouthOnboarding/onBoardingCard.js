@@ -46,7 +46,7 @@ class OnBoardingCards extends Component {
 
   render = () => {
     return (
-      <div className="totalCard">
+      <div className="overallCard">
         <div className="onBoardingCard" onClick={this.handleClick} role="button" tabIndex="0">
           <h1 className="title cardTitle" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onFocus={this.handleHover}>{this.state.text}</h1>
         </div>
