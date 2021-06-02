@@ -98,7 +98,8 @@ const NavBar = (props) => {
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
-              <NavLink to="/messages" className="navTab left right">Messages </NavLink>
+              {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
+              <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               <NavLink to="/networks/all" className="navTab left right">Feed Friends </NavLink>
               {renderAuth(props.auth)}
             </div>
@@ -116,7 +117,8 @@ const NavBar = (props) => {
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
-              <NavLink to="/messages" className="navTab left right">Messages </NavLink>
+              {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
+              <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               <NavLink to="/networks/resources" className="navTab left right">Feed Friends </NavLink>
               {renderAuth(props.auth)}
             </div>
@@ -136,6 +138,7 @@ const NavBar = (props) => {
             <div id="navRight">
               <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
               <NavLink to="/educate" className="navTab left right">Educate </NavLink>
+              <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               {renderAuth(props.auth)}
             </div>
           </ul>
