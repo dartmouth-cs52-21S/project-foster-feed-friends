@@ -8,6 +8,7 @@ export const ActionTypes = {
   FETCH_ALL: 'FETCH_ALL',
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
+  UPDATE_USER: 'UPDATE_USER',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -82,6 +83,22 @@ export function fetchMentor(id) {
       errorClear()(dispatch);
     }).catch((error) => {
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function updateYouthMessaged(id, messaged, history) {
+  // console.log('id ', id, ' eventID ', { events: [{ eventID }] }, ' history ', history);
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/${id}/mentor`, { messaged }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
+      // clear prev error
+      history.push(`/youth/profile/${id}`);
+    }).catch((error) => {
+      console.log('catch');
+      console.log(error);
+      // dispatch(authError(`Event update Failed: ${error.response.data}`));
     });
   };
 }

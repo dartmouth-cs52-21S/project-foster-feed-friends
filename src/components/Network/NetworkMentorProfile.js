@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchMentor } from '../../actions/network-actions';
+import { fetchMentor, updateYouthMessaged } from '../../actions/network-actions';
 
 // const NetworkOrgProfile = (props) => {
 //   const org = useSelector((state) => state.org);
@@ -68,13 +68,15 @@ class NetworkMentorProfile extends Component {
   }
 
   componentDidMount() {
-    console.log('I MADE IT');
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
   message = () => {
-    window.open(`mailto:${this.currentMentor.email}?subject=Reaching Out`);
+    console.log('I MADE IT');
+
+    window.open(`mailto:${this.props.currentMentor.email}?subject=Reaching Out`);
     // action that adds mentor to youth mesaged
+    this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
   }
 
   showMoments = (moments) => {
@@ -102,7 +104,9 @@ class NetworkMentorProfile extends Component {
             <h3 className="sixteenpoint"> Email: {this.props.currentMentor.email}</h3>
             {/* <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3> */}
             {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3> */}
-            <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a>
+            {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
+            <button type="button" onClick={this.message}>Email Me</button>
+
           </div>
           <div className="path-container">
             <div className="mentor-name">
@@ -120,6 +124,7 @@ class NetworkMentorProfile extends Component {
 function mapStateToProps(reduxState) {
   return {
     currentMentor: reduxState.networkMentors.currentMentor,
+    user: reduxState.user.user,
   };
 }
-export default withRouter(connect(mapStateToProps, { fetchMentor })(NetworkMentorProfile));
+export default withRouter(connect(mapStateToProps, { fetchMentor, updateYouthMessaged })(NetworkMentorProfile));
