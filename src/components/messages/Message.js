@@ -1,6 +1,6 @@
 // import React from 'react';
 
-// class MessageList extends React.Component {
+// class MessageList extends Component {
 //   render() {
 //     return (
 //       <ul className="message-list">
