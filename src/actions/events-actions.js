@@ -104,10 +104,10 @@ export function fetchSpecificEvent(id, eventID) {
     });
   };
 }
-export function updateYouthEvent(id, eventID, history) {
+export function updateYouthEvent(id, eventID, events, history) {
   // console.log('id ', id, ' eventID ', { events: [{ eventID }] }, ' history ', history);
   return (dispatch) => {
-    axios.put(`${ROOT_URL}/org/${id}/event/${eventID}`, { events: [eventID] }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+    axios.put(`${ROOT_URL}/org/${id}/event/${eventID}`, { events }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       // dispatch({ type: ActionTypes.ADD_EVENT, payload: response.data });
       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
       console.log(response.data);

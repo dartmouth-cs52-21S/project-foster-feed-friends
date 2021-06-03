@@ -19,10 +19,11 @@ class Event extends Component {
   }
 
   addToProfile = () => {
-    this.props.updateYouthEvent(this.props.user.id, this.props.match.params.eventId, this.props.history);
+    this.props.updateYouthEvent(this.props.user.id, this.props.match.params.eventId, [...this.props.user.events, this.props.match.params.eventId], this.props.history);
   }
 
   render() {
+    console.log(this.props.user.events);
     return (
       <div>
         <div> {this.props.currentEvent.name}</div>

@@ -20,6 +20,7 @@ class OnBoardingCards extends Component {
   }
 
   handleHover = () => {
+    console.log(this.state.text, 'hover: ', this.state.hover);
     this.setState({ hover: !this.hover });
   }
 
@@ -46,12 +47,12 @@ class OnBoardingCards extends Component {
 
   render = () => {
     return (
-      <div className="overallCard">
+      <div className="overallCard" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
         <div className="onBoardingCard" onClick={this.handleClick} role="button" tabIndex="0">
-          <h1 className="title cardTitle" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onFocus={this.handleHover}>{this.state.text}</h1>
+          <h1 className="title cardTitle">{this.state.text}</h1>
         </div>
         <div>
-          {this.state.hover ? <div className="onBoardingHover">{this.state.hoverText}</div> : null}
+          {this.state.hover === true ? <div className="onBoardingHover">{this.state.hoverText}</div> : null}
         </div>
       </div>
     );

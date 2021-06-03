@@ -74,6 +74,7 @@ export function fetchOrg(id) {
 
 // get a post by id
 export function fetchMentor(id) {
+  console.log('token', localStorage.getItem('token'));
   return (dispatch) => {
     axios.get(`${ROOT_URL}/mentor/profile/${id}`).then((response) => {
       dispatch({ type: ActionTypes.FETCH_MENTOR, payload: response.data });
