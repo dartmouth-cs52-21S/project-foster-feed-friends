@@ -120,3 +120,18 @@ export function updateYouthEvent(id, eventID, events, history) {
     });
   };
 }
+export function updateYouthMessaged(id, mentorID, messaged, history) {
+  // console.log('id ', id, ' eventID ', { events: [{ eventID }] }, ' history ', history);
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/org/${id}/event/${mentorID}`, { messaged }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      console.log(response.data);
+      // clear prev error
+      history.push(`/youth/profile/${id}`);
+    }).catch((error) => {
+      console.log('catch');
+      console.log(error);
+      // dispatch(authError(`Event update Failed: ${error.response.data}`));
+    });
+  };
+}

@@ -72,6 +72,11 @@ class NetworkMentorProfile extends Component {
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
+  message = () => {
+    window.open(`mailto:${this.currentMentor.email}?subject=Reaching Out`);
+    // action that adds mentor to youth mesaged
+  }
+
   showMoments = (moments) => {
     if (moments) {
       return (moments.map((moment) => {
@@ -93,10 +98,11 @@ class NetworkMentorProfile extends Component {
           <div className="leftBar">
             <h1 className="title">Welcome! {this.props.currentMentor.firstName} </h1>
             <h3 className="boldtwentyfour">Personal Information: </h3>
-            <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.path}</h3>
+            <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.careerPath}</h3>
             <h3 className="sixteenpoint"> Email: {this.props.currentMentor.email}</h3>
-            <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3>
-            <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3>
+            {/* <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3> */}
+            {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3> */}
+            <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a>
           </div>
           <div className="path-container">
             <div className="mentor-name">
