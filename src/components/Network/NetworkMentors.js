@@ -17,6 +17,7 @@ class NetworkMentors extends Component {
     super(props);
     this.container = undefined;
     this.state = {
+      text: '',
     };
     // this.container = React.createRef();
   }
@@ -24,6 +25,10 @@ class NetworkMentors extends Component {
   componentDidMount() {
     this.props.fetchMentors();
   }
+
+  onInputChange = (event) => {
+    this.setState({ text: event.target.value });
+  };
 
   // handleContainer = (c) => {
   //   this.setState({
@@ -69,7 +74,9 @@ class NetworkMentors extends Component {
   // }
 
   mentorsList = () => {
-    const map = this.props.allMentors.map((mentor) => {
+    const map = this.props.allMentors.filter((res) => {
+      return res.firstName.toLowerCase().includes(this.state.text);
+    }).map((mentor) => {
       return (
         <NavLink to={`mentor/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6">
@@ -116,6 +123,7 @@ class NetworkMentors extends Component {
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
+            onChange={this.onInputChange}
           />
           <span className="input-group-text border-0" id="search-addon">
             <i className="fas fa-search" />

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 // work in progress
@@ -12,6 +13,7 @@ class NetworkYouth extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      text: '',
     };
   }
 
@@ -19,8 +21,14 @@ class NetworkYouth extends Component {
     this.props.fetchOrgs();
   }
 
+  onInputChange = (event) => {
+    this.setState({ text: event.target.value });
+  };
+
   orgsList = () => {
-    const map = this.props.allOrgs.map((org) => {
+    const map = this.props.allOrgs.filter((res) => {
+      return res.organizationName.toLowerCase().includes(this.state.text);
+    }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>
           {/* <div className="col-sm-6"> */}
@@ -64,6 +72,7 @@ class NetworkYouth extends Component {
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
+            onChange={this.onInputChange}
           />
           <span className="input-group-text border-0" id="search-addon">
             <i className="fas fa-search" />

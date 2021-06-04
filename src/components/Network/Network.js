@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
@@ -13,6 +14,7 @@ class Network extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      text: '',
     };
   }
 
@@ -20,8 +22,14 @@ class Network extends Component {
     this.props.fetchAll();
   }
 
+  onInputChange = (event) => {
+    this.setState({ text: event.target.value });
+  };
+
   orgsList = () => {
-    const map = this.props.allOrgs.map((org) => {
+    const map = this.props.allOrgs.filter((res) => {
+      return res.organizationName.toLowerCase().includes(this.state.text);
+    }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>
           {/* <div className="col-sm-6"> */}
@@ -43,7 +51,9 @@ class Network extends Component {
   }
 
   mentorsList = () => {
-    const map = this.props.allMentors.map((mentor) => {
+    const map = this.props.allMentors.filter((res) => {
+      return res.firstName.toLowerCase().includes(this.state.text);
+    }).map((mentor) => {
       return (
         <NavLink to={`mentor/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6"> */}
@@ -87,6 +97,7 @@ class Network extends Component {
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
+            onChange={this.onInputChange}
           />
           <span className="input-group-text border-0" id="search-addon">
             <i className="fas fa-search" />
