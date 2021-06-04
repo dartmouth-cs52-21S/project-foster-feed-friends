@@ -70,6 +70,10 @@ class SignUpMentor extends Component {
     this.setState({ fosterBackground: event.target.value });
   }
 
+  handleBioChange = (event) => {
+    this.setState({ bio: event.target.value });
+  }
+
   onSubmit = (event) => {
     console.log(this.state);
     if (this.state.firstName !== '' && this.state.lastName !== '' && this.state.careerPath !== ''
@@ -92,6 +96,7 @@ class SignUpMentor extends Component {
       emailConfrim: '',
       password: '',
       passwordConfirm: '',
+      bio: '',
     });
   }
 
@@ -112,6 +117,10 @@ class SignUpMentor extends Component {
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization</InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.organization} onChange={this.handleOrgChange} />
+            </FormControl>
+            <FormControl className="signUpSpecificInput">
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Bio</InputLabel>
+              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.bio} onChange={this.handleBioChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Email<sup>*</sup></InputLabel>
