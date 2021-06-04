@@ -38,7 +38,15 @@ $pink:#D34D9D;
 }
 
 .green-btn{
-    background-color:$dark-green;
+    background-color:$primaryG;
+    margin-right: 10px;
+    border-radius: 25%;
+    padding: 10px;
+}
+
+.green-btn:hover{
+    background-color:$yellow-CTA;
+
 }
 #search-addon{
     margin-right: 30px;
@@ -51,6 +59,11 @@ $pink:#D34D9D;
 .email{
     color:$white;
 }
+
+.email:hover{
+    color:$white;
+}
+
 .chatbox-container { 
     position: absolute; 
     bottom: 0; 
@@ -67,4 +80,11 @@ $pink:#D34D9D;
 
 .cardContainer{
     flex-wrap: wrap;
+}
+
+.sortTab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
