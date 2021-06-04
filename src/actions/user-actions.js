@@ -8,8 +8,8 @@ export const ActionTypes = {
   UPDATE_USER: 'UPDATE_USER',
 };
 
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 // const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -98,7 +98,6 @@ export function updateYouth(youth, history) {
 }
 
 export function updateOrg(org, history) {
-  console.log('updated org: ', org);
   return (dispatch) => {
     axios.put(`${ROOT_URL}/org/profile/${org.id}/edit`, org, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
@@ -107,6 +106,32 @@ export function updateOrg(org, history) {
       errorClear()(dispatch);
       // redirect to main page
       history.push(`/org/profile/${org.id}`);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function updateYouthPath(id, pathString, history) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/youth/${id}/path/edit`, { path: pathString }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      errorClear()(dispatch);
+      // redirect to main page
+      history.push(`/youth/profile/${id}`);
+    }).catch((error) => {
+      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+    });
+  };
+}
+
+export function updateMentorMoments(id, moments, history) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/mentor/${id}/path/edit`, { momentsPath: moments }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      errorClear()(dispatch);
+      // redirect to main page
+      history.push(`/mentor/profile/${id}`);
     }).catch((error) => {
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
     });

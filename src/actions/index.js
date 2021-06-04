@@ -29,8 +29,8 @@ export const ActionTypes = {
   FETCH_EVENT: 'FETCH_EVENT',
 };
 
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// export const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+export const ROOT_URL = 'http://localhost:9090/api';
 export const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 

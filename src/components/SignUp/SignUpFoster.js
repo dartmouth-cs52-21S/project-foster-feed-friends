@@ -81,7 +81,6 @@ class SignUpFoster extends Component {
       passwordconfirm: '',
     });
     localStorage.removeItem('pathYouth');
-    console.log('shouldbe empty/undefined:', localStorage.removeItem('pathYouth'));
   }
 
   render = () => {

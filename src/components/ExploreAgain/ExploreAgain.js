@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 
 // const jsonFile = require('../../constants/example.json');
 
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import OnBoardingCards from '../YouthOnboarding/onBoardingCard';
 import '../YouthOnboarding/onBoardingPage.scss';
+import { updateYouthPath } from '../../actions/user-actions';
 
 const jsonFile = require('../../constants/exploreAgain.json');
 
@@ -57,7 +58,13 @@ class ExploreAgain extends Component {
   }
 
   continueClick = () => {
-    this.props.updatePath(localStorage.getItem('pathYouth'));
+    this.setState({ transition: false });
+  }
+
+  updatePath = () => {
+    console.log('about to replace path with: ', localStorage.getItem('pathYouth'));
+    this.props.updateYouthPath(this.props.match.params.userID, localStorage.getItem('pathYouth'), this.props.history);
+    localStorage.removeItem('pathYouth');
   }
 
   mapJsonAfter = (fileArray) => {
@@ -88,6 +95,7 @@ class ExploreAgain extends Component {
   }
 
   render = () => {
+    console.log('path youth: ', localStorage.getItem('pathYouth'));
     if (!this.state.transition) {
       return (
         <div className="onBoardingPage">
@@ -111,8 +119,8 @@ class ExploreAgain extends Component {
             )
             : <div> Join our family today! </div>}
 
-          {this.state.conclusionText !== undefined ? <NavLink type="button" className="yellow-btn" to="/signup/youth">Finalize Account</NavLink>
-            : <button type="button" className="yellow-btn" onClick={this.updatePath}>Update Your Path! </button>}
+          {this.state.conclusionText !== undefined ? <button type="button" className="yellow-btn" to="/signup/youth" onClick={this.updatePath}>Update Account!</button>
+            : <button type="button" className="yellow-btn" onClick={this.continueClick}>Learn about your options! </button>}
         </div>
 
       );
@@ -120,4 +128,4 @@ class ExploreAgain extends Component {
   }
 }
 
-export default withRouter(connect(null, {})(ExploreAgain));
+export default withRouter(connect(null, { updateYouthPath })(ExploreAgain));

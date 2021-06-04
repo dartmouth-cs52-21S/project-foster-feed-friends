@@ -10,8 +10,8 @@ export const ActionTypes = {
   UPDATE_USER: 'UPDATE_USER',
 };
 
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 // const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 

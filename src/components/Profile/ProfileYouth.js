@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchYouthEvents } from '../../actions/events-actions';
-import EventCardProfile from '../Events/EventCard';
+import EventCardProfile from '../Events/EventCardProfile';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
@@ -30,13 +30,15 @@ const ProfileYouth = (props) => {
       <div className="leftBar">
         <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
         {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
-        <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+        <NavLink to={`/youth/${props.match.params.userID}/path`}> <button className="yellow-btn" type="button">Edit Path</button> </NavLink>
 
         {/* <h3 className="boldtwentyfour">Location :</h3> */}
         {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
         {/* <h3 className="sixteenpoint">{youth.f}</h3> */}
         <h3 className="boldtwentyfour">path:</h3>
         <h3 className="sixteenpoint">{youth.user.path}</h3>
+        <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+
         <h3 className="boldtwentyfour">hometown:</h3>
         <h3 className="sixteenpoint">{youth ? youth.user.hometown : null }</h3>
         <h3 className="boldtwentyfour">Email:</h3>
@@ -70,19 +72,21 @@ const ProfileYouth = (props) => {
         <div className="EventsBlock">
           <h2>Events </h2>
           <div className="underlineLight profileBar" />
-          {all.length === 0 ? <h3 className="sixteenpoint">Explore Events</h3> : all.map((data, key) => {
-            return (
-              <EventCardProfile
-                key={data._id}
-                name={data.name}
-                date={data.date}
-                time={data.time}
-                location={data.location}
-                id={data._id}
-                coordinator={data.coordinator}
-              />
-            );
-          }) }
+          <div className="eventsRow">
+            {all.length === 0 ? <h3 className="sixteenpoint">Explore Events</h3> : all.map((data, key) => {
+              return (
+                <EventCardProfile
+                  key={data._id}
+                  name={data.name}
+                  date={data.date}
+                  time={data.time}
+                  location={data.location}
+                  id={data._id}
+                  coordinator={data.coordinator}
+                />
+              );
+            }) }
+          </div>
           <div />
         </div>
       </div>

@@ -105,6 +105,7 @@ const ProfileMentor = (props) => {
           <div className="mentor-name">
             <h3 className="sixteenpoint" id="path-name">{mentor.user.firstName}&apos;s Path</h3>
           </div>
+          <NavLink to={`mentor/${props.match.params.userID}/path/edit`}>New Path</NavLink>
           <div className="all-moments">
             {showMoments(mentor.user.momentsPath)}
           </div>
