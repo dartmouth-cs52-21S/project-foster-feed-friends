@@ -57,6 +57,7 @@ const ProfileYouth = (props) => {
           </div>
         </div> */}
         <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
+        <NavLink to={`/messages/${youth.user.id}`} exact>Inbox</NavLink>
       </div>
       <div className="eventsContainer">
 

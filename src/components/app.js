@@ -44,6 +44,7 @@ import NetworkOrgProfile from './Network/NetworkOrgProfile';
 import NetworkMentorProfile from './Network/NetworkMentorProfile';
 import Resource from './Resource';
 import Event from './Events/Event';
+import MessageInbox from './messages/Message';
 
 const theme = createMuiTheme({
   palette: {
@@ -92,6 +93,7 @@ const App = (props) => {
             <Route exact path="/networks/mentors" component={NetworkMentors} />
             <Route exact path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
             <Route exact path="/networks/mentor/profile/:userID" component={NetworkMentorProfile} />
+            <Route exact path="/messages/:userID" component={MessageInbox} />
             {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />
