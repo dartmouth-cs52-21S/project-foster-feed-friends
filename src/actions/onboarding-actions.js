@@ -9,8 +9,8 @@ export const ActionTypes = {
 
 };
 
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://foster-project.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 // const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
@@ -29,6 +29,7 @@ export function signinYouth({ email, password }, history) {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -42,6 +43,7 @@ export function signinMentor({ email, password }, history) {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -61,6 +63,7 @@ export function signinOrg({ email, password }, history) {
       dispatch({ type: ActionTypes.AUTH_USER, payload: response.data.ID });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       dispatch(authError(`Sign In Failed: ${error.response.data}`));
@@ -74,6 +77,7 @@ export function signupYouth(fields, history) {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       console.log(response.data.ID);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
@@ -93,6 +97,7 @@ export function signupMentor(
       // dispatch({ type: ActionTypes.MOMENTS_CLEAR });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');
@@ -110,6 +115,7 @@ export function signupOrg(
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
+      localStorage.setItem('type', response.data.type);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
       console.log('catch');

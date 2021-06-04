@@ -20,13 +20,8 @@ class OnBoardingCards extends Component {
   }
 
   handleHover = () => {
-    console.log(this.state.text, 'hover: ', this.state.hover);
     this.setState({ hover: !this.hover });
   }
-
-  // handleBack = () => {
-  //   this.props.setOptions(this.props.previous);
-  // }
 
   handleClick = () => {
     if (localStorage.getItem('pathYouth') == null) {

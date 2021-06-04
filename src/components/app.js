@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 // import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router, Route, Switch,
@@ -42,9 +42,11 @@ import NetworkOrgs from './Network/NetworkOrgs';
 import SubmitResource from './sumbitResource';
 import NetworkOrgProfile from './Network/NetworkOrgProfile';
 import NetworkMentorProfile from './Network/NetworkMentorProfile';
+import ExploreAgain from './ExploreAgain/ExploreAgain';
 import Resource from './Resource';
 import Event from './Events/Event';
 import MessageInbox from './messages/Message';
+import { fetchYouthInfo, fetchMentorInfo, fetchOrgInfo } from '../actions/user-actions';
 
 const theme = createMuiTheme({
   palette: {
@@ -60,12 +62,21 @@ const FallBack = (props) => {
 
 const App = (props) => {
   // const history = useHistory();
+  const dispatch = useDispatch();
   useEffect(() => {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
+    const type = localStorage.getItem('type');
 
-    if (token && userId) {
+    if (token && userId && type) {
       props.authUser(userId);
+      if (type === 'youth') {
+        dispatch(fetchYouthInfo(userId));
+      } else if (type === 'mentor') {
+        dispatch(fetchMentorInfo(userId));
+      } else {
+        dispatch(fetchOrgInfo(userId));
+      }
     }
   }, []);
 
@@ -100,6 +111,7 @@ const App = (props) => {
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
             <PrivateRoute exact path="/youth/profile/:userID" component={ProfileYouth} />
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
+            <PrivateRoute exact path="/youth/:userID/path" component={ExploreAgain} />
             <PrivateRoute path="/networks/orgs/profile/:userID/event/:eventId" component={Event} />
             {/* <PrivateRoute path="/-org/profile/event/:userID" component={eventForm} /> */}
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />

@@ -1,6 +1,8 @@
+/* eslint-disable no-return-assign */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Talk from 'talkjs';
 import { fetchMentor, updateYouthMessaged } from '../../actions/network-actions';
 
 // const NetworkOrgProfile = (props) => {
@@ -93,6 +95,45 @@ class NetworkMentorProfile extends Component {
     );
   };
 
+  handleMessageClick = (mentor) => {
+    console.log('mentor passed in:', mentor);
+    const currentUser = this.props.user.id;
+    const mentorUser = mentor.id;
+    console.log('currentUser: ', currentUser);
+    console.log('mentorUser: ', mentorUser);
+    /* Session initialization code */
+    Talk.ready.then(() => {
+      /* Create the two users that will participate in the conversation */
+      const me = new Talk.User({
+        id: currentUser,
+        name: this.props.user.firstName,
+        email: this.props.user.email,
+      });
+      const other = new Talk.User({
+        id: mentorUser,
+        name: mentor.firstName,
+        email: mentor.email,
+      });
+      /* Create a talk session if this does not exist. Remember to replace tthe APP ID with the one on your dashboard */
+      if (!window.talkSession) {
+        window.talkSession = new Talk.Session({
+          appId: 'tLpEOP6z',
+          me,
+        });
+      }
+      /* Get a conversation ID or create one */
+      const conversationId = Talk.oneOnOneId(me, other);
+      const conversation = window.talkSession.getOrCreateConversation(conversationId);
+      /* Set participants of the conversations */
+      conversation.setParticipant(me);
+      conversation.setParticipant(other);
+      /* Create and mount chatbox in container */
+      this.chatbox = window.talkSession.createChatbox(conversation);
+      this.chatbox.mount(this.container);
+    })
+      .catch((e) => console.error(e));
+  }
+
   render = () => {
     return (
       <div>
@@ -102,10 +143,11 @@ class NetworkMentorProfile extends Component {
             <h3 className="boldtwentyfour">Personal Information: </h3>
             <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.careerPath}</h3>
             <h3 className="sixteenpoint"> Email: {this.props.currentMentor.email}</h3>
+            <button className="fas fa-comments pink-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)} alt="submit" />
             {/* <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3> */}
             {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3> */}
             {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
-            <button type="button" onClick={this.message}>Email Me</button>
+            {/* <button type="button" onClick={this.message}>Email Me</button> */}
 
           </div>
           <div className="path-container">
@@ -116,6 +158,9 @@ class NetworkMentorProfile extends Component {
               {this.showMoments(this.props.currentMentor.momentsPath)}
             </div>
           </div>
+        </div>
+        <div className="chatbox-container" ref={(c) => this.container = c}>
+          <div id="talkjs-container" style={{ height: '300px' }}><i /></div>
         </div>
       </div>
     );

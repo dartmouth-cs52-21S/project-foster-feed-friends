@@ -4,8 +4,6 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import { connect } from 'react-redux';
 import { fetchOrgs } from '../../actions/network-actions';
 import '../../platform-styles/network-mentor.scss';
@@ -48,17 +46,17 @@ class NetworkYouth extends Component {
       <div>
         <div id="banner">Network</div>
         <AppBar position="static" className="sortingBar">
-          <Tabs saria-label="simple tabs example">
+          <div className="sortTab">
             <NavLink to="/networks/resources">
-              <Tab label="Organizations" />
+              <div>Organizations</div>
             </NavLink>
             <NavLink to="/networks/mentors">
-              <Tab label="Mentors" />
+              <div>Mentors</div>
             </NavLink>
             <NavLink to="/networks/all">
-              <Tab label="All" />
+              <div>All</div>
             </NavLink>
-          </Tabs>
+          </div>
         </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
@@ -71,7 +69,7 @@ class NetworkYouth extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <ul id="orgList">
+        <ul className="orgList cardContainer">
           {this.orgsList()}
         </ul>
       </div>
