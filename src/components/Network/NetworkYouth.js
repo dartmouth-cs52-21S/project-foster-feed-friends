@@ -71,7 +71,7 @@ class NetworkYouth extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <ul id="orgList">
+        <ul className="orgList cardContainer">
           {this.orgsList()}
         </ul>
       </div>

@@ -123,7 +123,7 @@ class NetworkMentors extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <ul id="orgList">
+        <ul className="orgList cardContainer">
           {this.mentorsList()}
           {/* { this.props.allMentors.map(mentor =>
                                     <NavLink to={`mentor/profile/${mentor.id}`} exact>
