@@ -94,7 +94,7 @@ export function signupMentor(
   return (dispatch) => {
     axios.post(`${ROOT_URL}/signup/mentor/`, fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
-      // dispatch({ type: ActionTypes.MOMENTS_CLEAR });
+      dispatch({ type: ActionTypes.MOMENTS_CLEAR });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
       localStorage.setItem('type', response.data.type);
