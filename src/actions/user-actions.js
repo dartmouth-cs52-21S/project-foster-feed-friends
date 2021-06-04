@@ -6,6 +6,8 @@ export const ActionTypes = {
   ERROR_SET: 'ERROR_SET',
   ERROR_CLEAR: 'ERROR_CLEAR',
   UPDATE_USER: 'UPDATE_USER',
+  MOMENT_CLEAR: 'MOMENT_CLEAR',
+  MOMENTS_CLEAR: 'MOMENTS_CLEAR',
 };
 
 // const ROOT_URL = 'https://foster-project.herokuapp.com/api';
@@ -129,6 +131,8 @@ export function updateMentorMoments(id, moments, history) {
   return (dispatch) => {
     axios.put(`${ROOT_URL}/mentor/${id}/path/edit`, { momentsPath: moments }, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+      dispatch({ type: ActionTypes.MOMENTS_CLEAR });
+      dispatch({ type: ActionTypes.MOMENT_CLEAR });
       errorClear()(dispatch);
       // redirect to main page
       history.push(`/mentor/profile/${id}`);

@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
-// import { withRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
-import { NavLink } from 'react-router-dom';
-import { fetchMentorInfo } from '../../actions/user-actions';
-import { signoutUser } from '../../actions/onboarding-actions';
-import '../../profile-styles/org-profile.scss';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import MentorMomentsUpdateModal from './MentorMomentsUpdate-Modal';
+import { fetchMoments } from '../../actions/moments-action';
+import { updateMentorMoments } from '../../actions/user-actions';
 import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 
+// const [show, setShow] = useState(false);
+// const onDelete = () => {
+
+// }
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
@@ -57,21 +59,26 @@ const MomentThumbnail = (props) => {
   }
 };
 
-const ProfileMentor = (props) => {
-  const mentor = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const history = useHistory();
+class MentorMomentsUpdate extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
 
-  useEffect(() => {
-    dispatch(fetchMentorInfo(props.match.params.userID));
-  }, []);
+  componentDidMount() {
+    if (this.props.allMoments.length > 0) {
+      this.props.fetchMoments();
+    }
+  }
 
-  const onSubmit = () => {
-    dispatch(signoutUser(history));
+  onDone = () => {
+    // localStorage.setItem('momentsPath', this.props.allMoments);
+    this.props.updateMentorMoments(this.props.match.params.userID, this.props.allMoments, this.props.history);
   };
-  console.log('mentor in component', mentor);
 
-  const showMoments = (moments) => {
+  showMoments = (moments) => {
     if (moments) {
       return (moments.map((moment) => {
         // put this in a nav link
@@ -83,35 +90,31 @@ const ProfileMentor = (props) => {
     return (
       <div />
     );
-  };
+  }
 
-  return (
-
-    <div>
-      <div className="profilePageContainer">
-        <div className="leftBar">
-          <h1 className="title">Welcome! {mentor.user.firstName} </h1>
-          <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-          <h3 className="boldtwentyfour">Personal Information: </h3>
-          <h3 className="sixteenpoint">Career Path: {mentor.user.path}</h3>
-          <h3 className="sixteenpoint"> Email: {mentor.user.email}</h3>
-          <h3 className="sixteenpoint"> Location: {mentor.user.location}</h3>
-          <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
-          <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
-          <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink>
-
+  render = () => {
+    return (
+      <div className="mentor-path">
+        <div className="path-header">
+          <h2>As you proceed, tell us about any pivotal moments in your life, the highs and the lows.</h2>
+          <h4>click the add button on the right to add these moments</h4>
+          <button className="lightgreen-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
         </div>
-        <div className="path-container">
-          <div className="mentor-name">
-            <h3 className="sixteenpoint" id="path-name">{mentor.user.firstName}&apos;s Path</h3>
-          </div>
-          <NavLink to={`/mentor/${props.match.params.userID}/path`}>New Path</NavLink>
-          <div className="all-moments">
-            {showMoments(mentor.user.momentsPath)}
-          </div>
+        <div className="all-moments">
+          {this.showMoments(this.props.allMoments)}
+        </div>
+        <MentorMomentsUpdateModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
+        {/* <MomentModal show={this.state.show} /> */}
+        <div className="done-btn">
+          <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
         </div>
       </div>
-    </div>
-  );
-};
-export default ProfileMentor;
+    );
+  }
+}
+
+const mapStateToProps = (reduxstate) => ({
+  allMoments: reduxstate.moments.allMoments,
+});
+
+export default withRouter(connect(mapStateToProps, { fetchMoments, updateMentorMoments })(MentorMomentsUpdate));
