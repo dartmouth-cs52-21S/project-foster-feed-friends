@@ -74,11 +74,11 @@ class SignUpOrg extends Component {
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
-          <div id="su-title">Welcome to Foster Feed Friends! Sign up to join our network.</div>
+          <div id="su-title">Welcome to Foster Feed Friends! Sign up to join our network.<sub>*Required Field</sub></div>
           <div>{this.state.error}</div>
         </div>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name<sup>*</sup></InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.orgname} onChange={this.handleOrgNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
@@ -90,19 +90,19 @@ class SignUpOrg extends Component {
           <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Email</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Email<sup>*</sup></InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.email} onChange={this.handleEmailChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation<sup>*</sup></InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.emailconfirm} onChange={this.handleEmailConfirmChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password<sup>*</sup></InputLabel>
           <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation<sup>*</sup></InputLabel>
           <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
         </FormControl>
         <button type="button" className="yellow-btn" variant="contained" onClick={this.onSubmit} color="primary">Sign-Up</button>

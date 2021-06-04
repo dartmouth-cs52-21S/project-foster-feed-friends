@@ -100,13 +100,13 @@ class SignUpMentor extends Component {
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
-          <h1 className="title"> Welcome to Foster Feed Friends! Sign up now to build your best future! </h1>
+          <h1 className="title"> Welcome to Foster Feed Friends! Sign up now to build your best future! <sub>*Required Field</sub> </h1>
           <div>{this.state.error}</div>
         </div>
         <div className="inputColumns">
           <div className="inputColumn">
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.firstName} onChange={this.handleFirstNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
@@ -114,17 +114,17 @@ class SignUpMentor extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.organization} onChange={this.handleOrgChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Email</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Email<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.email} onChange={this.handleEmailChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Email Confirmation<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.emailconfirm} onChange={this.handleEmailConfirmChange} />
             </FormControl>
           </div>
           <div className="inputColumn">
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Last Name</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Last Name<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.lastName} onChange={this.handleLastNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
@@ -132,11 +132,11 @@ class SignUpMentor extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.careerPath} onChange={this.handleCareerChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Password<sup>*</sup></InputLabel>
               <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Password Confirmation<sup>*</sup></InputLabel>
               <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.passwordconfirm} onChange={this.handlePasswordConfirmChange} />
             </FormControl>
           </div>
