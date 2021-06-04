@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import '../../platform-styles/network-mentor.scss';
 
 import { fetchMentor } from '../../actions/network-actions';
 

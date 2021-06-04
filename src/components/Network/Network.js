@@ -5,8 +5,8 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../../platform-styles/network-mentor.scss';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+// import Tabs from '@material-ui/core/Tabs';
+// import Tab from '@material-ui/core/Tab';
 import { fetchAll } from '../../actions/network-actions';
 
 class Network extends Component {
@@ -69,17 +69,17 @@ class Network extends Component {
       <div>
         <div id="banner">Network</div>
         <AppBar position="static" className="sortingBar">
-          <Tabs saria-label="simple tabs example">
+          <div className="sortTab">
             <NavLink to="/networks/resources">
-              <Tab index={0} value={0} label="Organizations" />
+              <div>Organizations</div>
             </NavLink>
             <NavLink to="/networks/mentors">
-              <Tab index={1} value={1} label="Mentors" />
+              <div>Mentors</div>
             </NavLink>
             <NavLink to="/networks/all">
-              <Tab index={2} value={2} label="All" />
+              <div>All</div>
             </NavLink>
-          </Tabs>
+          </div>
         </AppBar>
         <div className="searchBar input-group rounded">
           <input type="search"
@@ -92,10 +92,10 @@ class Network extends Component {
             <i className="fas fa-search" />
           </span>
         </div>
-        <ul id="orgList">
+        <ul className="orgList cardContainer">
           {this.orgsList()}
         </ul>
-        <ul>
+        <ul className="orgList cardContainer">
           {this.mentorsList()}
         </ul>
       </div>
