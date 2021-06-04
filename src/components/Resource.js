@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
@@ -15,6 +16,7 @@ class Resource extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      text: '',
     };
   }
 
@@ -22,8 +24,14 @@ class Resource extends Component {
     this.props.fetchResources();
   }
 
+  onInputChange = (event) => {
+    this.setState({ text: event.target.value });
+  };
+
   resourcesList = () => {
-    const map = this.props.allResources.map((resource) => {
+    const map = this.props.allResources.filter((res) => {
+      return res.organizationName.toLowerCase().includes(this.state.text);
+    }).map((resource) => {
       return (
         <div className="col-sm-6 ">
           <div className="card">
@@ -52,6 +60,7 @@ class Resource extends Component {
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
+            onChange={this.onInputChange}
           />
           <span className="input-group-text border-0" id="search-addon">
             <i className="fas fa-search" />
