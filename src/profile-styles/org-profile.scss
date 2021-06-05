@@ -62,10 +62,27 @@ $pink:#D34D9D;
     height: 75px;
     padding-top: 30px;
 }
+.badgeCircleLit{
+    border-radius: 50%;
+    background: $dark-green;
+    width: 75px;
+    height: 75px;
+    padding-top: 30px;
+}
+.badgeCircleOff{
+    border-radius: 50%;
+    background: rgb(177, 177, 177);
+    width: 75px;
+    height: 75px;
+    padding-top: 30px;
+}
 .badgeRow{
     display: flex;
     flex-direction: row;
-    // justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-right: 20px;
 }
 .badge{
     display: flex; 
@@ -75,5 +92,6 @@ $pink:#D34D9D;
     max-width: 100px;
     flex-wrap: wrap;
     margin-left: 20px;
+    padding:0;
 }
 .eventsRow::-webkit-scrollbar {display: none;}

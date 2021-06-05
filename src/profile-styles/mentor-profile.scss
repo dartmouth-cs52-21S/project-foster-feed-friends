@@ -1,0 +1,88 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+//mentor profile.js & networkmentorprofile.js
+.leftBar{
+    // padding-left: 20px;
+    // padding-top: 24px;
+    background-color: #92C893;
+    max-height: 100vh;
+    max-width: 500px;
+    padding: 40px;
+}
+.boldtwentyfour{
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 24px;;
+}
+.update{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.profilePageContainer{
+    display: flex;
+    flex-direction: row;
+}
+.profile-header{
+    display: flex;
+    flex-direction: row;
+}
+.profile-title{ 
+    font-family: "Nunito", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.editprofile-btn{
+    text-decoration: none;
+    background-color: $dark-green;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right:10px;
+    width: fit-content;
+}
+.profile-info{
+    padding-top: 15px;
+}
+.profile-section h3{
+    font-family: "Mulish",sans-serif;
+    font-size: 20px;
+}
+.profile-section p{
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+}
+.newpath-btn{
+    text-decoration: none;
+    background-color: $blue;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    width: fit-content;
+    margin-top: 10px;
+}
+.mentorpath-name{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+}

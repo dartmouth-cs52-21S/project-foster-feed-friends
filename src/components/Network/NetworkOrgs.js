@@ -35,7 +35,7 @@ class NetworkOrgs extends Component {
               <h6 id="location">{org.location}</h6>
               <p className="card-text"> {org.poc}</p>
               <i className="far fa-envelope green-btn">
-                <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
+                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer">Email</a>
               </i>
             </div>
           </div>

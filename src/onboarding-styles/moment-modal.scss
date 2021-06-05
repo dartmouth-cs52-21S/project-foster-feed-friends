@@ -25,6 +25,9 @@ $pink:#D34D9D;
 }
 .moment-header{
     text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
 }
 .moment-header, .moment-footer{
     padding: 10px;
@@ -40,6 +43,9 @@ $pink:#D34D9D;
 .moment-body h6{
     text-align: left;
     margin-left: 15px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
 }
 .ModalSpecificInput{
     margin: 15px !important ;
@@ -53,6 +59,11 @@ $pink:#D34D9D;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+.moment-buttons p{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 .moment-footer{
     display: flex;

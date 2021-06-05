@@ -28,7 +28,7 @@ class Network extends Component {
 
   orgsList = () => {
     const map = this.props.allOrgs.filter((res) => {
-      return res.organizationName.toLowerCase().includes(this.state.text);
+      return res.orgname.toLowerCase().includes(this.state.text);
     }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>

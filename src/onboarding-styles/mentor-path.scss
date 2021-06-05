@@ -26,7 +26,8 @@ $pink:#D34D9D;
     color: #656565;
 }
 .lightgreen-btn{
-    font-size: 16px !important;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
     border-radius: 10px;
     border: none;
     padding: 5px;
@@ -48,5 +49,53 @@ $pink:#D34D9D;
     width:900px;
 }
 #path-name{
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
     padding: 20px;
+}
+.profile-type{
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+}
+.inspo-btn{
+    text-decoration: none;
+    background-color: $blue;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    height: fit-content;
+    border-style: none;
+    border-radius: 20px;
+    width: fit-content;
+}
+.mbtn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+.inspo-header{
+    text-align: center;
+}
+.inspo-header h2{
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+}
+.inspo-header h4{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.inspo-text li{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 10px;
 }

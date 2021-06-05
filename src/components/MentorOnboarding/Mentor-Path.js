@@ -1,15 +1,15 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
 import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 
-// const [show, setShow] = useState(false);
-// const onDelete = () => {
-
-// }
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
@@ -58,6 +58,68 @@ const MomentThumbnail = (props) => {
   }
 };
 
+// lines 57-137adopted from https://material-ui.com/components/popover/
+const useStyles = makeStyles((theme) => ({
+  typography: {
+    padding: theme.spacing(2),
+  },
+}));
+
+const SimplePopover = () => {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
+  return (
+    <div>
+      <button type="button" className="inspo-btn" aria-describedby={id} variant="contained" onClick={handleClick}>
+        Need Inspo?
+      </button>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+      >
+        <Typography className={classes.typography}>
+          <div className="popper">
+            <div className="inspo-header">
+              <h2>Need Inspiration?</h2>
+              <h4>Here are some prompts you may consider.<br /></h4>
+            </div>
+            <div className="inspo-content">
+              <div className="inspo-text">
+                <li>What was your first job?</li>
+                <li>Who has been one of your greatest mentors in life?</li>
+                <li>When was a time you felt defeated?</li>
+                <li>Describe a moment you felt proud.</li>
+              </div>
+            </div>
+          </div>
+        </Typography>
+      </Popover>
+    </div>
+  );
+};
+
 class MentorPath extends Component {
   constructor(props) {
     super(props);
@@ -103,7 +165,7 @@ class MentorPath extends Component {
       <div className="mentor-path">
         <div className="path-header">
           <h2>As you proceed, tell us about any pivotal moments in your life, the highs and the lows.</h2>
-          <h4>click the add button on the right to add these moments</h4>
+          <h4>click the add button below to add these moments</h4>
           <button className="lightgreen-btn" id="add-btn" type="button" onClick={() => this.setState({ show: true })}>Add Moment</button>
         </div>
         <div className="all-moments">
@@ -111,8 +173,11 @@ class MentorPath extends Component {
         </div>
         <MomentModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
-        <div className="done-btn">
+        {/* <div className="done-btn"> */}
+        <div className="mbtn-container">
+          <SimplePopover />
           <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
+          {/* </div> */}
         </div>
       </div>
     );

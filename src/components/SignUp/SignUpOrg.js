@@ -82,11 +82,11 @@ class SignUpOrg extends Component {
           <Input id="component-simple" className="sixteenpoint" value={this.state.orgname} onChange={this.handleOrgNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Location</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Location<sup>*</sup></InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name</InputLabel>
+          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name<sup>*</sup></InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
         </FormControl>
         <FormControl className="signUpSpecificInput">

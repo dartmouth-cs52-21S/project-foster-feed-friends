@@ -7,6 +7,15 @@ $white:#F5FFFC;
 $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
+
+// body, html {
+//     font-family: "Nunito", sans-serif !important;
+//     height: 100%;
+//     color:black;
+//     background-color: white;
+//     padding:0;
+//     margin:0;
+// }
 //for rendering the left and right side 
 // elements on the navbar in the same line 
 ul{
@@ -28,8 +37,14 @@ ul{
     text-decoration: none;
     padding:10px;
     text-align: center;
+    font-family: "Nunito", sans-serif;
     color:$white;
+}
+.left{
     font-size: 25px;
+}
+.right{
+    font-size: 20px;
 }
 
 //For underline navbar animation left-right
@@ -97,6 +112,11 @@ a.left:hover:before {
     padding-bottom: 5px;
     margin-left: 20px;
     margin-top: 5px;
+}
+
+.nav-btn{
+    padding: 10px;
+    margin-right: 25px;
 }
 
 
