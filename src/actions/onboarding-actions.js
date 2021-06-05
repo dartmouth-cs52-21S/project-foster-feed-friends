@@ -6,7 +6,7 @@ export const ActionTypes = {
   AUTH_ERROR: 'AUTH_ERROR',
   MOMENTS_CLEAR: 'MOMENTS_CLEAR',
   MOMENT_CLEAR: 'MOMENT_CLEAR',
-
+  USER_CLEAR: 'USER_CLEAR',
 };
 
 const ROOT_URL = 'https://foster-project.herokuapp.com/api';

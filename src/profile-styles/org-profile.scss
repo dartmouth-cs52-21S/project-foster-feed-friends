@@ -95,3 +95,18 @@ $pink:#D34D9D;
     padding:0;
 }
 .eventsRow::-webkit-scrollbar {display: none;}
+.email-btn{
+    text-decoration: none;
+    background-color: $dark-green;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right:15px;
+    height: fit-content;
+    border-style: none;
+    border-radius: 20px;
+    width: fit-content;
+}
