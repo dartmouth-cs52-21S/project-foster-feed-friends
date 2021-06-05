@@ -16,19 +16,15 @@ import SignInFoster from './SignIn/SignInFoster';
 import SignInOrg from './SignIn/SignInOrg';
 import SignUp from './SignUp/SignUp';
 import '../style.scss';
-import '../Karina.scss';
-import '../will.scss';
-import '../melissa.scss';
+// import '../Karina.scss';
+// import '../will.scss';
+// import '../melissa.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
 import SignInMentor from './SignIn/SignInMentor';
-
-// import SignUpMentor from './SignUp/SignUpMentor';
 import EventForm from './Profile/eventForm';
-
 import SignUpMentor from './SignUp/SignUpMentor';
-
 import PrivateRoute from './privateRoute';
 import MentorEdit from './ProfileEditing/MentorEdit';
 import FosterEdit from './ProfileEditing/FosterEdit';

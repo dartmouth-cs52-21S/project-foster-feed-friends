@@ -87,19 +87,32 @@ class SignUpMentor extends Component {
       if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
         this.props.signupMentor(this.state, this.props.history);
       } else {
-        this.setState({ error: 'Make sure both emails and passwords match!' });
+        this.setState({ error: 'Make sure both emails match and both passwords match!' });
       }
     } else {
-      this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
+      this.setState({ error: 'Missing fields! Please make sure to input all required fields.' });
     }
     this.setState({
+      // firstName: '',
+      // lastName: '',
+      // email: '',
+      // emailconfirm: '',
+      // password: '',
+      // passwordconfirm: '',
+      // careerPath: '',
       firstName: '',
       lastName: '',
-      email: '',
-      emailConfrim: '',
-      password: '',
-      passwordConfirm: '',
+      organization: '',
       careerPath: '',
+      email: '',
+      emailconfirm: '',
+      password: '',
+      passwordconfirm: '',
+      fosterBackground: 'No',
+      bio: '',
+      location: '',
+      type: 'mentor',
+      momentsPath: [],
 
     });
   }

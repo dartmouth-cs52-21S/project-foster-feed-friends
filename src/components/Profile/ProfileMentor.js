@@ -86,7 +86,6 @@ const ProfileMentor = (props) => {
   };
 
   return (
-
     <div>
       <div className="profilePageContainer">
         <div className="leftBar">
@@ -99,7 +98,6 @@ const ProfileMentor = (props) => {
           <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
           <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
           <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink>
-
         </div>
         <div className="path-container">
           <div className="mentor-name">

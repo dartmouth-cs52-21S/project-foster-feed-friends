@@ -19,7 +19,7 @@ function mapStateToProps(reduxState) {
 const renderAuth = (auth) => {
   const user = useSelector((state) => state.user);
   if (auth) {
-    return <NavLink to={`/${user.user.type}/profile/${user.user.id}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
+    return <NavLink className="yellow-btn" to={`/${user.user.type}/profile/${user.user.id}`}>Profile</NavLink>;
     // return <NavLink to={`/${localStorage.getItem('type')}/profile/${localStorage.getItem('userId')}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
     // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
@@ -88,7 +88,7 @@ const renderAuth = (auth) => {
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.user);
-  if (props.auth && user.user.type === 'youth') {
+  if (props.auth && (user.user.type === 'mentor' || user.user.type === 'youth')) {
     return (
       <AppBar position="static" id="navBarContainer">
         {/* <img alt=" " src="../img/logo.png" /> */}
@@ -100,14 +100,17 @@ const NavBar = (props) => {
             <div id="navRight">
               {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
               <NavLink to="/resources" className="navTab left right">Resources </NavLink>
+              <NavLink to={`/messages/${user.user.id}`} className="navTab left right">Messages </NavLink>
               <NavLink to="/networks/all" className="navTab left right">Feed Friends </NavLink>
-              {renderAuth(props.auth)}
+              <div className="nav-btn">
+                {renderAuth(props.auth)}
+              </div>
             </div>
           </ul>
         </div>
       </AppBar>
     );
-  } else if (props.auth && (user.user.type === 'mentor' || user.user.type === 'org')) {
+  } else if (props.auth && user.user.type === 'org') {
     return (
       <AppBar position="static" id="navBarContainer">
         {/* <img alt=" " src="../img/logo.png" /> */}
@@ -120,7 +123,9 @@ const NavBar = (props) => {
               {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
               <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               <NavLink to="/networks/resources" className="navTab left right">Feed Friends </NavLink>
-              {renderAuth(props.auth)}
+              <div className="nav-btn">
+                {renderAuth(props.auth)}
+              </div>
             </div>
           </ul>
         </div>
@@ -139,7 +144,9 @@ const NavBar = (props) => {
               <NavLink to="/mentor" className="navTab left right">Mentor </NavLink>
               <NavLink to="/educate" className="navTab left right">Educate </NavLink>
               <NavLink to="/resources" className="navTab left right">Resources </NavLink>
-              {renderAuth(props.auth)}
+              <div className="nav-btn">
+                {renderAuth(props.auth)}
+              </div>
             </div>
           </ul>
         </div>
