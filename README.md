@@ -24,8 +24,7 @@ Backend - Mongo DB:
 
 ## Setup
 
-TODO: how to get the project dev environment up and running, npm install etc
-- pull from starterpack, run npm install and npm start. 
+- run npm install and npm start. 
 
 ## Deployment
 
