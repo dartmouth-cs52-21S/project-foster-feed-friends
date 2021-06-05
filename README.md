@@ -12,13 +12,14 @@ We are a pathway to building better futures.
 ## Architecture
 
 Frontend: 
-- Bootstrap (styling) 
-- MaterialUI/CSS (inputs/forms)
+- Bootstrap utilized for navigation bar and simple font stylings 
+- MaterialUI used for input fields, forms, and card displays
+- SCSS used for flex boxes and spacing along each React Component
 
-Backend - Mongo: 
+Backend - Mongo DB: 
 - User Collection with log in information (ie. Name, Username, Password, Email, Hometown/City, foster or organization, and path/purpose) 
 - Path Resources Colletion (e.g: College, Workforce, Military, Technical School/Bootcamps) 
-- Mentors Collection (Name, Organization, Their Path, Email, Former Foster Youth, Bio: Why mentor?) 
+- Mentors Collection (Name, Organization, Career Path, Email, Former Foster Youth, Bio: Why be a mentor?) 
 - Organziations Collection (Name, donation route, purpose, location) 
 
 ## Setup
@@ -32,13 +33,14 @@ TODO: how to deploy the project
 
 heroku(backend) & netlify(overall) <3 
 
-## Authors
+## Authors- With much collaboration
 - Gebriel Belaineh --Backend
-- Juliet Elisa Giraso -- backend
+- Juliet Elisa Giraso -- Backend
 - Karina Montiel -- Frontend
-- Melissa Valencia 
-- William Perez 
-- Muhtasim Miraz
+- Melissa Valencia -- Frontend
+- William Perez -- Frontend 
+- Muhtasim Miraz--Backend 
 
 ## Acknowledgments
 CS52 Professor Tim T. 
+CS52 21S TAs 
