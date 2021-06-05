@@ -9,6 +9,7 @@ import MomentModal from './Moment-Modal';
 import { fetchMoments } from '../../actions/moments-action';
 import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
+import path from '../YouthOnboarding/path.png';
 
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
@@ -174,6 +175,7 @@ class MentorPath extends Component {
         <MomentModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
         {/* <div className="done-btn"> */}
+        <img src={path} alt="path" />
         <div className="mbtn-container">
           <SimplePopover />
           <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>

@@ -6,16 +6,10 @@
     height: 100%;
    
 }
-// #backgroundImage{
-//     background-image: url('../../img/background.png');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
-// #backgroundImage2{
-//     background-image: url('../../img/background.png');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
+
+#onboardingPath{
+    margin-top: 10px;;
+}
 .onBoardingTitle{
     margin-top: 50px;
     text-align: center;
@@ -25,8 +19,8 @@
 .resourceText{
     text-align: center;
     font-size: 16px;
-    margin: 0 px;
-    width: 25%;
+    padding-bottom: 10px;
+    padding-top: 10px
 }
 .resourceLink{
     font-size: 16px;
@@ -40,10 +34,33 @@
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    padding: 5px 10px
 }
 .gameOfLifeResource{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+.transitionCard{
+    font-family: Nunito;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+}
+.stick{
+    margin-top: 0px;
+    height: 100px; 
+    width: 20px;
+    background-color: rgb(250, 202, 131);
+
+}
+.onboardingButton{
+    margin-bottom: 10px;
 }

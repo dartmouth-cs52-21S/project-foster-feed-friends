@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter, NavLink } from 'react-router-dom';
+import path from './path.png';
+import sign from './roadsign.png';
 
 // DONT FORGET NAV LINK
 // import onBoardingCard from './onBoardingCard';
 
 // const jsonFile = require('../../constants/example.json');
 
-import { withRouter, NavLink } from 'react-router-dom';
 import OnBoardingCards from './onBoardingCard';
 import './onBoardingPage.scss';
 
@@ -91,26 +93,40 @@ class OnBoardingPage extends Component {
         <div className="onBoardingPage backgroundImage">
           <h1 className="title onBoardingTitle">{this.state.titleText}</h1>
           <div className="onBoardingCards">{this.mapJsonAfter(this.state.options)} </div>
-          {/* <img src="./path.png" alt="path" /> */}
+          <img id="onboardingPath" src={path} alt="path" />
         </div>
       );
     } else {
       return (
         <div className="onBoardingPage backgroundImage">
+
           {this.state.conclusionText !== undefined ? <h1 className="title onBoardingTitle">{this.state.conclusionText}</h1>
             : <h1 className="title onBoardingTitle">{this.state.transitionTitleText}</h1>}
-
-          {this.state.resourceText !== undefined && this.state.resourceLink !== undefined
-            ? (
-              <div className="gameOfLifeResource">
-                <h3 className="resourceText">{this.state.resourceText}</h3>
-                <a href={`${this.state.resourceLink}`} target="_blank" rel="noopener noreferrer"> website here!</a>
-              </div>
-            )
-            : <div> Join our family today! </div>}
-
           {this.state.conclusionText !== undefined ? <NavLink type="button" className="yellow-btn" to="/signup/youth">Finalize Account</NavLink>
             : <button type="button" className="yellow-btn" onClick={this.continueClick}>Continue </button>}
+          <div className="card transitionCard" style={{ backgroundImage: { sign } }}>
+            {this.state.resourceText !== undefined && this.state.resourceLink !== undefined
+              ? (
+                <div className="card-title">
+                  <h3 className="resourceText">{this.state.resourceText}</h3>
+
+                </div>
+
+              )
+              : <div> Join our family today! </div>}
+
+            {this.state.conclusionText !== undefined ? null : (
+              <a className="yellow-btn onboardingButton"
+                href={`${this.state.resourceLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              > website here!
+              </a>
+            )}
+
+          </div>
+          <div className="stick" />
+          <img id="onboardingPath" src={path} alt="path" />
 
         </div>
 
