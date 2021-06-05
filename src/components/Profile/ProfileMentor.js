@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { fetchMentorInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
-import '../../profile-styles/org-profile.scss';
+import '../../profile-styles/mentor-profile.scss';
 import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 
@@ -89,21 +89,37 @@ const ProfileMentor = (props) => {
     <div>
       <div className="profilePageContainer">
         <div className="leftBar">
-          <h1 className="title">Welcome! {mentor.user.firstName} </h1>
-          <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-          <h3 className="boldtwentyfour">Personal Information: </h3>
-          <h3 className="sixteenpoint">Career Path: {mentor.user.path}</h3>
-          <h3 className="sixteenpoint"> Email: {mentor.user.email}</h3>
-          <h3 className="sixteenpoint"> Location: {mentor.user.location}</h3>
-          <h3 className="sixteenpoint"> Bio: {mentor.user.why}</h3>
+          <div className="profile-header">
+            <h1 className="profile-title">Welcome, {mentor.user.firstName}! </h1>
+            <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`} className="editprofile-btn">Edit Profile</NavLink>
+          </div>
+          {/* <h2 className="profile-info">Personal Information</h2> */}
+          <div className="profile-info">
+            <div className="profile-section">
+              <h3>Career Path:</h3>
+              <p>{mentor.user.careerPath}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Email:</h3>
+              <p>{mentor.user.email}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Location:</h3>
+              <p>{mentor.user.location}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Bio:</h3>
+              <p>{mentor.user.bio}</p>
+            </div>
+          </div>
           <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
-          <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink>
+          {/* <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink> */}
         </div>
         <div className="path-container">
-          <div className="mentor-name">
-            <h3 className="sixteenpoint" id="path-name">{mentor.user.firstName}&apos;s Path</h3>
+          <div className="mentorpath-name">
+            <h3 id="path-name">{mentor.user.firstName}&apos;s Path</h3>
+            <NavLink to={`/mentor/${props.match.params.userID}/path`} className="newpath-btn">Create New Path</NavLink>
           </div>
-          <NavLink to={`/mentor/${props.match.params.userID}/path`}>New Path</NavLink>
           <div className="all-moments">
             {showMoments(mentor.user.momentsPath)}
           </div>

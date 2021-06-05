@@ -4,14 +4,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Talk from 'talkjs';
 import { fetchMentor, updateYouthMessaged } from '../../actions/network-actions';
-
-// const NetworkOrgProfile = (props) => {
-//   const org = useSelector((state) => state.org);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchOrg(props.match.params.userID)); // reseting user
-//   }, []);
+import '../../profile-styles/mentor-profile.scss';
+import '../../onboarding-styles/moment-card.scss';
+import '../../onboarding-styles/mentor-path.scss';
 
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
@@ -75,7 +70,6 @@ class NetworkMentorProfile extends Component {
 
   message = () => {
     console.log('I MADE IT');
-
     window.open(`mailto:${this.props.currentMentor.email}?subject=Reaching Out`);
     // action that adds mentor to youth mesaged
     this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
@@ -139,20 +133,36 @@ class NetworkMentorProfile extends Component {
       <div>
         <div className="profilePageContainer">
           <div className="leftBar">
-            <h1 className="title">Welcome! {this.props.currentMentor.firstName} </h1>
-            <h3 className="boldtwentyfour">Personal Information: </h3>
-            <h3 className="sixteenpoint">Career Path: {this.props.currentMentor.careerPath}</h3>
-            <h3 className="sixteenpoint"> Email: {this.props.currentMentor.email}</h3>
+            <div className="profile-header">
+              <h1 className="profile-title">{this.props.currentMentor.firstName} {this.props.currentMentor.lastName}</h1>
+            </div>
+            <p className="profile-type">{this.props.currentMentor.type}</p>
+            {/* <h2>Personal Information</h2> */}
+            <div className="profile-info">
+              <div className="profile-section">
+                <h3>Career Path:</h3>
+                <p>{this.props.currentMentor.careerPath}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Email:</h3>
+                <p>{this.props.currentMentor.email}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Location:</h3>
+                <p>{this.props.currentMentor.location}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Bio:</h3>
+                <p>{this.props.currentMentor.bio}</p>
+              </div>
+            </div>
             <button className="fas fa-comments pink-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)} alt="submit" />
-            {/* <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3> */}
-            {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3> */}
             {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
             {/* <button type="button" onClick={this.message}>Email Me</button> */}
-
           </div>
           <div className="path-container">
-            <div className="mentor-name">
-              <h3 className="sixteenpoint" id="path-name">{this.props.currentMentor.firstName}&apos;s Path</h3>
+            <div className="mentorpath-name">
+              <h3 id="path-name">{this.props.currentMentor.firstName}&apos;s Path</h3>
             </div>
             <div className="all-moments">
               {this.showMoments(this.props.currentMentor.momentsPath)}

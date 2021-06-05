@@ -137,7 +137,7 @@ class SignUpMentor extends Component {
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Bio</InputLabel>
-              <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.bio} onChange={this.handleBioChange} />
+              <Input id="component-simple" className="sixteenpoint" value={this.state.bio} onChange={this.handleBioChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
               <InputLabel className="sixteenpoint" htmlFor="component-simple">Email<sup>*</sup></InputLabel>

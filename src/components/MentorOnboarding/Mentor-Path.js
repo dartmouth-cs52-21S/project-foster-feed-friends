@@ -82,10 +82,9 @@ const SimplePopover = () => {
 
   return (
     <div>
-      {/* <Button className="fas fa-info-circle" aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
-        Open Popover
-      </Button> */}
-      <i id="popover-icon" className="fas fa-info-circle" aria-describedby={id} variant="contained" color="primary" onClick={handleClick} />
+      <button type="button" className="inspo-btn" aria-describedby={id} variant="contained" onClick={handleClick}>
+        Need Inspo?
+      </button>
       <Popover
         id={id}
         open={open}
@@ -104,17 +103,14 @@ const SimplePopover = () => {
           <div className="popper">
             <div className="inspo-header">
               <h2>Need Inspiration?</h2>
-              <h4>Here are some prompts you may consider and symbols you may associate them with. <br /></h4>
+              <h4>Here are some prompts you may consider.<br /></h4>
             </div>
             <div className="inspo-content">
-              <div className="popper-symbol">
-                <i className="fas fa-star pink-btn" />
-              </div>
               <div className="inspo-text">
-                <h5>What was your first job?</h5>
-                <h5>Who has been one of your greatest mentors in life?</h5>
-                <h5>When was a time you felt defeated?</h5>
-                <h5>Describe a moment you felt proud.</h5>
+                <li>What was your first job?</li>
+                <li>Who has been one of your greatest mentors in life?</li>
+                <li>When was a time you felt defeated?</li>
+                <li>Describe a moment you felt proud.</li>
               </div>
             </div>
           </div>
@@ -177,11 +173,11 @@ class MentorPath extends Component {
         </div>
         <MomentModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
-        <div className="done-btn">
-          <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
-        </div>
-        <div className="inspo-btn">
+        {/* <div className="done-btn"> */}
+        <div className="mbtn-container">
           <SimplePopover />
+          <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
+          {/* </div> */}
         </div>
       </div>
     );

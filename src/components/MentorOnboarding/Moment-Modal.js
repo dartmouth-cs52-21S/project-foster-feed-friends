@@ -114,10 +114,6 @@ class MomentModal extends Component {
     this.setState({ description: event.target.value });
   }
 
-  // onSymbolClick = (event) => {
-
-  // }
-
   onAdd = (event) => {
     this.props.createMoment(this.state);
     this.props.handleAdd();
