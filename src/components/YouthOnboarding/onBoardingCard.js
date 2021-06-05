@@ -19,9 +19,9 @@ class OnBoardingCards extends Component {
     };
   }
 
-  handleHover = () => {
-    this.setState({ hover: !this.hover });
-  }
+  // handleHover = () => {
+  //   this.setState({ hover: !this.hover });
+  // }
 
   handleClick = () => {
     if (localStorage.getItem('pathYouth') == null) {
@@ -42,14 +42,30 @@ class OnBoardingCards extends Component {
 
   render = () => {
     return (
-      <div className="overallCard" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-        <div className="onBoardingCard" onClick={this.handleClick} role="button" tabIndex="0">
-          <h1 className="title cardTitle">{this.state.text}</h1>
+      <div onMouseEnter={() => this.setState({ hover: true })} onMouseLeave={() => this.setState({ hover: false })}>
+        <div className="card onBoarding">
+          <div className="card-body" onClick={this.handleClick} role="button" tabIndex="0">
+            <h1 className="card-title">{this.state.text}</h1>
+          </div>
         </div>
-        <div>
-          {this.state.hover === true ? <div className="onBoardingHover">{this.state.hoverText}</div> : null}
-        </div>
+        {this.state.hover === true ? (
+          <div className="card onBoarding">
+            <div>
+              <div className="card-body">{this.state.hoverText}</div>
+            </div>
+          </div>
+        ) : null }
       </div>
+    // <div className="card">
+    //   <div className="card-body">
+    //     <h5 className="card-title">{resource.organizationName}</h5>
+    //     <h6 id="location">{resource.location}</h6>
+    //     <h6 id="location">{resource.poc}</h6>
+    //     <i className="far fa-envelope green-btn">
+    //       <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${resource.pocemail}`} target="_blank" rel="noopener noreferrer">Email</a>
+    //     </i>
+    //   </div>
+    // </div>
     );
   }
 }

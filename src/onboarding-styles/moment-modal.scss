@@ -90,10 +90,10 @@ $pink:#D34D9D;
 #popover-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 #popover-icon{
     margin-left: 5px;
-    align-self: center;
 }
 
 
