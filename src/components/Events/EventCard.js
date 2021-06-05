@@ -7,21 +7,22 @@ const EventCard = ({
 }) => {
   return (
     <NavLink to={`${currentOrgID}/event/${id}`}>
-      <div className="totalCard">
+      <div className="card eventCard">
         {/* <div className="card-body"> */}
-        <div className="leftCard">
+        <div className="card-body">
+          <p className="card-title"><em>{name}</em></p>
+          <p>{coordinator}</p>
           <p>{date}</p>
           <p>{time}</p>
           <p>{location}</p>
         </div>
-        <div className="rightCard">
-          <p>{name}</p>
-          {/* <p>{this.state.description}</p> */}
-          <p>{coordinator}</p>
-          {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
-        </div>
-        {/* </div> */}
+
+        {/* <p>{this.state.description}</p> */}
+
+        {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
       </div>
+      {/* </div> */}
+
     </NavLink>
 
   );

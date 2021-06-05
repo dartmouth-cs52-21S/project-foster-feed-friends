@@ -6,11 +6,14 @@ import { NavLink } from 'react-router-dom';
 import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchYouthEvents } from '../../actions/events-actions';
+// import { fetchMentor } from '../../actions/network-actions';
+
 import EventCardProfile from '../Events/EventCardProfile';
 
 const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
   const { all } = useSelector((state) => state.events);
+  const { currentMentor } = useSelector((state) => state.networkMentors);
   const dispatch = useDispatch();
   const history = useHistory();
   console.log(youth);
@@ -18,6 +21,7 @@ const ProfileYouth = (props) => {
   useEffect(() => {
     dispatch(fetchYouthInfo(props.match.params.userID));
     dispatch(fetchYouthEvents(props.match.params.userID));
+    // dispatch(go through list, fetchMentor(), render information)
   }, []);
 
   const onSubmit = () => {
@@ -145,8 +149,20 @@ const ProfileYouth = (props) => {
         <div className="EventsBlock">
           <h2>Connections</h2>
           <div className="underlineLight profileBar" />
-          {youth.user.messaged ? <h3 className="sixteenpoint">Connect with a Mentor!</h3> : null }
-          <div />
+          {youth.user.messaged ? (
+            <div>{youth.user.messaged.length > 0 ? (
+              <div>{ youth.user.messaged.map((data, key) => {
+                return (
+                  <div className="card">
+                    {currentMentor.firstName}
+                  </div>
+                );
+              })}
+              </div>
+            ) : <h3 className="sixteenpoint">Connect with a Mentor!</h3>}
+            </div>
+          ) : null}
+
         </div>
         <div className="EventsBlock">
           <h2>Events </h2>

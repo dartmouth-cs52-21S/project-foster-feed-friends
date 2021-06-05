@@ -90,6 +90,7 @@ class NetworkMentorProfile extends Component {
   };
 
   handleMessageClick = (mentor) => {
+    this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID]);
     console.log('mentor passed in:', mentor);
     const currentUser = this.props.user.id;
     const mentorUser = mentor.id;
