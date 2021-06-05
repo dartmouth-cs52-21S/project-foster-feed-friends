@@ -11,6 +11,7 @@ import OnBoardingCards from './onBoardingCard';
 import './onBoardingPage.scss';
 
 const jsonFile = require('../../constants/test.json');
+// const background = require('../../img/background.png');
 
 class OnBoardingPage extends Component {
   constructor(props) {
@@ -23,13 +24,8 @@ class OnBoardingPage extends Component {
       resourceText: '',
       resourceLink: '',
       conclusionText: '',
-      // previous: jsonFile,
     };
   }
-
-  // setPrevious = () => {
-  //   this.setState(prevState => ({options: this.state.previous));
-  // }
 
   setConclusionText = (text) => {
     this.setState({ conclusionText: text });
@@ -60,37 +56,6 @@ class OnBoardingPage extends Component {
     this.setState({ transition: false });
   }
 
-  // mapJson = (fileArray) => {
-  //   console.log(localStorage.getItem('pathYouth'));
-
-  //   return fileArray.map((data) => {
-  //     return (
-  //       data.options.map((value) => {
-  //         return (
-  //           <div key={value.id} className="accordion" id="accordionPanelsStayOpenExample">
-  //             <OnBoardingCards
-  //               key={value.id}
-  //               title={value.title}
-  //               hoverText={value.hoverText}
-  //               transitionTitleText={value.transitionTitleText}
-  //               setTransitionText={this.setTransitionText}
-  //               titleText={value.titleText}
-  //               setTitleText={this.setTitleText}
-  //               resourceText={value.resourceText}
-  //               setResourceText={this.setResourceText}
-  //               resourceLink={value.resourceLink}
-  //               setResourceLink={this.setResourceLink}
-  //               option={data.options}
-  //               setOptions={this.setOptions}
-  //               conclusionText={data.conclusionText}
-  //               setConclusionText={this.setConclusionText}
-  //             />
-  //           </div>
-  //         );
-  //       }));
-  //   });
-  // }
-
   mapJsonAfter = (fileArray) => {
     return fileArray.map((data) => {
       console.log(fileArray);
@@ -119,17 +84,19 @@ class OnBoardingPage extends Component {
   }
 
   render = () => {
+    // document.getElementsByClassName('backgroundImage').style.background = 'url(\'../../img/background.png\')';
     if (!this.state.transition) {
       return (
-        <div className="onBoardingPage">
-          {/* <div><p>Back</p></div> */}
+        // eslint-disable-next-line global-require
+        <div className="onBoardingPage backgroundImage">
           <h1 className="title onBoardingTitle">{this.state.titleText}</h1>
           <div className="onBoardingCards">{this.mapJsonAfter(this.state.options)} </div>
+          {/* <img src="./path.png" alt="path" /> */}
         </div>
       );
     } else {
       return (
-        <div className="onBoardingPage">
+        <div className="onBoardingPage backgroundImage">
           {this.state.conclusionText !== undefined ? <h1 className="title onBoardingTitle">{this.state.conclusionText}</h1>
             : <h1 className="title onBoardingTitle">{this.state.transitionTitleText}</h1>}
 
@@ -144,6 +111,8 @@ class OnBoardingPage extends Component {
 
           {this.state.conclusionText !== undefined ? <NavLink type="button" className="yellow-btn" to="/signup/youth">Finalize Account</NavLink>
             : <button type="button" className="yellow-btn" onClick={this.continueClick}>Continue </button>}
+          {/* <img src="./path.png" alt="path" /> */}
+
         </div>
 
       );

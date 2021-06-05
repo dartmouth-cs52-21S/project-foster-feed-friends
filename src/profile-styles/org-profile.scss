@@ -36,6 +36,13 @@ $pink:#D34D9D;
     display: flex;
     flex-direction: column;
 }
+.badgesContiner{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 .profileBar.underlineLight{
     width: 275px;
 }
@@ -48,5 +55,25 @@ $pink:#D34D9D;
     overflow-x: auto;
     width:900px;
 }
-
+.badgeCircle{
+    border-radius: 50%;
+    background: black;
+    width: 75px;
+    height: 75px;
+    padding-top: 30px;
+}
+.badgeRow{
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+}
+.badge{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
 .eventsRow::-webkit-scrollbar {display: none;}

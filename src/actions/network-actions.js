@@ -51,7 +51,8 @@ export function fetchMentors() {
 export function fetchAll() {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/networks/all`).then((response) => {
-      dispatch({ type: ActionTypes.FETCH_ALL, payload: response.data });
+      dispatch({ type: ActionTypes.FETCH_ORGS, payload: response.data.orgs });
+      dispatch({ type: ActionTypes.FETCH_MENTORS, payload: response.data.mentors });
       // clear prev error
       errorClear()(dispatch);
     }).catch((error) => {
