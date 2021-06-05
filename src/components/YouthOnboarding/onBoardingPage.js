@@ -111,7 +111,6 @@ class OnBoardingPage extends Component {
 
           {this.state.conclusionText !== undefined ? <NavLink type="button" className="yellow-btn" to="/signup/youth">Finalize Account</NavLink>
             : <button type="button" className="yellow-btn" onClick={this.continueClick}>Continue </button>}
-          {/* <img src="./path.png" alt="path" /> */}
 
         </div>
 

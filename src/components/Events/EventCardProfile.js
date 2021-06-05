@@ -6,15 +6,15 @@ const EventCard = ({
   name, date, time, location, coordinator, id, currentOrgID,
 }) => {
   return (
-    <div className="totalCard">
+    <div className="card eventCard">
       {/* <div className="card-body"> */}
-      <div className="leftCard">
+      <div className="card-body">
         <p>{date}</p>
         <p>{time}</p>
         <p>{location}</p>
       </div>
-      <div className="rightCard">
-        <p>{name}</p>
+      <div className="card-body">
+        <p className="card-title">{name}</p>
         {/* <p>{this.state.description}</p> */}
         <p>{coordinator}</p>
         {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
