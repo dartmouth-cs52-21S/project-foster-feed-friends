@@ -63,3 +63,37 @@ $pink:#D34D9D;
     text-align: center;
     align-content: center;
 }
+.popper-header{
+    text-align: center;
+}
+.popper-header h2{
+    padding: 5px;
+}
+.popper-content{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.popper-text{
+    margin-left: 25px;
+}
+.popper-text h3, .popper-header h2{
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+.popper-text h5, .popper-header h4{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+#popover-container{
+    display: flex;
+    flex-direction: row;
+}
+#popover-icon{
+    margin-left: 5px;
+    align-self: center;
+}
+
+
