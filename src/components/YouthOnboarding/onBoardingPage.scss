@@ -3,12 +3,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
+   
 }
-
+// #backgroundImage{
+//     background-image: url('../../img/background.png');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
+// #backgroundImage2{
+//     background-image: url('../../img/background.png');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
 .onBoardingTitle{
     margin-top: 50px;
     text-align: center;
     width: 75%;
+
 }
 .resourceText{
     text-align: center;

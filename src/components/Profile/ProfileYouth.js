@@ -43,23 +43,102 @@ const ProfileYouth = (props) => {
         <h3 className="sixteenpoint">{youth ? youth.user.hometown : null }</h3>
         <h3 className="boldtwentyfour">Email:</h3>
         <h3 className="sixteenpoint"> {youth ? youth.user.email : null } </h3>
-        {/* <h3 className="boldtwentyfour">Badges</h3> */}
-        {/* <div className="badgeContainer">
-          <div className="badge">
-            <div> Badge 1</div>
-            <h4>One Connection </h4>
-          </div>
-          <div>
-            <div> Badge 2</div>
-            <h4>Ten Connection </h4>
-          </div>
-          <div>
-            <div> Badge 3</div>
-            <h4>twenty-five Connection </h4>
-          </div>
-        </div> */}
+        <h3 className="boldtwentyfour">Badges</h3>
+        <div className="badgesContainer">
+          {youth.user.events
+            ? (
+              <div className="badgeRow">
+                {console.log('events', youth.user.events)}
+                <div className="badge">
+                  { youth.user.events.length >= 1
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 1</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 1</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint"> 1 Event </h4>
+                </div>
+
+                <div className="badge">
+                  { youth.user.events.length >= 10
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 10</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 10</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint">10 Events </h4>
+                </div>
+                <div className="badge">
+                  { youth.user.events.length >= 25
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 25</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 25</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint">25 Events </h4>
+                </div>
+              </div>
+            ) : null}
+          {youth.user.messaged
+            ? (
+              <div className="badgeRow">
+                <div className="badge">
+                  { youth.user.events.messaged >= 1
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 1</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 1</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint"> 1 Connection </h4>
+                </div>
+                <div className="badge">
+                  { youth.user.events.length >= 10
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 10</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 10</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint">10 Connections </h4>
+                </div>
+                <div className="badge">
+                  { youth.user.events.length >= 25
+                    ? (
+                      <div className="badgeCircleLit">
+                        <div className="sixteenpoint"> 25</div>
+                      </div>
+                    ) : (
+                      <div className="badgeCircleOff">
+                        <div className="sixteenpoint"> 25</div>
+                      </div>
+                    )}
+                  <h4 className="sixteenpoint">25 Connections </h4>
+                </div>
+
+              </div>
+            ) : null}
+        </div>
         <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
-        <NavLink to={`/messages/${youth.user.id}`} exact>Inbox</NavLink>
+
       </div>
       <div className="eventsContainer">
 

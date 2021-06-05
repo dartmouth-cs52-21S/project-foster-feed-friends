@@ -157,6 +157,10 @@ class NetworkMentorProfile extends Component {
               </div>
             </div>
             <button className="fas fa-comments pink-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)} alt="submit" />
+
+            <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3>
+            {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3>
+
             {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
             {/* <button type="button" onClick={this.message}>Email Me</button> */}
           </div>
