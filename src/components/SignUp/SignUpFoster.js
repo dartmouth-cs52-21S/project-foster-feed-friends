@@ -97,7 +97,7 @@ class SignUpFoster extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.firstName} onChange={this.handleFirstNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Hometown</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Hometown<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.hometown} onChange={this.handleHometownChange} />
             </FormControl>
 
@@ -116,7 +116,7 @@ class SignUpFoster extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.lastName} onChange={this.handleLastNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Age</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Age<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.age} onChange={this.handleAgeChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">

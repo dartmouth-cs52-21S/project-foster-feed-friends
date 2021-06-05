@@ -28,6 +28,7 @@ class SignUpMentor extends Component {
       passwordconfirm: '',
       fosterBackground: 'No',
       bio: '',
+      location: '',
       type: 'mentor',
       momentsPath: props.allMoments,
 
@@ -74,6 +75,10 @@ class SignUpMentor extends Component {
     this.setState({ bio: event.target.value });
   }
 
+  handleLocationChange = (event) => {
+    this.setState({ location: event.target.value });
+  }
+
   onSubmit = (event) => {
     console.log(this.state);
     if (this.state.firstName !== '' && this.state.lastName !== '' && this.state.careerPath !== ''
@@ -91,12 +96,11 @@ class SignUpMentor extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      organization: '',
-      age: '',
       emailConfrim: '',
       password: '',
       passwordConfirm: '',
-      bio: '',
+      careerPath: '',
+
     });
   }
 
@@ -137,7 +141,11 @@ class SignUpMentor extends Component {
               <Input id="component-simple" className="sixteenpoint" value={this.state.lastName} onChange={this.handleLastNameChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
-              <InputLabel className="sixteenpoint" htmlFor="component-simple">Career Path</InputLabel>
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Location</InputLabel>
+              <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
+            </FormControl>
+            <FormControl className="signUpSpecificInput">
+              <InputLabel className="sixteenpoint" htmlFor="component-simple">Career Path<sup>*</sup></InputLabel>
               <Input id="component-simple" className="sixteenpoint" value={this.state.careerPath} onChange={this.handleCareerChange} />
             </FormControl>
             <FormControl className="signUpSpecificInput">
