@@ -1,16 +1,11 @@
+/* eslint-disable no-return-assign */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import '../../platform-styles/network-mentor.scss';
-
+// import { useHistory } from 'react-router';
 import { fetchMentor } from '../../actions/network-actions';
-
-// const NetworkOrgProfile = (props) => {
-//   const org = useSelector((state) => state.org);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchOrg(props.match.params.userID)); // reseting user
-//   }, []);
+import '../../profile-styles/mentor-profile.scss';
+import '../../onboarding-styles/moment-card.scss';
+import '../../onboarding-styles/mentor-path.scss';
 
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
@@ -63,6 +58,8 @@ const MomentThumbnail = (props) => {
 
 const NetworkMentorProfile = (props) => {
   const { currentMentor } = useSelector((state) => state.networkMentors);
+  //   const user = useSelector((state) => state.user);
+  //   const history = useHistory();
   const dispatch = useDispatch();
   //   const [state, setState] = useState();
 
@@ -72,6 +69,13 @@ const NetworkMentorProfile = (props) => {
     console.log('plsss againnnn');
     dispatch(fetchMentor(props.match.params.userID));
   });
+
+  //   const message = () => {
+  //     console.log('I MADE IT');
+  //     window.open(`mailto:${props.currentMentor.email}?subject=Reaching Out`);
+  //     // action that adds mentor to youth mesaged
+  //     updateYouthMessaged(props.user.id, [...props.user.messaged, props.match.params.userID], history);
+  //   };
 
   const showMoments = (moments) => {
     if (moments) {
@@ -91,16 +95,40 @@ const NetworkMentorProfile = (props) => {
     <div>
       <div className="profilePageContainer">
         <div className="leftBar">
-          <h1 className="title">Welcome! {props.currentMentor.firstName} </h1>
-          <h3 className="boldtwentyfour">Personal Information: </h3>
-          <h3 className="sixteenpoint">Career Path: {props.currentMentor.user.path}</h3>
-          <h3 className="sixteenpoint"> Email: {props.currentMentor.user.email}</h3>
-          <h3 className="sixteenpoint"> Location: {props.currentMentor.user.location}</h3>
-          <h3 className="sixteenpoint"> Bio: {props.currentMentor.user.why}</h3>
+          <div className="profile-header">
+            <h1 className="profile-title">{currentMentor.firstName} {currentMentor.lastName}</h1>
+          </div>
+          <p className="profile-type">{currentMentor.type}</p>
+          {/* <h2>Personal Information</h2> */}
+          <div className="profile-info">
+            <div className="profile-section">
+              <h3>Career Path:</h3>
+              <p>{currentMentor.careerPath}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Email:</h3>
+              <p>{currentMentor.email}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Location:</h3>
+              <p>{currentMentor.location}</p>
+            </div>
+            <div className="profile-section">
+              <h3>Bio:</h3>
+              <p>{currentMentor.bio}</p>
+            </div>
+          </div>
+          <button className="fas fa-comments pink-btn" type="button" alt="submit" />
+
+          <h3 className="sixteenpoint"> Location: {currentMentor.location}</h3>
+          {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3>
+
+              {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
+          {/* <button type="button" onClick={this.message}>Email Me</button> */}
         </div>
         <div className="path-container">
-          <div className="mentor-name">
-            <h3 className="sixteenpoint" id="path-name">{props.currentMentor.firstName}&apos;s Path</h3>
+          <div className="mentorpath-name">
+            <h3 id="path-name">{currentMentor.firstName}&apos;s Path</h3>
           </div>
           <div className="all-moments">
             {showMoments(currentMentor.momentsPath)}
@@ -112,28 +140,4 @@ const NetworkMentorProfile = (props) => {
   );
 };
 
-// class NetworkMentorProfile extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//     };
-//   }
-
-//   componentDidMount() {
-//     console.log('I MADE IT');
-//     this.props.fetchMentor(this.props.match.params.userID);
-//   }
-
-//   render = () => {
-//     return (
-
-//     );
-//   }
-// }
-// function mapStateToProps(reduxState) {
-//   return {
-//     currentMentor: reduxState.networkMentors.currentMentor,
-
-//   };
-// }
 export default NetworkMentorProfile;

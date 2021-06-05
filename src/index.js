@@ -24,6 +24,8 @@ const store = createStore(reducers, {}, compose(
 ));
 const token = localStorage.getItem('token');
 const userID = localStorage.getItem('userId');
+
+// localStorage.removeItem('token');
 if (token && userID) {
   store.dispatch({ type: ActionTypes.AUTH_USER, payload: userID });
 }
