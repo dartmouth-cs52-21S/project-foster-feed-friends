@@ -29,21 +29,38 @@ class NetworkOrgProfile extends Component {
     this.props.fetchOrgEvents(this.props.match.params.userID);
   }
 
+    handleEmailClick = () => {
+      console.log('I MADE IT');
+      window.open(`mailto:${this.props.currentOrg.email}?subject=Reaching Out`);
+      // action that adds mentor to youth mesaged
+      // this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
+    }
+
   render = () => {
     console.log('org id:', this.props.currentOrg.id);
     return (
       <div>
         <div className="profilePageContainer">
           <div className="leftBar">
-            <h1 className="title">Welcome! {this.props.currentOrg?.orgname}</h1>
+            <div className="network-header">
+              <h1 className="profile-title">{this.props.currentOrg?.orgname}</h1>
+              <button className="email-btn" type="button" onClick={this.handleEmailClick}>Email Us</button>
+            </div>
             {this.props.currentOrg.events ? <h3 className="sixteenpoint">{this.props.currentOrg.events.length} Events</h3> : null}
-
-            <h3 className="boldtwentyfour">Person of contact name : </h3>
-
-            <h3 className="sixteenpoint">{this.props.currentOrg.poc}</h3>
-            <h3 className="sixteenpoint">{this.props.currentOrg.location}</h3>
-            <h3 className="boldtwentyfour">Email:</h3>
-            <h3 className="sixteenpoint"> {this.props.currentOrg.email} </h3>
+            <div className="profile-info">
+              <div className="profile-section">
+                <h3>Location:</h3>
+                <p>{this.props.currentOrg.location}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Person of Contact Name:</h3>
+                <p>{this.props.currentOrg.poc}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Email:</h3>
+                <p>{this.props.currentOrg.email}</p>
+              </div>
+            </div>
           </div>
           <div className="eventsContainer">
 
