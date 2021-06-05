@@ -49,10 +49,11 @@ const ProfileOrg = (props) => {
       <div>
         <div className="profilePageContainer">
           <div className="leftBar">
-            <h1 className="title">Welcome! {org.user.orgname}</h1>
-            {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
-            {/* <button className="yellow-btn" type="button" onClick={() => { toggleEditing(false); }}> Edit Profile </button> */}
-            <NavLink to={`/org/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
+            <h1 className="title">Welcome, {org.user.orgname}!</h1>
+            <div className="network-header">
+              {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
+              <NavLink to={`/org/profile/${props.match.params.userID}/edit`} className="editprofile-btn" type="button">Edit Profile</NavLink>
+            </div>
             <h3 className="boldtwentyfour">Person of contact name : </h3>
             <h3 className="sixteenpoint">{org.user.pocname}</h3>
             <h3 className="sixteenpoint">{org.user.location}</h3>

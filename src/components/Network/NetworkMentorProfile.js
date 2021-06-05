@@ -68,12 +68,12 @@ class NetworkMentorProfile extends Component {
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
-  message = () => {
-    console.log('I MADE IT');
-    window.open(`mailto:${this.props.currentMentor.email}?subject=Reaching Out`);
-    // action that adds mentor to youth mesaged
-    this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
-  }
+  // handleEmailClick = () => {
+  //   console.log('I MADE IT');
+  //   window.open(`mailto:${this.props.currentMentor.email}?subject=Reaching Out`);
+  //   // action that adds mentor to youth mesaged
+  //   this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
+  // }
 
   showMoments = (moments) => {
     if (moments) {
@@ -134,8 +134,9 @@ class NetworkMentorProfile extends Component {
       <div>
         <div className="profilePageContainer">
           <div className="leftBar">
-            <div className="profile-header">
+            <div className="network-header">
               <h1 className="profile-title">{this.props.currentMentor.firstName} {this.props.currentMentor.lastName}</h1>
+              <button className="message-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)}>Message Me</button>
             </div>
             <p className="profile-type">{this.props.currentMentor.type}</p>
             {/* <h2>Personal Information</h2> */}
@@ -157,13 +158,7 @@ class NetworkMentorProfile extends Component {
                 <p>{this.props.currentMentor.bio}</p>
               </div>
             </div>
-            <button className="fas fa-comments pink-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)} alt="submit" />
-
-            <h3 className="sixteenpoint"> Location: {this.props.currentMentor.location}</h3>
-            {/* <h3 className="sixteenpoint"> Bio: {this.props.currentMentor.why}</h3>
-
-            {/* <a type="button" onClick={this.message} href={`mailto:${this.props.currentMentor.email}`}>Email Me</a> */}
-            {/* <button type="button" onClick={this.message}>Email Me</button> */}
+            {/* <button className="email-btn" type="button" onClick={this.handleEmailClick}>Email Me</button> */}
           </div>
           <div className="path-container">
             <div className="mentorpath-name">
