@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,7 +22,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-star pink-btn" />
+          <i className="fas fa-star pop-sym" />
           {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
@@ -34,7 +34,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-archway pink-btn" />
+          <i className="fas fa-archway pop-sym" />
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
@@ -45,7 +45,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-spinner pink-btn" />
+          <i className="fas fa-spinner pop-sym" />
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
@@ -172,12 +172,12 @@ class MentorMomentsUpdate extends Component {
         <MentorMomentsUpdateModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
         <img src={path} alt="path" />
-        <div className="done-btn">
+        {/* <div className="done-btn">
           <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
-        </div>
+        </div> */}
         <div className="mbtn-container">
           <SimplePopover />
-          <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
+          <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
           {/* </div> */}
         </div>
       </div>

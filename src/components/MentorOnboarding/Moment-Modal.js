@@ -63,7 +63,7 @@ const SimplePopover = () => {
             </div>
             <div className="popper-content">
               <div className="popper-symbol">
-                <i className="fas fa-star pink-btn" />
+                <i className="fas fa-star pop-sym" />
               </div>
               <div className="popper-text">
                 <h3>Star</h3>
@@ -72,7 +72,7 @@ const SimplePopover = () => {
             </div>
             <div className="popper-content">
               <div className="popper-symbol">
-                <i className="fas fa-archway pink-btn" />
+                <i className="fas fa-archway pop-sym" />
               </div>
               <div className="popper-text">
                 <h3>Bridge</h3>
@@ -81,7 +81,7 @@ const SimplePopover = () => {
             </div>
             <div className="popper-content">
               <div className="popper-symbol">
-                <i className="fas fa-spinner pink-btn" />
+                <i className="fas fa-spinner pop-sym" />
               </div>
               <div className="popper-text">
                 <h3>Full-Circle</h3>
@@ -162,19 +162,19 @@ class MomentModal extends Component {
               </div>
               <div className="moment-buttons">
                 <div className="img-btn">
-                  <button className="fas fa-star pink-btn" type="button" onClick={() => this.setState({ symbol: 'star' })} symbol={this.state.symbol} />
+                  <button className="fas fa-star sym-btn" type="button" onClick={() => this.setState({ symbol: 'star' })} symbol={this.state.symbol} />
                   <p>star</p>
                 </div>
                 <div className="img-btn">
-                  <button className="fas fa-archway pink-btn" type="button" onClick={() => this.setState({ symbol: 'bridge' })} symbol={this.state.symbol} />
+                  <button className="fas fa-archway sym-btn" type="button" onClick={() => this.setState({ symbol: 'bridge' })} symbol={this.state.symbol} />
                   <p>bridge</p>
                 </div>
                 <div className="img-btn">
-                  <button className="fas fa-spinner pink-btn" type="button" onClick={() => this.setState({ symbol: 'circle' })} symbol={this.state.symbol} />
+                  <button className="fas fa-spinner sym-btn" type="button" onClick={() => this.setState({ symbol: 'circle' })} symbol={this.state.symbol} />
                   <p>full-circle</p>
                 </div>
                 <div className="img-btn">
-                  <button className="fas fa-slash pink-btn" type="button" onClick={() => this.setState({ symbol: 'none' })} symbol={this.state.symbol} />
+                  <button className="fas fa-slash sym-btn" type="button" onClick={() => this.setState({ symbol: 'none' })} symbol={this.state.symbol} />
                   <p>none</p>
                 </div>
               </div>
