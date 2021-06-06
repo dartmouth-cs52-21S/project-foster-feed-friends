@@ -7,6 +7,7 @@ import { fetchMentor, updateYouthMessaged } from '../../actions/network-actions'
 import '../../profile-styles/mentor-profile.scss';
 import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
+import path from '../YouthOnboarding/path.png';
 
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
@@ -166,6 +167,7 @@ class NetworkMentorProfile extends Component {
             </div>
             <div className="all-moments">
               {this.showMoments(this.props.currentMentor.momentsPath)}
+              <img src={path} alt="path" />
             </div>
           </div>
         </div>
