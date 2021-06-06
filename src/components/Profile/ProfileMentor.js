@@ -112,7 +112,9 @@ const ProfileMentor = (props) => {
               <p>{mentor.user.bio}</p>
             </div>
           </div>
-          <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
+          <div className="so-container">
+            <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
+          </div>
           {/* <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink> */}
         </div>
         <div className="path-container">
