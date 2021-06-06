@@ -79,6 +79,7 @@ class SignUpFoster extends Component {
       emailconfirm: '',
       password: '',
       passwordconfirm: '',
+      type: 'youth',
     });
     localStorage.removeItem('pathYouth');
   }

@@ -88,6 +88,8 @@ const renderAuth = (auth) => {
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.user);
+
+  console.log(user);
   if (props.auth && (user.user.type === 'mentor' || user.user.type === 'youth')) {
     return (
       <AppBar position="static" id="navBarContainer">
