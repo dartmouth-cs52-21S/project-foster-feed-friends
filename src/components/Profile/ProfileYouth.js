@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
-import { fetchYouthEvents } from '../../actions/events-actions';
+// import { fetchYouthEvents } from '../../actions/events-actions';
 // import { fetchMentor } from '../../actions/network-actions';
 
 import EventCardProfile from '../Events/EventCardProfile';
@@ -20,7 +20,7 @@ const ProfileYouth = (props) => {
 
   useEffect(() => {
     dispatch(fetchYouthInfo(props.match.params.userID));
-    dispatch(fetchYouthEvents(props.match.params.userID));
+    // dispatch(fetchYouthEvents(props.match.params.userID));
     // dispatch(go through list, fetchMentor(), render information)
   }, []);
 
