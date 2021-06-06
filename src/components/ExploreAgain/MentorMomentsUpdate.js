@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -172,12 +172,12 @@ class MentorMomentsUpdate extends Component {
         <MentorMomentsUpdateModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
         {/* <MomentModal show={this.state.show} /> */}
         <img src={path} alt="path" />
-        <div className="done-btn">
+        {/* <div className="done-btn">
           <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
-        </div>
+        </div> */}
         <div className="mbtn-container">
           <SimplePopover />
-          <NavLink to="/signup/mentor" className="yellow-btn" type="submit" onClick={this.onDone}>Done</NavLink>
+          <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
           {/* </div> */}
         </div>
       </div>
