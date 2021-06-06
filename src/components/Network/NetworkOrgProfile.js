@@ -54,7 +54,7 @@ class NetworkOrgProfile extends Component {
               </div>
               <div className="profile-section">
                 <h3>Person of Contact Name:</h3>
-                <p>{this.props.currentOrg.poc}</p>
+                <p>{this.props.currentOrg.pocname}</p>
               </div>
               <div className="profile-section">
                 <h3>Email:</h3>

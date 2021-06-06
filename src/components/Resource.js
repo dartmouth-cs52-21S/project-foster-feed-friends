@@ -53,7 +53,7 @@ class Resource extends Component {
   render() {
     return (
       <div>
-        <div id="banner">Resources</div>
+        <div id="pink-banner">Resources</div>
         <div className="searchBar input-group rounded">
           <input type="search"
             className="form-control rounded"

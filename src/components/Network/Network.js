@@ -32,18 +32,14 @@ class Network extends Component {
     }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>
-          {/* <div className="col-sm-6"> */}
-          <div key={org.id} className="card">
-            <div className="card-body">
-              <h5 className="card-title">{org.orgname}</h5>
-              <h6 id="location">{org.location}</h6>
-              <p className="card-text"> {org.poc}</p>
-              <i className="far fa-envelope green-btn">
-                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer">Email</a>
-              </i>
+          <div className="card mc-card">
+            <div className="card-body mc-body">
+              <h4 className="card-title mc-title">{org.orgname} </h4>
+              <h5 className="mc-location">{org.location}</h5>
+              {/* <h6 className="mc-email">{org.pocname}</h6> */}
+              <h6 className="mc-email">{org.email}</h6>
             </div>
           </div>
-          {/* </div> */}
         </NavLink>
       );
     });
@@ -56,12 +52,11 @@ class Network extends Component {
     }).map((mentor) => {
       return (
         <NavLink to={`mentor/profile/${mentor.id}`} exact>
-          {/* <div className="col-sm-6"> */}
-          <div key={mentor.id} className="card">
-            <div className="card-body">
-              <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
-              <h6 id="location">{mentor.hometown}</h6>
-              <p className="card-text"> {mentor.bio}</p>
+          <div className="card mc-card">
+            <div className="card-body mc-body">
+              <h4 className="card-title mc-title">{mentor.firstName} {mentor.lastName} </h4>
+              <h5 className="mc-location">{mentor.location}</h5>
+              <h6 className="mc-email">{mentor.email}</h6>
             </div>
           </div>
           {/* </div> */}
@@ -84,7 +79,7 @@ class Network extends Component {
               <div>Mentors</div>
             </NavLink>
             <NavLink to="/networks/all">
-              <div>All</div>
+              <div id="all">All</div>
             </NavLink>
           </div>
         </AppBar>
@@ -102,10 +97,11 @@ class Network extends Component {
         </div>
         <ul className="orgList cardContainer">
           {this.orgsList()}
-        </ul>
-        <ul className="orgList cardContainer">
           {this.mentorsList()}
         </ul>
+        {/* <ul className="orgList cardContainer">
+          {this.mentorsList()}
+        </ul> */}
       </div>
     );
   }

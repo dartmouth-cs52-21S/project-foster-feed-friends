@@ -15,7 +15,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-star pink-btn" />
+          <i className="fas fa-star pop-sym" />
           {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
 
@@ -28,7 +28,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-archway pink-btn" />
+          <i className="fas fa-archway pop-sym" />
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
@@ -39,7 +39,7 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          <i className="fas fa-spinner pink-btn" />
+          <i className="fas fa-spinner pop-sym" />
           {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
