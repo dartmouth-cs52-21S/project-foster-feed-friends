@@ -61,8 +61,10 @@ $pink:#D34D9D;
 }
 .pink-btn{
     font-size: 16px !important;
+    font-family: 'Nunito', sans-serif;
     border-radius: 10px;
     padding: 5px;
     background-color: $pink;
     color:$white;
+    border-style: none;
 }

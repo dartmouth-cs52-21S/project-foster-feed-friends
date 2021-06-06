@@ -138,6 +138,7 @@ export function updateMentorMoments(id, moments, history) {
       history.push(`/mentor/profile/${id}`);
     }).catch((error) => {
       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+      console.log(error);
     });
   };
 }

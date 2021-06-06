@@ -81,14 +81,15 @@ class NetworkMentors extends Component {
         <NavLink to={`mentor/profile/${mentor.id}`} exact>
           {/* <div className="col-sm-6">
             {console.log(mentor.firstName, ' ', mentor.id)} */}
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
-              <h6 id="location">{mentor.hometown}</h6>
-              <p className="card-text"> {mentor.bio}</p>
-              <i className="far fa-envelope green-btn">
+          <div className="card mc-card">
+            <div className="card-body mc-body">
+              <h4 className="card-title mc-title">{mentor.firstName} {mentor.lastName} </h4>
+              <h5 className="mc-location">{mentor.location}</h5>
+              <h6 className="mc-email">{mentor.email}</h6>
+              {/* <p className="card-text mc-bio"> {mentor.bio}</p> */}
+              {/* <i className="far fa-envelope green-btn">
                 <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
-              </i>
+              </i> */}
               {/* <button className="fas fa-comments pink-btn" type="button" onClick={() => this.handleMessageClick(mentor)} /> */}
             </div>
           </div>
@@ -113,7 +114,7 @@ class NetworkMentors extends Component {
               <div>Mentors</div>
             </NavLink>
             <NavLink to="/networks/all">
-              <div>All</div>
+              <div id="all">All</div>
             </NavLink>
           </div>
         </AppBar>
@@ -153,9 +154,9 @@ class NetworkMentors extends Component {
                     </div>
                 </div> */}
         </ul>
-        <div className="chatbox-container" ref={(c) => this.container = c}>
+        {/* <div className="chatbox-container" ref={(c) => this.container = c}>
           <div id="talkjs-container" style={{ height: '300px' }}><i /></div>
-        </div>
+        </div> */}
       </div>
     );
   }

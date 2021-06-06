@@ -43,3 +43,6 @@ heroku(backend) & netlify(overall) <3
 ## Acknowledgments
 CS52 Professor Tim T. 
 CS52 21S TAs 
+- Jordan Sanz
+- Catherine Parnell
+- Thomas Monfre

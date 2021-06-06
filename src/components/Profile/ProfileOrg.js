@@ -54,12 +54,23 @@ const ProfileOrg = (props) => {
               {org.user.events ? <h3 className="sixteenpoint">{org.user.events.length} Events</h3> : null}
               <NavLink to={`/org/profile/${props.match.params.userID}/edit`} className="editprofile-btn" type="button">Edit Profile</NavLink>
             </div>
-            <h3 className="boldtwentyfour">Person of contact name : </h3>
-            <h3 className="sixteenpoint">{org.user.pocname}</h3>
-            <h3 className="sixteenpoint">{org.user.location}</h3>
-            <h3 className="boldtwentyfour">Email:</h3>
-            <h3 className="sixteenpoint"> {org.user.email} </h3>
-            <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
+            <div className="profile-info">
+              <div className="profile-section">
+                <h3>Location:</h3>
+                <p>{org.user.location}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Person of Contact:</h3>
+                <p>{org.user.pocname}</p>
+              </div>
+              <div className="profile-section">
+                <h3>Email:</h3>
+                <p>{org.user.email}</p>
+              </div>
+            </div>
+            <div className="so-container">
+              <button className="yellow-btn" type="button" onClick={onSubmit}>Sign Out </button>
+            </div>
           </div>
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>

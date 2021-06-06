@@ -11,9 +11,9 @@ $pink:#D34D9D;
 .cardContainer{
     flex-wrap: wrap;
 }
- .card-body{
+.card-body{
      margin:10px;
- }
+}
 .card{
     margin:10px;
 }
@@ -28,7 +28,14 @@ a{
 h5, h6{
     color:$black;
 }
-
 .green-btn{
     color:$white;
+}
+#pink-banner{
+    background-color: $pink;
+    text-align: center;
+    padding:10px;
+    font-size: 25px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
 }
