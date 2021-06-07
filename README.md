@@ -21,7 +21,8 @@ Check out our Figma! [*Figma Prototype*](https://www.figma.com/file/Hcpn03bH20z8
 
 
 ## Architecture
-* For More Information Read Our [*Backend ReadMe*] (https://github.com/dartmouth-cs52-21S/project-api-foster-feed-friends) 
+For More Information Read Our [*Backend ReadMe*](https://github.com/dartmouth-cs52-21S/project-api-foster-feed-friends) 
+
 Frontend: 
 - Bootstrap utilized for navigation bar and simple font stylings 
 - MaterialUI used for input fields, forms, and card displays
