@@ -25,8 +25,6 @@ ul{
     justify-content: space-between;
     text-decoration: none;
 }
-
-
 //nav bar bg and text elems
 #navBarContainer{
     background-color: $primaryG;
@@ -40,29 +38,28 @@ ul{
     font-family: "Nunito", sans-serif;
     color:$white;
 }
+.navTab:hover{
+    color: $white;
+}
 .left{
     font-size: 25px;
 }
 .right{
     font-size: 20px;
 }
-
 //For underline navbar animation left-right
 a{
     text-decoration: none;
     color:black;
 }
-
 a:hover{
     color:$yellow-CTA;
     text-decoration: none;
 }
-
 a.left
 {
     position: relative;
 }
-
 a.left:before {
   content: "";
   position: absolute;
@@ -74,12 +71,10 @@ a.left:before {
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
-
 a.left:hover:before {
   visibility: visible;
   width: 100%;
 }
-
 //flex boxes for the nav elems
 #navRight{
     display:flex;
@@ -87,7 +82,6 @@ a.left:hover:before {
     justify-content: flex-end;
     padding-top:20px;
 }
-
 #title{
     display: flex;
     flex-direction: row;
@@ -95,7 +89,6 @@ a.left:hover:before {
     padding-top:20px;
     margin-left: 0px;
 }
-
 .navSignInButton{
     text-decoration: none;
     color:$white !important;
@@ -113,7 +106,6 @@ a.left:hover:before {
     margin-left: 20px;
     margin-top: 5px;
 }
-
 .nav-btn{
     padding: 10px;
     margin-right: 25px;

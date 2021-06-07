@@ -74,7 +74,7 @@ class SignUpOrg extends Component {
     return (
       <div id="signUpSpecificContainer">
         <div className="header">
-          <div id="su-title">Welcome to Foster Feed Friends! Sign up to join our network.<sub>*Required Field</sub></div>
+          <div className="title">Welcome to Foster Feed Friends! Sign up to join our network.<sub>*Required Field</sub></div>
           <div>{this.state.error}</div>
         </div>
         <FormControl className="signUpSpecificInput">
