@@ -43,6 +43,7 @@ import MentorMomentsUpdate from './ExploreAgain/MentorMomentsUpdate';
 import Resource from './Resource';
 import Event from './Events/Event';
 import MessageInbox from './messages/Message';
+import OrgeEvent from './Events/orgeEvent';
 import { fetchYouthInfo, fetchMentorInfo, fetchOrgInfo } from '../actions/user-actions';
 
 const theme = createMuiTheme({
@@ -110,12 +111,13 @@ const App = (props) => {
             <PrivateRoute exact path="/mentor/profile/:userID" component={ProfileMentor} />
             <PrivateRoute exact path="/youth/:userID/path" component={ExploreAgain} />
             <PrivateRoute exact path="/mentor/:userID/path" component={MentorMomentsUpdate} />
+            <PrivateRoute path="org/profile/:userID/event/:eventId" component={OrgeEvent} />
             <PrivateRoute path="/networks/orgs/profile/:userID/event/:eventId" component={Event} />
             {/* <PrivateRoute path="/-org/profile/event/:userID" component={eventForm} /> */}
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
             <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />
-            <PrivateRoute path="/org/profile/:userID/event" component={EventForm} />
+            <PrivateRoute exact path="/org/profile/:userID/event" component={EventForm} />
             <PrivateRoute component={FallBack} />
           </Switch>
         </div>
