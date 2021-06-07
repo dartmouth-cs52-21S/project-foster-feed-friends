@@ -11,10 +11,6 @@ import '../../onboarding-styles/moment-card.scss';
 import '../../onboarding-styles/mentor-path.scss';
 import path from '../YouthOnboarding/path.png';
 
-// const [show, setShow] = useState(false);
-// const onDelete = () => {
-
-// }
 const MomentThumbnail = (props) => {
   if (props.moment.symbol === 'star') {
     return (
@@ -23,8 +19,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-star pop-sym" />
-          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -35,7 +29,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-archway pop-sym" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -46,7 +39,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-spinner pop-sym" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -56,7 +48,6 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -140,16 +131,12 @@ class MentorMomentsUpdate extends Component {
   }
 
   onDone = () => {
-    // localStorage.setItem('momentsPath', this.props.allMoments);
     this.props.updateMentorMoments(this.props.match.params.userID, this.props.allMoments, this.props.history);
   };
 
   showMoments = (moments) => {
     if (moments) {
       return (moments.map((moment) => {
-        // put this in a nav link
-        // return (<Link id="tn-link" to={`posts/${post.id}`} key={post.id}> <MomentThumbnail id={post.id} key={post.id} post={post} /> </Link>);
-        // return (<Link to={`posts/${post.id}`}> <Post id={post.id} key={post.id} post={post} /> </Link>);
         return <MomentThumbnail moment={moment} key={moment.title} />;
       }));
     }
@@ -170,15 +157,10 @@ class MentorMomentsUpdate extends Component {
           {this.showMoments(this.props.allMoments)}
         </div>
         <MentorMomentsUpdateModal handleCancel={() => this.setState({ show: false })} handleAdd={() => this.setState({ show: false })} show={this.state.show} />
-        {/* <MomentModal show={this.state.show} /> */}
         <img src={path} alt="path" />
-        {/* <div className="done-btn">
-          <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
-        </div> */}
         <div className="mbtn-container">
           <SimplePopover />
           <button className="yellow-btn" type="submit" onClick={this.onDone}>Done</button>
-          {/* </div> */}
         </div>
       </div>
     );

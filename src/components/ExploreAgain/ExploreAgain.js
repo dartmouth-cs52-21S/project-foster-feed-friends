@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-// DONT FORGET NAV LINK
-// import onBoardingCard from './onBoardingCard';
-
-// const jsonFile = require('../../constants/example.json');
-
 import { withRouter } from 'react-router-dom';
 import OnBoardingCards from '../YouthOnboarding/onBoardingCard';
 import '../YouthOnboarding/onBoardingPage.scss';
@@ -25,13 +19,8 @@ class ExploreAgain extends Component {
       resourceText: '',
       resourceLink: '',
       conclusionText: '',
-      // previous: jsonFile,
     };
   }
-
-  // setPrevious = () => {
-  //   this.setState(prevState => ({options: this.state.previous));
-  // }
 
   setConclusionText = (text) => {
     this.setState({ conclusionText: text });
@@ -100,7 +89,6 @@ class ExploreAgain extends Component {
     if (!this.state.transition) {
       return (
         <div className="onBoardingPage">
-          {/* <div><p>Back</p></div> */}
           <h1 className="title onBoardingTitle">{this.state.titleText}</h1>
           <div className="onBoardingCards">{this.mapJsonAfter(this.state.options)} </div>
           <img src={path} alt="path" />
