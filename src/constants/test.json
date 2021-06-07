@@ -4,92 +4,91 @@
             "id": "College",
             "title": "College",
             "hoverText":"Having a college degree increases your average yearly income by 70 percent",
-            "transitionTitleText":"Higher education is accessible to you! College has so many options, we are gonna begin with 2 year v 4 year colleges",
-            "resourceText":["2 year colleges are a very financailly accessible option. They are open to everyone and are government funded and cost less than a 4 year insitition. There is lots of aid, and you can transfer to a 4 year afterwards", "4 year colleges are more selective than 2 year colleges. They some require entrance exams, have application fees, essays, and have higher tution. However there is lots of aid if need! You are not alone"],
+            "transitionTitleText":"Higher education is accessible to you! College has so many options, we are going to begin with 2 year vs. 4 year colleges.",
+            "resourceText":["2 year colleges are a very financially accessible option. They are open to everyone and are government funded and cost less than a 4 year insitition. There is financial aid available, and you can transfer to a 4 year afterwards.", "4 year colleges are more selective than 2 year colleges. They require some entrance exams, have application fees, essays, and higher tution prices. There is also aid available if needed! You are not alone."],
             "resourceLink":"https://www.greatvaluecolleges.net/2-year-versus-4-year-colleges/",
-            "titleText":"You are not alone, and you have options! Choose a path to explore ",
+            "titleText":"You are not alone, and you have options! Choose a path to explore. ",
             "options": [{
                 "id":"Two-Year",
                 "title": "Two-Year",
-                "hoverText":"At a 2-year college, you are able to earn you associates degree. It is one step above a high school diploma but one below a bachelors",
-                "conclusionText": "Now that we have identified the 2 year insititions path, foster feed friends offers resources and mentors for you to succeed!"
-                    
+                "hoverText":"At a 2-year college, you are able to earn your associates degree. It is one step above a high school diploma but one below a bachelors",
+                "conclusionText": "Now that we have identified the 2 year institution path, Foster Feed Friends offers resources and mentors for you to succeed!"
                 },
                 {
                 "id":"Four-Year",
                 "title": "Four-Year",
-                "hoverText":"At a 4-year institution, you are able to earn you bachelors degree. It is wildly accepted and in some cases required for jobs with more specialization",
-                "transitionTitleText":"Now that we have honed in on 4 year insititions, we must view at the avalabile options. A new option arises Public v. Private Insititons",
-                "resourceText":["Public colleges have funding from the government. They typically have lower cost of attendence. However, there is more flexibility with financial aid with private insititions"],
+                "hoverText":"At a 4-year institution, you are able to earn your bachelors degree. It is wildly accepted and in some cases required for jobs with more specialization.",
+                "transitionTitleText":"Now that we have honed in on 4 year insititions, we must view all the available options. A new option arises: Public vs. Private Institutions.",
+                "resourceText":["Public colleges have funding from the government. They typically have lower cost of attendence. However, there is more flexibility with financial aid within private insititions"],
                 "resourceLink":"https://www.mycollegeoptions.org/Core/SiteContent/Students/Advice/College-Resource-Center/College-Search---Selection/College-Choices/Public-Vs-Private-Colleges.aspx",
-                "titleText":"Staying close to home or going thousands of miles away are both options for you! ",
+                "titleText":"Staying close to home or going thousands of miles away are both options for you!",
                 "options": [{
                         "id":"Public",
                         "title": "Public",
-                        "hoverText":"Public colleges/universitits tend to be larger, offer more financail aid.",
-                        "conclusionText": "Now that we have identified the 4 year Public insititions path, foster feed friends offers resources and mentors for you to succeed!"
+                        "hoverText":"Public colleges and universities tend to be larger and offer more financial aid.",
+                        "conclusionText": "Now that we have identified the 4 yearpPublic insitution path, Foster Feed Friends offers resources and mentors for you to succeed!"
                         },{
                         "id":"Private",
                         "title": "Private",
-                        "hoverText":"Private insitutios have more control over financail aid, general schooling requirements, and some are considered more prestigious (ie. Ivy League)",
-                        "conclusionText":"Now that we have honed in on 4 year private insititions path, foster feed friends offers resources and mentors for you to succeed!"
+                        "hoverText":"Private institutioms have more control over financial aid, general schooling requirements, and some are considered more prestigious (ie. Ivy League).",
+                        "conclusionText":"Now that we have honed in on 4 year private insitition path, Foster Feed Friends offers resources and mentors for you to succeed!"
                         }
                     ]
                 }]
         },{
             "id": "Military",
             "title": "Military",
-            "hoverText":"The military offers many benefits after a certain time frame of service. It is a large commitment",
-            "transitionTitleText":"The military is an option for you. There are mulitple branches under the military that could be appealing to you.",
-            "resourceText":["The militiary is a big commitment, with rewards. Each branch is distinct and offers their own set of requritments. Some have academies which are selective, and have entrance requirements."],
+            "hoverText":"The military offers many benefits after a certain time frame of service. It is a large commitment.",
+            "transitionTitleText":"The military is an option for you. There are mulitple branches under the military that may be appealing to you.",
+            "resourceText":["The military is a big commitment, with rewards. Each branch is distinct and offers their own set of requirements. Some have academies which are selective, and have entrance requirements."],
             "resourceLink":"https://www.defense.gov/Our-Story/Our-Forces/",
-            "titleText":"You are not alone, and you have options! Choose a path to explore ",
+            "titleText":"You are not alone, and you have options! Choose a path to explore.",
             "options":[{
                 "id":"Navy",
                 "title": "Navy",
-                "hoverText":"The United States Navy is the maritime service branch of the United States Armed Forces. It is  principally designated for naval and amphibious warfare; namely, lake-borne, riverine, littoral, or ocean-borne combat operations and related functions.",
-                "conclusionText": "Now that we have identified the Navy path, foster feed friends offers resources and mentors for you to succeed!"
+                "hoverText":"The United States Navy is the maritime service branch of the United States Armed Forces. It is principally designated for naval and amphibious warfare; namely, lake-borne, riverine, littoral, or ocean-borne combat operations and related functions.",
+                "conclusionText": "Now that we have identified the Navy path, Foster Feed Friends offers resources and mentors for you to succeed!"
             },{
                 "id":"Army",
                 "title": "Army",
-                "hoverText":"The United States Army is the land service branch of the United States Armed Forces. It is the land-based military branch, service branch or armed service of a nation or state",
-                "conclusionText": "Now that we have identified the Army path, foster feed friends offers resources and mentors for you to succeed!"
+                "hoverText":"The United States Army is the land service branch of the United States Armed Forces. It is the land-based military branch, service branch or armed service of a nation or state.",
+                "conclusionText": "Now that we have identified the Army path, Foster Feed Friends offers resources and mentors for you to succeed!"
                     
             },{
                 "id":"Marines",
                 "title": "Marines",
                 "hoverText":"The United State Marine Corps the maritime land force service branch of the United States Armed Forces responsible for conducting expeditionary and amphibious operations, through combined arms, implementing its own infantry, armor, artillery, aerial and special operations forces.",
-                "conclusionText": "Now that we have identified the Marines path, foster feed friends offers resources and mentors for you to succeed!"  
+                "conclusionText": "Now that we have identified the Marines path, Foster Feed Friends offers resources and mentors for you to succeed!"  
             },{
                 "id":"Air Force",
                 "title": "Air Force",
-                "hoverText":"Having a college degree increases your average yearly income by 70 percent",
-                "conclusionText": "Now that we have identified the Air Force path, foster feed friends offers resources and mentors for you to succeed!"
+                "hoverText":"The United States Air Force is th air service branch of the United States Armed Forces.",
+                "conclusionText": "Now that we have identified the Air Force path, Foster Feed Friends offers resources and mentors for you to succeed!"
                     
             }]
         },{
             "id": "Work Force",
             "title": "Work Force",
-            "hoverText":"These jobs have minimal educational requirements, and can range in pay starting at minimum wage",
+            "hoverText":"These jobs have minimal educational requirements, and can range in pay starting at minimum wage.",
             "transitionTitleText":"Entering the workforce right away is a great way to start earning money from the get go! You can explore various workforve jobs below",
-            "resourceText":["There are many sectors to the workforce, finding a job that you are interested in and you meet the qualifications is key! Know your brand :)"],
+            "resourceText":["There are many sectors to the workforce, finding a job that you are interested in and you meet qualifications for is key! Know your brand :)"],
             "resourceLink":"https://www.forbes.com/sites/forbeshumanresourcescouncil/2019/11/25/getting-ready-to-join-the-workforce-13-tips-for-high-school-and-college-seniors/?sh=16b44b1e234a",
-            "titleText":"You are not alone, and you have options! Choose a path to explore ",
+            "titleText":"You are not alone, and you have options! Choose a path to explore.",
             "options":[{
                     "id": "Food Service",
                     "title": "Food Service",
                     "hoverText":"This includes jobs like cooks, servers, and fast food workers. They can range in pay and sophisitication level.",
-                    "conclusionText": "Now that we have identified the food service work force, foster feed friends offers resources and mentors for you to succeed!"
+                    "conclusionText": "Now that we have identified the food service work force, Foster Feed Friends offers resources and mentors for you to succeed!"
                     },{
                     "id":"Office",
                     "title": "Office",
                     "hoverText":"Office jobs are a great way of expanding your network and also refining your professional skills.",
-                    "conclusionText": "Now that we have identified the office path, foster feed friends offers resources and mentors for you to succeed!"   
+                    "conclusionText": "Now that we have identified the office path, Foster Feed Friends offers resources and mentors for you to succeed!"   
                     },{
                     "id":"Sales",
                     "title": "Sales",
                     "hoverText":"This is a great way to expand your customer service skills, along with continuing to build great relationships with coworkers.",
-                    "conclusionText": "Now that we have identified the sales path, foster feed friends offers resources and mentors for you to succeed!"
+                    "conclusionText": "Now that we have identified the sales path, Foster Feed Friends offers resources and mentors for you to succeed!"
                     },{
                     "id":"Manual Labor",
                     "title": "Manual Labor",
@@ -100,21 +99,21 @@
         },{
             "id": "Technical School",
             "title": "Technical School",
-            "hoverText":"This is an option to learn a trade or specific skill. They range in time periods, but offer a very direct path to job options ",
-            "transitionTitleText":"Technical Schools can be bootcamps or other trainings that specify a specific skill/trade",
-            "resourceText":["These technical schools can be run as an extension of a college or university. They offer certification of specialization usually or some type of acknowledgement of work"],
+            "hoverText":"This is an option to learn a trade or specific skill. They range in time periods, but offer a very direct path to job options.",
+            "transitionTitleText":"Technical schools can be bootcamps or other trainings that focus on a specific skill/trade.",
+            "resourceText":["These technical schools can be run as an extension of a college or university. They offer certification of specialization usually or some type of acknowledgement of work."],
             "resourceLink":"https://www.neit.edu/blog/what-is-a-technical-school",
-            "titleText":"You are not alone, and you have options! Choose a path to explore ",
+            "titleText":"You are not alone, and you have options! Choose a path to explore.",
             "options":[{
                     "id":"Online",
                     "title": "Online",
-                    "hoverText":"In the age of zoom, this allows you to study at any insitution from your home while working or intering or simply studying",
-                    "conclusionText": "Now that we have identified the Navy path, foster feed friends offers resources and mentors for you to succeed!"
+                    "hoverText":"In the age of zoom, this allows you to study at any institution from your home while working, interning or simply studying.",
+                    "conclusionText": "Now that we have identified the Online Technical School path, Foster Feed Friends offers resources and mentors for you to succeed!"
                     },{
                     "id":"In-Person",
                     "title": "In-Person",
-                    "hoverText":"In person schooling usually is more hands-on and is extremely specialized like cosmetology and nursing",
-                    "conclusionText": "Now that we have identified the Army path, foster feed friends offers resources and mentors for you to succeed!"
+                    "hoverText":"In-person schooling usually is more hands-on and is much more specialized like cosmetology and nursing.",
+                    "conclusionText": "Now that we have identified the In-Person Technical School path, Foster Feed Friends offers resources and mentors for you to succeed!"
             }]
         }
     ]

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-// import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
@@ -16,9 +15,6 @@ import SignInFoster from './SignIn/SignInFoster';
 import SignInOrg from './SignIn/SignInOrg';
 import SignUp from './SignUp/SignUp';
 import '../style.scss';
-// import '../Karina.scss';
-// import '../will.scss';
-// import '../melissa.scss';
 import ProfileOrg from './Profile/ProfileOrg';
 import ProfileMentor from './Profile/ProfileMentor';
 import ProfileYouth from './Profile/ProfileYouth';
@@ -59,7 +55,6 @@ const FallBack = (props) => {
 };
 
 const App = (props) => {
-  // const history = useHistory();
   const dispatch = useDispatch();
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -103,7 +98,6 @@ const App = (props) => {
             <Route exact path="/networks/orgs/profile/:userID" component={NetworkOrgProfile} />
             <Route exact path="/networks/mentor/profile/:userID" component={NetworkMentorProfile} />
             <Route exact path="/messages/:userID" component={MessageInbox} />
-            {/* // specific org profile after clicking card */}
             <Route path="/signup/mentor" component={SignUpMentor} />
             <Route path="/signup/mentormoments" component={MentorPath} />
             <PrivateRoute exact path="/org/profile/:userID" component={ProfileOrg} />
@@ -113,7 +107,6 @@ const App = (props) => {
             <PrivateRoute exact path="/mentor/:userID/path" component={MentorMomentsUpdate} />
             <PrivateRoute path="org/profile/:userID/event/:eventId" component={OrgeEvent} />
             <PrivateRoute path="/networks/orgs/profile/:userID/event/:eventId" component={Event} />
-            {/* <PrivateRoute path="/-org/profile/event/:userID" component={eventForm} /> */}
             <PrivateRoute path="/mentor/profile/:userID/edit" component={MentorEdit} />
             <PrivateRoute path="/youth/profile/:userID/edit" component={FosterEdit} />
             <PrivateRoute path="/org/profile/:userID/edit" component={OrgEdit} />

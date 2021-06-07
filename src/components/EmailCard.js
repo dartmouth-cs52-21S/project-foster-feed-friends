@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 
 class emailCard extends Component {
@@ -14,7 +13,6 @@ class emailCard extends Component {
 
   render = () => {
     return (
-
       <div>
         <h1>{this.state.mentor}</h1>
         <h3>{this.state.date}</h3>

@@ -159,7 +159,7 @@ const ProfileYouth = (props) => {
                     <div className="card-body">
                       <img src="https://cdn.iconscout.com/icon/free/png-512/message-672-675248.png" alt="message icon" width="50px" />
                       <div className="card-title"> Messaged: {data.firstName} {data.lastName}</div>
-                      <NavLink className="yellow-btn" to="">Follow Up</NavLink>
+                      <NavLink className="lightgreen-btn" to="">Follow Up</NavLink>
                     </div>
                   </div>
                 );
