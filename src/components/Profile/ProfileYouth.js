@@ -39,21 +39,26 @@ const ProfileYouth = (props) => {
 
     <div className="profilePageContainer">
       <div className="leftBar">
-        <h1 className="title">Welcome! {youth ? youth.user.firstName : null } </h1>
+        <h1 className="title">Welcome, {youth ? youth.user.firstName : null }!</h1>
         {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
-        <NavLink to={`/youth/${props.match.params.userID}/path`}> <button className="yellow-btn" type="button">Edit Path</button> </NavLink>
-
-        {/* <h3 className="boldtwentyfour">Location :</h3> */}
-        {/* <h3 className="sixteenpoint">{youth.events.length}</h3> */}
-        {/* <h3 className="sixteenpoint">{youth.f}</h3> */}
-        <h3 className="boldtwentyfour">path:</h3>
-        <h3 className="sixteenpoint">{youth.user.path}</h3>
-        <NavLink to={`/youth/profile/${props.match.params.userID}/edit`}> <button className="yellow-btn" type="button">Edit Profile</button> </NavLink>
-
-        <h3 className="boldtwentyfour">hometown:</h3>
-        <h3 className="sixteenpoint">{youth ? youth.user.hometown : null }</h3>
-        <h3 className="boldtwentyfour">Email:</h3>
-        <h3 className="sixteenpoint"> {youth ? youth.user.email : null } </h3>
+        <div className="youthbtn-container">
+          <NavLink to={`/youth/${props.match.params.userID}/path`} className="editpath-btn">Edit Path</NavLink>
+          <NavLink to={`/youth/profile/${props.match.params.userID}/edit`} className="editprofile-btn">Edit Profile</NavLink>
+        </div>
+        <div className="profile-info">
+          <div className="profile-section">
+            <h3 className="boldtwentyfour">Path:</h3>
+            <p className="sixteenpoint">{youth.user.path}</p>
+          </div>
+          <div className="profile-section">
+            <h3 className="boldtwentyfour">Hometown:</h3>
+            <p className="sixteenpoint">{youth ? youth.user.hometown : null }</p>
+          </div>
+          <div className="profile-section">
+            <h3 className="boldtwentyfour">Email:</h3>
+            <p className="sixteenpoint"> {youth ? youth.user.email : null } </p>
+          </div>
+        </div>
         <h3 className="boldtwentyfour">Badges</h3>
         <div className="badgesContainer">
           {youth.user.events

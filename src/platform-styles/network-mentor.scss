@@ -39,6 +39,7 @@ $pink:#D34D9D;
     margin-right: 10px;
     border-radius: 25%;
     padding: 10px;
+    border: none;
 }
 .green-btn:hover{
     background-color:$yellow-CTA;
@@ -105,7 +106,6 @@ $pink:#D34D9D;
     // border: 5px solid $light-green;
 }
 .mc-card:hover{
-    border: 5px solid $pink;
-
+    border: 3px solid $pink;
 }
 

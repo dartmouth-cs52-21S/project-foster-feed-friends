@@ -6,6 +6,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { signoutUser } from '../../actions/onboarding-actions';
 import Footer from './footer';
 import '../../website-styles/landing.scss';
+import landingblob from '../../img/landingBlobs.png';
 
 class Landing extends Component {
   constructor(props) {
@@ -51,14 +52,16 @@ class Landing extends Component {
               <h2>Who are we?</h2>
               <div className="underlineLight" />
               <p>
-                We are six dartmouth students dedicated to making an social impact on the foster youth community
+                We are six dartmouth students dedicated to making an social impact on the foster youth community.
               </p>
               <div id="teamImages">
                 <div id="team" />
               </div>
             </div>
           </div>
-          <img id="blobs" src="src/img/landingBlobs.png" alt="" height="450px" />
+
+          {/* <img id="blobs" src="src/img/landingBlobs.png" alt="" height="450px" /> */}
+          <img id="blobs" src={landingblob} alt="" height="450px" />
         </div>
         <Footer />
       </div>

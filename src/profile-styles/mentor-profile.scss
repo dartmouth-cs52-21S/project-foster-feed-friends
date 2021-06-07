@@ -108,3 +108,22 @@ $pink:#D34D9D;
     flex-direction: row;
     justify-content: space-between;
 }
+.editpath-btn{
+    text-decoration: none;
+    background-color: $blue;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right:10px;
+    width: fit-content;
+    margin-right: 10px;
+}
+.youthbtn-container{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}

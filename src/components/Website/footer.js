@@ -50,8 +50,12 @@ class Footer extends Component {
                 Contact Us
               </h6>
               <p className="footer-links">
-                <NavLink className="text-reset" to="/">Email</NavLink>
-                {/* <a href="#!" className="text-reset">email</a> */}
+                <a className="email"
+                  href="mailto:fosterfeedfriends@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > Email
+                </a>
               </p>
               <p className="footer-links">
                 <a href="https://www.linkedin.com/" className="text-reset">LinkedIn</a>
@@ -65,11 +69,11 @@ class Footer extends Component {
                 Support Us
               </h6>
               <p className="footer-links">
-                <NavLink className="text-reset" to="/">Donate</NavLink>
+                <NavLink className="text-reset" to="/resources">Resources</NavLink>
                 {/* <a href="#!" className="text-reset">Donate</a> */}
               </p>
               <p className="footer-links">
-                <NavLink className="text-reset" to="/SignUp/mentor">Become a Mentor</NavLink>
+                <NavLink className="text-reset" to="/SignUp/mentormoments">Become a Mentor</NavLink>
                 {/* <a href="#!" className="text-reset">Become a Mentor</a> */}
               </p>
               <p className="footer-links">

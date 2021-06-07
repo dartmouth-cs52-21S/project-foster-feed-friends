@@ -24,6 +24,10 @@ class Resource extends Component {
     this.props.fetchResources();
   }
 
+  onhandleclick = (email) => {
+    window.open(`mailto:${email}?subject=Reaching Out`);
+  }
+
   onInputChange = (event) => {
     this.setState({ text: event.target.value });
   };
@@ -33,18 +37,28 @@ class Resource extends Component {
       return res.organizationName.toLowerCase().includes(this.state.text);
     }).map((resource) => {
       return (
-        <div className="col-sm-6 ">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{resource.organizationName}</h5>
-              <h6 id="location">{resource.location}</h6>
-              <h6 id="location">{resource.poc}</h6>
-              <i className="far fa-envelope green-btn">
-                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${resource.pocemail}`} target="_blank" rel="noopener noreferrer">Email</a>
-              </i>
+      // <div className="col-sm-6 ">
+        <div className="card res-card">
+          <div className="card-body res-body">
+            <h5 className="card-title res-title">{resource.organizationName}</h5>
+            <h6 className="res-location">{resource.location}</h6>
+            <h6 className="res-poc">Point of Contact: {resource.poc}</h6>
+            <div className="contact-info">
+              <a className="res-web" href={`${resource.website}`} target="_blank" rel="noopener noreferrer">website here</a>
+              {/* <NavLink id="location" to={resource.website}>website</NavLink> */}
+              {/* <i className="far fa-envelope green-btn">
+              <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${resource.pocemail}`} target="_blank" rel="noopener noreferrer">Email</a>
+            </i> */}
+              <button type="button"
+                className="far fa-envelope green-btn"
+                // href={`mailto:${resource.pocemail}`}
+                onClick={() => { this.onhandleclick(resource.pocemail); }}
+                // onClick={() => { window.open(`mailto:${}subject=Reaching Out'); }}
+              />
             </div>
           </div>
         </div>
+      // </div>
       );
     });
     return map;

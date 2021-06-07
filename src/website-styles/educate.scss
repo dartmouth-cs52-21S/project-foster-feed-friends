@@ -61,6 +61,7 @@ $pink:#D34D9D;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .educateContent h2{
     font-family: "Nunito", sans-serif;
@@ -73,5 +74,13 @@ $pink:#D34D9D;
     font-size: 24px;
     width: 900px;
     padding-right: 25px;
-
+}
+.sr-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sr-btn{
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

@@ -29,12 +29,12 @@ class NetworkOrgProfile extends Component {
     this.props.fetchOrgEvents(this.props.match.params.userID);
   }
 
-    handleEmailClick = () => {
-      console.log('I MADE IT');
-      window.open(`mailto:${this.props.currentOrg.email}?subject=Reaching Out`);
-      // action that adds mentor to youth mesaged
-      // this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
-    }
+  handleEmailClick = () => {
+    console.log('I MADE IT');
+    window.open(`mailto:${this.props.currentOrg.email}?subject=Reaching Out`);
+    // action that adds mentor to youth mesaged
+    // this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
+  }
 
   render = () => {
     console.log('org id:', this.props.currentOrg.id);
