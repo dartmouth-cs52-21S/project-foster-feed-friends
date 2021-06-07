@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import '../../platform-styles/network-mentor.scss';
 import { fetchSpecificEvent, deleteEvent } from '../../actions/events-actions';
 import './Event.scss';
 

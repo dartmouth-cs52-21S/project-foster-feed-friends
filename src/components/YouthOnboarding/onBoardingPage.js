@@ -4,16 +4,10 @@ import { withRouter, NavLink } from 'react-router-dom';
 import path from './path.png';
 import sign from './roadsign.png';
 
-// DONT FORGET NAV LINK
-// import onBoardingCard from './onBoardingCard';
-
-// const jsonFile = require('../../constants/example.json');
-
 import OnBoardingCards from './onBoardingCard';
 import './onBoardingPage.scss';
 
 const jsonFile = require('../../constants/test.json');
-// const background = require('../../img/background.png');
 
 class OnBoardingPage extends Component {
   constructor(props) {
@@ -86,7 +80,6 @@ class OnBoardingPage extends Component {
   }
 
   render = () => {
-    // document.getElementsByClassName('backgroundImage').style.background = 'url(\'../../img/background.png\')';
     if (!this.state.transition) {
       return (
         // eslint-disable-next-line global-require
