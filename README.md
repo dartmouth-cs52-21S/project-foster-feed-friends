@@ -7,7 +7,7 @@ Foster Feed Friends aims to provide resourses and information to foster youth ab
 
 We are a pathway to building better futures. 
 
-#Our Product 
+# Our Product 
 
 Check out our deployed site! [*Foster Feed Friends*](https://fosterfeedfriends.netlify.app/)
 
@@ -53,8 +53,10 @@ heroku(backend) & netlify(overall) <3
 - Muhtasim Miraz--Backend 
 
 ## Acknowledgments
-CS52 Professor Tim T. 
+CS52 Professor Tim Tregubov
+
 CS52 21S TAs 
 - Jordan Sanz
 - Catherine Parnell
 - Thomas Monfre
+- Yaouri Ahang
