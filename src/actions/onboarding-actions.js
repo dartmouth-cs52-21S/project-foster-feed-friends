@@ -109,7 +109,7 @@ export function signupOrg(
   fields, history,
 ) {
   return (dispatch) => {
-    console.log('inside action singup');
+    console.log('inside action signup');
     axios.post(`${ROOT_URL}/signup/org/`,
       fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });

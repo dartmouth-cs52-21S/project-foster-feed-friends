@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import '../../platform-styles/network-mentor.scss';
 import { fetchSpecificEvent, updateYouthEvent } from '../../actions/events-actions';
 import './Event.scss';
 
@@ -11,7 +10,6 @@ class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    //   events: [],
     };
   }
 
