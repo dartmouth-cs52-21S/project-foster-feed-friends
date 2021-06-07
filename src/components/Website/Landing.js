@@ -21,8 +21,8 @@ class Landing extends Component {
       <div id="landing-container">
         <div className="landingSubcontainer">
           <h1>We are a pathway to building better futures.</h1>
-          <p>Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the system.
-            We want to enable foster children to not only understand thier options but take advantage of it.
+          <p>Foster Feed Friends aims to provide resources and information to foster youth about to age out of the Foster Care System.
+            We want to enable foster children to not only understand their options but take advantage of them.
           </p>
           <NavLink className="yellow-btn" to="/signup">Join Our Community</NavLink>
         </div>
@@ -38,10 +38,10 @@ class Landing extends Component {
             <div className="subLeft">
               <h2>How we do it</h2>
               <div className="underlineDark" />
-              <p>Foster Feed Friends’s platform host an easily accessible database for foster youth to contact out to
-                mentors willing to share and guide these youth in the next chapter of their lives. Our on boarding process allows
+              <p>Foster Feed Friends’s platform host an easily accessible database for foster youth to contact
+                mentors willing to share and guide them in the next chapter of their lives. Our on boarding process allows
                 foster youth to truly explore their options as they begin to think of what lies beyond the foster care system.
-                Along the way, foster youth are exposed to resources that are usesful as they explore their options We keep
+                Along the way, foster youth are exposed to resources that are usesful as they explore their options. We keep
                 youth engaged with milestone badges, and allow them to connect with other foster youth interested in their own path.
               </p>
             </div>

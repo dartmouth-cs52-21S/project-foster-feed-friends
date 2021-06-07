@@ -35,7 +35,7 @@ class Educate extends Component {
         </div>
         <div className="educateContent">
           <h2>Empathy</h2>
-          <p>Foster youth have undergone immense trauma. As adults, we must be able to listen and respond when needed with care and compassion.
+          <p>Foster youth have undergone immense trauma. As adults and helping hands, we must be able to listen and respond when needed with care and compassion.
             Put yourself in their situation for just a minute and try to understand how the system has failed them. We must continously be kind
             with foster youth in order to help them succeed.
           </p>
