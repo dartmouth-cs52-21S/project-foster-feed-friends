@@ -57,22 +57,24 @@ class OrgEdit extends Component {
 
   render = () => {
     return (
-      <div id="signUpSpecificContainer profileEdit">
+      <div className="profileEdit">
         <div className="header profileEdit">
           <div id="su-title">Edit Your Profile</div>
         </div>
-        <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.orgname} onChange={this.handleOrgNameChange} />
-        </FormControl>
-        <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Location</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
-        </FormControl>
-        <FormControl className="signUpSpecificInput">
-          <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name</InputLabel>
-          <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
-        </FormControl>
+        <div className="profileEdit">
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Organization Name</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.orgname} onChange={this.handleOrgNameChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Location</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.location} onChange={this.handleLocationChange} />
+          </FormControl>
+          <FormControl className="signUpSpecificInput">
+            <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name</InputLabel>
+            <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
+          </FormControl>
+        </div>
         <button type="button" className="lightgreen-btn" variant="contained" onClick={this.onSubmit} color="primary">save</button>
       </div>
     );

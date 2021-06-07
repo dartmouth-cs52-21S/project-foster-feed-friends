@@ -105,8 +105,6 @@ export function signupOrg(
   };
 }
 
-// deletes token from localstorage
-// and deauths
 export function signoutUser(history) {
   return (dispatch) => {
     localStorage.removeItem('token');

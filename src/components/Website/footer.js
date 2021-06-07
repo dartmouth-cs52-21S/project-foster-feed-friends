@@ -14,9 +14,6 @@ class Footer extends Component {
 
   render = () => {
     return (
-    // <div>
-    //   <a href="https://www.freepik.com/vectors/people">People vector created by pikisuperstar - www.freepik.com</a>);
-    // </div>
       <footer id="general-footer">
         <div className="container" id="footer-container">
           <div className="row">
@@ -34,15 +31,12 @@ class Footer extends Component {
               </h6>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/">Home</NavLink>
-                {/* <a href="#!" className="text-reset">home</a> */}
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/educate">Educate</NavLink>
-                {/* <a href="#!" className="text-reset">educate</a> */}
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/mentor">Mentor</NavLink>
-                {/* <a href="#!" className="text-reset">mentor</a> */}
               </p>
             </div>
             <div className="col-md-2">
@@ -70,34 +64,31 @@ class Footer extends Component {
               </h6>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/resources">Resources</NavLink>
-                {/* <a href="#!" className="text-reset">Donate</a> */}
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/SignUp/mentormoments">Become a Mentor</NavLink>
-                {/* <a href="#!" className="text-reset">Become a Mentor</a> */}
+                =
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/signup">Sign Up</NavLink>
-                {/* <a href="#!" className="text-reset">Sign Up</a> */}
               </p>
             </div>
             <div className="col-md-2">
               <h6 className="footer-col">
-                Stay Updated
+                Join Our Community
               </h6>
               <form className="md-form">
-                <input type="text" id="form1" className="form-control" placeholder="Your Email Here" />
-                <button className="pink-btn" type="submit">subscribe</button>
+                {/* <input type="text" id="form1" className="form-control" placeholder="Your Email Here" />
+                <button className="pink-btn" type="submit">subscribe</button> */}
+                <NavLink className="footer-btn" to="/signup">Sign-Up</NavLink>
               </form>
             </div>
           </div>
         </div>
         <div className="copyright">
           © 2021 Copyright: Foster Feed Friends
-          {/* <a className="text-reset" href="/"> FosterFeedFriends</a> */}
         </div>
       </footer>
-
     );
   }
 }

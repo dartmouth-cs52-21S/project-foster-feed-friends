@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -17,8 +16,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-star sym-btn" />
-          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -29,7 +26,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-archway sym-btn" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -40,7 +36,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-spinner sym-btn" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -50,7 +45,6 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -69,14 +63,10 @@ const ProfileMentor = (props) => {
   const onSubmit = () => {
     dispatch(signoutUser(history));
   };
-  console.log('mentor in component', mentor);
 
   const showMoments = (moments) => {
     if (moments) {
       return (moments.map((moment) => {
-        // put this in a nav link
-        // return (<Link id="tn-link" to={`posts/${post.id}`} key={post.id}> <MomentThumbnail id={post.id} key={post.id} post={post} /> </Link>);
-        // return (<Link to={`posts/${post.id}`}> <Post id={post.id} key={post.id} post={post} /> </Link>);
         return <MomentThumbnail moment={moment} key={moment.title} />;
       }));
     }
@@ -93,7 +83,6 @@ const ProfileMentor = (props) => {
             <h1 className="profile-title">Welcome, {mentor.user.firstName}! </h1>
             <NavLink to={`/mentor/profile/${props.match.params.userID}/edit`} className="editprofile-btn">Edit Profile</NavLink>
           </div>
-          {/* <h2 className="profile-info">Personal Information</h2> */}
           <div className="profile-info">
             <div className="profile-section">
               <h3>Career Path:</h3>
@@ -115,7 +104,6 @@ const ProfileMentor = (props) => {
           <div className="so-container">
             <button type="button" className="yellow-btn" onClick={onSubmit}>Sign Out </button>
           </div>
-          {/* <NavLink to={`/messages/${mentor.user.id}`} exact>Inbox</NavLink> */}
         </div>
         <div className="path-container">
           <div className="mentorpath-name">

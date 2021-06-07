@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { withRouter } from 'react-router-dom';
 import {
   FormControl, InputLabel, Input,
 } from '@material-ui/core';
 import { signupOrg } from '../../actions/onboarding-actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignUpOrg extends Component {
   constructor(props) {
@@ -51,22 +51,16 @@ class SignUpOrg extends Component {
   }
 
   onSubmit = (event) => {
-    // this.setState({
-    //   email: this.email,
-    //   password: this.password,
-    //   username: this.username,
-    // });
-    console.log(this.state);
     if (this.state.orgname !== '' && this.state.location !== '' && this.state.pocname !== ''
     && this.state.email !== '' && this.state.emailconfirm !== '' && this.state.password !== ''
     && this.state.passwordconfirm !== '') {
       if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
         this.props.signupOrg(this.state, this.props.history);
       } else {
-        this.setState({ error: 'Make sure both emails and passwords match!' });
+        this.setState({ error: 'Make sure both emails and both passwords match!' });
       }
     } else {
-      this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
+      this.setState({ error: 'Missing fields! Please make sure to input all required fields.' });
     }
   }
 
