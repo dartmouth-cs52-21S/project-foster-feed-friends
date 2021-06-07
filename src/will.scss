@@ -12,7 +12,6 @@ $pink:#D34D9D;
     margin: 0px;
 }
 
-
 //landing page 
 #landing-container{
     display:flex; 
@@ -61,25 +60,6 @@ $pink:#D34D9D;
     padding-right:20px;
     width: fit-content
 }
-// .yellowButton{
-//     background-color: #FFB621;
-//     border-radius: 25px;
-//     padding-left: 10px;
-//     padding-right: 10px;
-//     font-size: 22x;
-//     font-weight: 700;
-//     padding-top: 0px;
-//     line-height: 25px;
-//     padding-bottom: 5px;
-// }
-// .navLinkButton{
-//     text-decoration: none;
-//     color:black;
-//     font-family: 'Nunito', sans-serif;
-//     font-weight: 700;
-//     height: fit-content;
-//     font-size: .5em !important;
-// }
 .landingLeftSubcontainer{
     margin-top: 205px;
     display: flex;
@@ -186,7 +166,6 @@ $pink:#D34D9D;
 }
 
 //sign in 
-
 #signInOptions{
     display: flex;
     flex-direction: row;
@@ -234,9 +213,6 @@ $pink:#D34D9D;
 .MuiCardActions-root{
     padding-bottom: 16px !important;
 }
-// .MuiTypography-body1{
-//     font-size: 1.5em !important;
-// }
 #signInSpecificConatiner{
     margin-top: 50px;;
     display: flex;
@@ -254,6 +230,7 @@ $pink:#D34D9D;
 .signInSpecificButton{
     margin: 15px !important ;
 }
+
 //signupyouth 
 .inputColumns{
     display: flex;
@@ -262,9 +239,7 @@ $pink:#D34D9D;
     justify-content: center;
 }
 
-
 //org profile 
-
 .leftBar{
     padding-left: 20px;
     padding-top: 24px;
@@ -300,6 +275,7 @@ $pink:#D34D9D;
 .EventsBlock{
     padding-top: 25px;
 }
+
 //signupMentor 
 .radioButtons{
     display: flex;

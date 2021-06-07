@@ -8,14 +8,6 @@ $blue:#6F93EE;
 $orange:#D37B4D;
 $pink:#D34D9D;
 
-// body, html {
-//     font-family: "Nunito", sans-serif !important;
-//     height: 100%;
-//     color:black;
-//     background-color: white;
-//     padding:0;
-//     margin:0;
-// }
 //for rendering the left and right side 
 // elements on the navbar in the same line 
 ul{
@@ -25,6 +17,7 @@ ul{
     justify-content: space-between;
     text-decoration: none;
 }
+
 //nav bar bg and text elems
 #navBarContainer{
     background-color: $primaryG;
@@ -47,6 +40,7 @@ ul{
 .right{
     font-size: 20px;
 }
+
 //For underline navbar animation left-right
 a{
     text-decoration: none;
@@ -75,6 +69,7 @@ a.left:hover:before {
   visibility: visible;
   width: 100%;
 }
+
 //flex boxes for the nav elems
 #navRight{
     display:flex;
