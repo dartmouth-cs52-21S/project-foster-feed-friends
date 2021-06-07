@@ -5,6 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
 import { updateMentor } from '../../actions/user-actions';
+import './profileEdit.scss';
 
 class MentorEdit extends Component {
   constructor(props) {
@@ -55,11 +56,11 @@ class MentorEdit extends Component {
 
   render = () => {
     return (
-      <div>
-        <div className="header">
+      <div className="profileEdit">
+        <div className="header profileEdit">
           <div id="su-title">Edit Your Profile</div>
         </div>
-        <div>
+        <div className="profileEdit">
           <FormControl className="signUpSpecificInput">
             <InputLabel className="sixteenpoint" htmlFor="component-simple">First Name</InputLabel>
             <Input id="component-simple" className="sixteenpoint" value={this.state.firstName} onChange={this.handleFirstNameChange} />
@@ -78,7 +79,7 @@ class MentorEdit extends Component {
           </FormControl>
 
         </div>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">Save</button>
+        <button type="button" className="lightgreen-btn" variant="contained" onClick={this.onSubmit} color="primary">Save</button>
       </div>
     );
   }

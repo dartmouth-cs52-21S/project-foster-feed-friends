@@ -22,6 +22,7 @@
                 "transitionTitleText":"Now that we have honed in on 4 year insititions, we must view at the avalabile options. A new option arises Public v. Private Insititons",
                 "resourceText":["Public colleges have funding from the government. They typically have lower cost of attendence. However, there is more flexibility with financial aid with private insititions"],
                 "resourceLink":"https://www.mycollegeoptions.org/Core/SiteContent/Students/Advice/College-Resource-Center/College-Search---Selection/College-Choices/Public-Vs-Private-Colleges.aspx",
+                "titleText":"Staying close to home or going thousands of miles away are both options for you! ",
                 "options": [{
                         "id":"Public",
                         "title": "Public",

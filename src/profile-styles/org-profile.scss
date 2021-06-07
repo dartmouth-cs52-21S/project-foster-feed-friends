@@ -49,11 +49,24 @@ $pink:#D34D9D;
 .EventsBlock{
     padding-top: 25px;
 }
+.connectionsRow{
+    font-family: Mulish;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    flex: 0 0 auto;
+    overflow:scroll;
+    flex-wrap: wrap;
+
+}
 .eventsRow{
     margin-top: 20px;
     display: flex;
     overflow-x: auto;
-    width:900px;
+    width: 900px;
+    font-family: Mulish;
+    
 }
 .badgeCircle{
     border-radius: 50%;
@@ -64,17 +77,17 @@ $pink:#D34D9D;
 }
 .badgeCircleLit{
     border-radius: 50%;
-    background: $dark-green;
+    background: $blue;
     width: 75px;
     height: 75px;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .badgeCircleOff{
     border-radius: 50%;
     background: rgb(177, 177, 177);
     width: 75px;
     height: 75px;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .badgeRow{
     display: flex;
@@ -94,7 +107,11 @@ $pink:#D34D9D;
     margin-left: 20px;
     padding:0;
 }
+// horizontal scroll with flexbox found from: jenniferbland.com/how-to-implement-horizontal-scrolling-using-flexbox/
 .eventsRow::-webkit-scrollbar {display: none;}
+
+.connectionsRow::-webkit-scrollbar {display: none;}
+
 .email-btn{
     text-decoration: none;
     background-color: $dark-green;
@@ -112,4 +129,11 @@ $pink:#D34D9D;
 }
 .so-container{
     margin-top: 50px;
+}
+.messagedCard{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
 }

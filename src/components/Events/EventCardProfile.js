@@ -2,28 +2,27 @@ import React from 'react';
 import './EventCard.scss';
 // import { NavLink } from 'react-router-dom';
 
-const EventCard = ({
+const EventCardProfile = ({
   name, date, time, location, coordinator, id, currentOrgID,
 }) => {
   return (
     <div className="card eventCard">
-      {/* <div className="card-body"> */}
-      <div className="card-body">
+      <div className="leftCardSection">
+        <img src="  https://static.thenounproject.com/png/626764-200.png" alt="mentor badge icon" width="100px" />
         <p>{date}</p>
-        <p>{time}</p>
-        <p>{location}</p>
       </div>
-      <div className="card-body">
-        <p className="card-title">{name}</p>
-        {/* <p>{this.state.description}</p> */}
-        <p>{coordinator}</p>
-        {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
+      <div className="rightCardSection">
+        <p>Event Name: {name}</p>
+        <p>Location: {location}</p>
+        <p>Time: {time}</p>
+        <p>Coordinator: {coordinator}</p>
       </div>
-      {/* </div> */}
+
     </div>
 
   );
 };
+
 // class EventCard extends Component {
 //   constructor(props) {
 //     super(props);
@@ -57,4 +56,4 @@ const EventCard = ({
 //     }
 // }
 
-export default EventCard;
+export default EventCardProfile;

@@ -6,23 +6,22 @@ const EventCardYouth = ({
   name, date, time, location, coordinator, id, currentOrgID,
 }) => {
   return (
-    <NavLink to={`${currentOrgID}/event/${id}`}>
-      <div className="totalCard">
-        {/* <div className="card-body"> */}
-        <div className="leftCard">
+    <NavLink className="noDecoration" to={`${currentOrgID}/event/${id}`}>
+      <div className="card eventCard">
+        <div className="leftCardSection">
+          <img src="  https://static.thenounproject.com/png/626764-200.png" alt="mentor badge icon" width="100px" />
           <p>{date}</p>
-          <p>{time}</p>
-          <p>{location}</p>
         </div>
-        <div className="rightCard">
-          <p>{name}</p>
-          {/* <p>{this.state.description}</p> */}
-          <p>{coordinator}</p>
-          <div>+</div>
-          {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
+        <div className="rightCardSection">
+          <p>Event Name: {name}</p>
+          <p>Location: {location}</p>
+          <p>Time: {time}</p>
+          <p>Coordinator: {coordinator}</p>
+          <button type="button" className="yellow-btn">add event</button>
         </div>
-        {/* </div> */}
+
       </div>
+
     </NavLink>
 
   );

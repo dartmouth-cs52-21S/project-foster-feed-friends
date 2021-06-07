@@ -75,7 +75,7 @@ const ProfileOrg = (props) => {
           <div className="eventsContainer">
             <NavLink className="yellow-btn" to={`/org/profile/${props.match.params.userID}/event`}>Create an Event</NavLink>
             <div className="EventsBlock">
-              <h2>Upcoming Events </h2>
+              <h2>All Events </h2>
               <div className="underlineLight profileBar" />
               <div className="eventsRow">
                 {all.length === 0 ? <h3 className="sixteenpoint">No Upcoming Events</h3> : all.map((data, key) => {
@@ -93,12 +93,7 @@ const ProfileOrg = (props) => {
                 }) }
               </div>
             </div>
-            <div className="EventsBlock">
-              <h2>Previous Events </h2>
-              <div className="underlineLight profileBar" />
-              {org.user.events ? <h3 className="sixteenpoint">No Past Events</h3> : null }
-              <div />
-            </div>
+
           </div>
         </div>
       </div>
