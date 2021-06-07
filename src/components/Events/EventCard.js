@@ -6,22 +6,20 @@ const EventCard = ({
   name, date, time, location, coordinator, id, currentOrgID,
 }) => {
   return (
-    <NavLink to={`${currentOrgID}/event/${id}`}>
+    <NavLink className="noDecoration" to={`${currentOrgID}/event/${id}`}>
       <div className="card eventCard">
-        {/* <div className="card-body"> */}
-        <div className="card-body">
-          <p className="card-title"><em>{name}</em></p>
-          <p>{coordinator}</p>
+        <div className="leftCardSection">
+          <img src="  https://static.thenounproject.com/png/626764-200.png" alt="mentor badge icon" width="100px" />
           <p>{date}</p>
-          <p>{time}</p>
-          <p>{location}</p>
+        </div>
+        <div className="rightCardSection">
+          <p>Event Name: {name}</p>
+          <p>Location: {location}</p>
+          <p>Time: {time}</p>
+          <p>Coordinator: {coordinator}</p>
         </div>
 
-        {/* <p>{this.state.description}</p> */}
-
-        {/* {this.state.react === 'true' ? <div className="reacts"> </div> : null } */}
       </div>
-      {/* </div> */}
 
     </NavLink>
 

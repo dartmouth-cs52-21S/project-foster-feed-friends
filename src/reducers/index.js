@@ -11,6 +11,7 @@ import MomentsReducer from './moments-reducer';
 import EventReducer from './event-reducer';
 import ResourceReducer from './resource-reducer';
 import mentorReducer from './mentor-reducer';
+import MessagedReducer from './messaged-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   events: EventReducer,
   resources: ResourceReducer,
   networkMentors: mentorReducer,
+  messagedMentor: MessagedReducer,
 
 });
 

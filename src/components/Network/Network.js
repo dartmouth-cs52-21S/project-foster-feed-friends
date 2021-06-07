@@ -32,15 +32,6 @@ class Network extends Component {
     }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>
-          {/* <div className="col-sm-6"> */}
-          {/* <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{org.orgname}</h5>
-              <h6 id="location">{org.location}</h6>
-              <p className="card-text"> {org.poc}</p>
-              <i className="far fa-envelope green-btn">
-                <a onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${org.email}`} target="_blank" rel="noopener noreferrer">Email</a>
-              </i> */}
           <div className="card mc-card">
             <div className="card-body mc-body">
               <h4 className="card-title mc-title">{org.orgname} </h4>
@@ -49,7 +40,6 @@ class Network extends Component {
               <h6 className="mc-email">{org.email}</h6>
             </div>
           </div>
-          {/* </div> */}
         </NavLink>
       );
     });
@@ -62,15 +52,6 @@ class Network extends Component {
     }).map((mentor) => {
       return (
         <NavLink to={`mentor/profile/${mentor.id}`} exact>
-          {/* <div className="col-sm-6"> */}
-          {/* <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{mentor.firstName}{mentor.lastName} </h5>
-              <h6 id="location">{mentor.hometown}</h6>
-              <p className="card-text"> {mentor.bio}</p>
-              <i className="far fa-envelope green-btn">
-                <a className="email" onClick="window.open('mailto:your@email.address?subject=Reaching Out');" href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"> Email</a>
-              </i> */}
           <div className="card mc-card">
             <div className="card-body mc-body">
               <h4 className="card-title mc-title">{mentor.firstName} {mentor.lastName} </h4>
@@ -129,6 +110,7 @@ class Network extends Component {
 const mapStateToProps = (reduxstate) => ({
   allOrgs: reduxstate.network.allOrgs,
   allMentors: reduxstate.networkMentors.allMentors,
+  currentMentors: reduxstate.networkMentors.currentMentors,
 });
 
 export default withRouter(connect(mapStateToProps, { fetchAll })(Network));

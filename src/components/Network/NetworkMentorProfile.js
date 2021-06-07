@@ -167,8 +167,8 @@ class NetworkMentorProfile extends Component {
             </div>
             <div className="all-moments">
               {this.showMoments(this.props.currentMentor.momentsPath)}
-              <img src={path} alt="path" />
             </div>
+            <img src={path} alt="path" width="100%" />
           </div>
         </div>
         <div className="chatbox-container" ref={(c) => this.container = c}>

@@ -5,6 +5,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import { connect } from 'react-redux';
 import { updateOrg } from '../../actions/user-actions';
+import './profileEdit.scss';
 
 class OrgEdit extends Component {
   constructor(props) {
@@ -56,8 +57,8 @@ class OrgEdit extends Component {
 
   render = () => {
     return (
-      <div id="signUpSpecificContainer">
-        <div className="header">
+      <div id="signUpSpecificContainer profileEdit">
+        <div className="header profileEdit">
           <div id="su-title">Edit Your Profile</div>
         </div>
         <FormControl className="signUpSpecificInput">
@@ -72,7 +73,7 @@ class OrgEdit extends Component {
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Point of Contact Name</InputLabel>
           <Input id="component-simple" className="sixteenpoint" value={this.state.pocname} onChange={this.handlePOCNameChange} />
         </FormControl>
-        <button type="button" className="yellowButton navLinkButton" variant="contained" onClick={this.onSubmit} color="primary">save</button>
+        <button type="button" className="lightgreen-btn" variant="contained" onClick={this.onSubmit} color="primary">save</button>
       </div>
     );
   }
