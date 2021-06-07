@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchSpecificEvent, deleteEvent } from '../../actions/events-actions';
+import { fetchSpecificEvent } from '../../actions/events-actions';
 import './Event.scss';
 
 class OrgEvent extends Component {
@@ -17,10 +17,6 @@ class OrgEvent extends Component {
     this.props.fetchSpecificEvent(this.props.match.params.userId, this.props.match.params.eventId);
   }
 
-  delete = () => {
-    this.props.deleteEvent(this.props.match.params.userId, this.props.match.params.eventId, this.props.history);
-  }
-
   render() {
     console.log(this.props.user.events);
     return (
@@ -31,7 +27,6 @@ class OrgEvent extends Component {
         <div> Event Time: {this.props.currentEvent.time}</div>
         <div> Event Location: {this.props.currentEvent.location}</div>
         <div> Event Coordinator: {this.props.currentEvent.coordinator}</div>
-        <button id="eventDetailsBtn" className="lightgreen-btn" type="submit" onClick={this.delete}>Delete</button>
       </div>
     );
   }
@@ -42,4 +37,4 @@ const mapStateToProps = (reduxstate) => ({
   user: reduxstate.user.user,
 });
 
-export default withRouter(connect(mapStateToProps, { fetchSpecificEvent, deleteEvent })(OrgEvent));
+export default withRouter(connect(mapStateToProps, { fetchSpecificEvent })(OrgEvent));

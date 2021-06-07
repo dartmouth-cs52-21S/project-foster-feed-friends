@@ -1,9 +1,8 @@
 # Foster Feed Friends
 <img width="1440" alt="Screen Shot 2021-06-07 at 4 26 23 PM" src="https://user-images.githubusercontent.com/31497093/121083623-ab2c2a00-c7ad-11eb-9905-81c5337b29ff.png">
 
-[*how?*]
-
-Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the system. We want to enable foster children to not only understand their options but take advantage of it. 
+# Hi we are Foster Feed Friends
+Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the Foster Care System. We want to enable foster children to not only understand their options but take advantage of them in a way that best suits their vision of their future. 
 
 We are a pathway to building better futures. 
 

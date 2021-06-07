@@ -66,13 +66,13 @@ export function updateYouthEvent(id, eventID, events, history) {
   };
 }
 
-export function deleteEvent(id, eventID, history) {
-  return (dispatch) => {
-    axios.put(`${ROOT_URL}/org/${id}/event/${eventID}/delete`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
-      dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
-      history.push(`/mentor/profile/${id}`);
-    }).catch((error) => {
-      dispatch({ type: ActionTypes.ERROR_SET, payload: error });
-    });
-  };
-}
+// export function deleteEvent(id, eventID, history) {
+//   return (dispatch) => {
+//     axios.put(`${ROOT_URL}/org/${id}/event/${eventID}/delete`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+//       dispatch({ type: ActionTypes.UPDATE_USER, payload: response.data });
+//       history.push(`/mentor/profile/${id}`);
+//     }).catch((error) => {
+//       dispatch({ type: ActionTypes.ERROR_SET, payload: error });
+//     });
+//   };
+// }
