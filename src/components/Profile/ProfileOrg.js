@@ -1,31 +1,19 @@
 import React, { useEffect, useState } from 'react';
-// import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-// import EventForm from './eventForm';
 import EventCard from '../Events/EventCard';
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchOrgEvents } from '../../actions/events-actions';
-// import eventForm from './eventForm';
 import '../../profile-styles/org-profile.scss';
 
 const ProfileOrg = (props) => {
   const org = useSelector((state) => state.user);
   const { all } = useSelector((state) => state.events);
-  console.log(all);
   const dispatch = useDispatch();
   const history = useHistory();
-  // const [editing, toggleEditing] = useState(false);
   const [editing] = useState(false);
-  // const [orgAcountDetail, editOrgAccountDetail] = useState({
-  //   poc: org.user.pocname,
-  //   location: org.user.location,
-  //   email: org.user.location,
-
-  // });
-  console.log(org);
 
   useEffect(() => {
     dispatch(fetchOrgInfo(props.match.params.userID));
@@ -36,14 +24,6 @@ const ProfileOrg = (props) => {
     dispatch(signoutUser(history));
   };
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-
-  //   editOrgAccountDetail((prevValue) => {
-  //     return { ...prevValue, [name]: value };
-  //   });
-  //   event.preventDefault();
-  // };
   if (!editing) {
     return (
       <div>

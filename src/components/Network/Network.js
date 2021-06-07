@@ -6,8 +6,6 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../../platform-styles/network-mentor.scss';
 import AppBar from '@material-ui/core/AppBar';
-// import Tabs from '@material-ui/core/Tabs';
-// import Tab from '@material-ui/core/Tab';
 import { fetchAll } from '../../actions/network-actions';
 
 class Network extends Component {
@@ -36,7 +34,6 @@ class Network extends Component {
             <div className="card-body mc-body">
               <h4 className="card-title mc-title">{org.orgname} </h4>
               <h5 className="mc-location">{org.location}</h5>
-              {/* <h6 className="mc-email">{org.pocname}</h6> */}
               <h6 className="mc-email">{org.email}</h6>
             </div>
           </div>
@@ -59,7 +56,6 @@ class Network extends Component {
               <h6 className="mc-email">{mentor.email}</h6>
             </div>
           </div>
-          {/* </div> */}
         </NavLink>
       );
     });
@@ -99,9 +95,6 @@ class Network extends Component {
           {this.orgsList()}
           {this.mentorsList()}
         </ul>
-        {/* <ul className="orgList cardContainer">
-          {this.mentorsList()}
-        </ul> */}
       </div>
     );
   }

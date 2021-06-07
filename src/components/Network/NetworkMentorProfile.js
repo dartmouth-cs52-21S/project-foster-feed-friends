@@ -17,9 +17,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-star pop-sym" />
-          {/* <i className="fas fa-trash" onClick={this.onDelete} /> */}
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
-
         </div>
       </div>
     );
@@ -30,7 +27,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-archway pop-sym" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -41,7 +37,6 @@ const MomentThumbnail = (props) => {
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
           <i className="fas fa-spinner pop-sym" />
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -51,7 +46,6 @@ const MomentThumbnail = (props) => {
         <div className="card-body">
           <h5 className="card-title" id="mom-title">{props.moment.title}</h5>
           <p className="card-desc" id="mom-desc">{props.moment.description}</p>
-          {/* <p className="card-sym" id="mom-sym">{props.moment.symbol}</p> */}
         </div>
       </div>
     );
@@ -69,19 +63,9 @@ class NetworkMentorProfile extends Component {
     this.props.fetchMentor(this.props.match.params.userID);
   }
 
-  // handleEmailClick = () => {
-  //   console.log('I MADE IT');
-  //   window.open(`mailto:${this.props.currentMentor.email}?subject=Reaching Out`);
-  //   // action that adds mentor to youth mesaged
-  //   this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
-  // }
-
   showMoments = (moments) => {
     if (moments) {
       return (moments.map((moment) => {
-        // put this in a nav link
-        // return (<Link id="tn-link" to={`posts/${post.id}`} key={post.id}> <MomentThumbnail id={post.id} key={post.id} post={post} /> </Link>);
-        // return (<Link to={`posts/${post.id}`}> <Post id={post.id} key={post.id} post={post} /> </Link>);
         return <MomentThumbnail moment={moment} key={moment.title} />;
       }));
     }
@@ -90,6 +74,8 @@ class NetworkMentorProfile extends Component {
     );
   };
 
+  // adapted from https://talkjs.com/resources/article/how-to-build-a-linkedin-like-messaging-app-with-react-and-talkjs/#setting-up-talkjs
+  // and https://github.com/talkjs/talkjs-examples/tree/master/react/linkedin-like-app/src
   handleMessageClick = (mentor) => {
     this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID]);
     console.log('mentor passed in:', mentor);
@@ -140,7 +126,6 @@ class NetworkMentorProfile extends Component {
               <button className="message-btn" type="button" onClick={() => this.handleMessageClick(this.props.currentMentor)}>Message Me</button>
             </div>
             <p className="profile-type">{this.props.currentMentor.type}</p>
-            {/* <h2>Personal Information</h2> */}
             <div className="profile-info">
               <div className="profile-section">
                 <h3>Career Path:</h3>
@@ -159,7 +144,6 @@ class NetworkMentorProfile extends Component {
                 <p>{this.props.currentMentor.bio}</p>
               </div>
             </div>
-            {/* <button className="email-btn" type="button" onClick={this.handleEmailClick}>Email Me</button> */}
           </div>
           <div className="path-container">
             <div className="mentorpath-name">

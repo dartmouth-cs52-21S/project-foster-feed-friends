@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -9,7 +8,6 @@ import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
 import { createMoment } from '../../actions/moments-action';
 import '../../onboarding-styles/moment-modal.scss';
 
@@ -37,9 +35,6 @@ const SimplePopover = () => {
 
   return (
     <div>
-      {/* <Button className="fas fa-info-circle" aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
-        Open Popover
-      </Button> */}
       <i id="popover-icon" className="fas fa-info-circle" aria-describedby={id} variant="contained" color="primary" onClick={handleClick} />
       <Popover
         id={id}
@@ -99,7 +94,6 @@ class MomentModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // show: true,
       title: '',
       description: '',
       symbol: '',
@@ -119,7 +113,6 @@ class MomentModal extends Component {
     this.props.createMoment(this.state);
     this.props.handleAdd();
     this.setState({
-      // show: false,
       title: '',
       description: '',
       symbol: '',
@@ -128,7 +121,6 @@ class MomentModal extends Component {
 
   onCancel = (event) => {
     this.setState({
-      // show: false,
       title: '',
       description: '',
       symbol: '',
@@ -193,7 +185,6 @@ class MomentModal extends Component {
 
 const mapStateToProps = (reduxstate) => ({
   moment: reduxstate.moments.currentMoment,
-  // error: reduxstate.error.error,
 });
 
 export default connect(mapStateToProps, { createMoment })(MomentModal);

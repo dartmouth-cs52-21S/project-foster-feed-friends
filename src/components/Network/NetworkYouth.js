@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unused-state */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-// work in progress
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
@@ -31,7 +30,6 @@ class NetworkYouth extends Component {
     }).map((org) => {
       return (
         <NavLink to={`orgs/profile/${org.id}`} exact>
-          {/* <div className="col-sm-6"> */}
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">{org.orgname}</h5>
@@ -42,7 +40,6 @@ class NetworkYouth extends Component {
               </i>
             </div>
           </div>
-          {/* </div> */}
         </NavLink>
       );
     });
