@@ -40,8 +40,6 @@ Backend - Mongo DB:
 
 ## Deployment
 
-TODO: how to deploy the project
-
 heroku(backend) & netlify(overall) <3 
 
 ## Authors- With much collaboration
