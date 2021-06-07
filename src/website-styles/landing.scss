@@ -56,6 +56,10 @@ $pink:#D34D9D;
     width: fit-content;
     border: none;
 }
+.yellow-btn:hover{
+    color: $white;
+    background-color: $dark-green;
+}
 .landingLeftSubcontainer{
     margin-top: 205px;
     display: flex;
