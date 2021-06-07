@@ -7,7 +7,19 @@ Foster Feed Friends aims to provide resourses and information to foster youth ab
 
 We are a pathway to building better futures. 
 
-- some sample screenshots or mockups (coming soon) 
+#Our Product 
+
+Check out our deployed site! [Foster Feed Friends](https://fosterfeedfriends.netlify.app/)
+
+Check out our Figma! ![Figma Prototype](https://www.figma.com/file/Hcpn03bH20z84UQfOMYEGj/?node-id=108%3A19)
+
+- ![org event](https://user-images.githubusercontent.com/66576635/121062707-6d220c80-c793-11eb-9873-eb9d34abe997.gif)
+- ![org signup and edit](https://user-images.githubusercontent.com/66576635/121062532-2c29f800-c793-11eb-8ffd-55b629e99795.gif)
+- ![mentor signup](https://user-images.githubusercontent.com/66576635/121062538-2e8c5200-c793-11eb-9338-5a043b0df151.gif)
+- ![mentor edit](https://user-images.githubusercontent.com/66576635/121062722-74491a80-c793-11eb-8306-3b6276854226.gif)
+- ![youth messages and events](https://user-images.githubusercontent.com/66576635/121062591-419f2200-c793-11eb-8908-df05d7c809c6.gif)
+- ![youth edit](https://user-images.githubusercontent.com/66576635/121062601-44017c00-c793-11eb-8bd9-c1fa26a3fbc8.gif)
+
 
 ## Architecture
 
