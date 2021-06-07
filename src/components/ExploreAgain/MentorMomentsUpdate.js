@@ -134,9 +134,9 @@ class MentorMomentsUpdate extends Component {
   }
 
   componentDidMount() {
-    // if (this.props.allMoments.length > 0) {
-    this.props.fetchMoments();
-    // }
+    if (this.props.allMoments.length > 0) {
+      this.props.fetchMoments();
+    }
   }
 
   onDone = () => {

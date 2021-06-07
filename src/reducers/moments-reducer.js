@@ -1,4 +1,4 @@
-import { ActionTypes } from '../actions/moments-action';
+import { ActionTypes } from '../actions';
 
 const initialState = {
   allMoments: [],
@@ -10,14 +10,17 @@ const MomentsReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ActionTypes.FETCH_MOMENTS:
+      console.log(
+        'in fetch moments, action.payload', action.payload,
+      );
       return { ...state, allMoments: action.payload };
     case ActionTypes.FETCH_MOMENT:
       return { ...state, currentMoment: action.payload };
     case ActionTypes.CREATE_MOMENT:
-      // console.log('made it in the actiontypes');
-      // console.log('create payload', action.payload);
+      console.log('allmoments', state.allMoments, action.payload);
       return { ...state, allMoments: [...state.allMoments, action.payload] };
     case ActionTypes.MOMENTS_CLEAR:
+      console.log('bitch we made it ');
       return { ...state, allMoments: [] };
     case ActionTypes.MOMENT_CLEAR:
       return { ...state, currentMoment: {} };
