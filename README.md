@@ -21,6 +21,7 @@ Check out our Figma! [*Figma Prototype*](https://www.figma.com/file/Hcpn03bH20z8
 
 
 ## Architecture
+For More Information Read Our [*Backend ReadMe*](https://github.com/dartmouth-cs52-21S/project-api-foster-feed-friends) 
 
 Frontend: 
 - Bootstrap utilized for navigation bar and simple font stylings 
@@ -38,8 +39,6 @@ Backend - Mongo DB:
 - run npm install and npm start. 
 
 ## Deployment
-
-TODO: how to deploy the project
 
 heroku(backend) & netlify(overall) <3 
 
