@@ -122,12 +122,14 @@ $pink:#D34D9D;
     font-size: 18px;
     font-weight: 600;
     padding: 5px;
-    padding-left: 15px;
-    padding-right:15px;
-    height: fit-content;
+    height: 40px;
     border-style: none;
     border-radius: 20px;
-    width: fit-content;
+    width: 100px;
+}
+.email-btn:hover{
+    border: 2px solid $white;
+    padding: 5px;
 }
 .so-container{
     margin-top: 50px;

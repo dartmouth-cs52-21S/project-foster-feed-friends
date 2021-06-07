@@ -3,19 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchOrg } from '../../actions/network-actions';
 import { fetchOrgEvents } from '../../actions/events-actions';
-
 import EventCardYouth from '../Events/EventCardYouth';
 import '../../platform-styles/network-mentor.scss';
-
-// import eventForm from './eventForm';
-
-// const NetworkOrgProfile = (props) => {
-//   const org = useSelector((state) => state.org);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchOrg(props.match.params.userID)); // reseting user
-//   }, []);
 
 class NetworkOrgProfile extends Component {
   constructor(props) {
@@ -32,8 +21,6 @@ class NetworkOrgProfile extends Component {
   handleEmailClick = () => {
     console.log('I MADE IT');
     window.open(`mailto:${this.props.currentOrg.email}?subject=Reaching Out`);
-    // action that adds mentor to youth mesaged
-    // this.props.updateYouthMessaged(this.props.user.id, [...this.props.user.messaged, this.props.match.params.userID], this.props.history);
   }
 
   render = () => {

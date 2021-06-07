@@ -1,21 +1,7 @@
-// import { ROOT_URL } from './index';
+import { ActionTypes, ROOT_URL } from './index';
 
-export const ActionTypes = {
-  AUTH_USER: 'AUTH_USER',
-  DEAUTH_USER: 'DEAUTH_USER',
-  AUTH_ERROR: 'AUTH_ERROR',
-  MOMENTS_CLEAR: 'MOMENTS_CLEAR',
-  MOMENT_CLEAR: 'MOMENT_CLEAR',
-  USER_CLEAR: 'USER_CLEAR',
-};
-
-const ROOT_URL = 'https://foster-project.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
-// const API_KEY = '?key=fosterfeedfriends';
 const axios = require('axios').default;
 
-// trigger to deauth if there is error
-// can also use in your error reducer if you have one to display an error message
 export function authError(error) {
   return {
     type: ActionTypes.AUTH_ERROR,
@@ -78,10 +64,8 @@ export function signupYouth(fields, history) {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
       localStorage.setItem('type', response.data.type);
-      console.log(response.data.ID);
       history.push(`/youth/profile/${response.data.ID}`);
     }).catch((error) => {
-      console.log('catch');
       dispatch(authError(`Sign up Failed: ${error.response.data}`));
     });
   };
@@ -100,7 +84,6 @@ export function signupMentor(
       localStorage.setItem('type', response.data.type);
       history.push(`/mentor/profile/${response.data.ID}`);
     }).catch((error) => {
-      console.log('catch');
       dispatch(authError(`Sign up Failed: ${error.response.data}`));
     });
   };
@@ -109,23 +92,18 @@ export function signupOrg(
   fields, history,
 ) {
   return (dispatch) => {
-    console.log('inside action signup');
-    axios.post(`${ROOT_URL}/signup/org/`,
-      fields).then((response) => {
+    axios.post(`${ROOT_URL}/signup/org/`, fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);
       localStorage.setItem('type', response.data.type);
       history.push(`/org/profile/${response.data.ID}`);
     }).catch((error) => {
-      console.log('catch');
       dispatch(authError(`Sign up Failed: ${error}`));
     });
   };
 }
 
-// deletes token from localstorage
-// and deauths
 export function signoutUser(history) {
   return (dispatch) => {
     localStorage.removeItem('token');
