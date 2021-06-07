@@ -88,6 +88,7 @@ const ProfileOrg = (props) => {
                       location={data.location}
                       id={data._id}
                       coordinator={data.coordinator}
+                      currentOrgID={org.user.id}
                     />
                   );
                 }) }
