@@ -92,8 +92,7 @@ export function signupOrg(
   fields, history,
 ) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/org/`,
-      fields).then((response) => {
+    axios.post(`${ROOT_URL}/signup/org/`, fields).then((response) => {
       dispatch({ type: ActionTypes.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.ID);

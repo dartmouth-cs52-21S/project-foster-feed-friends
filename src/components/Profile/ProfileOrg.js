@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import EventCard from '../Events/EventCard';
 import { fetchOrgInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
-// import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchOrgEvents } from '../../actions/events-actions';
 import '../../profile-styles/org-profile.scss';
 
