@@ -9,9 +9,9 @@ We are a pathway to building better futures.
 
 #Our Product 
 
-Check out our deployed site! [Foster Feed Friends](https://fosterfeedfriends.netlify.app/)
+Check out our deployed site! [*Foster Feed Friends*](https://fosterfeedfriends.netlify.app/)
 
-Check out our Figma! ![Figma Prototype](https://www.figma.com/file/Hcpn03bH20z84UQfOMYEGj/?node-id=108%3A19)
+Check out our Figma! [*Figma Prototype*](https://www.figma.com/file/Hcpn03bH20z84UQfOMYEGj/?node-id=108%3A19)
 
 - ![org event](https://user-images.githubusercontent.com/66576635/121062707-6d220c80-c793-11eb-9873-eb9d34abe997.gif)
 - ![org signup and edit](https://user-images.githubusercontent.com/66576635/121062532-2c29f800-c793-11eb-8ffd-55b629e99795.gif)
