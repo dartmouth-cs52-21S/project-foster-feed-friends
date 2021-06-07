@@ -1,10 +1,11 @@
 import { ActionTypes } from '../actions';
-// error state initially
+
 const initialState = {
   authenticated: false,
   userId: '',
 };
 
+// authentication reducer
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.AUTH_USER:

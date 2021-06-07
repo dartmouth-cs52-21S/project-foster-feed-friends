@@ -1,11 +1,10 @@
 import { ActionTypes } from '../actions';
-// error state initially
+// messaged inital state for users the current user has messaged
 const initialState = {
   messaged: [],
-  current: {},
 };
 
-// a reducer to raise and clear axios errors
+// a reducer to fetch messaged user account
 const MessagedReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_MESSAGED_MENTOR:
