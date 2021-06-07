@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-// import * as ReactBootStrap from 'react-bootstrap';
-
-// DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 import { signupYouth } from '../../actions/onboarding-actions';
+import '../../website-styles/sign-inup.scss';
 
 class SignUpFoster extends Component {
   constructor(props) {
@@ -65,10 +63,10 @@ class SignUpFoster extends Component {
       if (this.state.email === this.state.emailconfirm && this.state.password === this.state.passwordconfirm) {
         this.props.signupYouth(this.state, this.props.history);
       } else {
-        this.setState({ error: 'Make sure both emails and passwords match!' });
+        this.setState({ error: 'Make sure both emails match and both passwords match!' });
       }
     } else {
-      this.setState({ error: 'Missing fields! Please make sure you input your email and password' });
+      this.setState({ error: 'Missing fields! Please make sure to input all required fields.' });
     }
     this.setState({
       firstName: '',

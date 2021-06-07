@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -7,7 +6,6 @@ import { fetchYouthInfo } from '../../actions/user-actions';
 import { signoutUser } from '../../actions/onboarding-actions';
 import { fetchYouthEvents } from '../../actions/events-actions';
 import { fectchMessagedMentor } from '../../actions/messaged-actions';
-// import { fetchMentor } from '../../actions/network-actions';
 import EventCardProfile from '../Events/EventCardProfile';
 import '../../profile-styles/org-profile.scss';
 
@@ -15,7 +13,6 @@ const ProfileYouth = (props) => {
   const youth = useSelector((state) => state.user);
   const { all } = useSelector((state) => state.events);
   const { messaged } = useSelector((state) => state.messagedMentor);
-  // const { currentMentor } = useSelector((state) => state.networkMentors);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -23,7 +20,6 @@ const ProfileYouth = (props) => {
     dispatch(fetchYouthInfo(props.match.params.userID));
     dispatch(fetchYouthEvents(props.match.params.userID));
     dispatch(fectchMessagedMentor(props.match.params.userID));
-    // dispatch(go through list, fetchMentor(), render information)
   }, []);
 
   const onSubmit = () => {
@@ -35,7 +31,6 @@ const ProfileYouth = (props) => {
     <div className="profilePageContainer">
       <div className="leftBar">
         <h1 className="title">Welcome, {youth ? youth.user.firstName : null }!</h1>
-        {/* <button type="button" className="yellow-btn">Edit Profile</button> */}
         <div className="youthbtn-container">
           <NavLink to={`/youth/${props.match.params.userID}/path`} className="editpath-btn">Edit Path</NavLink>
           <NavLink to={`/youth/profile/${props.match.params.userID}/edit`} className="editprofile-btn">Edit Profile</NavLink>
@@ -54,7 +49,7 @@ const ProfileYouth = (props) => {
             <p className="sixteenpoint"> {youth ? youth.user.email : null } </p>
           </div>
         </div>
-        <h3 className="boldtwentyfour">Badges</h3>
+        <h3 className="boldtwentyfour">Badges:</h3>
         <div className="badgesContainer">
           {youth.user.events
             ? (

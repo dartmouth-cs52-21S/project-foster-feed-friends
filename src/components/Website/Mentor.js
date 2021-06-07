@@ -21,7 +21,6 @@ class Mentor extends Component {
             <h1>Mentor Stories</h1>
             <p>Making an Impact</p>
           </div>
-          {/* <img id="mentor-blobs" src="src/img/mentorblob.png" alt="" height="550px" /> */}
           <img id="mentor-blobs" src={mentorblob} alt="mentors" height="550px" />
         </div>
         <div className="mentor-container">

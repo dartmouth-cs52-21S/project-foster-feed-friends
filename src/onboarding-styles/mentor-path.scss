@@ -34,6 +34,9 @@ $pink:#D34D9D;
     background-color: $light-green;
     color:$white;
 }
+.lightgreen-btn:hover{
+    border: 2px solid $dark-green;
+}
 .done-btn{
     display: flex;
     flex-direction: row;
@@ -72,6 +75,9 @@ $pink:#D34D9D;
     border-style: none;
     border-radius: 20px;
     width: fit-content;
+}
+.inspo-btn:hover{
+    background-color: $dark-green;
 }
 .mbtn-container{
     display: flex;

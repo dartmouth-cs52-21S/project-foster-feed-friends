@@ -3,13 +3,6 @@ import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormLabel from '@material-ui/core/FormLabel';
-// import { FormControlLabel } from '@material-ui/core';
-// import * as ReactBootStrap from 'react-bootstrap';
-
-// DONT FORGET NAV LINK
 import { withRouter } from 'react-router-dom';
 import { signupMentor } from '../../actions/onboarding-actions';
 import '../../website-styles/sign-inup.scss';
@@ -93,13 +86,6 @@ class SignUpMentor extends Component {
       this.setState({ error: 'Missing fields! Please make sure to input all required fields.' });
     }
     this.setState({
-      // firstName: '',
-      // lastName: '',
-      // email: '',
-      // emailconfirm: '',
-      // password: '',
-      // passwordconfirm: '',
-      // careerPath: '',
       firstName: '',
       lastName: '',
       organization: '',
@@ -118,7 +104,6 @@ class SignUpMentor extends Component {
   }
 
   render = () => {
-    // console.log(localStorage.getItem('momentsPath'));
     return (
       <div id="signUpSpecificContainer">
         <div className="header">

@@ -20,12 +20,9 @@ class Educate extends Component {
     return (
       <div>
         <div id="educateRowI">
-          {/* <img src="src/img/educateI.png" alt="grad cap young woman" /> */}
           <img src={educateone} alt="grad cap young woman" />
-          {/* <img src="src/img/educateIII.png" alt="young men gathered around computer" /> */}
           <img src={educatethree} alt="young men around computers" />
         </div>
-        {/* <img id="educateRowII" src="src/img/educateII.png" alt="grad cap young woman" /> */}
         <img id="educateRowII" src={educatetwo} alt="grad cap young woman" />
         <div id="educatebar">
           <div className="educateLanding">

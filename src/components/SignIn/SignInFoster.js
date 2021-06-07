@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-// import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
 import { signinYouth } from '../../actions/onboarding-actions';
 
@@ -54,11 +53,7 @@ class SignInFoster extends Component {
           <InputLabel className="sixteenpoint" htmlFor="component-simple">Password</InputLabel>
           <Input type="password" id="component-simple" className="sixteenpoint" value={this.state.password} onChange={this.handlePasswordChange} />
         </FormControl>
-        {/* <Button className="signInSpecificButton" variant="contained" color="primary">
-          Sign-In
-        </Button> */}
         <button type="button" className="yellow-btn" onClick={this.onSubmit}>Sign In</button>
-
       </div>
     );
   }

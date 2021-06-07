@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import * as ReactBootStrap from 'react-bootstrap';
-// DONT FORGET NAV LINK
 import { withRouter, NavLink } from 'react-router-dom';
 import { signoutUser } from '../../actions/onboarding-actions';
 import Footer from './footer';
@@ -27,7 +25,6 @@ class Landing extends Component {
             We want to enable foster children to not only understand thier options but take advantage of it.
           </p>
           <NavLink className="yellow-btn" to="/signup">Join Our Community</NavLink>
-          {/* <button className="yellowButton" type="button"><NavLink className="navLinkButton" to="/signup">Join Our Community</NavLink></button> */}
         </div>
         <div className="landingLeftSubcontainer">
           <div id="content">
@@ -59,8 +56,6 @@ class Landing extends Component {
               </div>
             </div>
           </div>
-
-          {/* <img id="blobs" src="src/img/landingBlobs.png" alt="" height="450px" /> */}
           <img id="blobs" src={landingblob} alt="" height="450px" />
         </div>
         <Footer />

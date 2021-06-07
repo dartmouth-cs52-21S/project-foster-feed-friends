@@ -43,10 +43,14 @@ $pink:#D34D9D;
 .text-reset:hover{
     text-decoration: underline;
 }
+.footer-links a:hover{
+    text-decoration: underline;
+}
 .copyright{
     padding:10px;
     color: $white;
     font-size: 14px;
+    font-family: "Nunito", sans-serif;
 }
 .md-form{
     display: flex;
@@ -68,4 +72,21 @@ $pink:#D34D9D;
     background-color: $pink;
     color:$white;
     border-style: none;
+}
+.footer-btn{
+    font-size: 16px !important;
+    font-weight: 700;
+    width: 90px;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 20px;
+    padding: 7px;
+    background-color: $yellow-CTA;
+    color: black;
+    border-style: none;
+    text-align: center;
+    margin-left: 35px;
+}
+.footer-btn:hover{
+    color: $white;
+    background-color: $dark-green;
 }

@@ -77,7 +77,6 @@ class MentorEdit extends Component {
             <InputLabel className="sixteenpoint" htmlFor="component-simple">Career Path</InputLabel>
             <Input id="component-simple" className="sixteenpoint" value={this.state.careerPath} onChange={this.handleCareerChange} />
           </FormControl>
-
         </div>
         <button type="button" className="lightgreen-btn" variant="contained" onClick={this.onSubmit} color="primary">Save</button>
       </div>

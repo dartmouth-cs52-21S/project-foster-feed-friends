@@ -4,15 +4,14 @@ import {
   NavLink,
   withRouter,
 } from 'react-router-dom';
-// import Button from '@material-ui/core/Button';
 import { AppBar } from '@material-ui/core';
 import { signoutUser } from '../actions/onboarding-actions';
 import '../website-styles/nav-bar.scss';
+import heartlogo from '../img/logo.png';
 
 function mapStateToProps(reduxState) {
   return {
     auth: reduxState.auth.authenticated,
-    // user: reduxState.user.user,
   };
 }
 
@@ -20,8 +19,6 @@ const renderAuth = (auth) => {
   const user = useSelector((state) => state.user);
   if (auth) {
     return <NavLink className="yellow-btn" to={`/${user.user.type}/profile/${user.user.id}`}>Profile</NavLink>;
-    // return <NavLink to={`/${localStorage.getItem('type')}/profile/${localStorage.getItem('userId')}`}> <button className="yellow-btn" type="button"> Profile</button> </NavLink>;
-    // return <Button className="navSignInButton" onClick={() => signout(history)}>Sign Out</Button>;
   } else {
     return <NavLink className="yellow-btn" to="/signin">Sign In</NavLink>;
   }
@@ -29,19 +26,16 @@ const renderAuth = (auth) => {
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.user);
-
-  console.log(user);
   if (props.auth && user.user.type === 'youth') {
     return (
       <AppBar position="static" id="navBarContainer">
-        {/* <img alt=" " src="../img/logo.png" /> */}
         <div className="link-background">
           <ul>
             <div id="title">
+              <img id="logo" src={heartlogo} alt="" width="45px" height="45px" />
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
-              {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
               <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               <NavLink to={`/messages/${user.user.id}`} className="navTab left right">Messages </NavLink>
               <NavLink to="/networks/all" className="navTab left right">Feed Friends </NavLink>
@@ -56,10 +50,10 @@ const NavBar = (props) => {
   } else if (props.auth && user.user.type === 'org') {
     return (
       <AppBar position="static" id="navBarContainer">
-        {/* <img alt=" " src="../img/logo.png" /> */}
         <div className="link-background">
           <ul>
             <div id="title">
+              <img id="logo" src={heartlogo} alt="" width="45px" height="45px" />
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
@@ -75,14 +69,13 @@ const NavBar = (props) => {
   } else if (props.auth && user.user.type === 'mentor') {
     return (
       <AppBar position="static" id="navBarContainer">
-        {/* <img alt=" " src="../img/logo.png" /> */}
         <div className="link-background">
           <ul>
             <div id="title">
+              <img id="logo" src={heartlogo} alt="" width="45px" height="45px" />
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
-              {/* <NavLink to="/messages" className="navTab left right">Messages </NavLink> */}
               <NavLink to="/resources" className="navTab left right">Resources </NavLink>
               <NavLink to={`/messages/${user.user.id}`} className="navTab left right">Messages </NavLink>
               <div className="nav-btn">
@@ -96,10 +89,10 @@ const NavBar = (props) => {
   } else {
     return (
       <AppBar position="static" id="navBarContainer">
-        {/* <img alt=" " src="../img/logo.png" /> */}
         <div className="link-background">
           <ul>
             <div id="title">
+              <img id="logo" src={heartlogo} alt="" width="45px" height="45px" />
               <NavLink edge="start" exact to="/" className="navTab left">Foster Feed Friends</NavLink>
             </div>
             <div id="navRight">
