@@ -1,7 +1,7 @@
 # Foster Feed Friends
+<img width="1440" alt="Screen Shot 2021-06-07 at 4 26 23 PM" src="https://user-images.githubusercontent.com/31497093/121083623-ab2c2a00-c7ad-11eb-9905-81c5337b29ff.png">
 
-![Team Photo](Insert a Team Photo URL here)
-[*how?*](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)
+[*how?*]
 
 Foster Feed Friends aims to provide resourses and information to foster youth about to age out of the system. We want to enable foster children to not only understand thier options but take advantage of it. 
 
