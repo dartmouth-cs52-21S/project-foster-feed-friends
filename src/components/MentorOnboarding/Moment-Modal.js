@@ -80,7 +80,7 @@ const SimplePopover = () => {
               </div>
               <div className="popper-text">
                 <h3>Full-Circle</h3>
-                <h5>A defining moment that conveys an accomplishment to you.</h5>
+                <h5>A learning moment that served as a realization in your life.</h5>
               </div>
             </div>
           </div>
