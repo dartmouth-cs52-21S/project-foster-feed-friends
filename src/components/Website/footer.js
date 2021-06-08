@@ -67,7 +67,6 @@ class Footer extends Component {
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/SignUp/mentormoments">Become a Mentor</NavLink>
-                =
               </p>
               <p className="footer-links">
                 <NavLink className="text-reset" to="/signup">Sign Up</NavLink>
