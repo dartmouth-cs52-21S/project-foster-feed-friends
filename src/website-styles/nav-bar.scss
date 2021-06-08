@@ -1,0 +1,109 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+//for rendering the left and right side 
+// elements on the navbar in the same line 
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+//nav bar bg and text elems
+#navBarContainer{
+    background-color: $primaryG;
+    height:10%;
+}
+  
+.navTab{
+    text-decoration: none;
+    padding:10px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    color:$white;
+}
+.navTab:hover{
+    color: $white;
+}
+.left{
+    font-size: 25px;
+}
+.right{
+    font-size: 20px;
+}
+
+//For underline navbar animation left-right
+a{
+    text-decoration: none;
+    color:black;
+}
+a:hover{
+    color:$yellow-CTA;
+    text-decoration: none;
+}
+a.left
+{
+    position: relative;
+}
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+a.left:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+//flex boxes for the nav elems
+#navRight{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top:20px;
+}
+#title{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top:20px;
+    margin-left: 0px;
+}
+.navSignInButton{
+    text-decoration: none;
+    color:$white !important;
+    font-family: 'Nunito', sans-serif !important;
+    height: fit-content;
+    font-size: .8rem !important;
+    background-color: #FFB621;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 700;
+    padding-top: 10px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.nav-btn{
+    padding: 10px;
+    margin-right: 25px;
+}
+
+

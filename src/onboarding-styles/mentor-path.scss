@@ -1,0 +1,111 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+//mentor-path.js styling
+.path-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.path-header h2{
+    font-family: "Mulish", sans-serif;
+    font-size: 30px;
+    padding-top: 30px;
+}
+.path-header h4{
+    font-family: "Mulish", sans-serif;
+    font-size: 24px;
+    padding-top: 10px;
+    color: #656565;
+}
+.lightgreen-btn{
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    background-color: $light-green;
+    color:$white;
+}
+.lightgreen-btn:hover{
+    border: 2px solid $dark-green;
+    color:$white;
+}
+.done-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+.all-moments{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    width:900px;
+}
+#path-name{
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px;
+}
+.profile-type{
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+}
+.inspo-btn{
+    text-decoration: none;
+    background-color: $blue;
+    color: $white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    height: fit-content;
+    border-style: none;
+    border-radius: 20px;
+    width: fit-content;
+}
+.inspo-btn:hover{
+    background-color: $dark-green;
+}
+.mbtn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 150px;
+    padding: 40px;
+}
+.inspo-header{
+    text-align: center;
+}
+.inspo-header h2{
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+}
+.inspo-header h4{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.inspo-text li{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 10px;
+}

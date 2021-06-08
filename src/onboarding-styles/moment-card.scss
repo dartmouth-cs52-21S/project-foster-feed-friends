@@ -1,0 +1,26 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+#mom-card{
+    width: 200px;
+    background-color: $light-green;
+}
+#mom-title{
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+#mom-desc{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+#mom-sym{
+    background-color: $pink;
+}

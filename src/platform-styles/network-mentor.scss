@@ -1,0 +1,110 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+#banner{
+    background-color: $blue;
+    text-align: center;
+    padding:10px;
+    font-size: 25px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+}
+.sortingBar{
+    background-color: #F2F2F2 !important;
+    text-align: center !important;
+    padding:10px;
+    margin-bottom: 30px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+#location{
+    opacity: 0.5;
+}
+.searchBar{
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-top: 20px;
+    font-family: "Mulish", sans-serif;
+}
+.green-btn{
+    background-color:$primaryG;
+    margin-right: 10px;
+    border-radius: 25%;
+    padding: 10px;
+    border: none;
+}
+.green-btn:hover{
+    background-color:$yellow-CTA;
+}
+#search-addon{
+    margin-right: 30px;
+}
+.MuiTabs-flexContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.email{
+    color:$white;
+}
+.email:hover{
+    color:$white;
+}
+.chatbox-container { 
+    position: absolute; 
+    bottom: 0; 
+    height: 400px; 
+    right: 5%; 
+    width: 300px; 
+}
+.card-Body{
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.cardContainer{
+    flex-wrap: wrap;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.sortTab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#all{
+    margin-left: 100px;
+}
+.mc-title{
+    font-family: "Nunito", sans-serif;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+.mc-location{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: $black;
+    margin-top: 25px;
+}
+.mc-email{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.mc-card{
+    width: 300px;
+    height: 150px;
+}
+.mc-card:hover{
+    border: 3px solid $pink;
+}
+

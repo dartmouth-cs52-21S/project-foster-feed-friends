@@ -1,0 +1,129 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+//sign in
+sub{
+    opacity:0.5;
+    font-size: 12px !important;
+}
+#signInOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title{ 
+    font-family: 'Nunito';
+    font-size: 32px !important;
+}
+#signInContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#signInContainer h1{
+    font-size: 1em;
+}
+.signInCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    width: 250px;
+}
+#ending{
+    display: flex;
+    margin-top: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#ending p{ 
+    font-family: "Nunito", sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.navLink{
+    text-decoration: none;
+    color: black;
+}
+.MuiCardContent-root {
+    padding-bottom: 0px!important;
+}
+.MuiCardActions-root{
+    padding-bottom: 16px !important;
+}
+.MuiTypography-body1{
+    font-family: "Nunito", sans-serif !important;
+    font-size: 32px !important;
+
+}
+#signInSpecificConatiner{
+    margin-top: 50px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sixteenpoint{
+    font-family: "Mulish", sans-serif !important;
+    font-size: 16px !important;
+}
+.signInSpecificInput{
+    margin: 15px !important ;
+    width: 300px !important;
+}
+.signInSpecificButton{
+    margin: 15px !important ;
+}
+
+// signupyouth 
+.inputColumns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+// signupMentor 
+.radioButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+// sign up org styling
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px;
+}
+#signUpSpecificContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.signUpSpecificInput{
+    margin: 15px !important;
+    width: 600px !important;
+}
+.signUpSpecificButton{
+    margin: 15px !important;
+    width: fit-content;
+    height: fit-content;
+}

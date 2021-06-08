@@ -1,0 +1,99 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+// landing page
+#landing-container{
+    display:flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url(../img/papaioannou-kostas-tysecUm5HJA-unsplash.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    align-items: center;
+}
+.landingSubcontainer{
+    padding-top: 50px;
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+.landingSubcontainer h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    width: 1600px;
+    text-align: center;
+    color:#F5FFFC;
+}
+.landingSubcontainer p{
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color:#F5FFFC;
+}
+.yellow-btn{
+    text-decoration: none;
+    background-color: #FFB621;
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+    width: fit-content;
+    border: none;
+}
+.yellow-btn:hover{
+    color: $white;
+    background-color: $dark-green;
+}
+.landingLeftSubcontainer{
+    margin-top: 205px;
+    display: flex;
+    flex-direction: row;
+}
+#blobs{
+    padding-left: 55px;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    width:60%;
+}
+.underlineLight{
+    background-color: #92C893;
+    width:400px; 
+    height: 5px;
+}
+.underlineDark{
+    background-color: #0E442C;
+    width:400px; 
+    height :5px;
+}
+.subLeft{
+    margin-left: 25px;
+}
+.subLeft h1,h2{
+    font-family: 'Nunito', sans-serif;
+    margin: 0px !important;
+    font-size: 40px;
+}
+.landingLeftSubcontainer p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    padding-top: 25px;
+}

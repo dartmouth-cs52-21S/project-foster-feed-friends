@@ -1,0 +1,78 @@
+$primaryG:#12A67C;
+$dark-green:#0E442C;
+$light-green:#92C893;
+$yellow-CTA:#FFB621;
+$black:#323433;
+$white:#F5FFFC;
+$blue:#6F93EE;
+$orange:#D37B4D;
+$pink:#D34D9D;
+
+.cardContainer{
+    flex-wrap: wrap;
+}
+.card-body{
+     margin:10px;
+}
+.card{
+    margin:10px;
+}
+a{
+    text-decoration: none;
+}
+.email{
+    color:$white;
+}
+
+h5, h6{
+    color:$black;
+}
+.green-btn{
+    color:$white;
+}
+#pink-banner{
+    background-color: $pink;
+    text-align: center;
+    padding:10px;
+    font-size: 25px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+}
+.res-title{
+    font-family: "Nunito", sans-serif;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+.res-location{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: $black;
+    margin-top: 25px;
+}
+.res-poc{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+.res-web{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: underline;
+    color: $dark-green;
+}
+.res-web:hover{
+    color: $blue;
+}
+.res-card{
+    width: 400px;
+    height: 190px;
+}
+.contact-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
